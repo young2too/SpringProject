@@ -5,7 +5,6 @@
 <c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 	<!-- META ============================================= -->
@@ -88,7 +87,7 @@
                 <div class="container clearfix">
 					<!-- Header Logo ==== -->
 					<div class="menu-logo">
-						<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
+						<a href=""><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
 					</div>
 					<!-- Mobile Nav Button ==== -->
                     <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -119,12 +118,12 @@
 					<!-- Navigation Menu ==== -->
                     <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
 						<div class="menu-logo">
-							<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
+							<a href=""><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
 						</div>
                         <ul class="nav navbar-nav">	
 							<li class="active"><a href="javascript:;">Home <i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="index.jsp">Home 1</a></li>
+									<li><a href="">Home 1</a></li>
 									<li><a href="index-2.jsp">Home 2</a></li>
 								</ul>
 							</li>
@@ -132,13 +131,13 @@
 								<ul class="sub-menu">
 									<li><a href="javascript:;">About<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
-											<li><a href="about-1.jsp">About 1</a></li>
+											<li><a href="study.do">About 1</a></li>
 											<li><a href="about-2.jsp">About 2</a></li>
 										</ul>
 									</li>
 									<li><a href="javascript:;">Event<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
-											<li><a href="event.jsp">Event</a></li>
+											<li><a href="exercise.do">Event</a></li>
 											<li><a href="events-details.jsp">Events Details</a></li>
 										</ul>
 									</li>
@@ -168,7 +167,7 @@
 											<li><a href="courses.jsp">Courses </a></li>
 											<li><a href="courses-details.jsp">Courses Details</a></li>
 											<li><a href="profile.jsp">Instructor Profile</a></li>
-											<li><a href="event.jsp">Upcoming Event</a></li>
+											<li><a href="exercise.do">Upcoming Event</a></li>
 											<li><a href="membership.jsp">Membership</a></li>
 										</ul>
 									</li>
@@ -229,7 +228,15 @@
         <div class="page-banner ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/banner/banner1.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
-                    <h1 class="text-white">Courses Details</h1>
+                    <h1 class="text-white">
+                    	<c:choose>
+                    		<c:when test="${category == 1 }">정보처리기사</c:when>
+                    		<c:when test="${category == 2 }">정보보안기사</c:when>
+                    		<c:when test="${category == 3 }">리눅스 마스터</c:when>
+                    		<c:when test="${category == 4 }">영단어 마스터</c:when>
+                    		<c:when test="${category == 5 }">한국사 능력시험</c:when>
+                    	</c:choose>
+                    </h1>
 				 </div>
             </div>
         </div>
@@ -237,8 +244,17 @@
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
-					<li><a href="#">Home</a></li>
-					<li>Courses Details</li>
+					<li><a href="/">Home</a></li>
+					<li><a href="/">문제집 선택</a>
+					<li>
+						<c:choose>
+                    		<c:when test="${category == 1 }">정보처리기사</c:when>
+                    		<c:when test="${category == 2 }">정보보안기사</c:when>
+                    		<c:when test="${category == 3 }">리눅스 마스터</c:when>
+                    		<c:when test="${category == 4 }">영단어 마스터</c:when>
+                    		<c:when test="${category == 5 }">한국사 능력시험</c:when>
+                    	</c:choose>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -332,7 +348,7 @@
 				<div class="container">
 					<div class="d-flex align-items-stretch">
 						<div class="pt-logo mr-auto">
-							<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""/></a>
+							<a href="/"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""/></a>
 						</div>
 						<div class="pt-social-link">
 							<ul class="list-inline m-a0">
@@ -373,8 +389,8 @@
 								<div class="widget footer_widget">
 									<h5 class="footer-title">Company</h5>
 									<ul>
-										<li><a href="index.jsp">Home</a></li>
-										<li><a href="about-1.jsp">About</a></li>
+										<li><a href="/">Home</a></li>
+										<li><a href="study.do">About</a></li>
 										<li><a href="faq-1.jsp">FAQs</a></li>
 										<li><a href="contact-1.jsp">Contact</a></li>
 									</ul>
@@ -387,7 +403,7 @@
 										<li><a href="../admin/index.jsp">Dashboard</a></li>
 										<li><a href="blog-classic-grid.jsp">Blog</a></li>
 										<li><a href="portfolio.jsp">Portfolio</a></li>
-										<li><a href="event.jsp">Event</a></li>
+										<li><a href="exercise.do">Event</a></li>
 									</ul>
 								</div>
 							</div>

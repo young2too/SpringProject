@@ -136,13 +136,13 @@
 								<ul class="sub-menu">
 									<li><a href="javascript:;">About<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
-											<li><a href="about-1.jsp">About 1</a></li>
+											<li><a href="study.do">About 1</a></li>
 											<li><a href="about-2.jsp">About 2</a></li>
 										</ul>
 									</li>
 									<li><a href="javascript:;">Event<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
-											<li><a href="event.jsp">Event</a></li>
+											<li><a href="exercise.do">Event</a></li>
 											<li><a href="events-details.jsp">Events Details</a></li>
 										</ul>
 									</li>
@@ -172,7 +172,7 @@
 											<li><a href="main/courses.jsp">Courses </a></li>
 											<li><a href="courses-details.jsp">Courses Details</a></li>
 											<li><a href="profile.jsp">Instructor Profile</a></li>
-											<li><a href="event.jsp">Upcoming Event</a></li>
+											<li><a href="exercise.do">Upcoming Event</a></li>
 											<li><a href="membership.jsp">Membership</a></li>
 										</ul>
 									</li>
@@ -1040,7 +1040,7 @@
 									<h5 class="footer-title">Company</h5>
 									<ul>
 										<li><a href="index.jsp">Home</a></li>
-										<li><a href="about-1.jsp">About</a></li>
+										<li><a href="study.do">About</a></li>
 										<li><a href="faq-1.jsp">FAQs</a></li>
 										<li><a href="contact-1.jsp">Contact</a></li>
 									</ul>
@@ -1053,7 +1053,7 @@
 										<li><a href="../admin/index.jsp">Dashboard</a></li>
 										<li><a href="blog-classic-grid.jsp">Blog</a></li>
 										<li><a href="portfolio.jsp">Portfolio</a></li>
-										<li><a href="event.jsp">Event</a></li>
+										<li><a href="exercise.do">Event</a></li>
 									</ul>
 								</div>
 							</div>

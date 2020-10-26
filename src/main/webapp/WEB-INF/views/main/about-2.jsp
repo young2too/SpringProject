@@ -5,7 +5,7 @@
 <c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- 미정 -->
 <head>
 
 	<!-- META ============================================= -->
@@ -228,15 +228,32 @@
         <div class="page-banner ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/banner/banner3.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
-                    <h1 class="text-white">About Us 2</h1>
+                    <h1 class="text-white">
+                    	<c:choose>
+                    		<c:when test="${category == 1 }">정보처리기사</c:when>
+                    		<c:when test="${category == 2 }">정보보안기사</c:when>
+                    		<c:when test="${category == 3 }">리눅스 마스터</c:when>
+                    		<c:when test="${category == 4 }">영단어 마스터</c:when>
+                    		<c:when test="${category == 5 }">한국사 능력시험</c:when>
+                    	</c:choose>
+					</h1>
 				 </div>
             </div>
         </div>
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
-					<li><a href="#">Home</a></li>
-					<li>About Us 2</li>
+					<li><a href="/">Home</a></li>
+					<li>문제집 선택<li>
+					<li>
+						<c:choose>
+                    		<c:when test="${category == 1 }">정보처리기사</c:when>
+                    		<c:when test="${category == 2 }">정보보안기사</c:when>
+                    		<c:when test="${category == 3 }">리눅스 마스터</c:when>
+                    		<c:when test="${category == 4 }">영단어 마스터</c:when>
+                    		<c:when test="${category == 5 }">한국사 능력시험</c:when>
+                    	</c:choose>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -247,12 +264,12 @@
 			<div class="section-area section-sp1">
                 <div class="container">
 					 <div class="row">
-						 <div class="col-lg-6 m-b30">
+						<!--  <div class="col-lg-6 m-b30">
 							<h2 class="title-head ">Learn a new skill online<br/> <span class="text-primary"> on your time</span></h2>
 							<h4><span class="counter">57,000 </span> Online Courses</h4>
 							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
 							<a href="#" class="btn button-md">Join Now</a>
-						 </div>
+						 </div> -->
 						 <div class="col-lg-6">
 							 <div class="row">
 								<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
@@ -362,7 +379,7 @@
 			</div>
 			<!-- Why Choose END ==== -->
 			<!-- Company Status ==== -->
-			<div class="section-area content-inner section-sp1">
+			<!-- <div class="section-area content-inner section-sp1">
                 <div class="container">
                     <div class="section-content">
                          <div class="row">
@@ -401,9 +418,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 			<!-- Company Stats END ==== -->
-			<!-- Our Story ==== -->
+			<%-- <!-- Our Story ==== -->
 			<div class="section-area bg-gray section-sp1 our-story">
 				<div class="container">
 					<div class="row align-items-center d-flex">
@@ -422,7 +439,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- Our Story END ==== -->
+			<!-- Our Story END ==== --> --%>
 			<!-- Testimonials ==== -->
 			<div class="section-area section-sp2">
 				<div class="container">
