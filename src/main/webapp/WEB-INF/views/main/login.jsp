@@ -59,13 +59,13 @@
 	<div id="loading-icon-bx"></div>
 	<div class="account-form">
 		<div class="account-head" style="background-image:url(${contextPath }/resources/main_assets/assets/images/background/bg2.jpg);">
-			<a href="index.html"><img src="${contextPath }/resources/main_assets/assets/images/logo-white-2.png" alt=""></a>
+			<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo-white-2.png" alt=""></a>
 		</div>
 		<div class="account-form-inner">
 			<div class="account-container">
 				<div class="heading-bx left">
 					<h2 class="title-head">Login to your <span>Account</span></h2>
-					<p>Don't have an account? <a href="register.html">Create one here</a></p>
+					<p>Don't have an account? <a href="register.do">Create one here</a></p>
 				</div>	
 				<form class="contact-bx">
 					<div class="row placeani">
@@ -91,7 +91,7 @@
 									<input type="checkbox" class="custom-control-input" id="customControlAutosizing">
 									<label class="custom-control-label" for="customControlAutosizing">Remember me</label>
 								</div>
-								<a href="forget-password.html" class="ml-auto">Forgot Password?</a>
+								<a href="forget-password.do" class="ml-auto">Forgot Password?</a>
 							</div>
 						</div>
 						<div class="col-lg-12 m-b30">

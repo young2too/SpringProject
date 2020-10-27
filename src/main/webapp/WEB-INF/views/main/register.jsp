@@ -58,16 +58,32 @@
 	<div id="loading-icon-bx"></div>
 	<div class="account-form">
 		<div class="account-head" style="background-image:url(${contextPath }/resources/main_assets/assets/images/background/bg2.jpg);">
-			<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo-white-2.png" alt=""></a>
+			<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo-white-2.png" alt=""></a>
 		</div>
 		<div class="account-form-inner">
 			<div class="account-container">
 				<div class="heading-bx left">
 					<h2 class="title-head">Sign Up <span>Now</span></h2>
-					<p>Login Your Account <a href="login.jsp">Click here</a></p>
+					<p>Login Your Account <a href="login.do">Click here</a></p>
 				</div>	
 				<form class="contact-bx">
 					<div class="row placeani">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<div class="input-group"> 
+									<label>Your ID</label>
+									<input name="dzId" type="text" class="form-control" required="">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="form-group">
+								<div class="input-group"> 
+									<label>Your Password</label>
+									<input name="dzPwd" type="password" class="form-control" required="">
+								</div>
+							</div>
+						</div>	
 						<div class="col-lg-12">
 							<div class="form-group">
 								<div class="input-group">
@@ -80,18 +96,11 @@
 							<div class="form-group">
 								<div class="input-group">
 									<label>Your Email Address</label>
-									<input name="dzName" type="email" required="" class="form-control">
+									<input name="dzEmail" type="email" required="" class="form-control">
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-12">
-							<div class="form-group">
-								<div class="input-group"> 
-									<label>Your Password</label>
-									<input name="dzEmail" type="password" class="form-control" required="">
-								</div>
-							</div>
-						</div>
+						
 						<div class="col-lg-12 m-b30">
 							<button name="submit" type="submit" value="Submit" class="btn button-md">Sign Up</button>
 						</div>

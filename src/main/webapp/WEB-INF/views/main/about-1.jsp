@@ -58,7 +58,7 @@
 	<div id="loading-icon-bx"></div>
 	<!-- Header Top ==== -->
     <header class="header rs-nav">
-		<div class="top-bar">
+ 		<div class="top-bar">
 			<div class="container">
 				<div class="row d-flex justify-content-between">
 					<div class="topbar-left">
@@ -67,21 +67,21 @@
 							<li><a href="javascript:;"><i class="fa fa-envelope-o"></i>Support@website.com</a></li>
 						</ul>
 					</div>
-					<div class="topbar-right">
+			 		<div class="topbar-right">
 						<ul>
 							<li>
 								<select class="header-lang-bx">
 									<option data-icon="flag flag-uk">English UK</option>
 									<option data-icon="flag flag-us">English US</option>
 								</select>
-							</li>
+							</li> 
 							<li><a href="login.jsp">Login</a></li>
 							<li><a href="register.jsp">Register</a></li>
 						</ul>
-					</div>
+					</div> 
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="sticky-header navbar-expand-lg">
             <div class="menu-bar clearfix">
                 <div class="container clearfix">
