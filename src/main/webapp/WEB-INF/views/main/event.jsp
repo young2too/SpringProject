@@ -59,18 +59,18 @@
 <div class="page-wraper">
 <div id="loading-icon-bx"></div>
 	<!-- Header Top ==== -->
-    <header class="header rs-nav">
+    <header class="header rs-nav header-transparent">
 		<div class="top-bar">
 			<div class="container">
 				<div class="row d-flex justify-content-between">
-					<div class="topbar-left">
+					<!--  <div class="topbar-left">
 						<ul>
 							<li><a href="faq-1.jsp"><i class="fa fa-question-circle"></i>Ask a Question</a></li>
 							<li><a href="javascript:;"><i class="fa fa-envelope-o"></i>Support@website.com</a></li>
 						</ul>
-					</div>
-					<div class="topbar-right">
-						<ul>
+					</div>-->
+					<!--<div class="topbar-right">
+						  <ul>
 							<li>
 								<select class="header-lang-bx">
 									<option data-icon="flag flag-uk">English UK</option>
@@ -80,7 +80,7 @@
 							<li><a href="login.jsp">Login</a></li>
 							<li><a href="register.jsp">Register</a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -89,7 +89,7 @@
                 <div class="container clearfix">
 					<!-- Header Logo ==== -->
 					<div class="menu-logo">
-						<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
+						<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""></a>
 					</div>
 					<!-- Mobile Nav Button ==== -->
                     <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,12 +98,11 @@
 						<span></span>
 					</button>
 					<!-- Author Nav ==== -->
-                    <div class="secondary-menu">
+                     <div class="secondary-menu">
                         <div class="secondary-inner">
                             <ul>
-								<li><a href="javascript:;" class="btn-link"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="javascript:;" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="javascript:;" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="login.jsp">로그인 </a></li>
+							<li><a href="register.jsp">회원가입</a></li>
 								<!-- Search Button ==== -->
 								<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
 							</ul>
@@ -120,26 +119,26 @@
 					<!-- Navigation Menu ==== -->
                     <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
 						<div class="menu-logo">
-							<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
+							<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
 						</div>
                         <ul class="nav navbar-nav">	
-							<li class="active"><a href="javascript:;">Home <i class="fa fa-chevron-down"></i></a>
+							<li class="active"><a href="javascript:;">Home<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="index.jsp">Home 1</a></li>
+									<li><a href="index.do">Home 1</a></li>
 									<li><a href="index-2.jsp">Home 2</a></li>
 								</ul>
 							</li>
-							<li><a href="javascript:;">Pages <i class="fa fa-chevron-down"></i></a>
+							<li><a href="javascript:;">PAGES<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="javascript:;">About<i class="fa fa-angle-right"></i></a>
+									<li><a href="javascript:;">학습하기<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
 											<li><a href="study.do">About 1</a></li>
 											<li><a href="about-2.jsp">About 2</a></li>
 										</ul>
 									</li>
-									<li><a href="javascript:;">Event<i class="fa fa-angle-right"></i></a>
+									<li><a href="javascript:;">문제풀기<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
-											<li><a href="exercise.do">Event</a></li>
+											<li><a href="exercise.do">주관식</a></li>
 											<li><a href="events-details.jsp">Events Details</a></li>
 										</ul>
 									</li>
@@ -161,16 +160,16 @@
 									<li><a href="error-404.jsp">404 Page</a></li>
 								</ul>
 							</li>
-							<li class="add-mega-menu"><a href="javascript:;">Our Courses <i class="fa fa-chevron-down"></i></a>
+							<li class="add-mega-menu"><a href="javascript:;">나의 단어장<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu add-menu">
 									<li class="add-menu-left">
-										<h5 class="menu-adv-title">Our Courses</h5>
+										<h5 class="menu-adv-title">나의 단어장</h5>
 										<ul>
-											<li><a href="courses.jsp">Courses </a></li>
-											<li><a href="courses-details.jsp">Courses Details</a></li>
-											<li><a href="profile.jsp">Instructor Profile</a></li>
-											<li><a href="exercise.do">Upcoming Event</a></li>
-											<li><a href="membership.jsp">Membership</a></li>
+											<li><a href="main/courses.jsp">정보처리기사</a></li>
+											<li><a href="courses-details.jsp">보안기사</a></li>
+											<li><a href="profile.jsp">리눅스</a></li>
+											<li><a href="exercise.do">한국사</a></li>
+											<li><a href="membership.jsp">영단어</a></li>
 										</ul>
 									</li>
 									<li class="add-menu-right">
@@ -182,7 +181,7 @@
 								<ul class="sub-menu">
 									<li><a href="blog-classic-grid.jsp">Blog Classic</a></li>
 									<li><a href="blog-classic-sidebar.jsp">Blog Classic Sidebar</a></li>
-									<li><a href="blog-list-sidebar.jsp">Blog List Sidebar</a></li>
+									<li><a href="blog-list-sidebar.jsp">QnA게시판</a></li>
 									<li><a href="blog-standard-sidebar.jsp">Blog Standard Sidebar</a></li>
 									<li><a href="blog-details.jsp">Blog Details</a></li>
 								</ul>
@@ -223,7 +222,7 @@
             </div>
         </div>
     </header>
-    <!-- header END ==== -->
+    <!-- Header Top END ==== -->
     <!-- Content -->
     <div class="page-content bg-white">
         <!-- inner page banner -->

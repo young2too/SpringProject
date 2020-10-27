@@ -17,9 +17,10 @@ public class QuizDAOImpl implements QuizDAO {
 
 
 	@Override
-	public List selectAllQuizListByCategory(String category) throws DataAccessException {
+	public List selectAllQuizListByCategory(int category) throws DataAccessException {
 		// TODO Auto-generated method stub
-		return null;
+		List<QuizVO> returnlist = sqlSession.selectList("mapper.quiz.selectAllQuizListByCategory", category);
+		return returnlist;
 	}
 
 	@Override
@@ -45,6 +46,15 @@ public class QuizDAOImpl implements QuizDAO {
 		// TODO Auto-generated method stub
 		
 		return 0;
+	}
+
+	@Override
+	public List<QuizVO> searchTwoRandomQuiz(int category) {
+		// TODO Auto-generated method stub
+		List<QuizVO> quizList = null;
+		quizList = sqlSession.selectList("mapper.quiz.selectTwoRandomQuiz",category);
+		return quizList;
+		
 	}
 
 }

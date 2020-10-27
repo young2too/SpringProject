@@ -57,18 +57,18 @@
 <div id="loading-icon-bx"></div>
 <div class="onepage"></div>
     <!-- Header Top ==== -->
-    <header class="header rs-nav">
+    <header class="header rs-nav header-transparent">
 		<div class="top-bar">
 			<div class="container">
 				<div class="row d-flex justify-content-between">
-					<div class="topbar-left">
+					<!--  <div class="topbar-left">
 						<ul>
 							<li><a href="faq-1.jsp"><i class="fa fa-question-circle"></i>Ask a Question</a></li>
 							<li><a href="javascript:;"><i class="fa fa-envelope-o"></i>Support@website.com</a></li>
 						</ul>
-					</div>
-					<div class="topbar-right">
-						<ul>
+					</div>-->
+					<!--<div class="topbar-right">
+						  <ul>
 							<li>
 								<select class="header-lang-bx">
 									<option data-icon="flag flag-uk">English UK</option>
@@ -78,7 +78,7 @@
 							<li><a href="login.jsp">Login</a></li>
 							<li><a href="register.jsp">Register</a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -87,7 +87,7 @@
                 <div class="container clearfix">
 					<!-- Header Logo ==== -->
 					<div class="menu-logo">
-						<a href=""><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
+						<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""></a>
 					</div>
 					<!-- Mobile Nav Button ==== -->
                     <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,12 +96,11 @@
 						<span></span>
 					</button>
 					<!-- Author Nav ==== -->
-                    <div class="secondary-menu">
+                     <div class="secondary-menu">
                         <div class="secondary-inner">
                             <ul>
-								<li><a href="javascript:;" class="btn-link"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="javascript:;" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="javascript:;" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="login.jsp">로그인 </a></li>
+							<li><a href="register.jsp">회원가입</a></li>
 								<!-- Search Button ==== -->
 								<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
 							</ul>
@@ -118,26 +117,26 @@
 					<!-- Navigation Menu ==== -->
                     <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
 						<div class="menu-logo">
-							<a href=""><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
+							<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
 						</div>
                         <ul class="nav navbar-nav">	
-							<li class="active"><a href="javascript:;">Home <i class="fa fa-chevron-down"></i></a>
+							<li class="active"><a href="javascript:;">Home<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="">Home 1</a></li>
+									<li><a href="index.do">Home 1</a></li>
 									<li><a href="index-2.jsp">Home 2</a></li>
 								</ul>
 							</li>
-							<li><a href="javascript:;">Pages <i class="fa fa-chevron-down"></i></a>
+							<li><a href="javascript:;">PAGES<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="javascript:;">About<i class="fa fa-angle-right"></i></a>
+									<li><a href="javascript:;">학습하기<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
 											<li><a href="study.do">About 1</a></li>
 											<li><a href="about-2.jsp">About 2</a></li>
 										</ul>
 									</li>
-									<li><a href="javascript:;">Event<i class="fa fa-angle-right"></i></a>
+									<li><a href="javascript:;">문제풀기<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
-											<li><a href="exercise.do">Event</a></li>
+											<li><a href="exercise.do">주관식</a></li>
 											<li><a href="events-details.jsp">Events Details</a></li>
 										</ul>
 									</li>
@@ -159,16 +158,16 @@
 									<li><a href="error-404.jsp">404 Page</a></li>
 								</ul>
 							</li>
-							<li class="add-mega-menu"><a href="javascript:;">Our Courses <i class="fa fa-chevron-down"></i></a>
+							<li class="add-mega-menu"><a href="javascript:;">나의 단어장<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu add-menu">
 									<li class="add-menu-left">
-										<h5 class="menu-adv-title">Our Courses</h5>
+										<h5 class="menu-adv-title">나의 단어장</h5>
 										<ul>
-											<li><a href="courses.jsp">Courses </a></li>
-											<li><a href="courses-details.jsp">Courses Details</a></li>
-											<li><a href="profile.jsp">Instructor Profile</a></li>
-											<li><a href="exercise.do">Upcoming Event</a></li>
-											<li><a href="membership.jsp">Membership</a></li>
+											<li><a href="main/courses.jsp">정보처리기사</a></li>
+											<li><a href="courses-details.jsp">보안기사</a></li>
+											<li><a href="profile.jsp">리눅스</a></li>
+											<li><a href="exercise.do">한국사</a></li>
+											<li><a href="membership.jsp">영단어</a></li>
 										</ul>
 									</li>
 									<li class="add-menu-right">
@@ -180,7 +179,7 @@
 								<ul class="sub-menu">
 									<li><a href="blog-classic-grid.jsp">Blog Classic</a></li>
 									<li><a href="blog-classic-sidebar.jsp">Blog Classic Sidebar</a></li>
-									<li><a href="blog-list-sidebar.jsp">Blog List Sidebar</a></li>
+									<li><a href="blog-list-sidebar.jsp">QnA게시판</a></li>
 									<li><a href="blog-standard-sidebar.jsp">Blog Standard Sidebar</a></li>
 									<li><a href="blog-details.jsp">Blog Details</a></li>
 								</ul>
@@ -221,7 +220,7 @@
             </div>
         </div>
     </header>
-    <!-- header END ==== -->
+    <!-- Header Top END ==== -->
     <!-- Content -->
     <div class="page-content bg-white">
         <!-- inner page banner -->
@@ -272,14 +271,66 @@
 								</div>
 								<div class="ttr-post-info">
 									<div class="ttr-post-title ">
-										<h2 class="post-title">Good Intentions or Good Results?</h2>
+										<h2 class="post-title">
+											<c:choose>
+												<c:when test="${category == 1 }">정보처리기사?</c:when>
+												<c:when test="${category == 2 }">정보보안기사?</c:when>
+												<c:when test="${category == 3 }">리눅스 마스터?</c:when>
+												<c:when test="${category == 4 }">영단어 마스터?</c:when>
+												<c:when test="${category == 5 }">한국사 능력시험?</c:when>
+											</c:choose>
+										</h2>
 									</div>
 									<div class="ttr-post-text">
-										<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+										<p>
+											<c:choose>
+												<c:when test="${category == 1 }">
+												과학기술정보통신부에서 주관하고 한국산업인력공단에서 시행하는 국가자격 시험 및 그 자격증을 의미한다.<br>
+												소프트웨어 개발 관련 자격증으로, 정보시스템의 생명주기 전반에 걸친 프로젝트 업무를 수행하는 직무로서
+												계획수립, 분석, 설계, 구현, 시험, 운영, 유지보수 등의 업무를 수행할 수 있는 능력을 검증하는 시험이다.<br>
+												1년에 3회로 시험이 실시되고 있다. 2020년부터 NCS 표준에 맞춰 시험 과목이 필기, 실기 모두를 포함해 대폭 개편되었다.<br>
+												</c:when>
+												<c:when test="${category == 2 }">
+												과학기술정보통신부에서 주관하고 한국인터넷진흥원에서 시행하는 국가자격 시험 및 그 자격증을 의미한다.<br>
+												KISA(한국인터넷진흥원)에서 시행하는 국가기술자격 시험으로서, 기존 국가공인 민간자격증인
+												'정보보호전문가(SIS)' 자격증을 국가기술자격으로 업그레이드시킨 자격이다.<br>
+												(기존 정보보호전문가 자격 보유자에게는 2년간 필기 면제 혜택을 주었다.)2013년부터 시작하여 1년에 2회씩 시험을 본다.<br>
+												응시 자격은 정보처리기사와 동일하게 관련학과가 의미가 없고 4학년이면 볼 수 있다. "4년제 대학 졸업자 혹은 졸업예정자",
+												"3년제는 졸업 + 동일 및 유사직종 실무 경력 1년", "2년제는 졸업 + 동일 및 유사직종 실무경력 2년", 이도저도 아니면
+												"동일 및 유사직종 4년 경력"으로도 응시 가능하다. 지역은 5개 지역으로 서울, 부산, 대전, 대구, 광주에서 응시할 수 있으며
+												응시료는 기존의 기사 시험과 동일하다.정보보안기사 자격증이 있으면 독학학위제를 통하여 정보통신학 학사 학위 취득이 가능하다.<br>
+												</c:when>
+												<c:when test="${category == 3 }">
+												한국정보통신진흥협회가 운영하는 국가 공인 민간 자격증이다.<br>
+												리눅스 기반의 Desktop 활용 및 Server 운영 능력, 리눅스 시스템의 설계 개발 및 관리 능력,
+												리눅스 기반의 네트워크 및 서버 구축/운영 능력을 검정하는 자격증이다.<br>
+												생각보다 인지도가 꽤 있는 자격증으로 매년 응시수가 늘어나고 있다.<br>
+												</c:when>
+												<c:when test="${category == 4 }">
+												본 사이트의 영어단어는 TOEIC을 기준으로 만들어져 있다.<br>
+												Test of English for International Communication(국제상 의사소통을 목적한 영어 시험)의
+												약자로서 영어가 모국어가 아닌 사람이 일상생활이나 사업 현장에서 필요한 실용에 알맞은 영어 구사 능력을 갖추었는지 평가하는 시험이다.<br>
+												토익은 미국 ETS(Educational Testing Service)의 주관하에 치르는 시험이고 듣기 및 읽기 시험인 TOEIC,
+												말하기 및 쓰기 시험인 TOEIC Speaking and Writing Tests 등이 있으며, 보통 토익이라고 말하면 듣기 및 읽기 시험,
+												토스나 TOEIC Speaking 시험이라고 말하면 말하기 시험을 가리킨다<br>
+												</c:when>
+												<c:when test="${category == 5 }">
+												교육부 소속 기관인 국사편찬위원회가 주관하는, 한국사 능력을 평가하고 검정하는 시험이다.<br>
+												초기엔 고급 기준 대학교 학부 이상 수준의 어려운 내용에 한문 독해력 등 고난도에 더불어 낮은 인지도 및 활용도 때문에
+												일부 역사 매니아를 제외하곤 인기가 없었으나, 취업 등에 가산점을 주는 등의 활용도가 높아지면서 지원자가 많이 늘었다.<br>
+												1회는 1~2급이 출제되지 않았다. 2~3회는 1~6급을 모두 따로 쳤으나 2008년(4회)부터 1~2급이 고급,
+												5~6급이 초급으로 개편됐고 2011년(11회)부터 3~4급이 중급으로 개편됐다.<br>
+												2020년 6월(47회)부터 기존의 초, 중, 고급 3종이 기본(4~6급)과 심화(1~3급) 2종으로 재개편됐다.<br>
+												등급 체계 개편의 이유는 상세히 밝히진 않았으나, 2018년 시험 전체 응시자의 94%가 중, 고급을 응시해 초급시험이 유명무실해진 것 때문으로 보인다.<br>
+												초급을 응시해 받는 5~6급은 그 어떤 서류전형에서도 쓸모 없기 때문. 2021년부터 개편된 공무원 시험도 영향이 있는 것으로 보인다.<br>
+												심화 시험의 난도는 기존의 고급 시험보다 평이한 수준으로, 기본 시험의 난도는 기존의 초급 시험보다 약간 어려운 수준으로 조절해 출제된다<br>
+												</c:when>
+											</c:choose>
+										</p>
 									</div>
 								</div>
 							</div>
-							<div class="courese-overview" id="overview">
+							<!-- <div class="courese-overview" id="overview">
 								<div class="row">
 									<div class="col-md-12 col-lg-5">
 										<ul class="course-features">
@@ -310,28 +361,20 @@
 										</ul>
 									</div>
 								</div>
-							</div>
+							</div> -->
 						</div>
 						<div class="col-lg-4 col-md-5 col-sm-12 m-b30">
 							<div class="bg-primary text-white contact-info-bx m-b30">
-								<h2 class="m-b10 title-head">Contact <span>Information</span></h2>
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+								<h2 class="m-b10 title-head">문제 풀기</h2>
+								<p>당신의 문제풀이 능력을 시험해 보자!</p>
 								<div class="widget widget_getintuch">	
 									<ul>
-										<li><i class="ti-location-pin"></i>75k Newcastle St. Ponte Vedra Beach, FL 309382 New York</li>
-										<li><i class="ti-mobile"></i>0800-123456 (24/7 Support Line)</li>
-										<li><i class="ti-email"></i>info@example.com</li>
+										<li><a href="short-answer.do" style="color:#fff;"><i class="ti-direction"></i>주관식</a></li>
+										<li><a href="#" style="color:#fff;"><i class="ti-direction"></i>객관식(미구현)</a></li>
+										<li><i class="ti-tag"></i>출처 : quizlet.com</li>
 									</ul>
 								</div>
-								<h5 class="m-t0 m-b20">Follow Us</h5>
-								<ul class="list-inline contact-social-bx">
-									<li><a href="#" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#" class="btn outline radius-xl"><i class="fa fa-linkedin"></i></a></li>
-									<li><a href="#" class="btn outline radius-xl"><i class="fa fa-google-plus"></i></a></li>
-								</ul>
 							</div>
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3448.1298878182047!2d-81.38369578541523!3d30.204840081824198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e437ac927a996b%3A0x799695b1a2b970ab!2sNona+Blue+Modern+Tavern!5e0!3m2!1sen!2sin!4v1548177305546" class="align-self-stretch d-flex" style="width:100%; min-width:100%; min-height:400px;" allowfullscreen></iframe>
 						</div>
 					</div>
 				</div>

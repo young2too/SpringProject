@@ -18,7 +18,7 @@ public class QuizServiceImpl implements QuizService{
 	private QuizDAO quizDAO;
 
 	@Override
-	public List selectAllQuizListByCategory(String category) throws DataAccessException {
+	public List selectAllQuizListByCategory(int category) throws DataAccessException {
 		// TODO Auto-generated method stub
 		List<QuizVO> quizList = quizDAO.selectAllQuizListByCategory(category);
 		
@@ -48,6 +48,13 @@ public class QuizServiceImpl implements QuizService{
 		// TODO Auto-generated method stub
 		quizDAO.addToMyVoca(quizCode, own_code);
 		return 0;
+	}
+
+	@Override
+	public List<QuizVO> selectTwoRandomQuiz(int category) {
+		// TODO Auto-generated method stub
+		List<QuizVO> randomTwoList = quizDAO.searchTwoRandomQuiz(category);
+		return randomTwoList;
 	}
 
 

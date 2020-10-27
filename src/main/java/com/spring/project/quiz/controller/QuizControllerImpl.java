@@ -1,5 +1,7 @@
 package com.spring.project.quiz.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,6 +22,8 @@ public class QuizControllerImpl implements QuizController {
 	 @Autowired private QuizService quizService;
 	  
 	 @Autowired QuizVO quizVO;
+	 
+		/* @Autowired private VocaService vocaService; */
 
 	
 	private static String current_category = "";
@@ -84,21 +88,37 @@ public class QuizControllerImpl implements QuizController {
 	
 	@RequestMapping(value = "startstudy.do", method=RequestMethod.GET)
 	public ModelAndView startstudyPage(HttpServletRequest request, HttpServletResponse response)throws Exception{
+		List<QuizVO> randomQuizList = quizService.selectTwoRandomQuiz(Integer.parseInt(current_category));
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("queryType","study");
 		mav.addObject("category",current_category);
+		mav.addObject("randomQuizList",randomQuizList);
 		mav.setViewName("main/about-2");//about-2는 공부하는 페이지
 
 		return mav;
 	}
 	
+	@RequestMapping(value = "questionList.do", method=RequestMethod.GET)
+	public ModelAndView questionListPage(HttpServletRequest request, HttpServletResponse response)throws Exception{
+		List<QuizVO> allQuizList = quizService.selectAllQuizListByCategory(Integer.parseInt(current_category));
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("allQuizList",allQuizList);//모든 퀴즈 리스트와
+		mav.addObject("category",current_category);//현재 카테고리를 실어보낸다
+		mav.setViewName("main/about-1");//about-1은 카드형 공부하기 페이지
+		return mav;
+	}
+	
+	
 	@RequestMapping(value = "startexercise.do", method=RequestMethod.GET)
 	public ModelAndView startexercisePage(HttpServletRequest request, HttpServletResponse response)throws Exception{
+		List<QuizVO> randomQuizList = quizService.selectTwoRandomQuiz(Integer.parseInt(current_category));
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("queryType","exercise");
 		mav.addObject("category",current_category);
+		mav.addObject("randomQuizList",randomQuizList);
 		mav.setViewName("main/events-details");//events-details는 문제풀이 페이지
 		return mav;
 	}
+
 	
 }
