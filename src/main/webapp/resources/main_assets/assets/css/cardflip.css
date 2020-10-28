@@ -1,0 +1,31 @@
+.theback {
+	backface-visibility: hidden;
+	transform: rotateX(180deg);
+	color: #D35400;
+
+	
+}
+
+.thefront {
+	backface-visibility: hidden;
+}
+
+.thecard:hover{
+	transform: rotateX(180deg);
+	cursor: pointer;
+	background: #F1948A;
+}
+
+.thecard {
+	text-align: center;
+    transform-style: preserve-3d;
+    transition: all 0.2s ease;
+    height: 100%;
+    margin-right: 25%;
+    margin-left: 25%;
+    width: 50%;
+    background: #00ff4e;
+    padding: 100px;
+    border-radius: 200px;
+    font-size:20px;
+}
