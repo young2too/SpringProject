@@ -14,7 +14,9 @@ public interface MemberService {
 	 // 회원정보 추가
 	 public int removeMember(String id) throws DataAccessException;
 	 // 회원정보 삭제
-	 public MemberVO login(MemberVO memberVO) throws Exception;
+	 public MemberVO loginProc(String LgId, String LgPw) throws Exception;
 	 // 로그인으로 회원정보 조회
-		/* public int getMaxMemberCode() throws Exception; */
+	 
+	 
+	/* public int getMaxMemberCode() throws Exception; */
 }

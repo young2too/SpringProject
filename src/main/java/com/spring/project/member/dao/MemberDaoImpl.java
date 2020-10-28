@@ -38,8 +38,11 @@ public class MemberDaoImpl implements MemberDao{
 	}
 
 	@Override
-	public MemberVO loginById(MemberVO memberVO) throws DataAccessException {
+	public MemberVO loginById(String LgId, String LgPw) throws DataAccessException {
 		// TODO Auto-generated method stub
+		MemberVO memberVO = new MemberVO();
+		memberVO.setId(LgId);
+		memberVO.setPw(LgPw);
 		MemberVO vo = sqlSession.selectOne("mapper.member.loginById",memberVO);
 		return vo;
 	}

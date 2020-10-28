@@ -38,9 +38,9 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public MemberVO login(MemberVO memberVO) throws Exception {
+	public MemberVO loginProc(String LgId, String LgPw) throws Exception {
 		// TODO Auto-generated method stub
-		return memberDAO.loginById(memberVO);
+		return memberDAO.loginById(LgId, LgPw);
 	}
 	
 	/*
