@@ -16,4 +16,5 @@ public interface MemberService {
 	 // 회원정보 삭제
 	 public MemberVO login(MemberVO memberVO) throws Exception;
 	 // 로그인으로 회원정보 조회
+		/* public int getMaxMemberCode() throws Exception; */
 }

@@ -13,6 +13,7 @@ public interface MemberController {
 	// 회원가입
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response)throws Exception;
 	// 로그인
-	public ModelAndView forgetPwd(HttpServletRequest request, HttpServletResponse response)throws Exception;
+	public ModelAndView forgetPw(HttpServletRequest request, HttpServletResponse response)throws Exception;
 	// 비밀번호 찾기
+	public ModelAndView addmember(HttpServletRequest request, HttpServletResponse response) throws Exception;
 }

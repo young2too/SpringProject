@@ -7,10 +7,9 @@
 
 	<resultMap type="memberVO" id="memResult">
 		<result property="id" column="id" />
-        <result property="pwd" column="pwd" />
+        <result property="pw" column="pw" />
         <result property="name" column="name" />
         <result property="email" column="email" />
-        <result property="member_code" column="member_code" />
 	</resultMap>
 	
 	<!-- 전체회원 정보조회 -->
@@ -18,15 +17,14 @@
 	<![CDATA[
 		select *
 		from member_table
-		<!-- order by member_code -->
 	]]>
 	</select>
 	
 	<!-- 회원정보 추가 -->
 	<insert id="insertMember"  parameterType="memberVO">
 		<![CDATA[
-		 insert into member_table(id,pwd, name, email, member_code)
-		 values(#{id}, #{pwd}, #{name}, #{email}, #{member_code})
+		 insert into member_table(id,pw, name, email)
+		 values(#{id}, #{pw}, #{name}, #{email})
 		]]>      
 	</insert>
 	
@@ -34,7 +32,7 @@
 	<!-- <update id="updateMember"  parameterType="memberVO">
      <![CDATA[
 	     update t_member
-	     set pwd=#{pwd}, name=#{name}, email=#{email}
+	     set pw=#{pw}, name=#{name}, email=#{email}
 	     where
 	     id=#{id}
       ]]>      
@@ -52,7 +50,14 @@
   <select id="loginById"  resultType="memberVO"   parameterType="memberVO" >
 	<![CDATA[
 		select * from member_table	
-		where id=#{id} and pwd=#{pwd}		
+		where id=#{id} and pw=#{pw}		
 	]]>
   </select>
+  
+  <!-- 회원코드 최댓값 구하기 -->
+<!--   <select id="getMaxMemberCode"  resultType="_int" >
+	<![CDATA[
+		select max(member_code) from member_table			
+	]]>
+  </select> -->
 </mapper>

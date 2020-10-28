@@ -5,9 +5,11 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Repository;
 
 import com.spring.project.member.vo.MemberVO;
 
+@Repository("memberDAO")
 
 public class MemberDaoImpl implements MemberDao{
 	
@@ -41,5 +43,15 @@ public class MemberDaoImpl implements MemberDao{
 		MemberVO vo = sqlSession.selectOne("mapper.member.loginById",memberVO);
 		return vo;
 	}
+
+	/*
+	 * @Override public int getMaxMemberCode() throws DataAccessException { // TODO
+	 * Auto-generated method stub List<Integer> returnlist =
+	 * sqlSession.selectList("mapper.member.getMaxMemberCode");
+	 * System.out.println(returnlist.get(0)); if(returnlist.size()==0) return 1;
+	 * else { return returnlist.get(0); }
+	 * 
+	 * }
+	 */
 
 }

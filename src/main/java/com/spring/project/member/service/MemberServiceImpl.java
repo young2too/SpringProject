@@ -15,7 +15,7 @@ import com.spring.project.member.vo.MemberVO;
 
 public class MemberServiceImpl implements MemberService{
 	
-	@Autowired MemberDao memberDAO;
+	@Autowired private MemberDao memberDAO;
 	
 	@Override
 	public List listMembers() throws DataAccessException {
@@ -42,5 +42,12 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		return memberDAO.loginById(memberVO);
 	}
+	
+	/*
+	 * public int getMaxMemberCode() throws Exception{ return
+	 * memberDAO.getMaxMemberCode();
+	 * 
+	 * }
+	 */
 	
 }
