@@ -33,4 +33,12 @@
          )where rownum<30
       ]]>
 	</select>
+	
+	<select id="searchQuizByQuizCode" resultMap="quizResult" parameterType="String">
+	<![CDATA[
+         select * from quiz_table
+         where quiz_code=#{quizCode}
+      ]]>
+	</select>
+	
 </mapper>

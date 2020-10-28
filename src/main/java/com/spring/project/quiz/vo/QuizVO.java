@@ -1,4 +1,5 @@
-package com.spring.project.quiz.vo;
+package com.spring.project.quiz.vo
+;
 
 import org.springframework.stereotype.Component;
 

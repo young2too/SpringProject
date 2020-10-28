@@ -15,6 +15,7 @@ public class QuizDAOImpl implements QuizDAO {
 	@Autowired
 	private SqlSession sqlSession;
 
+	
 
 	@Override
 	public List selectAllQuizListByCategory(int category) throws DataAccessException {
@@ -30,9 +31,10 @@ public class QuizDAOImpl implements QuizDAO {
 	}
 
 	@Override
-	public int searchQuizByQuizCode(String quizCode) throws DataAccessException {
+	public QuizVO searchQuizByQuizCode(String quizCode) throws DataAccessException {
 		// TODO Auto-generated method stub
-		return 0;
+		QuizVO quizVO = sqlSession.selectOne("mapper.quiz.searchQuizByQuizCode",quizCode);
+		return quizVO;
 	}
 
 	@Override

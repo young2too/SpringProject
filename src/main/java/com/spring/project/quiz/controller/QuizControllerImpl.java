@@ -120,5 +120,15 @@ public class QuizControllerImpl implements QuizController {
 		return mav;
 	}
 
-	
+	@RequestMapping(value = "short-answer.do", method=RequestMethod.GET)
+	public ModelAndView shortAnswerPage(HttpServletRequest request, HttpServletResponse response)throws Exception{
+		ModelAndView mav = new ModelAndView();
+		List<QuizVO> allQuizList = quizService.selectAllQuizListByCategory(Integer.parseInt(current_category));
+		mav.addObject("queryType","exercise");
+		String howmanyQuiz = Integer.toString(allQuizList.size());
+		mav.addObject("allQuizList", allQuizList);
+		mav.addObject("category",current_category);
+		mav.setViewName("main/short-answer");//events-details는 문제풀이 페이지
+		return mav;
+	}
 }
