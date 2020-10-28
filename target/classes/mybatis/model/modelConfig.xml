@@ -4,6 +4,6 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.spring.project.vocaVO.VocaVO"  alias="vocaVO" />
+		<typeAlias type="com.spring.project.voca.vocaVO.VocaVO"  alias="vocaVO" />
 	</typeAliases>
 </configuration>

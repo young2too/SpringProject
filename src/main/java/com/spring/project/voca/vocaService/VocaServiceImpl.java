@@ -1,4 +1,4 @@
-package com.spring.project.vocaService;
+package com.spring.project.voca.vocaService;
 
 import java.util.List;
 import java.util.StringTokenizer;
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.spring.project.vocaDAO.VocaDAO;
-import com.spring.project.vocaVO.VocaVO;
+import com.spring.project.voca.vocaDAO.VocaDAO;
+import com.spring.project.voca.vocaVO.VocaVO;
 
 @Transactional(propagation = Propagation.REQUIRED)
 

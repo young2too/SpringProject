@@ -11,7 +11,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- 나의 단어장_정보처리기사 -->
 <head>
 	
 	<!-- META ============================================= -->
@@ -275,11 +274,11 @@
 							<div class="widget widget_archive">
                                 <h5 class="widget-title style-1">나의 단어장</h5>
                                 <ul>
-                                    <li class="active"><a href="courses.do?category=1">정보처리기사</a></li>
-                                    <li><a href="courses.do?category=2">보안기사</a></li>
-                                    <li><a href="courses.do?category=3">리눅스</a></li>
-                                    <li><a href="courses.do?category=5">한국사 능력시험</a></li>
-                                    <li><a href="courses.do?category=4">영단어</a></li>
+                                    <li><a href="engineer.do?category=1">정보처리기사 </a></li>
+									<li><a href="security.do?category=2">정보보안기사</a></li>
+									<li><a href="linux.do?category=3">리눅스 마스터</a></li>
+									<li><a href="english.do?category=4">영단어 마스터</a></li>
+									<li><a href="korean-history.do?category=5">한국사 능력시험</a></li>
                                 </ul>
                             </div>
 							<div class="widget">

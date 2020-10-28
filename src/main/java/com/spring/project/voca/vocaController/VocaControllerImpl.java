@@ -1,4 +1,4 @@
-package com.spring.project.vocaController;
+package com.spring.project.voca.vocaController;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.project.vocaService.VocaService;
-import com.spring.project.vocaVO.VocaVO;
+import com.spring.project.voca.vocaService.VocaService;
+import com.spring.project.voca.vocaVO.VocaVO;
 
 @Controller("vocaController")
 public class VocaControllerImpl implements VocaController{

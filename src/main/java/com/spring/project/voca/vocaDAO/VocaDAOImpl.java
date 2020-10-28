@@ -1,4 +1,4 @@
-package com.spring.project.vocaDAO;
+package com.spring.project.voca.vocaDAO;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import com.spring.project.vocaVO.VocaVO;
+import com.spring.project.voca.vocaVO.VocaVO;
 
 @Repository("vocaDAO")
 public class VocaDAOImpl implements VocaDAO{

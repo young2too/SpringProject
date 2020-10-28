@@ -1,4 +1,4 @@
-package com.spring.project.vocaVO;
+package com.spring.project.voca.vocaVO;
 
 import org.springframework.stereotype.Component;
 

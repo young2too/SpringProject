@@ -1,4 +1,4 @@
-package com.spring.project.vocaController;
+package com.spring.project.voca.vocaController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

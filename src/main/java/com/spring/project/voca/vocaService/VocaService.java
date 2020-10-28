@@ -1,4 +1,4 @@
-package com.spring.project.vocaService;
+package com.spring.project.voca.vocaService;
 
 import java.util.List;
 
