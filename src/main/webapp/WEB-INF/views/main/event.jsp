@@ -5,6 +5,7 @@
 <c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html lang="en">
+
 <!-- 카테고리 셀렉하는 페이지 -->
 <%
 %>
@@ -165,11 +166,11 @@
 									<li class="add-menu-left">
 										<h5 class="menu-adv-title">나의 단어장</h5>
 										<ul>
-											<li><a href="main/courses.jsp">정보처리기사</a></li>
-											<li><a href="courses-details.jsp">보안기사</a></li>
-											<li><a href="profile.jsp">리눅스</a></li>
-											<li><a href="exercise.do">한국사</a></li>
-											<li><a href="membership.jsp">영단어</a></li>
+											<li><a href="courses.do">Courses </a></li>
+											<li><a href="courses-details.do">Courses Details</a></li>
+											<li><a href="profile.do">Instructor Profile</a></li>
+											<li><a href="event.do">Upcoming Event</a></li>
+											<li><a href="membership.do">Membership</a></li>
 										</ul>
 									</li>
 									<li class="add-menu-right">
@@ -226,7 +227,7 @@
     <!-- Content -->
     <div class="page-content bg-white">
         <!-- inner page banner -->
-        <div class="page-banner ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/banner/banner2.jpg);">
+        <div class="page-banner ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/banner/banner3.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
                     <h1 class="text-white">문제집 선택<br>Select your category!</h1>
@@ -285,6 +286,7 @@
 											<img src="${contextPath }/resources/main_assets/assets/images/event/pic1.jpg" alt="">
 										</a>
 									</div>
+
 									<div class="info-bx d-flex">
 										<div>
 											<div class="event-time">
@@ -292,6 +294,7 @@
 												<div class="event-month">Nobemver</div>
 											</div>
 										</div>
+
 										<div class="event-info">
 											<h4 class="event-title"><a href="selectedCategory.do?queryType=${queryType}&category=1">정보처리기사</a></h4>
 											<ul class="media-post">
@@ -301,6 +304,7 @@
 										</div>
 									</div>
 								</div>
+
 							</li>
 							<li class="action-card col-lg-6 col-md-6 col-sm-12 data-security">
 								<div class="event-bx m-b30">
@@ -388,22 +392,96 @@
 												<div class="event-month">November</div>
 											</div>
 										</div>
+
 										<div class="event-info">
 											<h4 class="event-title"><a href="selectedCategory.do?queryType=${queryType}&category=5">한국사 능력시험</a></h4>
 											<ul class="media-post">
 												<li><i class="fa fa-clock-o"></i> 9:30am 11:59am</a></li>
 											</ul>
 											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
+
 										</div>
 									</div>
 								</div>
-							</li>
-						</ul>
+								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+									<div class="cours-bx">
+										<div class="action-box">
+											<a href="#" class="btn">Read More</a>
+										</div>
+										<div class="info-bx text-center">
+											<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+											<span>Programming</span>
+										</div>
+										<div class="cours-more-info">
+											<div class="review">
+												<span>3 Review</span>
+											</div>
+											<div class="price">
+												<del>$190</del>
+												<h5>$120</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+									<div class="cours-bx">
+										<div class="action-box">
+											<a href="#" class="btn">Read More</a>
+										</div>
+										<div class="info-bx text-center">
+											<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+											<span>Programming</span>
+										</div>
+										<div class="cours-more-info">
+											<div class="review">
+												<span>3 Review</span>
+											</div>
+											<div class="price">
+												<del>$190</del>
+												<h5>$120</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+									<div class="cours-bx">
+										<div class="action-box">
+											<a href="#" class="btn">Read More</a>
+										</div>
+										<div class="info-bx text-center">
+											<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+											<span>Programming</span>
+										</div>
+										<div class="cours-more-info">
+											<div class="review">
+												<span>3 Review</span>
+											</div>
+											<div class="price">
+												<del>$190</del>
+												<h5>$120</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12 m-b20">
+									<div class="pagination-bx rounded-sm gray clearfix">
+										<ul class="pagination">
+											<li class="previous"><a href="#"><i class="ti-arrow-left"></i> Prev</a></li>
+											<li class="active"><a href="#">1</a></li>
+											<li><a href="#">2</a></li>
+											<li><a href="#">3</a></li>
+											<li class="next"><a href="#">Next <i class="ti-arrow-right"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
+            </div>
         </div>
 		<!-- contact area END -->
+		
     </div>
     <!-- Content END-->
 	<!-- Footer ==== -->
@@ -491,7 +569,7 @@
                             <ul class="magnific-image">
 								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" alt=""></a></li>
 								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic3.jpg" class="magnific-anchor"><img src="assets/images/gallery/pic3.jpg" alt=""></a></li>
+								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic3.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic3.jpg" alt=""></a></li>
 								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic4.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic4.jpg" alt=""></a></li>
 								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic5.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic5.jpg" alt=""></a></li>
 								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic6.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic6.jpg" alt=""></a></li>

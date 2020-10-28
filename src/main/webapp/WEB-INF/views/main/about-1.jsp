@@ -9,6 +9,7 @@
 
 <head>
 
+ 
 	<!-- META ============================================= -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -61,9 +62,11 @@
 	<script src="${contextPath }/resources/main_assets/assets/vendors/swiper/js/swiper.min.js"></script>
 
 	
+
 </head>
 <body id="bg">
 <div class="page-wraper">
+ 
 	<div id="loading-icon-bx"></div>
 	<!-- Header Top ==== -->
     <header class="header rs-nav header-transparent">
@@ -92,14 +95,17 @@
 			</div>
 		</div>
 		<div class="sticky-header navbar-expand-lg">
+
             <div class="menu-bar clearfix">
                 <div class="container clearfix">
+ 
 					<!-- Header Logo ==== -->
 					<div class="menu-logo">
 						<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""></a>
 					</div>
 					<!-- Mobile Nav Button ==== -->
                     <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
+ 
 						<span></span>
 						<span></span>
 						<span></span>
@@ -108,6 +114,7 @@
                      <div class="secondary-menu">
                         <div class="secondary-inner">
                             <ul>
+ 
 							<li><a href="login.jsp">로그인 </a></li>
 							<li><a href="register.jsp">회원가입</a></li>
 								<!-- Search Button ==== -->
@@ -115,16 +122,17 @@
 							</ul>
 						</div>
                     </div>
-					<!-- Search Box ==== -->
+               <!-- Search Box ==== -->
                     <div class="nav-search-bar">
                         <form action="#">
                             <input name="search" value="" type="text" class="form-control" placeholder="Type to search">
                             <span><i class="ti-search"></i></span>
                         </form>
-						<span id="search-remove"><i class="ti-close"></i></span>
+                  <span id="search-remove"><i class="ti-close"></i></span>
                     </div>
-					<!-- Navigation Menu ==== -->
+               <!-- Navigation Menu ==== -->
                     <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
+ 
 						<div class="menu-logo">
 							<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
 						</div>
@@ -223,8 +231,9 @@
 							<a href="javascript:;"><i class="fa fa-google-plus"></i></a>
 							<a href="javascript:;"><i class="fa fa-linkedin"></i></a>
 						</div>
+
                     </div>
-					<!-- Navigation Menu END ==== -->
+               <!-- Navigation Menu END ==== -->
                 </div>
             </div>
         </div>
@@ -237,6 +246,7 @@
             <div class="container">
                 <div class="page-banner-entry">
                     <h1 class="text-white">
+ 
                     	<c:choose>
                     		<c:when test="${category == 1 }">정보처리기사</c:when>
                     		<c:when test="${category == 2 }">정보보안기사</c:when>
@@ -246,8 +256,20 @@
                     	</c:choose>
 					</h1>
 				 </div>
+=======
+                       <c:choose>
+                          <c:when test="${category == 1 }">정보처리기사</c:when>
+                          <c:when test="${category == 2 }">정보보안기사</c:when>
+                          <c:when test="${category == 3 }">리눅스 마스터</c:when>
+                          <c:when test="${category == 4 }">영단어 마스터</c:when>
+                          <c:when test="${category == 5 }">한국사 능력시험</c:when>
+                       </c:choose>
+               </h1>
+             </div>
+>>>>>>> refs/heads/JD_branch
             </div>
         </div>
+ 
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
@@ -294,11 +316,13 @@
 		</div>
 
 		<!-- Page Content Box END ==== -->
+
     </div>
     <!-- Inner Content Box END ==== -->
     <!-- Footer ==== -->
     <footer>
         <div class="footer-top">
+ 
 			<div class="pt-exebar">
 				<div class="container">
 					<div class="d-flex align-items-stretch">
@@ -319,25 +343,27 @@
 					</div>
 				</div>
 			</div>
+
             <div class="container">
                 <div class="row">
-					<div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
+               <div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
                         <div class="widget">
                             <h5 class="footer-title">Sign Up For A Newsletter</h5>
-							<p class="text-capitalize m-b20">Weekly Breaking news analysis and cutting edge advices on job searching.</p>
+                     <p class="text-capitalize m-b20">Weekly Breaking news analysis and cutting edge advices on job searching.</p>
                             <div class="subscribe-form m-b20">
-								<form class="subscription-form" action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
-									<div class="ajax-message"></div>
-									<div class="input-group">
-										<input name="email" required="required"  class="form-control" placeholder="Your Email Address" type="email">
-										<span class="input-group-btn">
-											<button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
-										</span> 
-									</div>
-								</form>
-							</div>
+                        <form class="subscription-form" action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
+                           <div class="ajax-message"></div>
+                           <div class="input-group">
+                              <input name="email" required="required"  class="form-control" placeholder="Your Email Address" type="email">
+                              <span class="input-group-btn">
+                                 <button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
+                              </span> 
+                           </div>
+                        </form>
+                     </div>
                         </div>
                     </div>
+ 
 					<div class="col-12 col-lg-5 col-md-7 col-sm-12">
 						<div class="row">
 							<div class="col-4 col-lg-4 col-md-4 col-sm-4">
@@ -374,20 +400,21 @@
 								</div>
 							</div>
 						</div>
+
                     </div>
-					<div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
+               <div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
                         <div class="widget widget_gallery gallery-grid-4">
                             <h5 class="footer-title">Our Gallery</h5>
                             <ul class="magnific-image">
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic3.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic3.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic4.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic4.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic5.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic5.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic6.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic6.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic7.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic7.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic8.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic8.jpg" alt=""></a></li>
-							</ul>
+                        <li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" alt=""></a></li>
+                        <li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" alt=""></a></li>
+                        <li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic3.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic3.jpg" alt=""></a></li>
+                        <li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic4.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic4.jpg" alt=""></a></li>
+                        <li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic5.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic5.jpg" alt=""></a></li>
+                        <li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic6.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic6.jpg" alt=""></a></li>
+                        <li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic7.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic7.jpg" alt=""></a></li>
+                        <li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic8.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic8.jpg" alt=""></a></li>
+                     </ul>
                         </div>
                     </div>
                 </div>

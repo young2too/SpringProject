@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- 나의 단어장_영단어 -->
 <head>
 
 	<!-- META ============================================= -->
@@ -57,7 +58,7 @@
 <div class="page-wraper">
 <div id="loading-icon-bx"></div>
 
-	<!-- Header Top ==== -->
+    <!-- Header Top ==== -->
     <header class="header rs-nav">
 		<div class="top-bar">
 			<div class="container">
@@ -165,11 +166,11 @@
 									<li class="add-menu-left">
 										<h5 class="menu-adv-title">Our Courses</h5>
 										<ul>
-											<li><a href="courses.jsp">Courses </a></li>
-											<li><a href="courses-details.jsp">Courses Details</a></li>
-											<li><a href="profile.jsp">Instructor Profile</a></li>
-											<li><a href="event.jsp">Upcoming Event</a></li>
-											<li><a href="membership.jsp">Membership</a></li>
+											<li><a href="courses.do">Courses </a></li>
+											<li><a href="courses-details.do">Courses Details</a></li>
+											<li><a href="profile.do">Instructor Profile</a></li>
+											<li><a href="event.do">Upcoming Event</a></li>
+											<li><a href="membership.do">Membership</a></li>
 										</ul>
 									</li>
 									<li class="add-menu-right">
@@ -226,10 +227,10 @@
     <!-- Content -->
     <div class="page-content bg-white">
         <!-- inner page banner -->
-        <div class="page-banner ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/banner/banner2.jpg);">
+        <div class="page-banner ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/banner/banner3.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
-                    <h1 class="text-white">Membership</h1>
+                    <h1 class="text-white">영단어</h1>
 				 </div>
             </div>
         </div>
@@ -238,7 +239,7 @@
 			<div class="container">
 				<ul class="list-inline">
 					<li><a href="#">Home</a></li>
-					<li>Membership</li>
+					<li>Our Courses</li>
 				</ul>
 			</div>
 		</div>
@@ -246,100 +247,222 @@
         <!-- inner page banner END -->
 		<div class="content-block">
             <!-- About Us -->
-			<div class="section-area section-sp2">
+			<div class="section-area section-sp1">
                 <div class="container">
-					<div class="row">
-						<div class="col-md-12 heading-bx text-center">
-							<h2 class="title-head text-uppercase m-b0">Set a plan, start learning and <br/> <span> unlock your potential</span></h2>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
+					 <div class="row">
+						<div class="col-lg-3 col-md-4 col-sm-12 m-b30">
+							<div class="widget courses-search-bx placeani">
+								<div class="form-group">
+									<div class="input-group">
+										<label>Search Courses</label>
+										<input name="dzName" type="text" required class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="widget widget_archive">
+                                <h5 class="widget-title style-1">나의 단어장</h5>
+                                <ul>
+                                    <li class="active"><a href="courses.do">정보처리기사</a></li>
+                                    <li><a href="courses-details.do">보안기사</a></li>
+                                    <li><a href="profile.do">리눅스</a></li>
+                                    <li><a href="event.do">한국사</a></li>
+                                    <li><a href="membership.do">영단어</a></li>
+                                </ul>
+                            </div>
+							<div class="widget">
+							</div>
 						</div>
-					</div>
-					 <div class="pricingtable-row">
-						<div class="row">
-							<div class="col-sm-12 col-md-4 col-lg-4 m-b40">
-								<div class="pricingtable-wrapper">
-									<div class="pricingtable-inner">
-										<div class="pricingtable-main"> 
-											<div class="pricingtable-price"> 
-												<span class="priceing-doller">$</span>
-												<span class="pricingtable-bx">10</span>
-												<span class="pricingtable-type">3 Month</span>
-											</div>
-											<div class="pricingtable-title">
-												<h2>Basic</h2>
-												<p>We are just getting started</p>
-											</div>
+						<div class="col-lg-9 col-md-8 col-sm-12">
+							<div class="row">
+								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+									<div class="cours-bx">
+										<div class="action-box">
+											<a href="#" class="btn">Read More</a>
 										</div>
-										<ul class="pricingtable-features">
-											<li>One Time Fee</li>
-											<li>3 User</li>
-											<li>Lifetime Availability</li>
-											<li>Non Featured</li>
-											<li>30 days Listing</li>
-											<li>24/7 Support</li>
-											<li>Select</li>
-										</ul>
-										<div class="pricingtable-footer"> 
-											<a href="#" class="btn radius-xl">Get It Now</a>
+										<div class="info-bx text-center">
+											<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+											<span>Programming</span>
+										</div>
+										<div class="cours-more-info">
+											<div class="review">
+												<span>3 Review</span>
+											</div>
+											<div class="price">
+												<del>$190</del>
+												<h5>$120</h5>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-sm-12 col-md-4 col-lg-4 m-b40">
-								<div class="pricingtable-wrapper">
-									<div class="pricingtable-inner pricingtable-highlight">
-										<div class="pricingtable-main"> 
-											<div class="pricingtable-price"> 
-												<span class="priceing-doller">$</span>
-												<span class="pricingtable-bx">15</span>
-												<span class="pricingtable-type">6 Month</span>
-											</div>
-											<div class="pricingtable-title">
-												<h2>Medium</h2>
-												<p>The most popular plan</p>
-											</div>
+								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+									<div class="cours-bx">
+										<div class="action-box">
+											<a href="#" class="btn">Read More</a>
 										</div>
-										<ul class="pricingtable-features">
-											<li>One Time Fee</li>
-											<li>3 User</li>
-											<li>Lifetime Availability</li>
-											<li>Non Featured</li>
-											<li>30 days Listing</li>
-											<li>24/7 Support</li>
-											<li>Select</li>
-										</ul>
-										<div class="pricingtable-footer"> 
-											<a href="#" class="btn radius-xl">Get It Now</a>
+										<div class="info-bx text-center">
+											<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+											<span>Programming</span>
+										</div>
+										<div class="cours-more-info">
+											<div class="review">
+												<span>3 Review</span>
+											</div>
+											<div class="price">
+												<del>$190</del>
+												<h5>$120</h5>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-sm-12 col-md-4 col-lg-4 m-b40">
-								<div class="pricingtable-wrapper">
-									<div class="pricingtable-inner">
-										<div class="pricingtable-main"> 
-											<div class="pricingtable-price"> 
-												<span class="priceing-doller">$</span>
-												<span class="pricingtable-bx">20</span>
-												<span class="pricingtable-type">12 Month</span>
+								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+									<div class="cours-bx">
+										<div class="action-box">
+											<a href="#" class="btn">Read More</a>
+										</div>
+										<div class="info-bx text-center">
+											<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+											<span>Programming</span>
+										</div>
+										<div class="cours-more-info">
+											<div class="review">
+												<span>3 Review</span>
 											</div>
-											<div class="pricingtable-title">
-												<h2>Advanced</h2>
-												<p>Experience the best for e-learning</p>
+											<div class="price">
+												<del>$190</del>
+												<h5>$120</h5>
 											</div>
 										</div>
-										<ul class="pricingtable-features">
-											<li>One Time Fee</li>
-											<li>3 User</li>
-											<li>Lifetime Availability</li>
-											<li>Non Featured</li>
-											<li>30 days Listing</li>
-											<li>24/7 Support</li>
-											<li>Select</li>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+									<div class="cours-bx">
+										<div class="action-box">
+											<a href="#" class="btn">Read More</a>
+										</div>
+										<div class="info-bx text-center">
+											<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+											<span>Programming</span>
+										</div>
+										<div class="cours-more-info">
+											<div class="review">
+												<span>3 Review</span>
+											</div>
+											<div class="price">
+												<del>$190</del>
+												<h5>$120</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+									<div class="cours-bx">
+										<div class="action-box">
+											<a href="#" class="btn">Read More</a>
+										</div>
+										<div class="info-bx text-center">
+											<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+											<span>Programming</span>
+										</div>
+										<div class="cours-more-info">
+											<div class="review">
+												<span>3 Review</span>
+											</div>
+											<div class="price">
+												<del>$190</del>
+												<h5>$120</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+									<div class="cours-bx">
+										<div class="action-box">
+											<a href="#" class="btn">Read More</a>
+										</div>
+										<div class="info-bx text-center">
+											<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+											<span>Programming</span>
+										</div>
+										<div class="cours-more-info">
+											<div class="review">
+												<span>3 Review</span>
+											</div>
+											<div class="price">
+												<del>$190</del>
+												<h5>$120</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+									<div class="cours-bx">
+										<div class="action-box">
+											<a href="#" class="btn">Read More</a>
+										</div>
+										<div class="info-bx text-center">
+											<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+											<span>Programming</span>
+										</div>
+										<div class="cours-more-info">
+											<div class="review">
+												<span>3 Review</span>
+											</div>
+											<div class="price">
+												<del>$190</del>
+												<h5>$120</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+									<div class="cours-bx">
+										<div class="action-box">
+											<a href="#" class="btn">Read More</a>
+										</div>
+										<div class="info-bx text-center">
+											<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+											<span>Programming</span>
+										</div>
+										<div class="cours-more-info">
+											<div class="review">
+												<span>3 Review</span>
+											</div>
+											<div class="price">
+												<del>$190</del>
+												<h5>$120</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+									<div class="cours-bx">
+										<div class="action-box">
+											<a href="#" class="btn">Read More</a>
+										</div>
+										<div class="info-bx text-center">
+											<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+											<span>Programming</span>
+										</div>
+										<div class="cours-more-info">
+											<div class="review">
+												<span>3 Review</span>
+											</div>
+											<div class="price">
+												<del>$190</del>
+												<h5>$120</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12 m-b20">
+									<div class="pagination-bx rounded-sm gray clearfix">
+										<ul class="pagination">
+											<li class="previous"><a href="#"><i class="ti-arrow-left"></i> Prev</a></li>
+											<li class="active"><a href="#">1</a></li>
+											<li><a href="#">2</a></li>
+											<li><a href="#">3</a></li>
+											<li class="next"><a href="#">Next <i class="ti-arrow-right"></i></a></li>
 										</ul>
-										<div class="pricingtable-footer"> 
-											<a href="#" class="btn radius-xl">Get It Now</a>
-										</div>
 									</div>
 								</div>
 							</div>
@@ -347,133 +470,9 @@
 					</div>
 				</div>
             </div>
-            <!-- Our Services ==== -->
-			<div class="section-area section-sp2 bg-fix ovbl-dark join-bx" style="background-image:url(${contextPath }/resources/main_assets/assets/images/background/bg1.jpg);">
-                <div class="container">
-					<div class="row">
-						<div class="col-md-12 text-center heading-bx text-white">
-							<h2 class="title-head m-b0">Why Choose <span>Us</span></h2>
-							<p class="m-b0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
-						</div>
-						<div class="col-md-6">	
-							<div class="why-chooses-bx ">
-								<div class="ttr-accordion m-b30 faq-bx" id="accordion1">
-									<div class="panel">
-										<div class="acod-head">
-											<h6 class="acod-title"> 
-												<a data-toggle="collapse" href="#faq1" class="collapsed" data-parent="#faq1">
-												Why won't my payment go through? </a> </h6>
-										</div>
-										<div id="faq1" class="acod-body collapse">
-											<div class="acod-content">Web design aorem apsum dolor sit amet, adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="acod-head">
-											<h6 class="acod-title"> 
-												<a data-toggle="collapse" href="#faq2" class="collapsed" data-parent="#faq2">
-												How do I get a refund?</a> </h6>
-										</div>
-										<div id="faq2" class="acod-body collapse">
-											<div class="acod-content">Graphic design aorem apsum dolor sit amet, adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="acod-head">
-											<h6 class="acod-title"> 
-												<a data-toggle="collapse"  href="#faq3" class="collapsed"  data-parent="#faq3">
-												How do I redeem a coupon? </a> </h6>
-										</div>
-										<div id="faq3" class="acod-body collapse">
-											<div class="acod-content">Developement aorem apsum dolor sit amet, adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="acod-head">
-											<h6 class="acod-title"> 
-												<a data-toggle="collapse"  href="#faq4" class="collapsed"  data-parent="#faq4">
-												Why aren't my courses showing in my account? </a> </h6>
-										</div>
-										<div id="faq4" class="acod-body collapse">
-											<div class="acod-content">Developement aorem apsum dolor sit amet, adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="acod-head">
-											<h6 class="acod-title"> 
-												<a data-toggle="collapse"  href="#faq5" class="collapsed"  data-parent="#faq5">
-												Changing account name </a> </h6>
-										</div>
-										<div id="faq5" class="acod-body collapse">
-											<div class="acod-content">Developement aorem apsum dolor sit amet, adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="acod-head">
-											<h6 class="acod-title"> 
-												<a data-toggle="collapse"  href="#faq6" class="collapsed"  data-parent="#faq6">
-												Why aren't my courses showing in my account? </a> </h6>
-										</div>
-										<div id="faq6" class="acod-body collapse">
-											<div class="acod-content">Developement aorem apsum dolor sit amet, adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">	
-							<div class="video-bx">
-								<img src="${contextPath }/resources/main_assets/assets/images/about/pic1.jpg" alt=""/>
-								<a href="https://www.youtube.com/watch?v=x_sJzVe9P_8" class="popup-youtube video"><i class="fa fa-play"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- contact area END ==== -->
-		<!-- Our Status ==== -->
-			<div class="section-area content-inner section-sp1">
-                <div class="container">
-                    <div class="section-content">
-                         <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
-                                <div class="counter-style-1">
-                                    <div class="text-primary">
-										<span class="counter">3000</span><span>+</span>
-									</div>
-									<span class="counter-text">Completed Projects</span>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
-                                <div class="counter-style-1">
-									<div class="text-black">
-										<span class="counter">2500</span><span>+</span>
-									</div>
-									<span class="counter-text">Happy Clients</span>
-								</div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
-                                <div class="counter-style-1">
-									<div class="text-primary">
-										<span class="counter">1500</span><span>+</span>
-									</div>
-									<span class="counter-text">Questions Answered</span>
-								</div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
-                                <div class="counter-style-1">
-									<div class="text-black">
-										<span class="counter">1000</span><span>+</span>
-									</div>
-									<span class="counter-text">Ordered Coffee's</span>
-								</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-			<!-- Our Status END ==== -->
+        </div>
+		<!-- contact area END -->
+		
     </div>
     <!-- Content END-->
 	<!-- Footer ==== -->

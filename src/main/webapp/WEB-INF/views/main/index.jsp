@@ -5,7 +5,7 @@
 <c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- index -->
 <head>
 
 	<!-- META ============================================= -->
@@ -168,11 +168,11 @@
 									<li class="add-menu-left">
 										<h5 class="menu-adv-title">나의 단어장</h5>
 										<ul>
-											<li><a href="main/courses.jsp">정보처리기사</a></li>
-											<li><a href="courses-details.jsp">보안기사</a></li>
-											<li><a href="profile.jsp">리눅스</a></li>
-											<li><a href="exercise.do">한국사</a></li>
-											<li><a href="membership.jsp">영단어</a></li>
+											<li><a href="engineer.do?category=1">정보처리기사 </a></li>
+											<li><a href="security.do?category=2">정보보안기사</a></li>
+											<li><a href="linux.do?category=3">리눅스 마스터</a></li>
+											<li><a href="english.do?category=4">영단어 마스터</a></li>
+											<li><a href="korean-history.do?category=5">한국사 능력시험</a></li>
 										</ul>
 									</li>
 									<li class="add-menu-right">
