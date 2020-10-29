@@ -35,7 +35,7 @@
 	<insert id="newUserVoca" parameterType="VocaVO">
 		<![CDATA[
 			insert into voca_table
-			values(#{own_code},#{quiz_code},${voca_code})
+			values(#{own_code},#{quiz_code},#{voca_code})
 		]]>
 	</insert>
 </mapper>

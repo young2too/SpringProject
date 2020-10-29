@@ -66,17 +66,28 @@ public class VocaServiceImpl implements VocaService{
 	public int addVoca(String loginedUser, String code) throws DataAccessException {
 		List<VocaVO> myQuizList = vocaDAO.getMyVocaByID(loginedUser);
 		String myQuizes = "";
+		
 		if(myQuizList.size()!= 0) {
+			//일단 여기에 중복체크도 해줘야 함
+			System.out.println("come here!");
 			myQuizes += myQuizList.get(0).getQuiz_code();
+			if(myQuizes.contains(code) == false) {
+				myQuizes = myQuizes+code+",";
+				vocaVO.setOwn_code(loginedUser);
+				vocaVO.setQuiz_code(myQuizes);
+				return vocaDAO.addVoca(vocaVO);
+			}else {
+				return 0;
+			}
+			
+		}else {
 			myQuizes = myQuizes+code+",";
 			vocaVO.setOwn_code(loginedUser);
 			vocaVO.setQuiz_code(myQuizes);
-			return vocaDAO.addVoca(vocaVO);
-		}else {
-			vocaVO.setOwn_code(loginedUser);
-			vocaVO.setQuiz_code(myQuizes);
 			vocaVO.setVoca_code(loginedUser);
-			return vocaDAO.makeNewUserVoca(vocaVO);
+			vocaDAO.makeNewUserVoca(vocaVO);
+			return 1;//없는 유저이니 무조건 성공
+			
 		}
 	}
 

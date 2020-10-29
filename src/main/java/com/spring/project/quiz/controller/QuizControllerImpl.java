@@ -135,17 +135,18 @@ public class QuizControllerImpl implements QuizController {
 	}
 	
 	@RequestMapping(value = "addToMyVoca.do", method=RequestMethod.GET)
-	public void addToMyVocaPage(HttpServletRequest request, HttpServletResponse response)throws Exception{
-		String quizCode = request.getParameter("quiz_code");
+	public ModelAndView addToMyVocaPage(HttpServletRequest request, HttpServletResponse response)throws Exception{
+		String quizCode = request.getParameter("quizCode");
 		HttpSession session = request.getSession();
 		
 		//세션에서 현재 로그인된 아이디를 받아옴
 		String loginedUser = "test";
-		//
-		
-		
-		
-		return;
+		if(vocaService.addVoca(loginedUser, quizCode) != 0)
+			return new ModelAndView("main/addSuccess");
+		else {
+			return new ModelAndView("main/addFail");
+		}
 	}
 	
+
 }
