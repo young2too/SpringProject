@@ -453,14 +453,12 @@
 					</div>
 					<div class="testimonial-carousel owl-carousel owl-btn-1 col-12 p-lr0">
 						<c:forEach items="${ randomQuizList }" var="randomQuiz">
-							<div class="item thecard">
-							<div class="testimonial-bx thefront">
+							<div class="item">
+							<div class="testimonial-bx">
 								<div class="testimonial-content">
 									<p>${randomQuiz.quiz }</p>
+									<p style="color:red;font-weight:bold;">${randomQuiz.answer }</p>
 								</div>
-							</div>
-							<div class="testimonial-bx theback">
-								<p>${randomQuiz.answer }</p>
 							</div>
 						</div>
 						</c:forEach>

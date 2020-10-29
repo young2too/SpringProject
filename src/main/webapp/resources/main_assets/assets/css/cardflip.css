@@ -2,8 +2,6 @@
 	backface-visibility: hidden;
 	transform: rotateX(180deg);
 	color: #D35400;
-
-	
 }
 
 .thefront {
@@ -27,5 +25,12 @@
     background: #00ff4e;
     padding: 100px;
     border-radius: 200px;
+    font-size:20px;
+}
+
+.owl > .thecard{
+	text-align: center;
+    transform-style: preserve-3d;
+    transition: all 0.2s ease;
     font-size:20px;
 }

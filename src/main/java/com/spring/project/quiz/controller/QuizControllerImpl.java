@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -14,16 +15,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.project.quiz.service.QuizService;
 import com.spring.project.quiz.vo.QuizVO;
+import com.spring.project.voca.vocaService.VocaService;
 
 @Controller("quizController")
 public class QuizControllerImpl implements QuizController {
 	
 	
 	 @Autowired private QuizService quizService;
-	  
+	 @Autowired private VocaService vocaService;
 	 @Autowired QuizVO quizVO;
 	 
-		/* @Autowired private VocaService vocaService; */
 
 	
 	private static String current_category = "";
@@ -128,7 +129,23 @@ public class QuizControllerImpl implements QuizController {
 		String howmanyQuiz = Integer.toString(allQuizList.size());
 		mav.addObject("allQuizList", allQuizList);
 		mav.addObject("category",current_category);
+		mav.addObject("howmanyQuiz", howmanyQuiz);
 		mav.setViewName("main/short-answer");//events-details는 문제풀이 페이지
 		return mav;
 	}
+	
+	@RequestMapping(value = "addToMyVoca.do", method=RequestMethod.GET)
+	public void addToMyVocaPage(HttpServletRequest request, HttpServletResponse response)throws Exception{
+		String quizCode = request.getParameter("quiz_code");
+		HttpSession session = request.getSession();
+		
+		//세션에서 현재 로그인된 아이디를 받아옴
+		String loginedUser = "test";
+		//
+		
+		
+		
+		return;
+	}
+	
 }
