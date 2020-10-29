@@ -46,7 +46,7 @@
 	]]>      
   </delete>
   
-  <!-- 로그인창에서 입력한 ID와 비밀번호로 DB에서 비교 -->
+  <!-- 로그인창에서 입력한 ID,PW DB에서 비교 -->
   <select id="loginById"  resultType="memberVO"   parameterType="memberVO" >
 	<![CDATA[
 		select * from member_table	
@@ -55,7 +55,7 @@
   </select>
   
   <!-- 회원코드 최댓값 구하기 -->
-<!--   <select id="getMaxMemberCode"  resultType="_int" >
+	<!-- <select id="getMaxMemberCode"  resultType="_int" >
 	<![CDATA[
 		select max(member_code) from member_table			
 	]]>

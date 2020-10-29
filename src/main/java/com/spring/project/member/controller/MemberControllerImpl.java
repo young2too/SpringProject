@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -70,13 +71,14 @@ public class MemberControllerImpl implements MemberController{
 	@RequestMapping(value = "loginProc.do", method = {RequestMethod.POST, RequestMethod.GET})
 	public ModelAndView loginProc(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
+		ModelAndView mav = new ModelAndView();
 		String id = request.getParameter("LgId");
 		String pw = request.getParameter("LgPw");
-		ModelAndView mav = new ModelAndView();
 		memberVO = memberService.loginProc(id,pw);
 		if(memberVO != null) {
 		    HttpSession session = request.getSession();
 		    session.setAttribute("member", memberVO);
+		    session.setAttribute("LgId", memberVO.getId());
 		    session.setAttribute("isLogOn", true);
 		    String action = (String)session.getAttribute("action");
 		    session.removeAttribute("action");

@@ -20,10 +20,8 @@ public interface MemberController {
 	public ModelAndView forgetPw(HttpServletRequest request, HttpServletResponse response)throws Exception;
 	// 비밀번호 찾기 페이지로 이동
 	
-	
 	public ModelAndView addmember(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	// 회원가입 구현
-	
 	public ModelAndView loginProc(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	// 로그인 구현
 }

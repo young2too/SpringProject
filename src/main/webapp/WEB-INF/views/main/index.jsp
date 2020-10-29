@@ -1,3 +1,4 @@
+<%@page import="com.spring.project.member.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -103,12 +104,28 @@
 					<!-- Author Nav ==== -->
                      <div class="secondary-menu">
                         <div class="secondary-inner">
-                            <ul>
-							<li><a href="login.do">로그인</a>　</li>
-							<li><a href="register.do">회원가입</a></li>
-								<!-- Search Button ==== -->
-								<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
-							</ul>
+                        	<%
+								String LgId = (String)session.getAttribute("LgId");
+                        	%>
+                        	<% if(LgId !=null) {
+                        		%> 
+                        		<ul>
+									<li><%=LgId%>님 환영합니다　　</li>
+									<li><a href="login.do">로그아웃</a></li>
+									<!-- Search Button ==== -->
+									<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+								</ul>
+								<%
+							}else /* (member.getId() == null) */
+								{
+								%>
+                        	    <ul>
+									<li><a href="login.do">로그인</a>　</li>
+									<li><a href="register.do">회원가입</a></li>
+									<!-- Search Button ==== -->
+									<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+								</ul>
+							<%} %>
 						</div>
                     </div>
 					<!-- Search Box ==== -->

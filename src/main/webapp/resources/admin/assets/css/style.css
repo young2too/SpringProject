@@ -692,10 +692,12 @@
 	list-style:none;
 	padding:0;
 	margin:0;
+	
 }
 .secondary-inner ul li{
 	display:inline-block;
 	position:relative;
+	color:#fff;
 }
 .secondary-inner ul li a{
 	color:#fff;
