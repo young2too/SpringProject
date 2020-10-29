@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.project.quiz.vo.QuizVO;
 import com.spring.project.voca.vocaService.VocaService;
 import com.spring.project.voca.vocaVO.VocaVO;
 
@@ -22,12 +24,11 @@ public class VocaControllerImpl implements VocaController{
 	@Autowired
 	VocaVO vocaVO;
 	
-	// ³ªÀÇ´Ü¾îÀå_Á¤º¸Ã³¸®±â»ç ÆäÀÌÁö
 	@Override
 	@RequestMapping(value= {"engineer.do","security.do","linux.do","english.do","korean-history.do"}, method = RequestMethod.GET)
 	public ModelAndView vocaPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = getViewName(request);
-		System.out.println(viewName);
+	
 		String category = "";
 		switch(viewName) {
 		case "/engineer":
@@ -46,64 +47,48 @@ public class VocaControllerImpl implements VocaController{
 			category="5";
 			break;
 		}
-		// ¼­ºñ½º¿¡ ¼³Á¤ÇÑ Ä«Å×°í¸®¹øÈ£
 		
-		String loginedUser = "test";
+		String loginedUser = "test"; //loginedUserï¿½ï¿½ ï¿½ï¿½ï¿½Ä¿ï¿½ httpsessionï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¿Í¾ï¿½ ï¿½ï¿½
 		
-		//List getMyQuizList = vocaService.getMyQuizByCategory(loginedUser,Integer.parseInt(category));
+		List<QuizVO> getMyQuizList = vocaService.getMyQuizByCategory(loginedUser,Integer.parseInt(category));
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("main/courses");
 		mav.addObject("category",category);
-		//mav.addObject("getMyQuizList", getMyQuizList);
-		System.out.println(category);
-
-	
+		mav.addObject("getMyQuizList", getMyQuizList);
+		return mav;
+	}
+		
+	@Override
+	@RequestMapping(value="removeVoca.do" ,method = RequestMethod.GET)
+	public ModelAndView removeVoca(@RequestParam("code") String code, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String loginedUser = "test";//loginedUserï¿½ï¿½ ï¿½ï¿½ï¿½Ä¿ï¿½ httpsessionï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¿Í¾ï¿½ ï¿½ï¿½
+		vocaService.vocaRemove(loginedUser, code);
+		int idx = Integer.parseInt(code.substring(0, 1));
+		System.out.println(code);
+		String redirect = "redirect:/";
+		switch(idx) {
+		case 1:
+			redirect += "engineer.do";
+			break;
+		case 2:
+			redirect += "security.do";
+			break;
+		case 3:
+			redirect += "linux.do";
+			break;
+		case 4:
+			redirect += "english.do";
+			break;
+		case 5:
+			redirect += "korean-history.do";
+			break;
+			
+		}
+		
+		ModelAndView mav = new ModelAndView(redirect);
 		return mav;
 	}
 	
-	/*
-	 * // ³ªÀÇ´Ü¾îÀå_º¸¾È±â»ç ÆäÀÌÁö
-	 * 
-	 * @Override
-	 * 
-	 * @RequestMapping(value="courses-details.do", method = RequestMethod.GET)
-	 * public ModelAndView securityEngineer(HttpServletRequest request,
-	 * HttpServletResponse response) throws Exception { String viewName =
-	 * getViewName(request); ModelAndView mav = new ModelAndView();
-	 * mav.setViewName("main/"+viewName); System.out.println(viewName); return mav;
-	 * }
-	 * 
-	 * // ³ªÀÇ´Ü¾îÀå_¸®´ª½º ÆäÀÌÁö
-	 * 
-	 * @Override
-	 * 
-	 * @RequestMapping(value="profile.do", method = RequestMethod.GET) public
-	 * ModelAndView linux(HttpServletRequest request, HttpServletResponse response)
-	 * throws Exception { String viewName = getViewName(request); ModelAndView mav =
-	 * new ModelAndView(); mav.setViewName("main/"+viewName);
-	 * System.out.println(viewName); return mav; }
-	 * 
-	 * // ³ªÀÇ´Ü¾îÀå_¿µ´Ü¾î ÆäÀÌÁö
-	 * 
-	 * @Override
-	 * 
-	 * @RequestMapping(value="membership.do", method = RequestMethod.GET) public
-	 * ModelAndView voca(HttpServletRequest request, HttpServletResponse response)
-	 * throws Exception { String viewName = getViewName(request); ModelAndView mav =
-	 * new ModelAndView(); mav.setViewName("main/"+viewName);
-	 * System.out.println(viewName); return mav; }
-	 * 
-	 * // ³ªÀÇ´Ü¾îÀå_ÇÑ±¹»ç ÆäÀÌÁö
-	 * 
-	 * @Override
-	 * 
-	 * @RequestMapping(value="event.do", method = RequestMethod.GET) public
-	 * ModelAndView krHistory(HttpServletRequest request, HttpServletResponse
-	 * response) throws Exception { String viewName = getViewName(request);
-	 * ModelAndView mav = new ModelAndView(); mav.setViewName("main/"+viewName);
-	 * System.out.println(viewName); return mav; }
-	 */
-
 	
 	private String getViewName(HttpServletRequest request) throws Exception {
 		String contextPath = request.getContextPath();
@@ -135,4 +120,11 @@ public class VocaControllerImpl implements VocaController{
 		}
 		return viewName;
 	}
+
+
+
+
+
+
+
 }
