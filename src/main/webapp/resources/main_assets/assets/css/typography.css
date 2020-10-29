@@ -24,7 +24,7 @@ img { border-style: none; height: auto; max-width: 100%; vertical-align: middle;
 hr { clear: both; }
 section, article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, summary { display: block; }
 address { font-style: italic; }
-table { background-color: transparent;  width: 100%; }
+table { background-color: transparent; border-spacing: 10px; }
 table thead th { color: #333; }
 table td { padding: 15px 10px; }
 p, address, pre, hr, ul, ol, dl, dd, table { margin-bottom: 24px; }

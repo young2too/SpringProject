@@ -21,6 +21,25 @@ public class VocaDAOImpl implements VocaDAO{
 		List myVoca = sqlSession.selectList("mapper.voca.selectMyListByID", loginedUser);
 		return myVoca;
 	}
+
+	@Override
+	public int vocaDelete(VocaVO updateVoca) throws DataAccessException {
+		int result = sqlSession.update("mapper.voca.deleteVoca", updateVoca);
+		return result;
+	}
+
+	@Override
+	public int addVoca(VocaVO addVoca) throws DataAccessException {
+		int result = sqlSession.update("mapper.voca.addVoca", addVoca);
+		return result;
+	}
+
+	@Override
+	public int makeNewUserVoca(VocaVO newUserVoca) throws DataAccessException {
+		// TODO Auto-generated method stub
+		int result = sqlSession.insert("mapper.voca.newUserVoca", newUserVoca);
+		return result;
+	}
 	
 	
 	

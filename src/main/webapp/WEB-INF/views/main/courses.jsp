@@ -2,7 +2,6 @@
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
-
 <%
   request.setCharacterEncoding("UTF-8");
 %> 
@@ -171,11 +170,11 @@
 									<li class="add-menu-left">
 										<h5 class="menu-adv-title">Our Courses</h5>
 										<ul>
-											<li><a href="courses.do?category=1">정보처리기사 </a></li>
-											<li><a href="courses.do?category=2">정보보안기사</a></li>
-											<li><a href="courses.do?category=3">리눅스 마스터</a></li>
-											<li><a href="courses.do?category=4">영단어 마스터</a></li>
-											<li><a href="courses.do?category=5">한국사 능력시험</a></li>
+											<li><a href="engineer.do?category=1">정보처리기사 </a></li>
+											<li><a href="security.do?category=2">정보보안기사</a></li>
+											<li><a href="linux.do?category=3">리눅스 마스터</a></li>
+											<li><a href="english.do?category=4">영단어 마스터</a></li>
+											<li><a href="korean-history.do?category=5">한국사 능력시험</a></li>
 										</ul>
 									</li>
 									<li class="add-menu-right">
@@ -288,15 +287,13 @@
 						
 						
 						<!-- 단어장 들어갈 공간 -->
-						<table border="1"  align="center"  width="80%">
-						 <c:forEach var="ifmList" items="${ifmEngineerList}" >   
-						   <c:if test="${category eq 'ifmEngineer'}">
-						   		<tr align="center">
-						      <td>${ifmList.own_code}</td>
-						      <td>${ifmList.quiz_code}</td>
-						      <td>${ifmList.voca_code}</td>
+						<table border="1"  align="center"  width="75%">
+						 <c:forEach var="quizes" items="${getMyQuizList}" >   
+						   	<tr align="center">
+						      <td>${quizes.answer}</td>
+						      <td>${quizes.quiz}</td>
+						      <td><a href="${contextPath}/removeVoca.do?code=${quizes.quiz_code}">삭제</a></td>
 						    </tr>
-						   </c:if>
 						  </c:forEach>
 						</table>
 					</div>
