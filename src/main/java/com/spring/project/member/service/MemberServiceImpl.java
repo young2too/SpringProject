@@ -2,6 +2,8 @@ package com.spring.project.member.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
@@ -42,7 +44,8 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		return memberDAO.loginById(LgId, LgPw);
 	}
-	
+
+
 	/*
 	 * public int getMaxMemberCode() throws Exception{ return
 	 * memberDAO.getMaxMemberCode();

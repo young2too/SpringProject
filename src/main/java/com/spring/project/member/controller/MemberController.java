@@ -24,4 +24,6 @@ public interface MemberController {
 	// 회원가입 구현
 	public ModelAndView loginProc(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	// 로그인 구현
+	public ModelAndView logoutProc(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	// 로그아웃 구현
 }

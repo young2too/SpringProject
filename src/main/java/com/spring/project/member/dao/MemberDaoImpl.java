@@ -2,6 +2,8 @@ package com.spring.project.member.dao;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -46,6 +48,7 @@ public class MemberDaoImpl implements MemberDao{
 		MemberVO vo = sqlSession.selectOne("mapper.member.loginById",memberVO);
 		return vo;
 	}
+
 
 	/*
 	 * @Override public int getMaxMemberCode() throws DataAccessException { // TODO

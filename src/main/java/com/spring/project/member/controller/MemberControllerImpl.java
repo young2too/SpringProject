@@ -17,11 +17,13 @@ import com.spring.project.member.service.MemberService;
 import com.spring.project.member.vo.MemberVO;
 
 @Controller("memberController")
-public class MemberControllerImpl implements MemberController{
-	
-	@Autowired MemberVO memberVO;
-	@Autowired MemberService memberService;
-	
+public class MemberControllerImpl implements MemberController {
+
+	@Autowired
+	MemberVO memberVO;
+	@Autowired
+	MemberService memberService;
+
 	@Override
 	@RequestMapping(value = "register.do", method = RequestMethod.GET)
 	public ModelAndView signUp(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -41,16 +43,16 @@ public class MemberControllerImpl implements MemberController{
 	}
 
 	@Override
-	@RequestMapping(value = "forget-password.do", method = {RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(value = "forget-password.do", method = { RequestMethod.POST, RequestMethod.GET })
 	public ModelAndView forgetPw(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("main/forget-password");
 		return mav;
 	}
-	
+
 	@Override
-	@RequestMapping(value = "addmember.do", method = {RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(value = "addmember.do", method = { RequestMethod.POST, RequestMethod.GET })
 	public ModelAndView addmember(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		MemberVO addmemberVO = new MemberVO();
@@ -59,45 +61,57 @@ public class MemberControllerImpl implements MemberController{
 		addmemberVO.setName(request.getParameter("RgName"));
 		addmemberVO.setEmail(request.getParameter("RgEmail"));
 		/* addmemberVO.setMember_code(memberService.getMaxMemberCode()); */
-		
+
 		memberService.addMember(addmemberVO);
-		
+
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("main/login");
 		return mav;
 	}
 
 	@Override
-	@RequestMapping(value = "loginProc.do", method = {RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(value = "loginProc.do", method = { RequestMethod.POST, RequestMethod.GET })
 	public ModelAndView loginProc(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		ModelAndView mav = new ModelAndView();
 		String id = request.getParameter("LgId");
 		String pw = request.getParameter("LgPw");
-		memberVO = memberService.loginProc(id,pw);
-		if(memberVO != null) {
-		    HttpSession session = request.getSession();
-		    session.setAttribute("member", memberVO);
-		    session.setAttribute("LgId", memberVO.getId());
-		    session.setAttribute("isLogOn", true);
-		    String action = (String)session.getAttribute("action");
-		    session.removeAttribute("action");
-		    if(action!= null) {
-		       mav.setViewName("redirect:"+action);
-		    }else {
-		    	System.out.println("로그인완료");
-		    	mav.setViewName("main/index");
-		       
-		    }
-		    System.out.println(session.getAttribute("member"));
-		}else {
-		   mav.addObject("result","loginFailed");
-		   mav.setViewName("main/login");
+		memberVO = memberService.loginProc(id, pw);
+		if (memberVO != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("member", memberVO);
+			session.setAttribute("LgId", memberVO.getId());
+			session.setAttribute("isLogOn", true);
+			String action = (String) session.getAttribute("action");
+			session.removeAttribute("action");
+			if (action != null) {
+				mav.setViewName("redirect:" + action);
+			} else {
+				System.out.println("로그인완료");
+				mav.setViewName("main/index");
+
+			}
+			System.out.println(session.getAttribute("member"));
+		} else {
+			mav.addObject("result", "loginFailed");
+			mav.setViewName("main/login");
 		}
-		
+
 		return mav;
 	}
 
+	@Override
+	
+	 @RequestMapping(value = "logout.do", method = {RequestMethod.POST, RequestMethod.GET})
+	public ModelAndView logoutProc(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		// TODO Auto-generated method stub
+		ModelAndView mav = new ModelAndView();
+		HttpSession session = request.getSession();
+		session.invalidate();
+		mav.setViewName("main/index");
+		System.out.println("로그아웃 되었습니다.");
+		return mav;
+	}
 
 	/*
 	 * @Override public ModelAndView logout(HttpServletRequest request,

@@ -2,6 +2,8 @@ package com.spring.project.member.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.dao.DataAccessException;
 
 import com.spring.project.member.vo.MemberVO;
@@ -16,7 +18,7 @@ public interface MemberService {
 	 // 회원정보 삭제
 	 public MemberVO loginProc(String LgId, String LgPw) throws Exception;
 	 // 로그인으로 회원정보 조회
-	 
+
 	 
 	/* public int getMaxMemberCode() throws Exception; */
 }
