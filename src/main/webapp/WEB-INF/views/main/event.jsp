@@ -76,7 +76,7 @@
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
-					<li><a href="#">Home</a></li>
+					<li><a href="index.do">Home</a></li>
 					<li>문제집 선택</li>
 				</ul>
 			</div>
@@ -241,7 +241,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+								<!-- <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
 									<div class="cours-bx">
 										<div class="action-box">
 											<a href="#" class="btn">Read More</a>
@@ -260,8 +260,8 @@
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+								</div> -->
+								<!-- <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
 									<div class="cours-bx">
 										<div class="action-box">
 											<a href="#" class="btn">Read More</a>
@@ -280,8 +280,8 @@
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+								</div> -->
+								<!-- <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
 									<div class="cours-bx">
 										<div class="action-box">
 											<a href="#" class="btn">Read More</a>
@@ -300,7 +300,7 @@
 											</div>
 										</div>
 									</div>
-								</div>
+								</div> -->
 								<div class="col-lg-12 m-b20">
 									<div class="pagination-bx rounded-sm gray clearfix">
 										<ul class="pagination">

@@ -9,36 +9,47 @@
 
 <head>
 <style>
-.quiz-container{
-	text-align:center;
-	font-size:20px;
-	margin-top:1%;
-}
-.complete-rate{
-	text-align:right;
-	margin-right:10%;
-	font-size:20px;
-}
-.userInputWrapper{
+.correct-uncorrect-box {
+	width:100%;
+	text-align: center;
 	display:inline-block;
 }
-.userInputWrapper>input{
-	border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-.userInputWrapper>button{
-	font-size:18px;
-	border-radius : 5px;
-	border :1px solid skyblue;
-	background-color : rgba(0,0,0,0);
-	color:skyblue;
-	padding:5px;
 
+.quiz-container {
+	text-align: center;
+	font-size: 20px;
+	margin-top: 1%;
 }
-.userInputWrapper>button:hover{
-	color:white;
-	background-color:skyblue;
+
+.complete-rate {
+	text-align: right;
+	margin-right: 10%;
+	font-size: 20px;
+}
+
+.userInputWrapper {
+	display: inline-block;
+}
+
+.userInputWrapper>input {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+.userInputWrappeer>
+
+.userInputWrapper>button {
+	font-size: 18px;
+	border-radius: 5px;
+	border: 1px solid skyblue;
+	background-color: rgba(0, 0, 0, 0);
+	color: skyblue;
+	padding: 5px;
+}
+
+.userInputWrapper>button:hover {
+	color: white;
+	background-color: skyblue;
 }
 </style>
 
@@ -151,25 +162,30 @@
 				</div>
 			</div>
 			<!-- Page Heading Box END ==== -->
+			<div class="correct-uncorrect-box">
+				정답 : <span id="correct">0</span>개　　　　
+				오답 : <span id="incorrect">0</span>개　　　
+				문제 수 : ${ howmanyQuiz }문
+			</div>
 			<!-- Page Content Box ==== -->
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
 					<c:forEach items="${ allQuizList }" var="quiz" varStatus="status">
 						<div class="swiper-slide">
-						<div class="quiz-container">
-						<p>${quiz.quiz}	</p>
-							<div class="userInputWrapper">
-								<input id="userAnswer${ status.index }" type="text"
-									placeholder="정답을 입력하세요" />
-								<button id="confirm${ status.index }">확인</button>
-								<button onclick = window.open("addToMyVoca.do?quizCode=${quiz.quiz_code}")>단어장에 추가</button>
+							<div class="quiz-container">
+								<p>${quiz.quiz}</p>
+								<div class="userInputWrapper">
+									<input id="userAnswer${ status.index }" type="text"
+										placeholder="정답을 입력하세요" />
+									<button id="confirm${ status.index }">확인</button>
+									<button onclick=window.open(
+										"addToMyVoca.do?quizCode=${quiz.quiz_code }")>단어장에 추가</button>
+								</div>
+								<button id="answer${status.index }" value="${ quiz.answer }"
+									style="display: none;"></button>
+								<div class="complete-rate">${ status.index +1  } / ${ howmanyQuiz }
+								</div>
 							</div>
-							<button id="answer${status.index }" value="${ quiz.answer }"
-								style="display: none;"></button>
-							<div class="complete-rate">
-							${ status.index +1  } / ${ howmanyQuiz }
-							</div>
-						</div>
 						</div>
 					</c:forEach>
 				</div>
@@ -218,7 +234,7 @@
 		src="${contextPath }/resources/main_assets/assets/js/contact.js"></script>
 	<script
 		src="${contextPath }/resources/main_assets/assets/vendors/switcher/switcher.js"></script>
-	
+
 	<script>
 		var swiper = new Swiper('.swiper-container', {
 			pagination : {
@@ -232,6 +248,8 @@
 		});
 	</script>
 	<script>
+	var correct = 0;
+	var incorrect = 0;
 		$(function(){
 			var maxQuiz = ${howmanyQuiz};
 			for(var i=0;i<maxQuiz;i++){
@@ -239,11 +257,31 @@
 					var index = (this.id).substring(7);
 					var userAnswer = $('#userAnswer'+index)[0].value;
 					var realAnswer = $('#answer'+index)[0].value;
+					
+					
+					if($(this).is('[class]')==false){
+						$(this).attr('class','clicked');
+						$('#userAnswer'+index).attr('class','incorrect');
+						$('#userAnswer'+index).attr('placeholder','이미 틀린 문제에요');
+						if(userAnswer == realAnswer){
+							correct++;
+						}else{
+							incorrect++;
+						}
+					}
+					
+					
 					alert("당신의 답 : "+userAnswer+"\n"
 							+"정답 : "+realAnswer);
+					changeCorrects(correct, incorrect);
 				}))
 			}
 		})
+		function changeCorrects(correct, incorrect){
+			$("#correct").text(correct);
+			$("#incorrect").text(incorrect);
+		}
+
 </script>
 
 </body>

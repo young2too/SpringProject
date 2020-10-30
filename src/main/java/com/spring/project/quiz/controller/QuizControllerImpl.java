@@ -139,8 +139,11 @@ public class QuizControllerImpl implements QuizController {
 		String quizCode = request.getParameter("quizCode");
 		HttpSession session = request.getSession();
 		
-		//세션에서 현재 로그인된 아이디를 받아옴
-		String loginedUser = "test";
+		String loginedUser = (String) session.getAttribute("LgId");
+		if(loginedUser == null) {
+			return new ModelAndView("main/needLogin");
+		}
+		
 		if(vocaService.addVoca(loginedUser, quizCode) != 0)
 			return new ModelAndView("main/addSuccess");
 		else {

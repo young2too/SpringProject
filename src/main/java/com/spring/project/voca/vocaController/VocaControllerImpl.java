@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,7 +49,8 @@ public class VocaControllerImpl implements VocaController{
 			break;
 		}
 		
-		String loginedUser = "test"; //loginedUser�� ���Ŀ� httpsession���� �����ؿ;� ��
+		HttpSession session = request.getSession();
+		String loginedUser = (String) session.getAttribute("LgId");
 		
 		List<QuizVO> getMyQuizList = vocaService.getMyQuizByCategory(loginedUser,Integer.parseInt(category));
 		ModelAndView mav = new ModelAndView();
@@ -61,7 +63,8 @@ public class VocaControllerImpl implements VocaController{
 	@Override
 	@RequestMapping(value="removeVoca.do" ,method = RequestMethod.GET)
 	public ModelAndView removeVoca(@RequestParam("code") String code, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String loginedUser = "test";//loginedUser�� ���Ŀ� httpsession���� �����ؿ;� ��
+		HttpSession session = request.getSession();
+		String loginedUser = (String) session.getAttribute("LgId");
 		vocaService.vocaRemove(loginedUser, code);
 		int idx = Integer.parseInt(code.substring(0, 1));
 		System.out.println(code);
