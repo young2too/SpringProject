@@ -7,9 +7,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -60,8 +63,8 @@ public class MemberControllerImpl implements MemberController {
 		addmemberVO.setPw(request.getParameter("RgPw"));
 		addmemberVO.setName(request.getParameter("RgName"));
 		addmemberVO.setEmail(request.getParameter("RgEmail"));
-		/* addmemberVO.setMember_code(memberService.getMaxMemberCode()); */
-
+		
+		
 		memberService.addMember(addmemberVO);
 
 		ModelAndView mav = new ModelAndView();
@@ -101,8 +104,7 @@ public class MemberControllerImpl implements MemberController {
 	}
 
 	@Override
-	
-	 @RequestMapping(value = "logout.do", method = {RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(value = "logout.do", method = {RequestMethod.POST, RequestMethod.GET})
 	public ModelAndView logoutProc(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		ModelAndView mav = new ModelAndView();
@@ -111,6 +113,21 @@ public class MemberControllerImpl implements MemberController {
 		mav.setViewName("main/index");
 		System.out.println("로그아웃 되었습니다.");
 		return mav;
+	}
+
+	@Override
+	@ResponseBody
+	@RequestMapping(value = "idcheck.do", method = {RequestMethod.POST, RequestMethod.GET})
+	public int idCheck(@RequestParam("idcheck") String RgId) throws Exception{
+		// TODO Auto-generated method stub
+		int result = memberService.idCheck(RgId);
+		return result;
+	}
+
+	@Override
+	public int pwCheck(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	/*

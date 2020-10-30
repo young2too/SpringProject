@@ -6,6 +6,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- SignUp Btn 비활성화 -->
+<style>
+.non-active{
+	pointer-events: none;
+	background-color : gray;
+}
+</style>
+
 <head>
 
 	<!-- META ============================================= -->
@@ -73,6 +81,7 @@
 								<div class="input-group"> 
 									<label>Your ID</label>
 									<input name="RgId" type="text" class="form-control" required="">
+									<div id="checkmsg"></div>
 								</div>
 							</div>
 						</div>
@@ -134,5 +143,43 @@
 <script src="${contextPath }/resources/main_assets/assets/js/contact.js"></script>
 <script src="${contextPath }/resources/main_assets/assets/vendors/switcher/switcher.js"></script>
 </body>
+
+<script type="text/javascript">
+var idFlag;
+var idRule = /^[a-zA-Z0-9]{2,12}$/;
+$(document).ready(function(){
+	$('input[name=RgId]').blur(function(){
+		var idCheck= $('input[name=RgId]').val();
+		if(idRule.test(idCheck)){
+			$.ajax({
+				url:'idcheck.do?idcheck='+idCheck,
+				type:'get',
+				success:function(data){
+					var color;
+					var msg;
+					if(data>0){
+						msg=' 이미 있는 아이디 입니다. ';
+						$("[name=submit]").addClass('non-active');
+						color='red';
+						idFlag=false;
+					}
+					else{
+						msg=' 회원가입 가능한 아이디 입니다. '
+						$("[name=submit]").removeClass('non-active');
+						color='blue'
+						idFlag='true'
+					}
+					$('#checkmsg').text(msg);
+					$('#checkmsg').css('color',color);
+				},
+				error:function(){
+					alert("실패")	;
+				}
+				
+			})
+		}
+	
+	})});
+</script>
 
 </html>
