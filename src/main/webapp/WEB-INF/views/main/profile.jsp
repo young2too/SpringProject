@@ -329,7 +329,7 @@
 																		<li><i class="fa fa-star"></i></li>
 																		<li><i class="fa fa-star"></i></li>
 																	</ul>
-																</div>
+																</div><!-- ㅇㅇ -->
 																<div class="price">
 																	<del>$190</del>
 																	<h5>$120</h5>
