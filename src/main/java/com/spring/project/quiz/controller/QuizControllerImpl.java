@@ -138,16 +138,26 @@ public class QuizControllerImpl implements QuizController {
 	public ModelAndView addToMyVocaPage(HttpServletRequest request, HttpServletResponse response)throws Exception{
 		String quizCode = request.getParameter("quizCode");
 		HttpSession session = request.getSession();
-		
+		ModelAndView mav = new ModelAndView();
 		String loginedUser = (String) session.getAttribute("LgId");
+
 		if(loginedUser == null) {
-			return new ModelAndView("main/needLogin");
+			mav.addObject("errorMsg","로그인이 필요합니다!");
+			mav.setViewName("main/alert");
+			
+			return mav;
 		}
 		
-		if(vocaService.addVoca(loginedUser, quizCode) != 0)
-			return new ModelAndView("main/addSuccess");
+		if(vocaService.addVoca(loginedUser, quizCode) != 0) {
+			mav.addObject("errorMsg","단어장에 추가되었습니다!");
+			mav.setViewName("main/alert");
+			return mav;
+		}
+			
 		else {
-			return new ModelAndView("main/addFail");
+			mav.addObject("errorMsg","단어장 추가 실패");
+			mav.setViewName("main/alert");
+			return mav;
 		}
 	}
 	

@@ -48,16 +48,25 @@ public class VocaControllerImpl implements VocaController{
 			category="5";
 			break;
 		}
-		
+		ModelAndView mav = new ModelAndView();
 		HttpSession session = request.getSession();
 		String loginedUser = (String) session.getAttribute("LgId");
 		
-		List<QuizVO> getMyQuizList = vocaService.getMyQuizByCategory(loginedUser,Integer.parseInt(category));
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("main/courses");
-		mav.addObject("category",category);
-		mav.addObject("getMyQuizList", getMyQuizList);
+		if(loginedUser == null) {
+			mav.addObject("errorMsg","로그인이 필요합니다!");
+			mav.addObject("destUrl","index.do");
+			mav.setViewName("main/alert");
+			
+		}else {
+		
+			List<QuizVO> getMyQuizList = vocaService.getMyQuizByCategory(loginedUser,Integer.parseInt(category));
+		
+			mav.setViewName("main/courses");
+			mav.addObject("category",category);
+			mav.addObject("getMyQuizList", getMyQuizList);
+		}
 		return mav;
+		
 	}
 		
 	@Override

@@ -173,13 +173,13 @@
 					<c:forEach items="${ allQuizList }" var="quiz" varStatus="status">
 						<div class="swiper-slide">
 							<div class="quiz-container">
+							
 								<p>${quiz.quiz}</p>
 								<div class="userInputWrapper">
 									<input id="userAnswer${ status.index }" type="text"
 										placeholder="정답을 입력하세요" />
 									<button id="confirm${ status.index }">확인</button>
-									<button onclick=window.open(
-										"addToMyVoca.do?quizCode=${quiz.quiz_code }")>단어장에 추가</button>
+									<button onclick=window.open("addToMyVoca.do?quizCode=${quiz.quiz_code }")>단어장에 추가</button>
 								</div>
 								<button id="answer${status.index }" value="${ quiz.answer }"
 									style="display: none;"></button>

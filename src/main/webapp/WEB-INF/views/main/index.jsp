@@ -408,8 +408,8 @@
 									<div class="feature-box-sm radius bg-white">
 										<i class="fa fa-bank text-primary"></i>
 									</div>
-									<h4><a href="#">Best Industry Leaders</a></h4>
-									<a href="#" class="btn radius-xl">View More</a>
+									<h4><a href="study.do">학습하기</a></h4>
+									<a href="study.do" class="btn radius-xl">View More</a>
 								</div>
 							</div>
 						</div>
@@ -422,7 +422,7 @@
 									<div class="feature-box-sm radius bg-white">
 										<i class="fa fa-book text-primary"></i>
 									</div>
-									<h4><a href="#">Learn Courses Online</a></h4>
+									<h4><a href="#">나의 단어장</a></h4>
 									<a href="#" class="btn radius-xl">View More</a>
 								</div>
 							</div>
@@ -436,7 +436,7 @@
 									<div class="feature-box-sm radius bg-white">
 										<i class="fa fa-file-text-o text-primary"></i>
 									</div>
-									<h4><a href="#">Book Library & Store</a></h4>
+									<h4><a href="#">게시판</a></h4>
 									<a href="#" class="btn radius-xl">View More</a>
 								</div>
 							</div>
@@ -446,7 +446,7 @@
             </div>
             <!-- Our Services END -->
 			
-			<!-- Popular Courses -->
+			<%-- <!-- Popular Courses -->
 			 <div class="section-area section-sp2 popular-courses-bx">
                 <div class="container">
 					<div class="row">
@@ -573,7 +573,7 @@
 					</div>
 				</div>
 			</div> 
-			<!-- Popular Courses END -->
+			<!-- Popular Courses END --> --%>
 			
 			<!-- Form -->
 			<!-- <div class="section-area section-sp1 ovpr-dark bg-fix online-cours" style="background-image:url(${contextPath }/resources/main_assets/assets/images/background/bg1.jpg);">
