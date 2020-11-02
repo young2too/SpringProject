@@ -6,6 +6,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- SignUp Btn 비활성화 -->
+<style>
+.non-active{
+	pointer-events: none;
+	background-color : gray;
+}
+</style>
+
 <head>
 
 	<!-- META ============================================= -->
@@ -58,29 +66,22 @@
 	<div id="loading-icon-bx"></div>
 	<div class="account-form">
 		<div class="account-head" style="background-image:url(${contextPath }/resources/main_assets/assets/images/background/bg2.jpg);">
-			<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo-white-2.png" alt=""></a>
+			<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo-white-2.png" alt=""></a>
 		</div>
 		<div class="account-form-inner">
 			<div class="account-container">
 				<div class="heading-bx left">
 					<h2 class="title-head">Sign Up <span>Now</span></h2>
-					<p>Login Your Account <a href="login.jsp">Click here</a></p>
+					<p>Login Your Account <a href="login.do">Click here</a></p>
 				</div>	
-				<form class="contact-bx">
+				<form class="contact-bx" action="addmember.do">
 					<div class="row placeani">
 						<div class="col-lg-12">
 							<div class="form-group">
-								<div class="input-group">
-									<label>Your Name</label>
-									<input name="dzName" type="text" required="" class="form-control">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="form-group">
-								<div class="input-group">
-									<label>Your Email Address</label>
-									<input name="dzName" type="email" required="" class="form-control">
+								<div class="input-group"> 
+									<label>Your ID</label>
+									<input name="RgId" type="text" class="form-control" required="">
+									<div id="checkmsg"></div>
 								</div>
 							</div>
 						</div>
@@ -88,12 +89,29 @@
 							<div class="form-group">
 								<div class="input-group"> 
 									<label>Your Password</label>
-									<input name="dzEmail" type="password" class="form-control" required="">
+									<input name="RgPw" type="password" class="form-control" required="">
+								</div>
+							</div>
+						</div>	
+						<div class="col-lg-12">
+							<div class="form-group">
+								<div class="input-group">
+									<label>Your Name</label>
+									<input name="RgName" type="text" required="" class="form-control">
 								</div>
 							</div>
 						</div>
+						<div class="col-lg-12">
+							<div class="form-group">
+								<div class="input-group">
+									<label>Your Email Address</label>
+									<input name="RgEmail" type="email" required="" class="form-control">
+								</div>
+							</div>
+						</div>
+						
 						<div class="col-lg-12 m-b30">
-							<button name="submit" type="submit" value="Submit" class="btn button-md">Sign Up</button>
+							<button name="submit" type="submit" value="Submit" class="btn button-md" >Sign Up</button>
 						</div>
 						<div class="col-lg-12">
 							<h6>Sign Up with Social media</h6>
@@ -125,5 +143,43 @@
 <script src="${contextPath }/resources/main_assets/assets/js/contact.js"></script>
 <script src="${contextPath }/resources/main_assets/assets/vendors/switcher/switcher.js"></script>
 </body>
+
+<script type="text/javascript">
+var idFlag;
+var idRule = /^[a-zA-Z0-9]{2,12}$/;
+$(document).ready(function(){
+	$('input[name=RgId]').blur(function(){
+		var idCheck= $('input[name=RgId]').val();
+		if(idRule.test(idCheck)){
+			$.ajax({
+				url:'idcheck.do?idcheck='+idCheck,
+				type:'get',
+				success:function(data){
+					var color;
+					var msg;
+					if(data>0){
+						msg=' 이미 있는 아이디 입니다. ';
+						$("[name=submit]").addClass('non-active');
+						color='red';
+						idFlag=false;
+					}
+					else{
+						msg=' 회원가입 가능한 아이디 입니다. '
+						$("[name=submit]").removeClass('non-active');
+						color='blue'
+						idFlag='true'
+					}
+					$('#checkmsg').text(msg);
+					$('#checkmsg').css('color',color);
+				},
+				error:function(){
+					alert("실패")	;
+				}
+				
+			})
+		}
+	
+	})});
+</script>
 
 </html>

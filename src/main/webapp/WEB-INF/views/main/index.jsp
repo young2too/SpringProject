@@ -1,3 +1,4 @@
+<%@page import="com.spring.project.member.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -5,7 +6,7 @@
 <c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html lang="en">
-<!-- index -->
+
 <head>
 
 	<!-- META ============================================= -->
@@ -92,7 +93,7 @@
                 <div class="container clearfix">
 					<!-- Header Logo ==== -->
 					<div class="menu-logo">
-						<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""></a>
+						<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""></a>
 					</div>
 					<!-- Mobile Nav Button ==== -->
                     <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,12 +104,29 @@
 					<!-- Author Nav ==== -->
                      <div class="secondary-menu">
                         <div class="secondary-inner">
-                            <ul>
-							<li><a href="login.jsp">로그인</a>　</li>
-							<li><a href="register.jsp">회원가입</a></li>
-								<!-- Search Button ==== -->
-								<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
-							</ul>
+                        	<%
+								String LgId = (String)session.getAttribute("LgId");
+                        		MemberVO member = (MemberVO)session.getAttribute("member");
+                        	%>
+                        	<% if(LgId !=null) {
+                        		%> 
+                        		<ul>
+									<li><%=LgId%>님 환영합니다　　</li>
+									<li><a href="logout.do">로그아웃</a></li>
+									<!-- Search Button ==== -->
+									<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+								</ul>
+								<%
+							}else
+								{
+								%>
+                        	    <ul>
+									<li><a href="login.do">로그인</a>　</li>
+									<li><a href="register.do">회원가입</a></li>
+									<!-- Search Button ==== -->
+									<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+								</ul>
+							<%} %>
 						</div>
                     </div>
 					<!-- Search Box ==== -->
@@ -122,12 +140,12 @@
 					<!-- Navigation Menu ==== -->
                     <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
 						<div class="menu-logo">
-							<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
+							<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
 						</div>
                         <ul class="nav navbar-nav">	
 							<li class="active"><a href="javascript:;">Home<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="index.do">Home 1</a></li>
+									<li><a href="index.jsp">Home 1</a></li>
 									<li><a href="index-2.jsp">Home 2</a></li>
 								</ul>
 							</li>
@@ -136,13 +154,13 @@
 									<li><a href="javascript:;">학습하기<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
 											<li><a href="study.do">About 1</a></li>
-											<li><a href="about-2.jsp">About 2</a></li>
+											<li><a href="study.do">About 2</a></li>
 										</ul>
 									</li>
 									<li><a href="javascript:;">문제풀기<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
 											<li><a href="exercise.do">주관식</a></li>
-											<li><a href="events-details.jsp">Events Details</a></li>
+											<li><a href="#">Events Details</a></li>
 										</ul>
 									</li>
 									<li><a href="javascript:;">FAQ's<i class="fa fa-angle-right"></i></a>
@@ -997,7 +1015,7 @@
 				<div class="container">
 					<div class="d-flex align-items-stretch">
 						<div class="pt-logo mr-auto">
-							<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""/></a>
+							<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""/></a>
 						</div>
 						<div class="pt-social-link">
 							<ul class="list-inline m-a0">
@@ -1038,7 +1056,7 @@
 								<div class="widget footer_widget">
 									<h5 class="footer-title">Company</h5>
 									<ul>
-										<li><a href="index.do">Home</a></li>
+										<li><a href="index.jsp">Home</a></li>
 										<li><a href="study.do">About</a></li>
 										<li><a href="faq-1.jsp">FAQs</a></li>
 										<li><a href="contact-1.jsp">Contact</a></li>
@@ -1216,5 +1234,4 @@ jQuery(document).ready(function() {
 });	
 </script>
 </body>
-
 </html>
