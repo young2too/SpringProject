@@ -49,6 +49,19 @@ public class MemberDaoImpl implements MemberDao{
 		return vo;
 	}
 
+	@Override
+	public int idCheck(String RgId) throws DataAccessException {
+		// TODO Auto-generated method stub
+		int result = sqlSession.selectOne("mapper.member.idCheck", RgId);
+		return result;
+	}
+
+	/*
+	 * @Override public int pwCheck(String RgPw) throws DataAccessException { //
+	 * TODO Auto-generated method stub int result =
+	 * sqlSession.selectOne("mapper.member.pwCheck", RgPw); return result; }
+	 */
+
 
 	/*
 	 * @Override public int getMaxMemberCode() throws DataAccessException { // TODO

@@ -45,6 +45,16 @@ public class MemberServiceImpl implements MemberService{
 		return memberDAO.loginById(LgId, LgPw);
 	}
 
+	@Override
+	public int idCheck(String RgId) throws Exception {
+		// TODO Auto-generated method stub
+		return memberDAO.idCheck(RgId);
+	}
+
+	/*
+	 * @Override public int pwCheck(String RgPw) throws Exception { // TODO
+	 * Auto-generated method stub return memberDAO.pwCheck(RgPw); }
+	 */
 
 	/*
 	 * public int getMaxMemberCode() throws Exception{ return

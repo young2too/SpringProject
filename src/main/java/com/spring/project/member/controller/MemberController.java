@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -26,4 +28,7 @@ public interface MemberController {
 	// 로그인 구현
 	public ModelAndView logoutProc(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	// 로그아웃 구현
+	public int idCheck(@RequestParam("idcheck") String id) throws Exception;
+	// 아이디 중복체크 구현
+	/* public int pwCheck(@RequestParam("pwcheck") String pw) throws Exception; */
 }

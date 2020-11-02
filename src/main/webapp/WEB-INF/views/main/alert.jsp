@@ -12,7 +12,7 @@
 <body>
 <script>
 alert('${errorMsg}!');
-if('${destUrl}'!=null){
+if('${destUrl}'!=""){
 	location.href = '${destUrl}';
 }
 else{
