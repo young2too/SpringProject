@@ -29,6 +29,6 @@ public interface MemberController {
 	public ModelAndView logoutProc(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	// 로그아웃 구현
 	public int idCheck(@RequestParam("idcheck") String id) throws Exception;
-	
-	public int pwCheck(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	// 아이디 중복체크 구현
+	/* public int pwCheck(@RequestParam("pwcheck") String pw) throws Exception; */
 }

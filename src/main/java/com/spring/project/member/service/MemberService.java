@@ -19,6 +19,6 @@ public interface MemberService {
 	 public MemberVO loginProc(String LgId, String LgPw) throws Exception;
 	 // 로그인으로 회원정보 조회
 	 public int idCheck(String RgId) throws Exception;
-	 public int pwCheck(MemberVO memberVO) throws Exception;
+		/* public int pwCheck(String RgPw) throws Exception; */
 	/* public int getMaxMemberCode() throws Exception; */
 }
