@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.project.member.service.MemberService;
+import com.spring.project.member.vo.MemberVO;
 import com.spring.project.quiz.vo.QuizVO;
 import com.spring.project.voca.vocaService.VocaService;
 import com.spring.project.voca.vocaVO.VocaVO;
@@ -23,6 +26,7 @@ public class VocaControllerImpl implements VocaController{
 	private VocaService vocaService;
 	@Autowired
 	VocaVO vocaVO;
+	
 	
 	@Override
 	@RequestMapping(value= {"engineer.do","security.do","linux.do","english.do","korean-history.do"}, method = RequestMethod.GET)
@@ -47,8 +51,8 @@ public class VocaControllerImpl implements VocaController{
 			category="5";
 			break;
 		}
-		
-		String loginedUser = "test"; //loginedUser�� ���Ŀ� httpsession���� �����ؿ;� ��
+		HttpSession session = request.getSession();
+		String loginedUser = (String) session.getAttribute("LgId");
 		
 		List<QuizVO> getMyQuizList = vocaService.getMyQuizByCategory(loginedUser,Integer.parseInt(category));
 		ModelAndView mav = new ModelAndView();
@@ -61,7 +65,8 @@ public class VocaControllerImpl implements VocaController{
 	@Override
 	@RequestMapping(value="removeVoca.do" ,method = RequestMethod.GET)
 	public ModelAndView removeVoca(@RequestParam("code") String code, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String loginedUser = "test";//loginedUser�� ���Ŀ� httpsession���� �����ؿ;� ��
+		HttpSession session = request.getSession();
+		String loginedUser = (String) session.getAttribute("LgId");
 		vocaService.vocaRemove(loginedUser, code);
 		int idx = Integer.parseInt(code.substring(0, 1));
 		System.out.println(code);

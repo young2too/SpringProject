@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.spring.project.member.dao.MemberDao;
 import com.spring.project.quiz.dao.QuizDAO;
 import com.spring.project.quiz.vo.QuizVO;
 import com.spring.project.voca.vocaDAO.VocaDAO;
@@ -25,11 +26,11 @@ public class VocaServiceImpl implements VocaService{
 	
 	@Autowired VocaVO vocaVO;
 	 @Autowired private QuizDAO quizDAO;
+	 @Autowired private MemberDao memberDAO;
+	
 	 
-
 	@Override
 	public List getMyQuizByCategory(String loginedUser, int category) {
-		// TODO Auto-generated method stub
 		List<VocaVO> myQuizList = vocaDAO.getMyVocaByID(loginedUser);
 		String myQuizes = "";
 	
@@ -78,6 +79,12 @@ public class VocaServiceImpl implements VocaService{
 			vocaVO.setVoca_code(loginedUser);
 			return vocaDAO.makeNewUserVoca(vocaVO);
 		}
+	}
+
+
+	@Override
+	public List getMyID(String id) throws DataAccessException {
+		return null;
 	}
 
 }
