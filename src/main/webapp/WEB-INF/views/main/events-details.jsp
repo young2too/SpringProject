@@ -208,7 +208,7 @@
 								<div class="widget widget_getintuch">	
 									<ul>
 										<li><a href="short-answer.do" style="color:#fff;"><i class="ti-direction"></i>주관식</a></li>
-										<li><a href="#" style="color:#fff;"><i class="ti-direction"></i>객관식(미구현)</a></li>
+										<li><a href="select-answer.do" style="color:#fff;"><i class="ti-direction"></i>객관식</a></li>
 										<li><i class="ti-tag"></i>출처 : quizlet.com</li>
 									</ul>
 								</div>

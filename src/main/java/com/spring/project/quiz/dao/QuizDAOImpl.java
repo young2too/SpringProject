@@ -1,6 +1,8 @@
 package com.spring.project.quiz.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,6 +59,17 @@ public class QuizDAOImpl implements QuizDAO {
 		quizList = sqlSession.selectList("mapper.quiz.selectTwoRandomQuiz",category);
 		return quizList;
 		
+	}
+
+	@Override
+	public List<String> searchThreeRandomQuiz(String category, String quizCode) {
+		// TODO Auto-generated method stub
+		List<String> randomAnswerList = null;
+		Map<String,String> tempMap = new HashMap<String, String>();
+		tempMap.put("category", category);
+		tempMap.put("quizCode",quizCode);
+		randomAnswerList = sqlSession.selectList("mapper.quiz.selectThreeRandomAnswer",tempMap);
+		return randomAnswerList;
 	}
 
 }

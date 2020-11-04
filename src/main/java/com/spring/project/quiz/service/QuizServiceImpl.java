@@ -57,5 +57,12 @@ public class QuizServiceImpl implements QuizService{
 		return randomTwoList;
 	}
 
+	@Override
+	public List<String> selectWrongAnswer(String category, String quizCode) {
+		// TODO Auto-generated method stub
+		List<String> randomAnswerList = quizDAO.searchThreeRandomQuiz(category,quizCode);
+		return randomAnswerList;
+	}
+
 
 }

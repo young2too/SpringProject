@@ -10,12 +10,13 @@
 <head>
 <style>
 .correct-uncorrect-box {
-	width:100%;
+
+	width: 100%;
 	text-align: center;
-	display:inline-block;
+	display: inline-block;
 }
 
-.quiz-container {
+.question-content-wrapper {
 	text-align: center;
 	font-size: 20px;
 	margin-top: 1%;
@@ -27,18 +28,17 @@
 	font-size: 20px;
 }
 
-.userInputWrapper {
+.answer-selection-wrapper {
 	display: inline-block;
 }
 
-.userInputWrapper>input {
+.answer-selection-wrapper>input {
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
 }
-.userInputWrappeer>
 
-.userInputWrapper>button {
+.answer-selection-wrapper>button, #to-home{
 	font-size: 18px;
 	border-radius: 5px;
 	border: 1px solid skyblue;
@@ -47,10 +47,11 @@
 	padding: 5px;
 }
 
-.userInputWrapper>button:hover {
+.answer-selection-wrapper>button:hover, #to-home:hover{
 	color: white;
 	background-color: skyblue;
 }
+
 </style>
 
 
@@ -106,18 +107,7 @@
 	href="${contextPath }/resources/main_assets/assets/css/style.css">
 <link class="skin" rel="stylesheet" type="text/css"
 	href="${contextPath }/resources/main_assets/assets/css/color/color-1.css">
-<link rel="stylesheet" type="text/css"
-	href="${contextPath }/resources/main_assets/assets/css/cardflip.css">
 
-<!-- Swiper -->
-<link rel="stylesheet"
-	href="${contextPath }/resources/main_assets/assets/vendors/swiper/css/swiper.css">
-<link rel="stylesheet"
-	href="${contextPath }/resources/main_assets/assets/vendors/swiper/css/swiper.min.css">
-<script
-	src="${contextPath }/resources/main_assets/assets/vendors/swiper/js/swiper.js"></script>
-<script
-	src="${contextPath }/resources/main_assets/assets/vendors/swiper/js/swiper.min.js"></script>
 
 </head>
 <body id="bg">
@@ -163,36 +153,29 @@
 			</div>
 			<!-- Page Heading Box END ==== -->
 			<div class="correct-uncorrect-box">
-				정답 : <span id="correct">0</span>개　　　　
-				오답 : <span id="incorrect">0</span>개　　　
-				문제 수 : ${ howmanyQuiz }문
+					정답 : <span id="correct">0</span>개
+					오답 : <span id="incorrect">0</span>개
+					문제 수 : ${ howmanyQuiz }문
 			</div>
 			<!-- Page Content Box ==== -->
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					<c:forEach items="${ allQuizList }" var="quiz" varStatus="status">
-						<div class="swiper-slide">
-							<div class="quiz-container">
-							
-								<p>${quiz.quiz}</p>
-								<div class="userInputWrapper">
-									<input id="userAnswer${ status.index }" type="text"
-										placeholder="정답을 입력하세요" />
-									<button id="confirm${ status.index }">확인</button>
-									<button onclick=window.open("addToMyVoca.do?quizCode=${quiz.quiz_code }")>단어장에 추가</button>
-								</div>
-								<button id="answer${status.index }" value="${ quiz.answer }"
-									style="display: none;"></button>
-								<div class="complete-rate">${ status.index +1  } / ${ howmanyQuiz }
-								</div>
-							</div>
-						</div>
-					</c:forEach>
+			<div class="question-content-wrapper">
+				<div class="question-wrapper">
+					<div class="question">
+					</div>
+					<button id="to-home" onclick="window.open('index.do')" style="display:none;">메인으로</button>
 				</div>
-				<!-- Add Pagination -->
-				<div class="swiper-pagination"></div>
-				<!-- Add Arrows -->
-
+				<div class="answer-selection-wrapper">
+					<button name="selection1"></button>
+					<button name="selection2"></button>
+					<button name="selection3"></button>
+					<button name="selection4"></button>
+				</div>
+				<div class="complete-rate-wrapper">
+					<div class="complete-rate">
+					<!-- 진행도 -->
+					</div>
+				</div>
+			
 			</div>
 
 			<!-- Page Content Box END ==== -->
@@ -234,55 +217,104 @@
 		src="${contextPath }/resources/main_assets/assets/js/contact.js"></script>
 	<script
 		src="${contextPath }/resources/main_assets/assets/vendors/switcher/switcher.js"></script>
-
-	<script>
-		var swiper = new Swiper('.swiper-container', {
-			pagination : {
-				el : '.swiper-pagination',
-				type : 'progressbar',
-			},
-			navigation : {
-				nextEl : '.swiper-button-next',
-				prevEl : '.swiper-button-prev',
-			},
-		});
-	</script>
 	<script>
 	var correct = 0;
 	var incorrect = 0;
-		$(function(){
-			var maxQuiz = ${howmanyQuiz};
-			for(var i=0;i<maxQuiz;i++){
-				$('#confirm'+i).click((function(){
-					var index = (this.id).substring(7);
-					var userAnswer = $('#userAnswer'+index)[0].value;
-					var realAnswer = $('#answer'+index)[0].value;
-					
-					
-					if($(this).is('[class]')==false){
-						$(this).attr('class','clicked');
-						$('#userAnswer'+index).attr('class','incorrect');
-						$('#userAnswer'+index).attr('placeholder','이미 틀린 문제에요');
-						if(userAnswer == realAnswer){
-							correct++;
-						}else{
-							incorrect++;
-						}
+	var index = 0;
+	var count = 0;
+	var maxQuiz = ${howmanyQuiz};
+	var quizList = new Array();
+	var answerList = new Array();
+	var quizCodeList = new Array();
+	<c:forEach items="${allQuizList}" var="quiz">
+		quizList.push("${quiz.quiz}");
+		answerList.push("${quiz.answer}");
+		quizCodeList.push("${quiz.quiz_code}");
+	</c:forEach>
+	$(document).ready(function(){
+		setQuestion();
+		setSelection();
+		
+	});
+	function changeCorrects(correct, incorrect){
+		$("#correct").text(correct);
+		$("#incorrect").text(incorrect);
+	}
+	
+	function setQuestion(){
+		var question = quizList[index];
+		$(".question").html('<p>'+question+'</p>');
+	}
+	
+	function testEnd(){
+		$(".question").html('<p>정답 : '+correct+'개\n오답 : '+incorrect+'개 입니다</p>');
+		$("#to-home").css('display','');
+		$("button[name^='selection']").css('display','none');
+	}
+	
+	function setSelection(){
+		console.log(index);
+		if(index == maxQuiz){
+			testEnd();	
+			return;
+		}else{
+			var random1to4 =  Math.floor(Math.random() * 4);
+			$.ajax({
+				url:"selectWrongAnswer.do",
+				data:{quizCode : quizCodeList[index]},
+				type:"post",
+				success:function(data){
+					$("button[name^='selection']:eq("+random1to4+")").text(answerList[index]);
+					setValueOfSelections(random1to4, data);	
+					for(var i=0;i<4;i++){
+						$("button[name^='selection']:eq("+i+")").off("click");
+						$("button[name^='selection']:eq("+i+")").removeClass("correct");
+						$("button[name^='selection']:eq("+i+")").removeClass("incorrect");
+						$("button[name^='selection']:eq("+i+")").click({correctIndex:i,incorrectdatas : data}, function(event){
+							var userAnswer = this.innerHTML;
+							var realAnswer = answerList[index-1];
+							console.log("유저앤서 : "+userAnswer);
+							console.log("리얼앤서 : "+realAnswer);
+							if(userAnswer == realAnswer){
+								correct++;
+								$(this).text("정답입니다");
+								changeCorrects(correct,incorrect);
+								$("#correct").css('background','#C9FFC3');
+								setTimeout(() => {
+									$("#correct").css('background','')
+								}, 500);
+							}else{
+								incorrect++;
+								$(this).text("오답입니다");
+								changeCorrects(correct,incorrect);
+								$("#incorrect").css('background','#FF8383');
+								setTimeout(() => {
+									$("#incorrect").css('background','');
+								}, 500);
+							}
+							setQuestion();
+							setSelection();	
+						})
 					}
+					index++;
 					
-					
-					alert("당신의 답 : "+userAnswer+"\n"
-							+"정답 : "+realAnswer);
-					changeCorrects(correct, incorrect);
-				}))
-			}
-		});
-		function changeCorrects(correct, incorrect){
-			$("#correct").text(correct);
-			$("#incorrect").text(incorrect);
+				},
+				 error:function(request,status,error){
+				       alert("code = "+ request.status + " message = " + request.responseText + " error = " + error); // 실패 시 처리
+				},
+			})
 		}
-
-</script>
+		
+	}
+	function setValueOfSelections(correctIndex, incorrectdatas){
+		var incorrectIndex = 0;
+		for(var i=0;i<4;i++){
+			if(i==(correctIndex))continue;
+			$("button[name^='selection']:eq("+i+")").text(incorrectdatas[incorrectIndex]);
+			incorrectIndex++;
+		}
+	}
+	</script>
 
 </body>
 
