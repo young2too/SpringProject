@@ -103,8 +103,8 @@
 							<div class="widget courses-search-bx placeani">
 								<div class="form-group">
 									<div class="input-group">
-										<label>Search Courses</label>
-										<input name="dzName" type="text" required class="form-control">
+										 <label>단어찾기</label>
+                              <input type="text" id="vocaSearch" required class="form-control">	
 									</div>
 								</div>
 							</div>
@@ -124,19 +124,27 @@
 						
 						
 						<!-- 단어장 들어갈 공간 -->
-						<div style="text-align:center;width:75%">
-							<table border="1">
+						<div class="voca_place">
+                         
 							 	<c:forEach var="quizes" items="${getMyQuizList}" >   
-							   	<tr align="center">
-							      <td>${quizes.answer}</td>
-							      <td>${quizes.quiz}</td>
-							      <td><a href="${contextPath}/removeVoca.do?code=${quizes.quiz_code}">삭제</a></td>
-							    </tr>
-							    </c:forEach>
-							</table>
-						</div>
-						
-					</div>
+                         <div class="voca_table">
+                         	<div class="voca_table2">
+	                           <div class="voca_answer">${quizes.answer }</div>
+	                           <div class="line1"></div>
+	                           <div class="voca_quiz">${quizes.quiz }</div>
+	                           <div class="line2"></div>
+	                           <div class="voca_delete">
+	                           	<a href="/project/removeVoca.do?code=${quizes.quiz_code }"
+	                           	onclick="return confirm('삭제하시겠습니까?');">
+	                           		<i class="far fa-trash-alt" style="font-size:2rem;"></i>
+	                           	</a>
+	                           </div>
+	                         </div>
+                         </div>
+                          <br>
+                         </c:forEach>  
+                     </div>
+                  </div>
 				</div>
             </div>
         </div>
@@ -165,6 +173,20 @@
 <script src="${contextPath }/resources/main_assets/assets/js/functions.js"></script>
 <script src="${contextPath }/resources/main_assets/assets/js/contact.js"></script>
 <script src="${contextPath }/resources/main_assets/assets/vendors/switcher/switcher.js"></script>
+<script>
+jQuery.expr[':'].Contains = function(a,i,m){
+    return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase())>=0;
+};
+
+	$(document).ready(function(){
+		$("#vocaSearch").keyup(function(){
+			var k = $(this).val();
+			$(".voca_table").hide();
+			var temp = $(".voca_table > .voca_table2:contains('" + k + "')");
+            $(temp).parent().show();
+		});
+	});
+</script>
 </body>
 
 </html>
