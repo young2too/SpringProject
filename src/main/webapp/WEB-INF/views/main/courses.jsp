@@ -122,27 +122,25 @@
 							</div>
 						</div>
 						
-						
 						<!-- 단어장 들어갈 공간 -->
 						<div class="voca_place">
-                         
-							 	<c:forEach var="quizes" items="${getMyQuizList}" >   
                          <div class="voca_table">
+                         		<c:forEach var="quizes" items="${getMyQuizList}">
                          	<div class="voca_table2">
 	                           <div class="voca_answer">${quizes.answer }</div>
 	                           <div class="line1"></div>
 	                           <div class="voca_quiz">${quizes.quiz }</div>
 	                           <div class="line2"></div>
 	                           <div class="voca_delete">
-	                           	<a href="/project/removeVoca.do?code=${quizes.quiz_code }"
-	                           	onclick="return confirm('삭제하시겠습니까?');">
-	                           		<i class="far fa-trash-alt" style="font-size:2rem;"></i>
-	                           	</a>
+		                           	<a href="/project/removeVoca.do?code=${quizes.quiz_code }"
+		                           	onclick="return confirm('삭제하시겠습니까?');">
+		                           	<i class="far fa-trash-alt" style="font-size:2rem;"></i>
+		                           	</a>
 	                           </div>
-	                         </div>
-                         </div>
-                          <br>
-                         </c:forEach>  
+	                         </div> <!-- voca_table2 END -->
+	                         <br><br>
+	                           </c:forEach> 
+                         </div> <!--voca_table END  -->
                      </div>
                   </div>
 				</div>
@@ -156,7 +154,6 @@
   	<jsp:include page="footer.jsp"></jsp:include>
     <!-- Footer END ==== -->
     <button class="back-to-top fa fa-chevron-up" ></button>
-</div>
 <!-- External JavaScripts -->
 <script src="${contextPath }/resources/main_assets/assets/js/jquery.min.js"></script>
 <script src="${contextPath }/resources/main_assets/assets/vendors/bootstrap/js/popper.min.js"></script>
@@ -173,11 +170,8 @@
 <script src="${contextPath }/resources/main_assets/assets/js/functions.js"></script>
 <script src="${contextPath }/resources/main_assets/assets/js/contact.js"></script>
 <script src="${contextPath }/resources/main_assets/assets/vendors/switcher/switcher.js"></script>
+<script src="https://kit.fontawesome.com/c217175639.js" crossorigin="anonymous"></script>
 <script>
-jQuery.expr[':'].Contains = function(a,i,m){
-    return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase())>=0;
-};
-
 	$(document).ready(function(){
 		$("#vocaSearch").keyup(function(){
 			var k = $(this).val();
