@@ -798,7 +798,7 @@
 								<div class="widget footer_widget">
 									<h5 class="footer-title">Get In Touch</h5>
 									<ul>
-										<li><a href="../admin/index.jsp">Dashboard</a></li>
+										<li><a href="../admin/index.do">Dashboard</a></li>
 										<li><a href="blog-classic-grid.jsp">Blog</a></li>
 										<li><a href="portfolio.jsp">Portfolio</a></li>
 										<li><a href="exercise.do">Event</a></li>

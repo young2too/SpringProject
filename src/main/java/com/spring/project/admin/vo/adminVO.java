@@ -1,5 +1,8 @@
 package com.spring.project.admin.vo;
 
-public class adminVO {
+import org.springframework.stereotype.Component;
 
+@Component("adminVO")
+public class adminVO {
+	
 }

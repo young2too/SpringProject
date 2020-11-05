@@ -158,13 +158,13 @@
 							<!-- 관리자 대시보드 -->
 							<li class="nav-dashboard"><a href="javascript:;">관리자 메뉴 <i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="../admin/index.jsp">관리자 전용</a></li>
-									<li><a href="../admin/add-listing.jsp">Add Listing</a></li>
-									<li><a href="../admin/bookmark.jsp">Bookmark</a></li>
-									<li><a href="../admin/courses.jsp">Courses</a></li>
-									<li><a href="../admin/review.jsp">Review</a></li>
-									<li><a href="../admin/teacher-profile.jsp">Teacher Profile</a></li>
-									<li><a href="../admin/user-profile.jsp">User Profile</a></li>
+									<li><a href="admin/index.do">관리자 전용</a></li>
+									<li><a href="admin/add-listing.jsp">Add Listing</a></li>
+									<li><a href="admin/bookmark.jsp">Bookmark</a></li>
+									<li><a href="admin/courses.jsp">Courses</a></li>
+									<li><a href="admin/review.jsp">Review</a></li>
+									<li><a href="admin/teacher-profile.jsp">Teacher Profile</a></li>
+									<li><a href="admin/user-profile.jsp">User Profile</a></li>
 									<li><a href="javascript:;">Calendar<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
 											<li><a href="../admin/basic-calendar.jsp">Basic Calendar</a></li>
