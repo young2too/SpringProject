@@ -138,8 +138,7 @@
 		                           	</a>
 	                           </div>
 	                         </div> <!-- voca_table2 END -->
-	                         <br><br>
-	                           </c:forEach> 
+	                        	                           </c:forEach> 
                          </div> <!--voca_table END  -->
                      </div>
                   </div>
@@ -177,7 +176,7 @@
 			var k = $(this).val();
 			$(".voca_table2").hide();
 			var temp = $(".voca_table > .voca_table2:contains('" + k + "')");
-            $(temp).show();
+			$(temp).show();
 		});
 	});
 </script>
