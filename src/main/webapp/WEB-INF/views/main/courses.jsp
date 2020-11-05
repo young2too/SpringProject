@@ -175,9 +175,9 @@
 	$(document).ready(function(){
 		$("#vocaSearch").keyup(function(){
 			var k = $(this).val();
-			$(".voca_table").hide();
+			$(".voca_table2").hide();
 			var temp = $(".voca_table > .voca_table2:contains('" + k + "')");
-            $(temp).parent().show();
+            $(temp).show();
 		});
 	});
 </script>
