@@ -56,11 +56,12 @@ public class MemberDaoImpl implements MemberDao{
 		return result;
 	}
 
-	/*
-	 * @Override public int pwCheck(String RgPw) throws DataAccessException { //
-	 * TODO Auto-generated method stub int result =
-	 * sqlSession.selectOne("mapper.member.pwCheck", RgPw); return result; }
-	 */
+	@Override
+	public int pwCheck(MemberVO memberVO) throws DataAccessException {
+		// TODO Auto-generated method stub
+		int result = sqlSession.selectOne("mapper.member.pwCheck", memberVO);
+		return result;
+	}
 
 
 	/*

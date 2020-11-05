@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.spring.project.member.dao.MemberDao;
 import com.spring.project.quiz.dao.QuizDAO;
 import com.spring.project.quiz.vo.QuizVO;
 import com.spring.project.voca.vocaDAO.VocaDAO;
@@ -25,11 +26,11 @@ public class VocaServiceImpl implements VocaService{
 	
 	@Autowired VocaVO vocaVO;
 	 @Autowired private QuizDAO quizDAO;
+	 @Autowired private MemberDao memberDAO;
+	
 	 
-
 	@Override
 	public List getMyQuizByCategory(String loginedUser, int category) {
-		// TODO Auto-generated method stub
 		List<VocaVO> myQuizList = vocaDAO.getMyVocaByID(loginedUser);
 		String myQuizes = "";
 	
@@ -66,29 +67,24 @@ public class VocaServiceImpl implements VocaService{
 	public int addVoca(String loginedUser, String code) throws DataAccessException {
 		List<VocaVO> myQuizList = vocaDAO.getMyVocaByID(loginedUser);
 		String myQuizes = "";
-		
 		if(myQuizList.size()!= 0) {
-			//일단 여기에 중복체크도 해줘야 함
-			System.out.println("come here!");
 			myQuizes += myQuizList.get(0).getQuiz_code();
-			if(myQuizes.contains(code) == false) {
-				myQuizes = myQuizes+code+",";
-				vocaVO.setOwn_code(loginedUser);
-				vocaVO.setQuiz_code(myQuizes);
-				return vocaDAO.addVoca(vocaVO);
-			}else {
-				return 0;
-			}
-			
-		}else {
 			myQuizes = myQuizes+code+",";
 			vocaVO.setOwn_code(loginedUser);
 			vocaVO.setQuiz_code(myQuizes);
+			return vocaDAO.addVoca(vocaVO);
+		}else {
+			vocaVO.setOwn_code(loginedUser);
+			vocaVO.setQuiz_code(myQuizes);
 			vocaVO.setVoca_code(loginedUser);
-			vocaDAO.makeNewUserVoca(vocaVO);
-			return 1;//없는 유저이니 무조건 성공
-			
+			return vocaDAO.makeNewUserVoca(vocaVO);
 		}
+	}
+
+
+	@Override
+	public List getMyID(String id) throws DataAccessException {
+		return null;
 	}
 
 }

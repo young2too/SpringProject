@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.project.member.service.MemberService;
+import com.spring.project.member.vo.MemberVO;
 import com.spring.project.quiz.vo.QuizVO;
 import com.spring.project.voca.vocaService.VocaService;
 import com.spring.project.voca.vocaVO.VocaVO;
@@ -24,6 +26,7 @@ public class VocaControllerImpl implements VocaController{
 	private VocaService vocaService;
 	@Autowired
 	VocaVO vocaVO;
+	
 	
 	@Override
 	@RequestMapping(value= {"engineer.do","security.do","linux.do","english.do","korean-history.do"}, method = RequestMethod.GET)
@@ -48,25 +51,22 @@ public class VocaControllerImpl implements VocaController{
 			category="5";
 			break;
 		}
-		ModelAndView mav = new ModelAndView();
 		HttpSession session = request.getSession();
 		String loginedUser = (String) session.getAttribute("LgId");
-		
+		ModelAndView mav = new ModelAndView();
 		if(loginedUser == null) {
-			mav.addObject("errorMsg","로그인이 필요합니다!");
-			mav.addObject("destUrl","index.do");
+			mav.addObject("errorMsg", "로그인이 필요합니다!");
+			mav.addObject("destUrl","login.do");
 			mav.setViewName("main/alert");
-			
-		}else {
-		
-			List<QuizVO> getMyQuizList = vocaService.getMyQuizByCategory(loginedUser,Integer.parseInt(category));
-		
-			mav.setViewName("main/courses");
-			mav.addObject("category",category);
-			mav.addObject("getMyQuizList", getMyQuizList);
+			return mav;
 		}
-		return mav;
 		
+		List<QuizVO> getMyQuizList = vocaService.getMyQuizByCategory(loginedUser,Integer.parseInt(category));
+		
+		mav.setViewName("main/courses");
+		mav.addObject("category",category);
+		mav.addObject("getMyQuizList", getMyQuizList);
+		return mav;
 	}
 		
 	@Override
@@ -132,11 +132,4 @@ public class VocaControllerImpl implements VocaController{
 		}
 		return viewName;
 	}
-
-
-
-
-
-
-
 }

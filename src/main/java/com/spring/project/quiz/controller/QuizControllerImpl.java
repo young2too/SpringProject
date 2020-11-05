@@ -140,6 +140,7 @@ public class QuizControllerImpl implements QuizController {
 		return mav;
 	}
 
+
 	@RequestMapping(value = "select-answer.do", method = RequestMethod.GET)
 	public ModelAndView selectAnswerPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
@@ -156,7 +157,9 @@ public class QuizControllerImpl implements QuizController {
 	@RequestMapping(value = "addToMyVoca.do", method = RequestMethod.GET)
 	public ModelAndView addToMyVocaPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String quizCode = request.getParameter("quizCode");
+
 		HttpSession session = request.getSession();
+
 		ModelAndView mav = new ModelAndView();
 		String loginedUser = (String) session.getAttribute("LgId");
 
@@ -178,7 +181,9 @@ public class QuizControllerImpl implements QuizController {
 			mav.setViewName("main/alert");
 			return mav;
 		}
+
 	}
+
 
 	@ResponseBody
 	@RequestMapping(value = "selectWrongAnswer.do", method = RequestMethod.POST)

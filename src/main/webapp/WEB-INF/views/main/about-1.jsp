@@ -69,7 +69,6 @@
  
 	<div id="loading-icon-bx"></div>
 	<!-- Header Top ==== -->
-    <jsp:include page="header.jsp"></jsp:include>
     <!-- Header Top END ==== -->
     <!-- Inner Content Box ==== -->
     <div class="page-content">
@@ -88,22 +87,13 @@
                     	</c:choose>
 					</h1>
 				 </div>
-                       <c:choose>
-                          <c:when test="${category == 1 }">정보처리기사</c:when>
-                          <c:when test="${category == 2 }">정보보안기사</c:when>
-                          <c:when test="${category == 3 }">리눅스 마스터</c:when>
-                          <c:when test="${category == 4 }">영단어 마스터</c:when>
-                          <c:when test="${category == 5 }">한국사 능력시험</c:when>
-                       </c:choose>
-               </h1>
-             </div>
             </div>
         </div>
  
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
-					<li><a href="index.do">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li>문제집 선택</li>
 					<li>
 						<c:choose>
@@ -135,7 +125,6 @@
 						<p style="text-align:center;">
 						${quiz.answer }
 						<p>
-						<button onclick = window.open("addToMyVoca.do?quizCode=${quiz.quiz_code}")>단어장에 추가</button>
 					</div>
 				</div>
 			</div>
@@ -151,7 +140,6 @@
     </div>
     <!-- Inner Content Box END ==== -->
     <!-- Footer ==== -->
-    <jsp:include page="footer.jsp"></jsp:include>
     <!-- Footer END ==== -->
     <button class="back-to-top fa fa-chevron-up"></button>
 </div>

@@ -12,4 +12,6 @@ public interface VocaService {
 	
 	public int addVoca(String loginedUser, String code) throws DataAccessException;
 	
+	public List getMyID(String id) throws DataAccessException;
+	
 }

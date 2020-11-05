@@ -27,6 +27,37 @@ address { font-style: italic; }
 table { background-color: transparent; border-spacing: 10px; }
 table thead th { color: #333; }
 table td { padding: 15px 10px; }
+
+div.voca_place{
+	text-align:center;
+	width:75%;
+}
+div.voca_table{
+	padding-top: 5%;
+}
+div.voca_table2{
+	padding:1rem;
+	display:flex;
+	align-items: center;
+	box-shadow:3px 3px 2px 2px grey;
+}
+div.voca_answer{
+	text-align:left;
+	width:30%;
+}
+div.voca_quiz{
+	width:50%;
+}
+div.voca_delete{
+	width:20%;
+}
+div.line1{
+	
+}
+div.line2{
+	
+}
+
 p, address, pre, hr, ul, ol, dl, dd, table { margin-bottom: 24px; }
 ::selection { color: #000; background:#dbdbdb; }
 ::-moz-selection { color:#000; background:#dbdbdb; }

@@ -51,10 +51,12 @@ public class MemberServiceImpl implements MemberService{
 		return memberDAO.idCheck(RgId);
 	}
 
-	/*
-	 * @Override public int pwCheck(String RgPw) throws Exception { // TODO
-	 * Auto-generated method stub return memberDAO.pwCheck(RgPw); }
-	 */
+	@Override
+	public int pwCheck(MemberVO memberVO) throws Exception {
+		// TODO Auto-generated method stub
+		return memberDAO.pwCheck(memberVO);
+	}
+
 
 	/*
 	 * public int getMaxMemberCode() throws Exception{ return

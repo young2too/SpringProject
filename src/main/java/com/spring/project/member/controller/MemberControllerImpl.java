@@ -73,8 +73,7 @@ public class MemberControllerImpl implements MemberController {
 	}
 
 	@Override
-	@RequestMapping(value = "loginProc.do", method = { RequestMethod.POST
-			})
+	@RequestMapping(value = "loginProc.do", method = { RequestMethod.POST, RequestMethod.GET })
 	public ModelAndView loginProc(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		ModelAndView mav = new ModelAndView();
@@ -125,16 +124,12 @@ public class MemberControllerImpl implements MemberController {
 		return result;
 	}
 
-	/*
-	 * @Override
-	 * 
-	 * @ResponseBody
-	 * 
-	 * @RequestMapping(value = "pwcheck.do", method = {RequestMethod.POST,
-	 * RequestMethod.GET}) public int pwCheck(@RequestParam("pwcheck") String RgPw)
-	 * throws Exception { // TODO Auto-generated method stub int result =
-	 * memberService.pwCheck(RgPw); return result; }
-	 */
+	@Override
+	public int pwCheck(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	/*
 	 * @Override public ModelAndView logout(HttpServletRequest request,
 	 * HttpServletResponse response) throws Exception { // TODO Auto-generated

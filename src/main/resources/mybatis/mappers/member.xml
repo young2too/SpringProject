@@ -62,13 +62,13 @@
 	]]>
   </select>  
   
-<!-- pw 체크 
-  <select id="pwCheck"  resultType="int"   parameterType="String" >
+  <!-- pw 체크 -->
+  <select id="pwCheck"  resultType="int"   parameterType="memberVO" >
 	<![CDATA[
-		select count(pw) from member_table	
-		where pw=#{RgPw}		
+		select count(*) from member_table	
+		where id=#{id}		
 	]]>
-  </select> -->
+  </select>
   <!-- 회원코드 최댓값 구하기 -->
 	<!-- <select id="getMaxMemberCode"  resultType="_int" >
 	<![CDATA[

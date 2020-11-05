@@ -6,17 +6,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<meta name="robots" content="" />
+<title>EduChamp : Education HTML Template </title>
 </head>
-<body>
-	<footer>
+<!-- Footer ==== -->
+    <footer>
         <div class="footer-top">
 			<div class="pt-exebar">
 				<div class="container">
 					<div class="d-flex align-items-stretch">
 						<div class="pt-logo mr-auto">
-							<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""/></a>
+							<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""/></a>
 						</div>
 						<div class="pt-social-link">
 							<ul class="list-inline m-a0">
@@ -27,7 +31,7 @@
 							</ul>
 						</div>
 						<div class="pt-btn-join">
-							<a href="#" class="btn ">Join Now</a>
+							<a href="#" class="btn ">지금 가입하세요</a>
 						</div>
 					</div>
 				</div>
@@ -36,13 +40,13 @@
                 <div class="row">
 					<div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
                         <div class="widget">
-                            <h5 class="footer-title">Sign Up For A Newsletter</h5>
-							<p class="text-capitalize m-b20">Weekly Breaking news analysis and cutting edge advices on job searching.</p>
+                            <h5 class="footer-title">뉴스 레터 신청</h5>
+							<p class="text-capitalize m-b20">주간 속보 분석 및 구직에 대한 조언.</p>
                             <div class="subscribe-form m-b20">
 								<form class="subscription-form" action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
 									<div class="ajax-message"></div>
 									<div class="input-group">
-										<input name="email" required="required"  class="form-control" placeholder="Your Email Address" type="email">
+										<input name="email" required="required"  class="form-control" placeholder="귀하의 이메일 주소" type="email">
 										<span class="input-group-btn">
 											<button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
 										</span> 
@@ -55,34 +59,34 @@
 						<div class="row">
 							<div class="col-4 col-lg-4 col-md-4 col-sm-4">
 								<div class="widget footer_widget">
-									<h5 class="footer-title">Company</h5>
+									<h5 class="footer-title">회사</h5>
 									<ul>
-										<li><a href="index.do">Home</a></li>
-										<li><a href="study.do">About</a></li>
-										<li><a href="faq-1.jsp">FAQs</a></li>
-										<li><a href="contact-1.jsp">Contact</a></li>
+										<li><a href="index.jsp">홈</a></li>
+										<li><a href="about-1.jsp">소개</a></li>
+										<li><a href="faq-1.jsp">자주 묻는 질문</a></li>
+										<li><a href="contact-1.jsp">연락처</a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="col-4 col-lg-4 col-md-4 col-sm-4">
 								<div class="widget footer_widget">
-									<h5 class="footer-title">Get In Touch</h5>
+									<h5 class="footer-title">연락하기</h5>
 									<ul>
-										<li><a href="../admin/index.jsp">Dashboard</a></li>
-										<li><a href="blog-classic-grid.jsp">Blog</a></li>
-										<li><a href="portfolio.jsp">Portfolio</a></li>
-										<li><a href="exercise.do">Event</a></li>
+										<li><a href="../admin/index.jsp">대시보드</a></li>
+										<li><a href="blog-classic-grid.jsp">블로그</a></li>
+										<li><a href="portfolio.jsp">포트폴리오</a></li>
+										<li><a href="event.jsp">이벤트</a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="col-4 col-lg-4 col-md-4 col-sm-4">
 								<div class="widget footer_widget">
-									<h5 class="footer-title">Courses</h5>
+									<h5 class="footer-title">과정</h5>
 									<ul>
-										<li><a href="courses.jsp">Courses</a></li>
-										<li><a href="courses-details.jsp">Details</a></li>
-										<li><a href="membership.jsp">Membership</a></li>
-										<li><a href="profile.jsp">Profile</a></li>
+										<li><a href="courses.jsp">과정</a></li>
+										<li><a href="courses-details.jsp">세부</a></li>
+										<li><a href="membership.jsp">멤버십</a></li>
+										<li><a href="profile.jsp">프로필</a></li>
 									</ul>
 								</div>
 							</div>
@@ -90,7 +94,7 @@
                     </div>
 					<div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
                         <div class="widget widget_gallery gallery-grid-4">
-                            <h5 class="footer-title">Our Gallery</h5>
+                            <h5 class="footer-title">갤러리</h5>
                             <ul class="magnific-image">
 								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" alt=""></a></li>
 								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" alt=""></a></li>
@@ -114,5 +118,5 @@
             </div>
         </div>  -->
     </footer>
-</body>
+    <!-- Footer END ==== -->
 </html>

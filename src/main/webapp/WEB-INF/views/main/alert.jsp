@@ -18,7 +18,6 @@ if('${destUrl}'!=""){
 else{
 	self.close();	
 }
-
 </script>
 </body>
 </html>

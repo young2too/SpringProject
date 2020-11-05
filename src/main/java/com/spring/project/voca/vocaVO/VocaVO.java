@@ -2,6 +2,8 @@ package com.spring.project.voca.vocaVO;
 
 import org.springframework.stereotype.Component;
 
+import com.spring.project.member.vo.MemberVO;
+
 @Component("vocaVO")
 public class VocaVO {
 	private String own_code;
@@ -13,7 +15,7 @@ public class VocaVO {
 	}
 	
 	public VocaVO(String own_code, String quiz_code, String voca_code) {
-		this.own_code = own_code;
+		this.own_code =  own_code;
 		this.quiz_code = quiz_code;
 		this.voca_code = voca_code;
 	}
