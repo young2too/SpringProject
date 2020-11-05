@@ -162,6 +162,7 @@ public class QuizControllerImpl implements QuizController {
 
 		ModelAndView mav = new ModelAndView();
 		String loginedUser = (String) session.getAttribute("LgId");
+		System.out.println(loginedUser);
 
 		if (loginedUser == null) {
 			mav.addObject("errorMsg", "로그인이 필요합니다!");

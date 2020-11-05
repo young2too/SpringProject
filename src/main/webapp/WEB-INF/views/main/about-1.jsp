@@ -69,6 +69,7 @@
  
 	<div id="loading-icon-bx"></div>
 	<!-- Header Top ==== -->
+	<jsp:include page="header.jsp"></jsp:include>
     <!-- Header Top END ==== -->
     <!-- Inner Content Box ==== -->
     <div class="page-content">
@@ -125,6 +126,7 @@
 						<p style="text-align:center;">
 						${quiz.answer }
 						<p>
+						<button onclick = window.open("addToMyVoca.do?quizCode=${quiz.quiz_code}")>단어장에 추가</button>
 					</div>
 				</div>
 			</div>
@@ -140,6 +142,7 @@
     </div>
     <!-- Inner Content Box END ==== -->
     <!-- Footer ==== -->
+    <jsp:include page="footer.jsp"></jsp:include>
     <!-- Footer END ==== -->
     <button class="back-to-top fa fa-chevron-up"></button>
 </div>
