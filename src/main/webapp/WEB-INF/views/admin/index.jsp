@@ -322,7 +322,6 @@
 <script src="${contextPath }/resources/admin/assets/vendors/calendar/moment.min.js"></script>
 <script src="${contextPath }/resources/admin/assets/vendors/calendar/fullcalendar.js"></script>
 <script src="${contextPath }/resources/admin/assets/vendors/switcher/switcher.js"></script>
-
 </body>
 
 <!-- Mirrored from educhamp.themetrades.com/demo/admin/index.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:09:05 GMT -->

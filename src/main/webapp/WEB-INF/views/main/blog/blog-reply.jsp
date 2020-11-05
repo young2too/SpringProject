@@ -1,15 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
-
+<%
+  request.setCharacterEncoding("UTF-8");
+%> 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
- 
 	<!-- META ============================================= -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,95 +55,115 @@
 	<!-- STYLESHEETS ============================================= -->
 	<link rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/css/style.css">
 	<link class="skin" rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/css/color/color-1.css">
-	<link rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/css/cardflip.css">
-	
-	<!-- Swiper -->
-	<link rel="stylesheet" href="${contextPath }/resources/main_assets/assets/vendors/swiper/css/swiper.css">
-	<link rel="stylesheet" href="${contextPath }/resources/main_assets/assets/vendors/swiper/css/swiper.min.css">
-	<script src="${contextPath }/resources/main_assets/assets/vendors/swiper/js/swiper.js"></script>
-	<script src="${contextPath }/resources/main_assets/assets/vendors/swiper/js/swiper.min.js"></script>
+	<title>글추가창</title>
+	<script type="text/javascript">
 
+	 
 	
-
+	  function backToList(obj){
+	    obj.action="${contextPath}/listQaes.do";
+	    obj.submit();
+	  }
+	   
+	</script>
 </head>
 <body id="bg">
 <div class="page-wraper">
- 
-	<div id="loading-icon-bx"></div>
+<div id="loading-icon-bx"></div>
+
 	<!-- Header Top ==== -->
-    <!-- Header Top END ==== -->
-    <!-- Inner Content Box ==== -->
-    <div class="page-content">
-        <!-- Page Heading Box ==== -->
-        <div class="page-banner ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/banner/banner3.jpg);">
+    <jsp:include page="../header.jsp"></jsp:include>
+    <!-- header END ==== -->
+    <!-- Content -->
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <div class="page-banner ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/banner/banner2.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
-                    <h1 class="text-white">
- 
-                    	<c:choose>
-                    		<c:when test="${category == 1 }">정보처리기사</c:when>
-                    		<c:when test="${category == 2 }">정보보안기사</c:when>
-                    		<c:when test="${category == 3 }">리눅스 마스터</c:when>
-                    		<c:when test="${category == 4 }">영단어 마스터</c:when>
-                    		<c:when test="${category == 5 }">한국사 능력시험</c:when>
-                    	</c:choose>
-					</h1>
-				 </div>
+                    <h1 class="text-white">QnA 작성</h1>
+				</div>
             </div>
         </div>
- 
+		<!-- Breadcrumb row -->
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
-					<li><a href="/">Home</a></li>
-					<li>문제집 선택</li>
-					<li>
-						<c:choose>
-                    		<c:when test="${category == 1 }">정보처리기사</c:when>
-                    		<c:when test="${category == 2 }">정보보안기사</c:when>
-                    		<c:when test="${category == 3 }">리눅스 마스터</c:when>
-                    		<c:when test="${category == 4 }">영단어 마스터</c:when>
-                    		<c:when test="${category == 5 }">한국사 능력시험</c:when>
-                    	</c:choose>
-					</li>
+					<li><a href="#">Home</a></li>
+					<li>QnA 작성</li>
 				</ul>
 			</div>
 		</div>
-		<!-- Page Heading Box END ==== -->
-		<!-- Page Content Box ==== -->
-		<div class="swiper-container">
-		<!-- Additional required wrapper -->
-		<div class="swiper-wrapper">
-		<!-- Slides -->
-		<c:forEach items="${allQuizList}" var="quiz">
-			<div class="swiper-slide">
-				<div class="thecard">
-					<div class="thefront">
-						<p style="text-align:center;">
-						${quiz.quiz }
-						</p>
-					</div>
-					<div class="theback">
-						<p style="text-align:center;">
-						${quiz.answer }
-						<p>
+		<!-- Breadcrumb row END -->
+        <div class="content-block">
+			<div class="section-area section-sp1">
+				<div class="container">
+					<div class="row">
+						<!-- Left part start -->
+						<div class="col-lg-12 col-xl-12">
+							<!-- blog start -->
+							  <form name="frmReply" method="post"  action="${contextPath}/addReply.do"  >
+							  <!-- tiles안써서 다름 -->
+								<div class="info-bx">
+									 <table border="0" align="center">
+									 <input type="hidden" name="qaNUM" value="${qaNUM }">
+									 
+
+									 	  <tr>
+									 	  			<!-- <td align="right"> QnA 유형 </td>
+									 	 			<td >
+									 	 				<span style="float: left;width:500px;">
+													        <select id="question" name="qaHead" size="1" >
+													            <option value="">게시글 유형을 선택하세요</option>
+													            <option value="프로그램 오류">[프로그램 오류]</option>
+													            <option value="문제 오류">[문제 오류]</option>
+													            <option value="오답">[오답]</option>
+													            <option value="해설">[해설]</option>
+													            <option value="기타/문의">[기타/문의]</option>
+													        </select> 
+													    </span>
+								 					</td>  -->
+									 	 
+									      <tr>
+														<td align="right"> <i class="fa fa-user"></i> 작성자</td>
+														<td colspan="2" align="left"><input type="text" size="20" maxlength="100" value="hw" readonly/></td>
+														
+												</tr>
+										     <tr>
+												   <td align="right">글제목 </td>
+												   <td colspan="2"><input type="text" size="100"  maxlength="500" name="qaTitle" /></td>
+											 </tr>
+										 		<tr>
+													<td align="right" valign="top"><br>글내용 </td>
+													<td colspan=2><textarea name="qaContent" rows="10" cols="100" maxlength="4000"></textarea> </td>
+									     </tr>
+									
+									</table>
+										      
+										      
+										<div align="center" class="col-lg-12">
+											<input type="submit" value="답글쓰기" class="btn button-md" >
+											<input type="button" value="취소" class="btn button-md" onClick="backToList(this.form)">
+										</div>
+										     
+									    
+   									 
+								</div>
+								</form>
+								<hr>
+							</div>
+							
 					</div>
 				</div>
 			</div>
-		</c:forEach>
-		</div>
-		<!-- If we need navigation buttons -->
-		<div class="swiper-button-prev"></div> 
-		<div class="swiper-button-next"></div>
-		</div>
-
-		<!-- Page Content Box END ==== -->
-
+        </div>
     </div>
-    <!-- Inner Content Box END ==== -->
-    <!-- Footer ==== -->
+    
+    <!-- Content END-->
+<!-- Footer ==== -->
+   <jsp:include page="../footer.jsp"></jsp:include>
     <!-- Footer END ==== -->
-    <button class="back-to-top fa fa-chevron-up"></button>
+    <!-- scroll top button -->
+    <button class="back-to-top fa fa-chevron-up" ></button>
 </div>
 <!-- External JavaScripts -->
 <script src="${contextPath }/resources/main_assets/assets/js/jquery.min.js"></script>
@@ -159,15 +181,6 @@
 <script src="${contextPath }/resources/main_assets/assets/js/functions.js"></script>
 <script src="${contextPath }/resources/main_assets/assets/js/contact.js"></script>
 <script src="${contextPath }/resources/main_assets/assets/vendors/switcher/switcher.js"></script>
-<script>
-    var swiper = new Swiper('.swiper-container', {
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  </script>
 </body>
-
 
 </html>

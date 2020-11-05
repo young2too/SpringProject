@@ -12,5 +12,6 @@ public interface QuizController {
 	public ModelAndView exercisePage(HttpServletRequest request, HttpServletResponse response)throws Exception;
 	public ModelAndView selectCategoryPage(HttpServletRequest request, HttpServletResponse response)throws Exception;
 	public ModelAndView studyPage(HttpServletRequest request, HttpServletResponse response)throws Exception;
+
 	
 }

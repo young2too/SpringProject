@@ -59,6 +59,11 @@ div.line2{
 	
 }
 
+
+table { background-color: transparent;  width: 100%; }
+table thead th { color: #333; }
+table td { padding: 15px 10px; }
+
 p, address, pre, hr, ul, ol, dl, dd, table { margin-bottom: 24px; }
 ::selection { color: #000; background:#dbdbdb; }
 ::-moz-selection { color:#000; background:#dbdbdb; }
