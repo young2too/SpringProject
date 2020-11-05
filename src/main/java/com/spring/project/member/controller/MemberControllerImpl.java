@@ -96,8 +96,9 @@ public class MemberControllerImpl implements MemberController {
 			}
 			System.out.println(session.getAttribute("member"));
 		} else {
-			mav.addObject("result", "loginFailed");
-			mav.setViewName("main/login");
+			mav.addObject("errorMsg","로그인 실패");
+			mav.addObject("destUrl","login.do");
+			mav.setViewName("main/alert");
 		}
 
 		return mav;

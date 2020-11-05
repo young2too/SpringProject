@@ -146,13 +146,13 @@
 									</li>
 								</ul>
 							</li>
-							<li><a href="javascript:;">Blog <i class="fa fa-chevron-down"></i></a>
+							<li><a href="javascript:;">게시판 <i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="listQaes.do">Blog Classic</a></li>
+									<li><a href="listQaes.do">자유 게시판</a></li><!-- 
 									<li><a href="blog-classic-sidebar.jsp">Blog Classic Sidebar</a></li>
 									<li><a href="blog-list-sidebar.jsp">QnA게시판</a></li>
 									<li><a href="blog-standard-sidebar.jsp">Blog Standard Sidebar</a></li>
-									<li><a href="blog-details.jsp">Blog Details</a></li>
+									<li><a href="blog-details.jsp">Blog Details</a></li> -->
 								</ul>
 							</li>
 							<!-- 관리자 대시보드 -->

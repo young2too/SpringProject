@@ -92,7 +92,16 @@
 									<input name="RgPw" type="password" class="form-control" required="">
 								</div>
 							</div>
-						</div>	
+						</div>
+						<div class="col-lg-12">
+							<div class="form-group">
+								<div class="input-group"> 
+									<label>Your Password Check</label>
+									<input name="RgPwOk" type="password" class="form-control" required="">
+									<div id="checkmsgpw"></div>								
+								</div>
+							</div>
+						</div>		
 						<div class="col-lg-12">
 							<div class="form-group">
 								<div class="input-group">
@@ -145,9 +154,13 @@
 </body>
 
 <script type="text/javascript">
-var idFlag;
 var idRule = /^[a-zA-Z0-9]{2,12}$/;
+var pwRule = /^[a-zA-Z0-9]{2,12}$/;
 $(document).ready(function(){
+	idCheck();
+	pwCheck();
+});
+function idCheck (){
 	$('input[name=RgId]').blur(function(){
 		var idCheck= $('input[name=RgId]').val();
 		if(idRule.test(idCheck)){
@@ -158,28 +171,52 @@ $(document).ready(function(){
 					var color;
 					var msg;
 					if(data>0){
+						console.log("아디일치노노")
 						msg=' 이미 있는 아이디 입니다. ';
 						$("[name=submit]").addClass('non-active');
 						color='red';
-						idFlag=false;
 					}
 					else{
+						console.log("아디일치")
 						msg=' 회원가입 가능한 아이디 입니다. '
 						$("[name=submit]").removeClass('non-active');
-						color='blue'
-						idFlag='true'
+						color='blue';
 					}
 					$('#checkmsg').text(msg);
 					$('#checkmsg').css('color',color);
 				},
 				error:function(){
-					alert("실패")	;
+					alert("아이디 중복 실패")	;
 				}
 				
 			})
 		}
 	
-	})});
+	})
+}
+ 
+function pwCheck(){
+	$('input[name=RgPwOk]').blur(function(){
+	var pw= $('input[name=RgPw]').val();
+	var pwOk =$('input[name=RgPwOk]').val();
+	var color;
+	var msg;
+	if(pw!=pwOk){
+		console.log("비번일치노노")
+		msg='비밀번호가 일치하지않습니다';
+		$("[name=submit]").addClass('non-active');
+		color='red';
+	}
+	else{
+		console.log("비번일치")
+		msg='사용하 실 수 있는 비밀번호 입니다.';
+		$("[name=submit]").removeClass('non-active');
+		color='blue';	
+	}
+	$('#checkmsgpw').text(msg);
+	$('#checkmsgpw').css('color',color);	
+	})
+}
 </script>
 
 </html>
