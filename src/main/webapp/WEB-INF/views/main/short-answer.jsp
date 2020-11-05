@@ -573,7 +573,13 @@
 							+"정답 : "+realAnswer);
 				}))
 			}
-		})
+
+		});
+		function changeCorrects(correct, incorrect){
+			$("#correct").text(correct);
+			$("#incorrect").text(incorrect);
+		}
+
 </script>
 
 </body>

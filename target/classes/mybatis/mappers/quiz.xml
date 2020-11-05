@@ -41,4 +41,14 @@
       ]]>
 	</select>
 	
+	<select id="selectThreeRandomAnswer" resultType="string" parameterType="java.util.Map">
+      <![CDATA[
+         select * from (
+         	select answer from quiz_table
+         	where category=#{category} and quiz_code != #{quizCode}
+         	order by DBMS_random.random
+         )where rownum<4
+      ]]>
+	</select>
+	
 </mapper>

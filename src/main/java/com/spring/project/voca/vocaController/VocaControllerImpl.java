@@ -53,9 +53,16 @@ public class VocaControllerImpl implements VocaController{
 		}
 		HttpSession session = request.getSession();
 		String loginedUser = (String) session.getAttribute("LgId");
+		ModelAndView mav = new ModelAndView();
+		if(loginedUser == null) {
+			mav.addObject("errorMsg", "로그인이 필요합니다!");
+			mav.addObject("destUrl","login.do");
+			mav.setViewName("main/alert");
+			return mav;
+		}
 		
 		List<QuizVO> getMyQuizList = vocaService.getMyQuizByCategory(loginedUser,Integer.parseInt(category));
-		ModelAndView mav = new ModelAndView();
+		
 		mav.setViewName("main/courses");
 		mav.addObject("category",category);
 		mav.addObject("getMyQuizList", getMyQuizList);
@@ -125,11 +132,4 @@ public class VocaControllerImpl implements VocaController{
 		}
 		return viewName;
 	}
-
-
-
-
-
-
-
 }

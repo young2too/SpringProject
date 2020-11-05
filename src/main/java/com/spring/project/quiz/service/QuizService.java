@@ -19,4 +19,5 @@ public interface QuizService {
 	public int addToMyVoca(String quizCode, int own_code) throws DataAccessException;
 	//문제에 붙은 퀴즈코드를 이용하여 내 단어장에 추가함(파라미터로 퀴즈코드와 멤버코드를 보냄)
 	public List<QuizVO> selectTwoRandomQuiz(int category);
+	public List<String> selectWrongAnswer(String category, String quizCode);
 }
