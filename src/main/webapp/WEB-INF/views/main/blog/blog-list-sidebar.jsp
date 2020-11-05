@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 	<!-- META ============================================= -->
@@ -51,8 +54,21 @@
 	<!-- STYLESHEETS ============================================= -->
 	<link rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/css/style.css">
 	<link class="skin" rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/css/color/color-1.css">
-	
+	<title>게시판 목록창</title>
+	<style type="text/css">
+			li {list-style: none; float: left; padding: 6px;}
+		</style>
 </head>
+<script>
+	function fn_qaForm(isLogOn,blog-details,loginForm){
+		if(isLogOn != '' && isLogOn !='false'){
+			location.href=blog-details;
+		}else{
+			alert("로그인 후 글쓰기가 가능합니다.")
+			location.href=loginForm+'?action=/listQaes.do';
+		}
+	}
+</script>
 <body id="bg">
 <div class="page-wraper">
 <div id="loading-icon-bx"></div>
@@ -60,7 +76,7 @@
 	<!-- Header Top ==== -->
     <header class="header rs-nav">
 		<div class="top-bar">
-			<div class="container">
+			<div class="container">w
 				<div class="row d-flex justify-content-between">
 					<div class="topbar-left">
 						<ul>
@@ -229,7 +245,7 @@
         <div class="page-banner ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/banner/banner2.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
-                    <h1 class="text-white">Blog Details</h1>
+                    <h1 class="text-white">QnA</h1>
 				</div>
             </div>
         </div>
@@ -238,289 +254,118 @@
 			<div class="container">
 				<ul class="list-inline">
 					<li><a href="#">Home</a></li>
-					<li>Blog Details</li>
+					<li>QnA</li>
 				</ul>
+				&nbsp
 			</div>
 		</div>
 		<!-- Breadcrumb row END -->
-        <div class="content-block">
+        <!-- contact area -->
+    <div class="content-block">
 			<div class="section-area section-sp1">
 				<div class="container">
 					<div class="row">
 						<!-- Left part start -->
-						<div class="col-lg-8 col-xl-8">
-							<!-- blog start -->
-							<div class="recent-news blog-lg">
-								<div class="action-box blog-lg">
-									<img src="${contextPath }/resources/main_assets/assets/images/blog/default/thum1.jpg" alt="">
-								</div>
-								<div class="info-bx">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>May 14 2019</a></li>
-										<li><a href="#"><i class="fa fa-comments-o"></i>10 Comment</a></li>
-									</ul>
-									<h5 class="post-title"><a href="#">Why every startup should adopt Amazon’s Hot Air. Why every startup should adopt Amazon’s Hot Air.</a></h5>
-									<p>It is used every day in all types of businesses; Email newsletters, websites, print and online advertisements, presentations, social media updates, flyers, and brochures; the list goes on and on</p>
-									<p>David Ogilvy, the advertising legend once said that, On average, five times as many people read the headline as read the body copy. When you have written your headline, you have spent eighty cents out of your dollar." As Ogilvy points out, your headline is the first (and sometimes the only) thing that your audience will read.</p>
-									<p>You just need to enter the keyword and select the keyword type to generate a list of 6 title ideas and suggestions. If you’re not satisfied with the results, you can always hit the refresh button to generate a new list of unique titles.</p>
-									<p>Once you’ve gotten all the titles and have chosen the best one, the next thing you need to do is to craft a magnetic content. Great content marketers excel at creating content that their readers crave, but even the best struggle with delivering content to the right person at the right time.</p>
-									<div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
-									<div class="widget_tag_cloud">
-										<h6>TAGS</h6>
-										<div class="tagcloud"> 
-											<a href="#">Design</a> 
-											<a href="#">User interface</a> 
-											<a href="#">SEO</a> 
-											<a href="#">WordPress</a> 
-											<a href="#">Development</a> 
-											<a href="#">Joomla</a> 
-											<a href="#">Design</a> 
-											<a href="#">User interface</a> 
-											<a href="#">SEO</a> 
-											<a href="#">WordPress</a> 
-											<a href="#">Development</a> 
-											<a href="#">Joomla</a> 
-											<a href="#">Design</a> 
-											<a href="#">User interface</a> 
-											<a href="#">SEO</a> 
-											<a href="#">WordPress</a> 
-											<a href="#">Development</a> 
-											<a href="#">Joomla</a> 
-										</div>
-									</div>
-									<div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
-										<h6>SHARE </h6>
-										<ul class="list-inline contact-social-bx">
-											<li><a href="#" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#" class="btn outline radius-xl"><i class="fa fa-linkedin"></i></a></li>
-											<li><a href="#" class="btn outline radius-xl"><i class="fa fa-google-plus"></i></a></li>
-										</ul>
-									<div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
-								</div>
-							</div>
-							<div class="clear" id="comment-list">
-								<div class="comments-area" id="comments">
-									<h2 class="comments-title">8 Comments</h2>
-									<div class="clearfix m-b20">
-										<!-- comment list END -->
-										<ol class="comment-list">
-											<li class="comment">
-												<div class="comment-body">
-													<div class="comment-author vcard"> <img  class="avatar photo" src="${contextPath }/resources/main_assets/assets/images/testimonials/pic1.jpg" alt=""> <cite class="fn">John Doe</cite> <span class="says">says:</span> </div>
-													<div class="comment-meta"> <a href="#">December 02, 2019 at 10:45 am</a> </div>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae neqnsectetur adipiscing elit. Nam viae neqnsectetur adipiscing elit.
-														Nam vitae neque vitae sapien malesuada aliquet. </p>
-													<div class="reply"> <a href="#" class="comment-reply-link">Reply</a> </div>
-												</div>
-												<ol class="children">
-													<li class="comment odd parent">
-														<div class="comment-body">
-															<div class="comment-author vcard"> <img  class="avatar photo" src="${contextPath }/resources/main_assets/assets/images/testimonials/pic2.jpg" alt=""> <cite class="fn">John Doe</cite> <span class="says">says:</span> </div>
-															<div class="comment-meta"> <a href="#">December 02, 2019 at 10:45 am</a> </div>
-															<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae neque vitae sapien malesuada aliquet. 
-																In viverra dictum justo in vehicula. Fusce et massa eu ante ornare molestie. Sed vestibulum sem felis, 
-																ac elementum ligula blandit ac.</p>
-															<div class="reply"> <a href="#" class="comment-reply-link">Reply</a> </div>
-														</div>
-														<ol class="children">
-															<li class="comment odd parent">
-																<div class="comment-body">
-																	<div class="comment-author vcard"> <img  class="avatar photo" src="${contextPath }/resources/main_assets/assets/images/testimonials/pic3.jpg" alt=""> <cite class="fn">John Doe</cite> <span class="says">says:</span> </div>
-																	<div class="comment-meta"> <a href="#">December 02, 2019 at 10:45 am</a> </div>
-																	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae neque vitae sapien malesuada aliquet. 
-																		In viverra dictum justo in vehicula. Fusce et massa eu ante ornare molestie. Sed vestibulum sem felis, 
-																		ac elementum ligula blandit ac.</p>
-																	<div class="reply"> <a href="#" class="comment-reply-link">Reply</a> </div>
-																</div>
-															</li>
-														</ol>
-														<!-- list END -->
-													</li>
-												</ol>
-												<!-- list END -->
-											</li>
-											<li class="comment">
-												<div class="comment-body">
-													<div class="comment-author vcard"> <img  class="avatar photo" src="${contextPath }/resources/main_assets/assets/images/testimonials/pic1.jpg" alt=""> <cite class="fn">John Doe</cite> <span class="says">says:</span> </div>
-													<div class="comment-meta"> <a href="#">December 02, 2019 at 10:45 am</a> </div>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae neque vitae sapien malesuada aliquet. 
-														In viverra dictum justo in vehicula. Fusce et massa eu ante ornare molestie. Sed vestibulum sem felis, 
-														ac elementum ligula blandit ac.</p>
-													<div class="reply"> <a href="#" class="comment-reply-link">Reply</a> </div>
-												</div>
-											</li>
-											<li class="comment">
-												<div class="comment-body">
-													<div class="comment-author vcard"> <img  class="avatar photo" src="${contextPath }/resources/main_assets/assets/images/testimonials/pic2.jpg" alt=""> <cite class="fn">John Doe</cite> <span class="says">says:</span> </div>
-													<div class="comment-meta"> <a href="#">December 02, 2019 at 10:45 am</a> </div>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae neque vitae sapien malesuada aliquet. 
-														In viverra dictum justo in vehicula. Fusce et massa eu ante ornare molestie. Sed vestibulum sem felis, 
-														ac elementum ligula blandit ac.</p>
-													<div class="reply"> <a href="#" class="comment-reply-link">Reply</a> </div>
-												</div>
-											</li>
-											<li class="comment">
-												<div class="comment-body">
-													<div class="comment-author vcard"> <img  class="avatar photo" src="${contextPath }/resources/main_assets/assets/images/testimonials/pic3.jpg" alt=""> <cite class="fn">John Doe</cite> <span class="says">says:</span> </div>
-													<div class="comment-meta"> <a href="#">December 02, 2019 at 10:45 am</a> </div>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae neque vitae sapien malesuada aliquet. 
-														In viverra dictum justo in vehicula. Fusce et massa eu ante ornare molestie. Sed vestibulum sem felis, 
-														ac elementum ligula blandit ac.</p>
-													<div class="reply"> <a href="#" class="comment-reply-link">Reply</a> </div>
-												</div>
-											</li>
-										</ol>
-										<!-- comment list END -->
-										<!-- Form -->
-										<div class="comment-respond" id="respond">
-											<h4 class="comment-reply-title" id="reply-title">Leave a Reply <small> <a style="display:none;" href="#" id="cancel-comment-reply-link" rel="nofollow">Cancel reply</a> </small> </h4>
-											<form class="comment-form" id="commentform" method="post">
-												<p class="comment-form-author">
-													<label for="author">Name <span class="required">*</span></label>
-													<input type="text" value="" name="Author"  placeholder="Author" id="author">
-												</p>
-												<p class="comment-form-email">
-													<label for="email">Email <span class="required">*</span></label>
-													<input type="text" value="" placeholder="Email" name="email" id="email">
-												</p>
-												<p class="comment-form-url">
-													<label for="url">Website</label>
-													<input type="text"  value=""  placeholder="Website"  name="url" id="url">
-												</p>
-												<p class="comment-form-comment">
-													<label for="comment">Comment</label>
-													<textarea rows="8" name="comment" placeholder="Comment" id="comment"></textarea>
-												</p>
-												<p class="form-submit">
-													<input type="submit" value="Submit Comment" class="submit" id="submit" name="submit">
-												</p>
-											</form>
-										</div>
-										<!-- Form -->
-									</div>
-								</div>
-							</div>
-							<!-- blog END -->
-						</div>
-						<!-- Left part END -->
-						<!-- Side bar start -->
-						<div class="col-lg-4 col-xl-4">
-							<aside  class="side-bar sticky-top">
-								<div class="widget">
-									<h6 class="widget-title">Search</h6>
-									<div class="search-bx style-1">
-										<form role="search" method="post">
-											<div class="input-group">
-												<input name="text" class="form-control" placeholder="Enter your keywords..." type="text">
-												<span class="input-group-btn">
-													<button type="submit" class="fa fa-search text-primary"></button>
-												</span> 
-											</div>
-										</form>
-									</div>
-								</div>
-								<div class="widget recent-posts-entry">
-									<h6 class="widget-title">Recent Posts</h6>
-									<div class="widget-post-bx">
-										<div class="widget-post clearfix">
-											<div class="ttr-post-media"> <img src="${contextPath }/resources/main_assets/assets/images/blog/recent-blog/pic1.jpg" width="200" height="143" alt=""> </div>
-											<div class="ttr-post-info">
-												<div class="ttr-post-header">
-													<h6 class="post-title"><a href="blog-details.jsp">This Story Behind Education Will Haunt You Forever.</a></h6>
-												</div>
-												<ul class="media-post">
-													<li><a href="#"><i class="fa fa-calendar"></i>Oct 23 2019</a></li>
-													<li><a href="#"><i class="fa fa-comments-o"></i>15 Comment</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="widget-post clearfix">
-											<div class="ttr-post-media"> <img src="${contextPath }/resources/main_assets/assets/images/blog/recent-blog/pic2.jpg" width="200" height="160" alt=""> </div>
-											<div class="ttr-post-info">
-												<div class="ttr-post-header">
-													<h6 class="post-title"><a href="blog-details.jsp">What Will Education Be Like In The Next 50 Years?</a></h6>
-												</div>
-												<ul class="media-post">
-													<li><a href="#"><i class="fa fa-calendar"></i>May 14 2019</a></li>
-													<li><a href="#"><i class="fa fa-comments-o"></i>23 Comment</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="widget-post clearfix">
-											<div class="ttr-post-media"> <img src="${contextPath }/resources/main_assets/assets/images/blog/recent-blog/pic3.jpg" width="200" height="160" alt=""> </div>
-											<div class="ttr-post-info">
-												<div class="ttr-post-header">
-													<h6 class="post-title"><a href="blog-details.jsp">Eliminate Your Fears And Doubts About Education.</a></h6>
-												</div>
-												<ul class="media-post">
-													<li><a href="#"><i class="fa fa-calendar"></i>June 12 2019</a></li>
-													<li><a href="#"><i class="fa fa-comments-o"></i>27 Comment</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="widget widget-newslatter">
-									<h6 class="widget-title">Newsletter</h6>
-									<div class="news-box">
-										<p>Enter your e-mail and subscribe to our newsletter.</p>
-										<form class="subscription-form" action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
-											<div class="ajax-message"></div>
-											<div class="input-group">
-												<input name="dzEmail" required="required" type="email" class="form-control" placeholder="Your Email Address"/>
-												<button name="submit" value="Submit" type="submit" class="btn black radius-no">
-													<i class="fa fa-paper-plane-o"></i>
-												</button>
-											</div>
-										</form>
-									</div>
-								</div>
-								<div class="widget widget_gallery gallery-grid-4">
-									<h6 class="widget-title">Our Gallery</h6>
-									<ul>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic5.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic7.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic8.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic9.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic3.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic4.jpg" alt=""></a></div></li>
-									</ul>
-								</div>
-								<div class="widget widget_tag_cloud">
-									<h6 class="widget-title">Tags</h6>
-									<div class="tagcloud"> 
-										<a href="#">Design</a> 
-										<a href="#">User interface</a> 
-										<a href="#">SEO</a> 
-										<a href="#">WordPress</a> 
-										<a href="#">Development</a> 
-										<a href="#">Joomla</a> 
-										<a href="#">Design</a> 
-										<a href="#">User interface</a> 
-										<a href="#">SEO</a> 
-										<a href="#">WordPress</a> 
-										<a href="#">Development</a> 
-										<a href="#">Joomla</a> 
-										<a href="#">Design</a> 
-										<a href="#">User interface</a> 
-										<a href="#">SEO</a> 
-										<a href="#">WordPress</a> 
-										<a href="#">Development</a> 
-										<a href="#">Joomla</a> 
-									</div>
-								</div>
-							</aside>
-						</div>
-						<!-- Side bar END -->
-					</div>
-				</div>
-			</div>
+						<div class="col-lg-12 col-xl-12">
+							<div class="blog-post blog-md-30">
+								<table  align="center"  width="100%"  >
+								<c:set var="total" value="${pageMaker.listTotal }"/>
+								
+  <tr class="media-post" height="150%" align="center" >
+     <td width="10%"><i class="fa fa-pencil"></i>&nbsp NO</td>
+     <td width="15%"><i class="fa fa-bolt"></i>&nbsp HEAD</td>
+     <td width="15%"><i class="fa fa-user"></i>&nbsp POSTED BY</td>              
+     <td width="50%"><i class="fa fa-quora"></i>&nbsp TITLE</td>
+     <td width="10%"><i class="fa fa-calendar"></i>&nbsp DATE</td>
+  </tr>
+<c:choose>
+  <c:when test="${QaesList ==null }" >
+    <tr  height="10">
+      <td colspan="4">
+         <p align="center">
+            <b><span style="font-size:12pt;">등록된 글이 없습니다.</span></b>
+        </p>
+      </td>  
+    </tr>
+  </c:when>
+  <c:when test="${QaesList !=null }" >
+  <c:set var="total" value='${(total)-((page-1)*10)}'></c:set>
+ 		<c:forEach  var="qa" items="${QaesList }" varStatus="qaNum" >
+    <tr align="center">
+    	<td>
+    		
+    		${ total }
+    		<%-- -((${page-1})*10)+${ qaNum.index } --%>
+			<%-- ${total } --%>
+		
+		</td>
+	<!--  <td >${qaNum.count}</td>-->
+	<td >${qa.qaHead }</td>
+	<td >${qa.id }</td>
+	<td align='left' >
+	<!--   <span style="padding-right:10px"></span> -->
+	   <c:choose>
+	      <c:when test='${qa.level > 1 }'>  
+	         <c:forEach begin="1" end="${qa.level }" step="1">
+	              <span style="padding-left:1px"></span>    
+	         </c:forEach>
+	         <span style="font-size:20px;">└ RE )) </span>
+                   <a class='cls1' href="${contextPath}/viewQa.do?qaNUM=${qa.qaNUM}">${qa.qaTitle}</a>
+	      </c:when>
+	          <c:otherwise>
+	            <a class='cls1' href="${contextPath}/viewQa.do?qaNUM=${qa.qaNUM}">${qa.qaTitle}</a>
+	          </c:otherwise>
+	        </c:choose>
+	  </td>
+	  <td >${qa.qaDate}</td> 
+	</tr>
+	<c:set var="total" value="${total-1 }"/>
+    </c:forEach>
+     </c:when>
+    </c:choose>
+
+</table>
+
+<div class="pagination-bx rounded-sm gray" align="center">
+  <ul class="pagination justify-content-center">
+    <c:if test="${pageMaker.prev}">
+    	<li class="previous"><a href="listQaes.do${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
+    </c:if> 
+
+    <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+    	<c:choose>
+    		<c:when test="${page == idx}">
+    			<li class="active"><a href="listQaes.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
+    		</c:when>
+    		<c:otherwise>
+    			<li><a href="listQaes.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
+    		</c:otherwise>
+    	</c:choose>
+    </c:forEach>
+
+    <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+    	<li class="next"><a href="listQaes.do${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
+    </c:if> 
+  </ul>
+</div>
+
+
+
+
+
+<div class="pt-btn-write">
+	<a href="insertQa.do" class="btn">WRITE</a>
+</div>
+                                                    
+            </div>
+           </div>
+          </div>
+         </div>
         </div>
-    </div>
-    <!-- Content END-->
+       </div>
+      </div>
+     
+						
 <!-- Footer ==== -->
     <footer>
         <div class="footer-top">
@@ -622,7 +467,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a target="_blank" href="https://www.templateshub.net">Templates Hub</a></div>
-                </div>
             </div>
         </div>
     </footer>

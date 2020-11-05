@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
-any<!DOCTYPE html>
+<%
+  request.setCharacterEncoding("UTF-8");
+%> 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -51,7 +55,17 @@ any<!DOCTYPE html>
 	<!-- STYLESHEETS ============================================= -->
 	<link rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/css/style.css">
 	<link class="skin" rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/css/color/color-1.css">
+	<title>글추가창</title>
+	<script type="text/javascript">
+
+	 
 	
+	  function backToList(obj){
+	    obj.action="${contextPath}/listQaes.do";
+	    obj.submit();
+	  }
+	   
+	</script>
 </head>
 <body id="bg">
 <div class="page-wraper">
@@ -229,7 +243,7 @@ any<!DOCTYPE html>
         <div class="page-banner ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/banner/banner2.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
-                    <h1 class="text-white">Blog List Sidebar</h1>
+                    <h1 class="text-white">QnA 작성</h1>
 				</div>
             </div>
         </div>
@@ -238,300 +252,75 @@ any<!DOCTYPE html>
 			<div class="container">
 				<ul class="list-inline">
 					<li><a href="#">Home</a></li>
-					<li>Blog List Sidebar</li>
+					<li>QnA 작성</li>
 				</ul>
 			</div>
 		</div>
 		<!-- Breadcrumb row END -->
-        <!-- contact area -->
-         <div class="content-block">
+        <div class="content-block">
 			<div class="section-area section-sp1">
 				<div class="container">
 					<div class="row">
 						<!-- Left part start -->
-						<div class="col-lg-8">
-							<div class="blog-post blog-md clearfix">
-								<div class="ttr-post-media"> 
-									<a href="#"><img src="${contextPath }/resources/main_assets/assets/images/blog/grid/pic1.jpg" alt=""></a> 
-								</div>
-								<div class="ttr-post-info">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>Jan 12 2019</a></li>
-										<li><a href="#"><i class="fa fa-user"></i>By William</a></li>
-									</ul>
-									<h5 class="post-title"><a href="blog-details.jsp">This Story Behind Education Will Haunt You Forever.</a></h5>
-									<p>Knowing that, you’ve optimised your pages countless amount of times, written tons.</p>
-									<div class="post-extra">
-										<a href="#" class="btn-link">READ MORE</a>
-										<a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>05 Comment</a>
-									</div>
-								</div>
-							</div>
-							<div class="blog-post blog-md clearfix">
-								<div class="ttr-post-media"> 
-									<a href="#"><img src="${contextPath }/resources/main_assets/assets/images/blog/grid/pic2.jpg" alt=""></a> 
-								</div>
-								<div class="ttr-post-info">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>Feb 05 2019</a></li>
-										<li><a href="#"><i class="fa fa-user"></i>By John</a></li>
-									</ul>
-									<h5 class="post-title"><a href="blog-details.jsp">What Will Education Be Like In The Next 50 Years?</a></h5>
-									<p>As desperate as you are right now, you have done everything you can on your.</p>
-									<div class="post-extra">
-										<a href="#" class="btn-link">READ MORE</a>
-										<a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>12 Comment</a>
-									</div>
-								</div>
-							</div>
-							<div class="blog-post blog-md clearfix">
-								<div class="ttr-post-media"> 
-									<a href="#"><img src="${contextPath }/resources/main_assets/assets/images/blog/grid/pic3.jpg" alt=""></a> 
-								</div>
-								<div class="ttr-post-info">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>April 14 2019</a></li>
-										<li><a href="#"><i class="fa fa-user"></i>By George</a></li>
-									</ul>
-									<h5 class="post-title"><a href="blog-details.jsp">Master The Skills Of Education And Be.</a></h5>
-									<p>You will see in the guide all my years of valuable experience together with.</p>
-									<div class="post-extra">
-										<a href="#" class="btn-link">READ MORE</a>
-										<a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>20 Comment</a>
-									</div>
-								</div>
-							</div>
-							<div class="blog-post blog-md clearfix">
-								<div class="ttr-post-media"> 
-									<a href="#"><img src="${contextPath }/resources/main_assets/assets/images/blog/grid/pic1.jpg" alt=""></a> 
-								</div>
-								<div class="ttr-post-info">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>March 21 2019</a></li>
-										<li><a href="#"><i class="fa fa-user"></i>By Thomas</a></li>
-									</ul>
-									<h5 class="post-title"><a href="blog-details.jsp">Eliminate Your Fears And Doubts About Education.</a></h5>
-									<p>When I needed to start from scratch and figure out how things work. Getting people.</p>
-									<div class="post-extra">
-										<a href="#" class="btn-link">READ MORE</a>
-										<a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>28 Comment</a>
-									</div>
-								</div>
-							</div>
-							<div class="blog-post blog-md clearfix">
-								<div class="ttr-post-media"> 
-									<a href="#"><img src="${contextPath }/resources/main_assets/assets/images/blog/grid/pic2.jpg" alt=""></a> 
-								</div>
-								<div class="ttr-post-info">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>May 08 2019</a></li>
-										<li><a href="#"><i class="fa fa-user"></i>By James</a></li>
-									</ul>
-									<h5 class="post-title"><a href="blog-details.jsp">Seven Reasons You Should Fall In Love With Education.</a></h5>
-									<p>Honestly, I made ZERO money in the first year and I definitely do not want you to go.</p>
-									<div class="post-extra">
-										<a href="#" class="btn-link">READ MORE</a>
-										<a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>26 Comment</a>
-									</div>
-								</div>
-							</div>
-							<div class="blog-post blog-md clearfix">
-								<div class="ttr-post-media"> 
-									<a href="#"><img src="${contextPath }/resources/main_assets/assets/images/blog/grid/pic3.jpg" alt=""></a> 
-								</div>
-								<div class="ttr-post-info">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>June 19 2019</a></li>
-										<li><a href="#"><i class="fa fa-user"></i>By Arthur</a></li>
-									</ul>
-									<h5 class="post-title"><a href="blog-details.jsp">The Biggest Contribution Of Education To Humanity.</a></h5>
-									<p>You may have seen our tool that's been featured by many world-class SEO marketers.</p>
-									<div class="post-extra">
-										<a href="#" class="btn-link">READ MORE</a>
-										<a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>15 Comment</a>
-									</div>
-								</div>
-							</div>
-							<div class="blog-post blog-md clearfix">
-								<div class="ttr-post-media"> 
-									<a href="#"><img src="${contextPath }/resources/main_assets/assets/images/blog/grid/pic1.jpg" alt=""></a> 
-								</div>
-								<div class="ttr-post-info">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>March 21 2019</a></li>
-										<li><a href="#"><i class="fa fa-user"></i>By Thomas</a></li>
-									</ul>
-									<h5 class="post-title"><a href="blog-details.jsp">Eliminate Your Fears And Doubts About Education.</a></h5>
-									<p>When I needed to start from scratch and figure out how things work. Getting people.</p>
-									<div class="post-extra">
-										<a href="#" class="btn-link">READ MORE</a>
-										<a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>28 Comment</a>
-									</div>
-								</div>
-							</div>
-							<div class="blog-post blog-md clearfix">
-								<div class="ttr-post-media"> 
-									<a href="#"><img src="${contextPath }/resources/main_assets/assets/images/blog/grid/pic2.jpg" alt=""></a> 
-								</div>
-								<div class="ttr-post-info">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>May 08 2019</a></li>
-										<li><a href="#"><i class="fa fa-user"></i>By James</a></li>
-									</ul>
-									<h5 class="post-title"><a href="blog-details.jsp">Seven Reasons You Should Fall In Love With Education.</a></h5>
-									<p>Honestly, I made ZERO money in the first year and I definitely do not want you to go.</p>
-									<div class="post-extra">
-										<a href="#" class="btn-link">READ MORE</a>
-										<a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>26 Comment</a>
-									</div>
-								</div>
-							</div>
-							<div class="blog-post blog-md clearfix">
-								<div class="ttr-post-media"> 
-									<a href="#"><img src="${contextPath }/resources/main_assets/assets/images/blog/grid/pic3.jpg" alt=""></a> 
-								</div>
-								<div class="ttr-post-info">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>June 19 2019</a></li>
-										<li><a href="#"><i class="fa fa-user"></i>By Arthur</a></li>
-									</ul>
-									<h5 class="post-title"><a href="blog-details.jsp">The Biggest Contribution Of Education To Humanity.</a></h5>
-									<p>You may have seen our tool that's been featured by many world-class SEO marketers.</p>
-									<div class="post-extra">
-										<a href="#" class="btn-link">READ MORE</a>
-										<a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>15 Comment</a>
-									</div>
-								</div>
-							</div>
-							<!-- Pagination start -->
-							<div class="pagination-bx rounded-sm gray clearfix">
-								<ul class="pagination">
-									<li class="previous"><a href="#"><i class="ti-arrow-left"></i> Prev</a></li>
-									<li class="active"><a href="#">1</a></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li class="next"><a href="#">Next <i class="ti-arrow-right"></i></a></li>
-								</ul>
-							</div>
-							<!-- Pagination END -->
-						</div>
-						<!-- Left part END -->
-						<!-- Side bar start -->
-						<div class="col-lg-4 sticky-top">
-							<aside class="side-bar sticky-top">
-								<div class="widget">
-									<h6 class="widget-title">Search</h6>
-									<div class="search-bx style-1">
-										<form role="search" method="post">
-											<div class="input-group">
-												<input name="text" class="form-control" placeholder="Enter your keywords..." type="text">
-												<span class="input-group-btn">
-													<button type="submit" class="fa fa-search text-primary"></button>
-												</span> 
-											</div>
-										</form>
-									</div>
-								</div>
-								<div class="widget recent-posts-entry">
-									<h6 class="widget-title">Recent Posts</h6>
-									<div class="widget-post-bx">
-										<div class="widget-post clearfix">
-											<div class="ttr-post-media"> <img src="${contextPath }/resources/main_assets/assets/images/blog/recent-blog/pic1.jpg" width="200" height="143" alt=""> </div>
-											<div class="ttr-post-info">
-												<div class="ttr-post-header">
-													<h6 class="post-title"><a href="blog-details.jsp">This Story Behind Education Will Haunt You Forever.</a></h6>
-												</div>
-												<ul class="media-post">
-													<li><a href="#"><i class="fa fa-calendar"></i>Oct 23 2019</a></li>
-													<li><a href="#"><i class="fa fa-comments-o"></i>15 Comment</a></li>
-												</ul>
-											</div>
+						<div class="col-lg-12 col-xl-12">
+							<!-- blog start -->
+							  <form name="frmReply" method="post"  action="${contextPath}/addReply.do"  >
+							  <!-- tiles안써서 다름 -->
+								<div class="info-bx">
+									 <table border="0" align="center">
+									 <input type="hidden" name="qaNUM" value="${qaNUM }">
+									 
+
+									 	  <tr>
+									 	  			<!-- <td align="right"> QnA 유형 </td>
+									 	 			<td >
+									 	 				<span style="float: left;width:500px;">
+													        <select id="question" name="qaHead" size="1" >
+													            <option value="">게시글 유형을 선택하세요</option>
+													            <option value="프로그램 오류">[프로그램 오류]</option>
+													            <option value="문제 오류">[문제 오류]</option>
+													            <option value="오답">[오답]</option>
+													            <option value="해설">[해설]</option>
+													            <option value="기타/문의">[기타/문의]</option>
+													        </select> 
+													    </span>
+								 					</td>  -->
+									 	 
+									      <tr>
+														<td align="right"> <i class="fa fa-user"></i> 작성자</td>
+														<td colspan="2" align="left"><input type="text" size="20" maxlength="100" value="hw" readonly/></td>
+														
+												</tr>
+										     <tr>
+												   <td align="right">글제목 </td>
+												   <td colspan="2"><input type="text" size="100"  maxlength="500" name="qaTitle" /></td>
+											 </tr>
+										 		<tr>
+													<td align="right" valign="top"><br>글내용 </td>
+													<td colspan=2><textarea name="qaContent" rows="10" cols="100" maxlength="4000"></textarea> </td>
+									     </tr>
+									
+									</table>
+										      
+										      
+										<div align="center" class="col-lg-12">
+											<input type="submit" value="답글쓰기" class="btn button-md" >
+											<input type="button" value="취소" class="btn button-md" onClick="backToList(this.form)">
 										</div>
-										<div class="widget-post clearfix">
-											<div class="ttr-post-media"> <img src="${contextPath }/resources/main_assets/assets/images/blog/recent-blog/pic2.jpg" width="200" height="160" alt=""> </div>
-											<div class="ttr-post-info">
-												<div class="ttr-post-header">
-													<h6 class="post-title"><a href="blog-details.jsp">What Will Education Be Like In The Next 50 Years?</a></h6>
-												</div>
-												<ul class="media-post">
-													<li><a href="#"><i class="fa fa-calendar"></i>May 14 2019</a></li>
-													<li><a href="#"><i class="fa fa-comments-o"></i>23 Comment</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="widget-post clearfix">
-											<div class="ttr-post-media"> <img src="${contextPath }/resources/main_assets/assets/images/blog/recent-blog/pic3.jpg" width="200" height="160" alt=""> </div>
-											<div class="ttr-post-info">
-												<div class="ttr-post-header">
-													<h6 class="post-title"><a href="blog-details.jsp">Eliminate Your Fears And Doubts About Education.</a></h6>
-												</div>
-												<ul class="media-post">
-													<li><a href="#"><i class="fa fa-calendar"></i>June 12 2019</a></li>
-													<li><a href="#"><i class="fa fa-comments-o"></i>27 Comment</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
+										     
+									    
+   									 
 								</div>
-								<div class="widget widget-newslatter">
-									<h6 class="widget-title">Newsletter</h6>
-									<div class="news-box">
-										<p>Enter your e-mail and subscribe to our newsletter.</p>
-										<form class="subscription-form" action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
-											<div class="ajax-message"></div>
-											<div class="input-group">
-												<input name="dzEmail" required="required" type="email" class="form-control" placeholder="Your Email Address"/>
-												<button name="submit" value="Submit" type="submit" class="btn black radius-no">
-													<i class="fa fa-paper-plane-o"></i>
-												</button>
-											</div>
-										</form>
-									</div>
-								</div>
-								<div class="widget widget_gallery gallery-grid-4">
-									<h6 class="widget-title">Our Gallery</h6>
-									<ul>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic5.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic7.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic8.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic9.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic3.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic4.jpg" alt=""></a></div></li>
-									</ul>
-								</div>
-								<div class="widget widget_tag_cloud">
-									<h6 class="widget-title">Tags</h6>
-									<div class="tagcloud"> 
-										<a href="#">Design</a> 
-										<a href="#">User interface</a> 
-										<a href="#">SEO</a> 
-										<a href="#">WordPress</a> 
-										<a href="#">Development</a> 
-										<a href="#">Joomla</a> 
-										<a href="#">Design</a> 
-										<a href="#">User interface</a> 
-										<a href="#">SEO</a> 
-										<a href="#">WordPress</a> 
-										<a href="#">Development</a> 
-										<a href="#">Joomla</a> 
-										<a href="#">Design</a> 
-										<a href="#">User interface</a> 
-										<a href="#">SEO</a> 
-										<a href="#">WordPress</a> 
-										<a href="#">Development</a> 
-										<a href="#">Joomla</a> 
-									</div>
-								</div>
-							</aside>
-						</div>
-						<!-- Side bar END -->
+								</form>
+								<hr>
+							</div>
+							
 					</div>
 				</div>
 			</div>
         </div>
     </div>
+    
     <!-- Content END-->
 <!-- Footer ==== -->
     <footer>
@@ -634,6 +423,7 @@ any<!DOCTYPE html>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a target="_blank" href="https://www.templateshub.net">Templates Hub</a></div>
+                </div>
             </div>
         </div>
     </footer>

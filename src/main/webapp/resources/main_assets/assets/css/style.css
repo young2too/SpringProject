@@ -1862,6 +1862,11 @@ button.back-to-top {
 	border-left:1px solid rgba(255,255,255,0.1);
 	padding:0 0 0 20px;
 }
+
+.pt-btn-write{
+	border-left:1px solid rgba(255,255,255,0.1);
+	padding:0 0 0 10px;
+}
 .pt-logo{
 	padding:20px 0;
 }

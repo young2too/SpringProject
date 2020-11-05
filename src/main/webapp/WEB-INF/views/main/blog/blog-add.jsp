@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
+<%
+  request.setCharacterEncoding("UTF-8");
+%> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +55,28 @@
 	<!-- STYLESHEETS ============================================= -->
 	<link rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/css/style.css">
 	<link class="skin" rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/css/color/color-1.css">
+	<title>글추가창</title>
+	<script type="text/javascript">
 	
+	 
+	 function init(f){
+		 var f_sel = f.question;
+		 
+		 f_sel.options[0] = new Option("선택");
+		 	for(var i=0; i<f_selarr.length;i++){
+		 		f_sel.options[i+1] = new Option(f_selarr[i],f_selarr[i]);
+		 		new Option(text);
+		 	}
+	 }
+	 
+	 
+	
+	  function backToList(obj){
+	    obj.action="${contextPath}/listQaes.do";
+	    obj.submit();
+	  }
+	   
+	</script>
 </head>
 <body id="bg">
 <div class="page-wraper">
@@ -226,10 +251,10 @@
     <!-- Content -->
     <div class="page-content bg-white">
         <!-- inner page banner -->
-        <div class="page-banner ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/banner/banner1.jpg);">
+        <div class="page-banner ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/banner/banner2.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
-                    <h1 class="text-white">Blog Standard Sidebar</h1>
+                    <h1 class="text-white">QnA 작성</h1>
 				</div>
             </div>
         </div>
@@ -238,7 +263,7 @@
 			<div class="container">
 				<ul class="list-inline">
 					<li><a href="#">Home</a></li>
-					<li>Blog Standard Sidebar</li>
+					<li>QnA 작성</li>
 				</ul>
 			</div>
 		</div>
@@ -248,204 +273,66 @@
 				<div class="container">
 					<div class="row">
 						<!-- Left part start -->
-						<div class="col-md-7 col-lg-8 col-xl-8">
-							<div class="recent-news blog-lg m-b40">
-								<div class="action-box blog-lg">
-									<img src="${contextPath }/resources/main_assets/assets/images/blog/default/thum1.jpg" alt="">
-								</div>
+						<div class="col-lg-12 col-xl-12">
+						<div class="blog-post blog-md-30">
+							<!-- blog start -->
+							  <form name="blogForm" method="post"   action="${contextPath}/addQa.do"  >
+							  <!-- tiles안써서 다름 -->
 								<div class="info-bx">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>Jan 14 2019</a></li>
-										<li><a href="#"><i class="fa fa-user"></i>By Jone</a></li>
-									</ul>
-									<h5 class="post-title"><a href="blog-details.jsp">This Story Behind Education Will Haunt You Forever.</a></h5>
-									<p>You just need to enter the keyword and select the keyword type to generate a list of 6 title ideas and suggestions. If you’re not satisfied with the results, you can always hit the refresh button to generate a new list of unique titles.</p>
-									<div class="post-extra">
-										<a href="#" class="btn-link">READ MORE</a>
-										<a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>78 Comment</a>
-									</div>
-								</div>
-							</div>
-							<div class="recent-news blog-lg m-b40">
-								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/blog/default/thum2.jpg" alt="">
-								</div>
-								<div class="info-bx">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>March 21 2019</a></li>
-										<li><a href="#"><i class="fa fa-user"></i>By Thomas</a></li>
-									</ul>
-									<h5 class="post-title"><a href="blog-details.jsp">What Will Education Be Like In The Next 50 Years?</a></h5>
-									<p>Given that you want an exhaustive list of all possible title ideas for your keyword, you certainly can! Save time by downloading ALL the titles. We’ll mail you everything we have in store for easier access.</p>
-									<div class="post-extra">
-										<a href="#" class="btn-link">READ MORE</a>
-										<a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>23 Comment</a>
-									</div>
-								</div>
-							</div>
-							<div class="recent-news blog-lg m-b40">
-								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/blog/default/thum3.jpg" alt="">
-								</div>
-								<div class="info-bx">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>May 08 2019</a></li>
-										<li><a href="#"><i class="fa fa-user"></i>By Arthur</a></li>
-									</ul>
-									<h5 class="post-title"><a href="blog-details.jsp">Master The Skills Of Education And Be.</a></h5>
-									<p>Once you’ve gotten all the titles and have chosen the best one, the next thing you need to do is to craft a magnetic content. Great content marketers excel at creating content that their readers crave, but even the best struggle with delivering content to the right person at the right time.</p>
-									<div class="post-extra">
-										<a href="#" class="btn-link">READ MORE</a>
-										<a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>08 Comment</a>
-									</div>
-								</div>
-							</div>
-							<div class="recent-news blog-lg m-b40">
-								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/blog/default/thum4.jpg" alt="">
-								</div>
-								<div class="info-bx">
-									<ul class="media-post">
-										<li><a href="#"><i class="fa fa-calendar"></i>June 19 2019</a></li>
-										<li><a href="#"><i class="fa fa-user"></i>By James</a></li>
-									</ul>
-									<h5 class="post-title"><a href="blog-details.jsp">Eliminate Your Fears And Doubts About Education.</a></h5>
-									<p>To make sure your content drives results, the format needs to be just as well-researched as the information contained in it.</p>
-									<div class="post-extra">
-										<a href="#" class="btn-link">READ MORE</a>
-										<a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>15 Comment</a>
-									</div>
-								</div>
-							</div>
-							<!-- Pagination start -->
-							<div class="pagination-bx rounded-sm gray clearfix">
-								<ul class="pagination justify-content-center">
-									<li class="previous"><a href="#"><i class="ti-arrow-left"></i> Prev</a></li>
-									<li class="active"><a href="#">1</a></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li class="next"><a href="#">Next <i class="ti-arrow-right"></i></a></li>
-								</ul>
-							</div>
-							<!-- Pagination END -->
-						</div>
-						<!-- Left part END -->
-						<!-- Side bar start -->
-						<div class="col-md-5 col-lg-4 col-xl-4 sticky-top">
-							<aside class="side-bar sticky-top">
-								<div class="widget">
-									<h6 class="widget-title">Search</h6>
-									<div class="search-bx style-1">
-										<form role="search" method="post">
-											<div class="input-group">
-												<input name="text" class="form-control" placeholder="Enter your keywords..." type="text">
-												<span class="input-group-btn">
-													<button type="submit" class="fa fa-search text-primary"></button>
-												</span> 
-											</div>
-										</form>
-									</div>
-								</div>
-								<div class="widget recent-posts-entry">
-									<h6 class="widget-title">Recent Posts</h6>
-									<div class="widget-post-bx">
-										<div class="widget-post clearfix">
-											<div class="ttr-post-media"> <img src="${contextPath }/resources/main_assets/assets/images/blog/recent-blog/pic1.jpg" width="200" height="143" alt=""> </div>
-											<div class="ttr-post-info">
-												<div class="ttr-post-header">
-													<h6 class="post-title"><a href="blog-details.jsp">This Story Behind Education Will Haunt You Forever.</a></h6>
-												</div>
-												<ul class="media-post">
-													<li><a href="#"><i class="fa fa-calendar"></i>Oct 23 2019</a></li>
-													<li><a href="#"><i class="fa fa-comments-o"></i>15 Comment</a></li>
-												</ul>
-											</div>
+									 <table border="0" align="center">
+									 	  <tr>
+									 	  			<td align="right"> QnA 유형 </td>
+									 	 			<td >
+									 	 				<span style="float: left;width:500px;">
+													        <select id="question" name="qaHead" size="1" >
+													            <option value="">게시글 유형을 선택하세요</option>
+													            <option value="[프로그램 오류]">[프로그램 오류]</option>
+													            <option value="[문제 오류]">[문제 오류]</option>
+													            <option value="[오답]">[오답]</option>
+													            <option value="[해설]">[해설]</option>
+													            <option value="[기타/문의]">[기타/문의]</option>
+													        </select> 
+													    </span>
+								 					</td> 
+									 	 
+									      <tr>
+														<td align="right"> <i class="fa fa-user"></i> 작성자</td>
+														<td colspan="2" align="left"><input type="text" size="20" maxlength="100"  value="hw" readonly/> </td>
+														
+												</tr>
+										     <tr>
+												   <td align="right">글제목 </td>
+												   <td colspan="2"><input type="text" size="100"  maxlength="500" name="qaTitle" /></td>
+											 </tr>
+										 		<tr>
+													<td align="right" valign="top"><br>글내용 </td>
+													<td colspan=2><textarea name="qaContent" rows="10" cols="100" maxlength="4000"></textarea> </td>
+									     </tr>
+									  
+										  
+										  </table>
+										      
+										      
+										<div align="center" class="col-lg-12">
+											<input type="submit" value="글쓰기" class="btn button-md" >
+											<input type="button" value="목록보기" class="btn button-md" onClick="backToList(this.form)">
 										</div>
-										<div class="widget-post clearfix">
-											<div class="ttr-post-media"> <img src="${contextPath }/resources/main_assets/assets/images/blog/recent-blog/pic2.jpg" width="200" height="160" alt=""> </div>
-											<div class="ttr-post-info">
-												<div class="ttr-post-header">
-													<h6 class="post-title"><a href="blog-details.jsp">What Will Education Be Like In The Next 50 Years?</a></h6>
-												</div>
-												<ul class="media-post">
-													<li><a href="#"><i class="fa fa-calendar"></i>May 14 2019</a></li>
-													<li><a href="#"><i class="fa fa-comments-o"></i>23 Comment</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="widget-post clearfix">
-											<div class="ttr-post-media"> <img src="${contextPath }/resources/main_assets/assets/images/blog/recent-blog/pic3.jpg" width="200" height="160" alt=""> </div>
-											<div class="ttr-post-info">
-												<div class="ttr-post-header">
-													<h6 class="post-title"><a href="blog-details.jsp">Eliminate Your Fears And Doubts About Education.</a></h6>
-												</div>
-												<ul class="media-post">
-													<li><a href="#"><i class="fa fa-calendar"></i>June 12 2019</a></li>
-													<li><a href="#"><i class="fa fa-comments-o"></i>27 Comment</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
+										     
+									    
+   									 
 								</div>
-								<div class="widget widget-newslatter">
-									<h6 class="widget-title">Newsletter</h6>
-									<div class="news-box">
-										<p>Enter your e-mail and subscribe to our newsletter.</p>
-										<form class="subscription-form" action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
-											<div class="ajax-message"></div>
-											<div class="input-group">
-												<input name="dzEmail" required="required" type="email" class="form-control" placeholder="Your Email Address"/>
-												<button name="submit" value="Submit" type="submit" class="btn black radius-no">
-													<i class="fa fa-paper-plane-o"></i>
-												</button>
-											</div>
-										</form>
-									</div>
+								</form>
 								</div>
-								<div class="widget widget_gallery gallery-grid-4">
-									<h6 class="widget-title">Our Gallery</h6>
-									<ul>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic5.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic7.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic8.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic9.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic3.jpg" alt=""></a></div></li>
-										<li><div><a href="#"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic4.jpg" alt=""></a></div></li>
-									</ul>
-								</div>
-								<div class="widget widget_tag_cloud">
-									<h6 class="widget-title">Tags</h6>
-									<div class="tagcloud"> 
-										<a href="#">Design</a> 
-										<a href="#">User interface</a> 
-										<a href="#">SEO</a> 
-										<a href="#">WordPress</a> 
-										<a href="#">Development</a> 
-										<a href="#">Joomla</a> 
-										<a href="#">Design</a> 
-										<a href="#">User interface</a> 
-										<a href="#">SEO</a> 
-										<a href="#">WordPress</a> 
-										<a href="#">Development</a> 
-										<a href="#">Joomla</a> 
-										<a href="#">Design</a> 
-										<a href="#">User interface</a> 
-										<a href="#">SEO</a> 
-										<a href="#">WordPress</a> 
-										<a href="#">Development</a> 
-										<a href="#">Joomla</a> 
-									</div>
-								</div>
-							</aside>
-						</div>
-						<!-- Side bar END -->
+								<hr>
+								
+							</div>
+							
 					</div>
 				</div>
-            </div>
+			</div>
         </div>
     </div>
+    
     <!-- Content END-->
 <!-- Footer ==== -->
     <footer>

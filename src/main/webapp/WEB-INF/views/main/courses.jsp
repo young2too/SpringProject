@@ -65,7 +65,7 @@
 				<div class="row d-flex justify-content-between">
 					<div class="topbar-left">
 						<ul>
-							<li><a href="faq-1.jsp"><i class="fa fa-question-circle"></i>Ask a Question</a></li>
+							<li><a href="${contextPath }/WEB-INF/views/main/faq-1.jsp"><i class="fa fa-question-circle"></i>Ask a Question</a></li>
 							<li><a href="javascript:;"><i class="fa fa-envelope-o"></i>Support@website.com</a></li>
 						</ul>
 					</div>
@@ -145,7 +145,7 @@
 									</li>
 									<li><a href="javascript:;">FAQ's<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
-											<li><a href="faq-1.jsp">FAQ's 1</a></li>
+											<li><a href="${contextPath }/WEB-INF/views/main/faq-1.jsp">FAQ's 1</a></li>
 											<li><a href="faq-2.jsp">FAQ's 2</a></li>
 										</ul>
 									</li>

@@ -66,14 +66,14 @@
 		<div class="top-bar">
 			<div class="container">
 				<div class="row d-flex justify-content-between">
-					<div class="topbar-left">
+					<!--  <div class="topbar-left">
 						<ul>
 							<li><a href="faq-1.jsp"><i class="fa fa-question-circle"></i>Ask a Question</a></li>
 							<li><a href="javascript:;"><i class="fa fa-envelope-o"></i>Support@website.com</a></li>
 						</ul>
-					</div>
-					<div class="topbar-right">
-						<ul>
+					</div>-->
+					<!--<div class="topbar-right">
+						  <ul>
 							<li>
 								<select class="header-lang-bx">
 									<option data-icon="flag flag-uk">English UK</option>
@@ -83,7 +83,7 @@
 							<li><a href="login.jsp">Login</a></li>
 							<li><a href="register.jsp">Register</a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -101,12 +101,11 @@
 						<span></span>
 					</button>
 					<!-- Author Nav ==== -->
-                    <div class="secondary-menu">
+                     <div class="secondary-menu">
                         <div class="secondary-inner">
                             <ul>
-								<li><a href="javascript:;" class="btn-link"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="javascript:;" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="javascript:;" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="login.jsp">로그인 </a></li>
+							<li><a href="register.jsp">회원가입</a></li>
 								<!-- Search Button ==== -->
 								<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
 							</ul>
@@ -126,23 +125,23 @@
 							<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
 						</div>
                         <ul class="nav navbar-nav">	
-							<li class="active"><a href="javascript:;">Home <i class="fa fa-chevron-down"></i></a>
+							<li class="active"><a href="javascript:;">Home<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
 									<li><a href="index.jsp">Home 1</a></li>
 									<li><a href="index-2.jsp">Home 2</a></li>
 								</ul>
 							</li>
-							<li><a href="javascript:;">Pages <i class="fa fa-chevron-down"></i></a>
+							<li><a href="javascript:;">PAGES<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="javascript:;">About<i class="fa fa-angle-right"></i></a>
+									<li><a href="javascript:;">학습하기<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
 											<li><a href="about-1.jsp">About 1</a></li>
 											<li><a href="about-2.jsp">About 2</a></li>
 										</ul>
 									</li>
-									<li><a href="javascript:;">Event<i class="fa fa-angle-right"></i></a>
+									<li><a href="javascript:;">문제풀기<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
-											<li><a href="event.jsp">Event</a></li>
+											<li><a href="event.jsp">주관식</a></li>
 											<li><a href="events-details.jsp">Events Details</a></li>
 										</ul>
 									</li>
@@ -164,16 +163,16 @@
 									<li><a href="error-404.jsp">404 Page</a></li>
 								</ul>
 							</li>
-							<li class="add-mega-menu"><a href="javascript:;">Our Courses <i class="fa fa-chevron-down"></i></a>
+							<li class="add-mega-menu"><a href="javascript:;">나의 단어장<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu add-menu">
 									<li class="add-menu-left">
-										<h5 class="menu-adv-title">Our Courses</h5>
+										<h5 class="menu-adv-title">나의 단어장</h5>
 										<ul>
-											<li><a href="main/courses.jsp">Courses </a></li>
-											<li><a href="courses-details.jsp">Courses Details</a></li>
-											<li><a href="profile.jsp">Instructor Profile</a></li>
-											<li><a href="event.jsp">Upcoming Event</a></li>
-											<li><a href="membership.jsp">Membership</a></li>
+											<li><a href="main/courses.jsp">정보처리기사</a></li>
+											<li><a href="courses-details.jsp">보안기사</a></li>
+											<li><a href="profile.jsp">리눅스</a></li>
+											<li><a href="event.jsp">한국사</a></li>
+											<li><a href="membership.jsp">영단어</a></li>
 										</ul>
 									</li>
 									<li class="add-menu-right">
@@ -183,9 +182,9 @@
 							</li>
 							<li><a href="javascript:;">Blog <i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="blog-classic-grid.jsp">Blog Classic</a></li>
+									<li><a href="listQaes.do">Blog Classic</a></li>
 									<li><a href="blog-classic-sidebar.jsp">Blog Classic Sidebar</a></li>
-									<li><a href="blog-list-sidebar.jsp">Blog List Sidebar</a></li>
+									<li><a href="blog-list-sidebar.jsp">QnA게시판</a></li>
 									<li><a href="blog-standard-sidebar.jsp">Blog Standard Sidebar</a></li>
 									<li><a href="blog-details.jsp">Blog Details</a></li>
 								</ul>
@@ -311,8 +310,8 @@
 							<!-- LAYER NR. 3 -->
 							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
 								id="slide-100-layer-3" 
-								data-x="['center','center','center','center']" 
-								data-hoffset="['0','0','0','0']" 
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
 								data-y="['top','top','top','top']" 
 								data-voffset="['210','210','210','210']" 
 								data-width="none"
@@ -609,7 +608,7 @@
             <!-- Our Services END -->
 			
 			<!-- Popular Courses -->
-			<div class="section-area section-sp2 popular-courses-bx">
+			 <div class="section-area section-sp2 popular-courses-bx">
                 <div class="container">
 					<div class="row">
 						<div class="col-md-12 heading-bx left">
@@ -734,11 +733,11 @@
 					</div>
 					</div>
 				</div>
-			</div>
+			</div> 
 			<!-- Popular Courses END -->
 			
 			<!-- Form -->
-			<div class="section-area section-sp1 ovpr-dark bg-fix online-cours" style="background-image:url(${contextPath }/resources/main_assets/assets/images/background/bg1.jpg);">
+			<!-- <div class="section-area section-sp1 ovpr-dark bg-fix online-cours" style="background-image:url(${contextPath }/resources/main_assets/assets/images/background/bg1.jpg);">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 text-center text-white">
@@ -783,9 +782,9 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>  -->
 			<!-- Form END -->
-			<div class="section-area section-sp2">
+			<!-- <div class="section-area section-sp2">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 text-center heading-bx">
@@ -870,7 +869,7 @@
 						<a href="#" class="btn">View All Event</a>
 					</div>
 				</div>
-			</div>
+			</div>  -->
 			
 			<!-- Testimonials -->
 			<div class="section-area section-sp2 bg-fix ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/background/bg1.jpg);">
@@ -916,7 +915,7 @@
 			<!-- Testimonials END -->
 			
 			<!-- Recent News -->
-			<div class="section-area section-sp2">
+			<!-- <div class="section-area section-sp2">
                 <div class="container">
 					<div class="row">
 						<div class="col-md-12 heading-bx left">
@@ -984,7 +983,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>  -->
 			<!-- Recent News End -->
 			
         </div>
@@ -1088,13 +1087,13 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
+        <!--  <div class="footer-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a target="_blank" href="https://www.templateshub.net">Templates Hub</a></div>
                 </div>
             </div>
-        </div>
+        </div>  -->
     </footer>
     <!-- Footer END ==== -->
     <button class="back-to-top fa fa-chevron-up" ></button>
