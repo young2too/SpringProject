@@ -1,25 +1,31 @@
-  <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="contextPath" value="${ pageContext.request.contextPath }"/>   
-     
-     <footer>
+<c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<footer>
         <div class="footer-top">
 			<div class="pt-exebar">
 				<div class="container">
 					<div class="d-flex align-items-stretch">
 						<div class="pt-logo mr-auto">
-							<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""/></a>
+							<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""/></a>
 						</div>
-						<div class="pt-social-link">
+						<!-- <div class="pt-social-link">
 							<ul class="list-inline m-a0">
 								<li><a href="#" class="btn-link"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#" class="btn-link"><i class="fa fa-twitter"></i></a></li>
 								<li><a href="#" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
 							</ul>
-						</div>
+						</div> -->
 						<div class="pt-btn-join">
 							<a href="#" class="btn ">지금 가입하세요</a>
 						</div>
@@ -31,12 +37,12 @@
 					<div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
                         <div class="widget">
                             <h5 class="footer-title">뉴스 레터 신청</h5>
-							<p class="text-capitalize m-b20">주간 속보 분석 및 구직에 대한 조언.</p>
+							<p class="text-capitalize m-b20">주간 속보 분석 및 구직에 대한 조언을 받아보세요.</p>
                             <div class="subscribe-form m-b20">
 								<form class="subscription-form" action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
 									<div class="ajax-message"></div>
 									<div class="input-group">
-										<input name="email" required="required"  class="form-control" placeholder="귀하의 이메일 주소" type="email">
+										<input name="email" required="required"  class="form-control" placeholder="이메일 주소" type="email">
 										<span class="input-group-btn">
 											<button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
 										</span> 
@@ -51,7 +57,7 @@
 								<div class="widget footer_widget">
 									<h5 class="footer-title">회사</h5>
 									<ul>
-										<li><a href="index.jsp">홈</a></li>
+										<li><a href="index.do">홈</a></li>
 										<li><a href="study.do">소개</a></li>
 										<li><a href="faq-1.jsp">자주 묻는 질문</a></li>
 										<li><a href="contact-1.jsp">연락처</a></li>
@@ -83,8 +89,8 @@
 						</div>
                     </div>
 					<div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
-                        <div class="widget widget_gallery gallery-grid-4">
-                            <h5 class="footer-title">갤러리</h5>
+                       <%--  <div class="widget widget_gallery gallery-grid-4">
+                            <h5 class="footer-title">Our Gallery</h5>
                             <ul class="magnific-image">
 								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" alt=""></a></li>
 								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" alt=""></a></li>
@@ -95,7 +101,7 @@
 								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic7.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic7.jpg" alt=""></a></li>
 								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic8.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic8.jpg" alt=""></a></li>
 							</ul>
-                        </div>
+                        </div> --%>
                     </div>
                 </div>
             </div>
@@ -107,7 +113,6 @@
                 </div>
             </div>
         </div>  -->
-    </footer> 
-    <!-- Footer END ==== -->
-    <button class="back-to-top fa fa-chevron-up" ></button>
-</div>
+    </footer>
+</body>
+</html>
