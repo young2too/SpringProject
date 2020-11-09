@@ -1,5 +1,6 @@
 package com.spring.project.member.service;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -19,6 +20,10 @@ public interface MemberService {
 	 public MemberVO loginProc(String LgId, String LgPw) throws Exception;
 	 // 로그인으로 회원정보 조회
 	 public int idCheck(String RgId) throws Exception;
-		/* public int pwCheck(String RgPw) throws Exception; */
+	/* public int pwCheck(String RgPw) throws Exception; */
 	/* public int getMaxMemberCode() throws Exception; */
+	 
+	 public void keepLogin(String id, String sessionId, Date sessionLimit) throws Exception;
+	 public MemberVO checkUserWithSessionKey(String sessionId) throws Exception;
+
 }

@@ -8,16 +8,18 @@ public class MemberVO {
 	private String pw;
 	private String name;
 	private String email;
+	private boolean isUseCookie;
 	
 	public MemberVO() {
 		
 	}
 	
-	public MemberVO(String id,String pw, String name, String email) {
+	public MemberVO(String id,String pw, String name, String email,boolean isUseCookie) {
 		this.id=id;
 		this.pw=pw;
 		this.name=name;
 		this.email=email;
+		this.isUseCookie = isUseCookie;
 	}
 	public String getId() {
 		return id;
@@ -42,5 +44,13 @@ public class MemberVO {
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}	
+	}
+	public boolean isUseCookie() {
+		return isUseCookie;
+	}
+
+	public void setUseCookie(boolean isUseCookie) {
+		this.isUseCookie = isUseCookie;
+	}
+
 }

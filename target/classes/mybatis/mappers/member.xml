@@ -62,6 +62,25 @@
 	]]>
   </select>  
   
+  <!-- 로그인 된 경우 해당세션id와 유효시간을 table에 세팅 -->
+  <update id="keepLogin" parameterType="memberVO" >
+	<![CDATA[
+		update member_table 
+		set sessionkey=#{sessionId}, 
+		sessionLimit=#{sessionLimit} 
+		where id=#{id}
+	]]>
+  </update>
+  
+  <!--유효기간이 남아있으면서 해당 sessionId를 가지는 사용자 정보를 꺼내오는 부분  -->
+  <select id="checkUserWithSessionKey" resultType="memberVO">
+	<![CDATA[
+		select * from member_table	
+		where sessionkey=#{sessionId}
+		and sessionLimit > now()
+	]]>
+  </select>  
+  
 <!-- pw 체크 
   <select id="pwCheck"  resultType="int"   parameterType="String" >
 	<![CDATA[

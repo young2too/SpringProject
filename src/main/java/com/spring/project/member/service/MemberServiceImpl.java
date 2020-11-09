@@ -1,5 +1,6 @@
 package com.spring.project.member.service;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -49,6 +50,18 @@ public class MemberServiceImpl implements MemberService{
 	public int idCheck(String RgId) throws Exception {
 		// TODO Auto-generated method stub
 		return memberDAO.idCheck(RgId);
+	}
+
+	@Override
+	public void keepLogin(String id, String sessionId, Date sessionLimit) throws Exception{
+		// TODO Auto-generated method stub
+		memberDAO.keepLogin(id, sessionId, sessionLimit);
+	}
+
+	@Override
+	public MemberVO checkUserWithSessionKey(String sessionId) throws Exception{
+		// TODO Auto-generated method stub
+		return memberDAO.checkUserWithSessionKey(sessionId);
 	}
 
 	/*

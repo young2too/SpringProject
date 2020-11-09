@@ -1,6 +1,9 @@
 package com.spring.project.member.dao;
 
+import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -54,6 +57,23 @@ public class MemberDaoImpl implements MemberDao{
 		// TODO Auto-generated method stub
 		int result = sqlSession.selectOne("mapper.member.idCheck", RgId);
 		return result;
+	}
+
+	@Override
+	public void keepLogin(String id, String sessionId, Date sessionLimit) {
+		// TODO Auto-generated method stub
+		Map<String,Object> result = new HashMap<String, Object>();
+		result.put("id", id);
+		result.put("sessionId", sessionId);
+		result.put("sessionLimit", sessionLimit);
+		sqlSession.update("mapper.member.keepLogin", result);
+		
+	}
+
+	@Override
+	public MemberVO checkUserWithSessionKey(String sessionId) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("mapper.member.checkUserWithSessionKey",sessionId);
 	}
 
 	/*

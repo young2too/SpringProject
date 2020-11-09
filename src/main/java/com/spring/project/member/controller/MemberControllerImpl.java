@@ -1,5 +1,8 @@
 package com.spring.project.member.controller;
 
+import java.sql.Date;
+
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -15,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.util.WebUtils;
 
+import com.mysql.jdbc.interceptors.SessionAssociationInterceptor;
 import com.spring.project.member.service.MemberService;
 import com.spring.project.member.vo.MemberVO;
 
@@ -63,12 +68,11 @@ public class MemberControllerImpl implements MemberController {
 		addmemberVO.setPw(request.getParameter("RgPw"));
 		addmemberVO.setName(request.getParameter("RgName"));
 		addmemberVO.setEmail(request.getParameter("RgEmail"));
-		
-		
+
 		memberService.addMember(addmemberVO);
 
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("main/login");
+		mav.setViewName("redirect:login");
 		return mav;
 	}
 
@@ -80,45 +84,66 @@ public class MemberControllerImpl implements MemberController {
 		String id = request.getParameter("LgId");
 		String pw = request.getParameter("LgPw");
 		memberVO = memberService.loginProc(id, pw);
+		
 		if (memberVO != null) {
 			HttpSession session = request.getSession();
+			String[] rememberme = request.getParameterValues("RememberMe");
 			session.setAttribute("member", memberVO);
 			session.setAttribute("LgId", memberVO.getId());
+			
 			session.setAttribute("isLogOn", true);
-			String action = (String) session.getAttribute("action");
-			session.removeAttribute("action");
-			if (action != null) {
-				mav.setViewName("redirect:" + action);
-			} else {
-				System.out.println("로그인완료");
-				mav.setViewName("main/index");
-
+			System.out.println("로그인완료");
+			mav.setViewName("main/index");
+			
+			if (rememberme!=null) {
+				Cookie cookie = new Cookie("loginCookie", memberVO.getId());
+				System.out.println("쿠키굽기성공");
+				cookie.setPath("/");
+				int amount = 60 * 60 * 24 * 3; //3days
+				cookie.setMaxAge(amount);
+				response.addCookie(cookie);
+				Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
+				memberService.keepLogin(memberVO.getId(), session.getId(), sessionLimit);
 			}
-			System.out.println(session.getAttribute("member"));
+			/*
+			 * 
+			 * if ( session.getAttribute("login") !=null ){
+			 * session.removeAttribute("login"); }
+			 */
 		} else {
 			mav.addObject("result", "loginFailed");
+			System.out.println("로그인 실패");
 			mav.setViewName("main/login");
 		}
-
 		return mav;
 	}
 
 	@Override
-	@RequestMapping(value = "logout.do", method = {RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(value = "logout.do", method = { RequestMethod.POST, RequestMethod.GET })
 	public ModelAndView logoutProc(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub`	
 		ModelAndView mav = new ModelAndView();
 		HttpSession session = request.getSession();
+	    Cookie cookie = WebUtils.getCookie(request, "loginCookie");
+	    if(cookie!= null) { 
+	    	cookie.setPath("/"); 
+	    	cookie.setMaxAge(0);
+	    	response.addCookie(cookie);
+	    	System.out.println("쿠키초기화");
+	    } 
+		/*
+		 * session.setAttribute("member", null); session.setAttribute("LgId", null);
+		 * session.setAttribute("isLogOn", false);
+		 */
 		session.invalidate();
-		mav.setViewName("main/index");
-		System.out.println("로그아웃 되었습니다.");
+		mav.setViewName("redirect:/index.do");
 		return mav;
 	}
 
 	@Override
 	@ResponseBody
-	@RequestMapping(value = "idcheck.do", method = {RequestMethod.POST, RequestMethod.GET})
-	public int idCheck(@RequestParam("idcheck") String RgId) throws Exception{
+	@RequestMapping(value = "idcheck.do", method = { RequestMethod.POST, RequestMethod.GET })
+	public int idCheck(@RequestParam("idcheck") String RgId) throws Exception {
 		// TODO Auto-generated method stub
 		int result = memberService.idCheck(RgId);
 		return result;
