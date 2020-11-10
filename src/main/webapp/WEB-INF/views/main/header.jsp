@@ -52,8 +52,18 @@
 					<!-- Author Nav ==== -->
                      <div class="secondary-menu">
                         <div class="secondary-inner">
+                        
                         	<%
-								String LgId = (String)session.getAttribute("LgId");
+                        		
+                        		Cookie[] cookies = request.getCookies();
+                        		if(cookies != null){
+                        			for(Cookie cookie : cookies){
+                        				if(cookie.getName().equals("loginCookie")){
+                        					session.setAttribute("LgId", cookie.getValue());
+                        				}
+                        			}
+                        		}
+                        		String LgId = (String)session.getAttribute("LgId");
                         		MemberVO member = (MemberVO)session.getAttribute("member");
                         	%>
                         	<% if(LgId !=null) {

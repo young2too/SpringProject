@@ -29,6 +29,7 @@ public class QuizDAOImpl implements QuizDAO {
 	@Override
 	public int insertQuiz(QuizVO quizVO) throws DataAccessException {
 		// TODO Auto-generated method stub
+		sqlSession.insert("mapper.quiz.addNewQuiz",quizVO);
 		return 0;
 	}
 
@@ -70,6 +71,26 @@ public class QuizDAOImpl implements QuizDAO {
 		tempMap.put("quizCode",quizCode);
 		randomAnswerList = sqlSession.selectList("mapper.quiz.selectThreeRandomAnswer",tempMap);
 		return randomAnswerList;
+	}
+
+	@Override
+	public List<QuizVO> select10moreQuiz(int startNo) {
+		// TODO Auto-generated method stub
+		List<QuizVO> more10List = null;
+		more10List = sqlSession.selectList("mapper.quiz.select10moreQuiz",startNo);
+		return more10List;
+	}
+
+	@Override
+	public void deleteQuizByQuizCode(String quiz_code) {
+		// TODO Auto-generated method stub
+		sqlSession.delete("mapper.quiz.deleteQuizByQuizCode",quiz_code);
+	}
+
+	@Override
+	public int getQuizNumberByCategory(int category) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("mapper.quiz.getQuizNumberByCategory",category);
 	}
 
 }

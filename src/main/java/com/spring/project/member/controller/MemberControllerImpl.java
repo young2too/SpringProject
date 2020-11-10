@@ -1,5 +1,6 @@
 package com.spring.project.member.controller;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.util.WebUtils;
 
 import com.spring.project.member.service.MemberService;
 import com.spring.project.member.vo.MemberVO;
@@ -85,15 +87,17 @@ public class MemberControllerImpl implements MemberController {
 			session.setAttribute("member", memberVO);
 			session.setAttribute("LgId", memberVO.getId());
 			session.setAttribute("isLogOn", true);
-			String action = (String) session.getAttribute("action");
 			session.removeAttribute("action");
-			if (action != null) {
-				mav.setViewName("redirect:" + action);
-			} else {
-				System.out.println("로그인완료");
-				mav.setViewName("main/index");
-
+			String[] rememberme = request.getParameterValues("rememberMe");
+			if(rememberme != null) {
+				Cookie cookie = new Cookie("loginCookie",memberVO.getId());
+				cookie.setPath("/");
+				int amount = 60*60*24*3;
+				cookie.setMaxAge(amount);
+				response.addCookie(cookie);
 			}
+			System.out.println("로그인완료");
+			mav.setViewName("main/index");
 			System.out.println(session.getAttribute("member"));
 		} else {
 			mav.addObject("errorMsg","로그인 실패");
@@ -110,8 +114,14 @@ public class MemberControllerImpl implements MemberController {
 		// TODO Auto-generated method stub
 		ModelAndView mav = new ModelAndView();
 		HttpSession session = request.getSession();
+		Cookie cookie = WebUtils.getCookie(request, "loginCookie");
+		if(cookie != null) {
+			cookie.setPath("/");
+			cookie.setMaxAge(0);
+			response.addCookie(cookie);
+		}
 		session.invalidate();
-		mav.setViewName("main/index");
+		mav.setViewName("redirect:/index.do");
 		System.out.println("로그아웃 되었습니다.");
 		return mav;
 	}

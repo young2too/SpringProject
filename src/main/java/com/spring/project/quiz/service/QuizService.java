@@ -1,6 +1,7 @@
 package com.spring.project.quiz.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.dao.DataAccessException;
 
@@ -18,6 +19,10 @@ public interface QuizService {
 	
 	public int addToMyVoca(String quizCode, int own_code) throws DataAccessException;
 	//문제에 붙은 퀴즈코드를 이용하여 내 단어장에 추가함(파라미터로 퀴즈코드와 멤버코드를 보냄)
-	public List<QuizVO> selectTwoRandomQuiz(int category);
-	public List<String> selectWrongAnswer(String category, String quizCode);
+	public List<QuizVO> selectTwoRandomQuiz(int category) throws DataAccessException;
+	public List<String> selectWrongAnswer(String category, String quizCode) throws DataAccessException;
+	public List<QuizVO> select10Quiz(int startNo) throws DataAccessException;// 
+	public void deleteByQuizCode(String quiz_code) throws DataAccessException;
+	public int getQuizNumberByCategory(int category) throws DataAccessException;
+	public void addQuiz(QuizVO quizVO) throws DataAccessException;
 }
