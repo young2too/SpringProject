@@ -89,8 +89,7 @@
 			<div class="ttr-search-bar">
 				<form class="ttr-search-form">
 					<div class="ttr-search-input-wrapper">
-						<input type="text" name="qq" placeholder="search something..." class="ttr-search-input">
-						<button type="submit" name="search" class="ttr-search-submit"><i class="ti-arrow-right"></i></button>
+						<input type="text" id="searchInput" placeholder="search something..." class="ttr-search-input">
 					</div>
 					<span class="ttr-search-close ttr-search-toggle">
 						<i class="ti-close"></i>
@@ -100,5 +99,19 @@
 			<!--header search panel end -->
 		</div>
 	</header>
+<script src="${contextPath }/resources/main_assets/assets/js/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#searchInput").keyup(function(){
+			var k = $(this).val();
+			$(".voca_table2").hide();
+			var temp = $(".voca_table > .voca_table2:contains('" + k + "')");
+			$(temp).show();
+		});
+	});
+</script>
 </body>
+
+
+
 </html>

@@ -78,7 +78,7 @@ color:black !important;
 				<h4 class="breadcrumb-title">Add listing</h4>
 				<ul class="db-breadcrumb-list">
 					<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-					<li>Add listing</li>
+					<li>새 문제 추가</li>
 				</ul>
 			</div>
 			<div class="row">

@@ -3,7 +3,7 @@
 	backface-visibility: hidden;
 	transform: rotateX(180deg);
 	color: rgb(255, 255, 255);
-	font-size:60px;
+	font-size:40px;
 	font-weight: bold;
 }
 
@@ -12,6 +12,7 @@
 	/*border-radius: 50px;*/
 	background-color:rgb(255,255,255);
 	border:black 1px solid;
+	border:outset;
 }
 
 .theback button:hover{
