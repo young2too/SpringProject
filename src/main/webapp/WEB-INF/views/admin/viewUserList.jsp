@@ -75,51 +75,24 @@
 						<div class="widget-inner">
 							<div class="new-user-list">
 								<ul>
-									<li>
-										<span class="new-users-text">
-											<a href="#" class="new-users-name">Anna Strong </a>
-											<span class="new-users-info">Visual Designer,Google Inc </span>
-										</span>
-										<span class="new-users-btn">
-											<a href="#" class="btn button-sm outline">탈퇴</a>
-										</span>
-									</li>
-									<li>
-										<span class="new-users-text">
-											<a href="#" class="new-users-name"> Milano Esco </a>
-											<span class="new-users-info">Product Designer, Apple Inc </span>
-										</span>
-										<span class="new-users-btn">
-											<a href="#" class="btn button-sm outline">탈퇴</a>
-										</span>
-									</li>
-									<li>
-										<span class="new-users-text">
-											<a href="#" class="new-users-name">Nick Bold  </a>
-											<span class="new-users-info">Web Developer, Facebook Inc </span>
-										</span>
-										<span class="new-users-btn">
-											<a href="#" class="btn button-sm outline">탈퇴</a>
-										</span>
-									</li>
-									<li>
-										<span class="new-users-text">
-											<a href="#" class="new-users-name">Wiltor Delton </a>
-											<span class="new-users-info">Project Manager, Amazon Inc </span>
-										</span>
-										<span class="new-users-btn">
-											<a href="#" class="btn button-sm outline">탈퇴</a>
-										</span>
-									</li>
-									<li>
-										<span class="new-users-text">
-											<a href="#" class="new-users-name">Nick Stone </a>
-											<span class="new-users-info">Project Manager, Amazon Inc  </span>
-										</span>
-										<span class="new-users-btn">
-											<a href="#" class="btn button-sm outline">탈퇴</a>
-										</span>
-									</li>
+									<c:forEach var="members" items="${memList}">
+										<li>
+											<span class="new-users-text">
+												<span>ID   :   </span>
+												<span class="new-users-info">${members.id }</span>
+												&emsp;&emsp;
+												<span>NAME   :   </span>
+												<span class="new-users-info">${members.name }</span>
+												&emsp;&emsp;
+												<span>EMAIL :   </span>
+												<span class="new-users-info">${members.email }</span>
+											</span>
+											<span class="new-users-btn">
+												<a href="/project/admin/removeMember.do?id=${members.id }" 
+												onclick="return confirm('${members.name} 님을 삭제하시겠습니까?');" class="btn button-sm outline">탈퇴</a>
+											</span>
+										</li>
+									</c:forEach>
 								</ul>
 							</div>
 						</div>
