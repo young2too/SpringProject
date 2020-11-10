@@ -162,7 +162,7 @@
 				<div class="question-wrapper">
 					<div class="question">
 					</div>
-					<button id="to-home" onclick="window.open('index.do')" style="display:none;">메인으로</button>
+					<button id="to-home" onclick="window.open('index.do','_self')" style="display:none;">메인으로</button>
 				</div>
 				<div class="answer-selection-wrapper">
 					<button name="selection1"></button>
