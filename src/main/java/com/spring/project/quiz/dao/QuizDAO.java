@@ -19,6 +19,9 @@ public interface QuizDAO {
 	//문제에 붙은 퀴즈코드를 이용하여 내 단어장에 추가함(파라미터로 퀴즈코드와 멤버코드를 보냄)
 	public List<QuizVO> searchTwoRandomQuiz(int category);
 	public List<String> searchThreeRandomQuiz(String category, String quizCode);
+	public List<QuizVO> select10moreQuiz(int startNo);
+	public void deleteQuizByQuizCode(String quiz_code);
+	public int getQuizNumberByCategory(int category);
 
 }
 

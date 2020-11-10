@@ -39,10 +39,10 @@ public class HomeController {
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
-		int category = (int)Math.random()*5; 
-		List<QuizVO> randomQuiz = quizService.selectTwoRandomQuiz(category);
+		int category = (int)Math.random()*5+1; 
+		List<QuizVO> randomQuizList = quizService.selectTwoRandomQuiz(category);
 		String formattedDate = dateFormat.format(date);
-		model.addAttribute("randomQuiz", randomQuiz);
+		model.addAttribute("randomQuizList", randomQuizList);
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "main/index";

@@ -27,7 +27,7 @@
 		                </a>
 		            </li>
 					<li>
-						<a href="#" class="ttr-material-button">
+						<a href="quizes.do" class="ttr-material-button">
 							<span class="ttr-icon"><i class="ti-book"></i></span>
 		                	<span class="ttr-label">문제집 관리</span>
 		                </a>

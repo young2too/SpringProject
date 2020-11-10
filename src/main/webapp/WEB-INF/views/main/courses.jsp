@@ -125,7 +125,7 @@
 						<!-- 단어장 들어갈 공간 -->
 						<div class="voca_place">
                          <div class="voca_table">
-                         		<c:forEach var="quizes" items="${getMyQuizList}">
+                      	<c:forEach var="quizes" items="${getMyQuizList}">
                          	<div class="voca_table2">
 	                           <div class="voca_answer">${quizes.answer }</div>
 	                           <div class="line1"></div>
@@ -138,9 +138,9 @@
 		                           	</a>
 	                           </div>
 	                         </div> <!-- voca_table2 END -->
-	                        	                           </c:forEach> 
+	                   	 </c:forEach> 
                          </div> <!--voca_table END  -->
-                     </div>
+                     	</div>
                   </div>
 				</div>
             </div>

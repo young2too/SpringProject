@@ -11,7 +11,7 @@
 </head>
 <body>
 <script>
-alert('${errorMsg}!');
+alert('${errorMsg}');
 if('${destUrl}'!=""){
 	location.href = '${destUrl}';
 }
