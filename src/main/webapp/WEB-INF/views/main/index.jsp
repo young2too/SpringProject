@@ -96,7 +96,7 @@
 						data-param9="" data-param10="" 
 						data-description="Science says that Women are generally happier">
 							<!-- MAIN IMAGE -->
-							<img src="${contextPath }/resources/main_assets/assets/images/slider/slide1.jpg" alt="" 
+							<img src="${contextPath }/resources/main_assets/assets/images/slider/slide4.png" alt="" 
 								data-bgposition="center center" 
 								data-bgfit="cover" 
 								data-bgrepeat="no-repeat" 
@@ -166,7 +166,7 @@
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; white-space: nowrap; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-									가장 거침없는 자기 자신이 되세요 
+									가장 거침없는 자기 자신이 되세요!
 							</div>
 							
 							<!-- LAYER NR. 3 -->
@@ -188,7 +188,7 @@
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
-									무엇을 성취하려고 노력하든 모든 학생이 자신감을 가지고 무엇이든 배울 수 있도록 도와주세요. 무료 학습 세트, 학습 모드, 수업 내 게임을 사용하여 학생들에게 빠르게 동기를 부여할 수 있습니다.							</div>
+									동기부여와 목표가 무엇이든, 모든 학생들에게 성공을 위한 도구와 자신감을 심어 줍니다.						</div>
 							<!-- LAYER NR. 4 -->
 							<div class="tp-caption Newspaper-Button rev-btn " 
 								id="slide-100-layer-5" 
@@ -237,7 +237,7 @@
 						data-easein="default" 
 						data-easeout="default" 
 						data-masterspeed="default" 
-						data-thumb="${contextPath }/resources/main_assets/assets/images/slider/slide1.jpg" 
+						data-thumb="${contextPath }/resources/main_assets/assets/images/slider/slide4.png" 
 						data-rotate="0" 
 						data-fstransition="fade" 
 						data-fsmasterspeed="1500" 
@@ -251,7 +251,7 @@
 						data-param9="" data-param10="" 
 						data-description="Science says that Women are generally happier">
 							<!-- MAIN IMAGE -->
-							<img src="${contextPath }/resources/main_assets/assets/images/slider/slide2.jpg" alt="" 
+							<img src="${contextPath }/resources/main_assets/assets/images/slider/slide4.png" alt="" 
 								data-bgposition="center center" 
 								data-bgfit="cover" 
 								data-bgrepeat="no-repeat" 
@@ -314,7 +314,7 @@
 								data-width="none"
 								data-height="none"
 								data-whitespace="nowrap"
-								data-type="text" 
+								data-type="text"
 								data-responsive_offset="on"
 								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
 								data-textAlign="['left','left','left','left']"
@@ -323,12 +323,13 @@
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-									가장 거침없는 자기 자신이 되세요
+									가장 거침없는 자기 자신이 되세요!
 							</div>
 							
-							<!-- LAYER NR. 3 -->
+							
 							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
 								id="slide-200-layer-4" 
+								
 								data-x="['center','center','center','center']" 
 								data-hoffset="['0','0','0','0']" 
 								data-y="['top','top','top','top']" 
@@ -345,12 +346,12 @@
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
-									 무엇을 성취하려고 노력하든 모든 학생이 자신감을 가지고 무엇이든 배울 수 있도록 도와주세요. 무료 학습 세트, 학습 모드, 수업 내 게임을 사용하여 학생들에게 빠르게 동기를 부여할 수 있습니다.
-							</div>
+									 동기부여와 목표가 무엇이든, 모든 학생들에게 성공을 위한 도구와 자신감을 심어 줍니다.
+							<!-- LAYER NR. 3 --></div>
 							<!-- LAYER NR. 4 -->
 							<div class="tp-caption Newspaper-Button rev-btn " 
 								id="slide-200-layer-5" 
-								data-x="['center','center','center','center']" 
+								data-x="['center','center','center','center']"
 								data-hoffset="['90','80','75','90']" 
 								data-y="['top','top','top','top']" 
 								data-voffset="['400','400','400','420']" 
@@ -402,7 +403,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="service-bx">
 								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/our-services/pic1.jpg" alt="">
+									<img src="${contextPath }/resources/main_assets/assets/images/our-services/pic5.png" alt="">
 								</div>
 								<div class="info-bx text-center">
 									<div class="feature-box-sm radius bg-white">
@@ -416,7 +417,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="service-bx">
 								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/our-services/pic2.jpg" alt="">
+									<img src="${contextPath }/resources/main_assets/assets/images/our-services/pic4.png" alt="">
 								</div>
 								<div class="info-bx text-center">
 									<div class="feature-box-sm radius bg-white">
@@ -430,7 +431,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-12">
 							<div class="service-bx m-b0">
 								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/our-services/pic3.jpg" alt="">
+									<img src="${contextPath }/resources/main_assets/assets/images/our-services/pic6.png" alt="">
 								</div>
 								<div class="info-bx text-center">
 									<div class="feature-box-sm radius bg-white">
@@ -720,16 +721,60 @@
 						</div>
 					</div>
 					<div class="testimonial-carousel owl-carousel owl-btn-1 col-12 p-lr0">
-						<c:forEach items="${ randomQuizList }" var="randomQuiz">
-							<div class="item">
+						<div class="item">
 							<div class="testimonial-bx">
+								<!-- <div class="testimonial-thumb">
+									<img src="${contextPath }/resources/main_assets/assets/images/testimonials/pic1.jpg" alt="">
+								</div>  -->
+								<div class="testimonial-info">
+									<h5 class="name">흑백당</h5>
+									<!-- <p>-Art Director</p> -->
+								</div>
 								<div class="testimonial-content">
-									<p>${randomQuiz.quiz }</p>
-									<p style="color:red;font-weight:bold;">${randomQuiz.answer }</p>
+									<p>1939년 서울경복중학교 학생들이 조직한 독립운동단체</p>
 								</div>
 							</div>
 						</div>
-						</c:forEach>
+						<div class="item">
+							<div class="testimonial-bx">
+								<!-- <div class="testimonial-thumb">
+									<img src="${contextPath }/resources/main_assets/assets/images/testimonials/pic4.png" alt="">
+								</div>  -->
+								<div class="testimonial-info">
+									<h5 class="name">ROLLBACK</h5>
+									<!-- <p>-Art Director</p>  -->
+								</div>
+								<div class="testimonial-content">
+									<p>변경된 모든 내용들을 취소하고 데이터베이스를 이전 상태로 되돌리는 명령어이다. 비일관성이 될 수 있기때문에 그렇다.</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimonial-bx">
+								<!-- <div class="testimonial-thumb">
+									<img src="${contextPath }/resources/main_assets/assets/images/testimonials/pic4.png" alt="">
+								</div>  -->
+								<div class="testimonial-info">
+									<h5 class="name">RELIEVE</h5>
+									<!-- <p>-Art Director</p>  -->
+								</div>
+								<div class="testimonial-content">
+									<p>완화하다, 해소하다, 안도하게 하다</p>
+								</div>
+							</div>
+							</div>
+							<div class="item">
+							<div class="testimonial-bx">
+								<!-- <div class="testimonial-thumb">
+									<img src="${contextPath }/resources/main_assets/assets/images/testimonials/pic4.png" alt="">
+								</div>  -->
+								<div class="testimonial-info">
+									<h5 class="name">캡슐화</h5>
+									<!-- <p>-Art Director</p>  -->
+								</div>
+								<div class="testimonial-content">
+									<p>상위 계층에서 하위 계층으로 메세지를 전달 할 때, 하위 계층은 전달 받은 메세지에 헤더를 추가한다.</p>
+						</div>
 					</div>
 				</div>
 			</div>
