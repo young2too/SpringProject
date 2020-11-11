@@ -200,7 +200,7 @@
     var renderList = function(mode, vo){
         // 리스트 html을 정의
         
-        var html = "<div class='voca_table2'>" +
+        var html = "<div class='voca_table2 a_list'>" +
             "<div class='voca_answer'>"+ vo.answer +"</div>" +
             "<div class='line1'></div>"+
             "<div class='voca_quiz'>"+ vo.quiz +"</div>" +

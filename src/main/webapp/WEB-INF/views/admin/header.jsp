@@ -92,7 +92,7 @@
 						<input type="text" id="searchInput" placeholder="search something..." class="ttr-search-input">
 					</div>
 					<span class="ttr-search-close ttr-search-toggle">
-						<i class="ti-close"></i>
+						<i class="ti-close" onclick="pressX()"></i>
 					</span>
 				</form>
 			</div>
@@ -101,11 +101,18 @@
 	</header>
 <script src="${contextPath }/resources/main_assets/assets/js/jquery.min.js"></script>
 <script>
+	function pressX(){
+		$("#searchInput").val("");
+		$(".a_list").hide();
+		var temp = $(".a_list:contains('')");
+		$(temp).show();
+	}
+
 	$(document).ready(function(){
 		$("#searchInput").keyup(function(){
 			var k = $(this).val();
-			$(".voca_table2").hide();
-			var temp = $(".voca_table > .voca_table2:contains('" + k + "')");
+			$(".a_list").hide();
+			var temp = $(".a_list:contains('" + k + "')");
 			$(temp).show();
 		});
 	});

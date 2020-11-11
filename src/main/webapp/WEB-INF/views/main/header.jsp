@@ -52,9 +52,7 @@
 					<!-- Author Nav ==== -->
                      <div class="secondary-menu">
                         <div class="secondary-inner">
-                        
                         	<%
-                        		
                         		Cookie[] cookies = request.getCookies();
                         		if(cookies != null){
                         			for(Cookie cookie : cookies){
@@ -64,7 +62,6 @@
                         			}
                         		}
                         		String LgId = (String)session.getAttribute("LgId");
-                        		MemberVO member = (MemberVO)session.getAttribute("member");
                         	%>
                         	<% if(LgId !=null) {
                         		%> 
