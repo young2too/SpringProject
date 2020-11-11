@@ -48,6 +48,8 @@ public class adminControllerImpl implements adminController {
 	public ModelAndView removeMember(@RequestParam("id") String id, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		memberService.removeMember(id);
+		List<MemberVO> memList = memberService.listMembers();
+		mav.addObject("memList",memList);
 		mav.setViewName("admin/viewUserList");
 		return mav;
 	}
