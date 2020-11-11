@@ -97,8 +97,7 @@ public class VocaControllerImpl implements VocaController{
 			
 		}
 		
-		ModelAndView mav = new ModelAndView(  
-				);
+		ModelAndView mav = new ModelAndView();
 		return mav;
 	}
 	

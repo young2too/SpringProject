@@ -42,6 +42,18 @@ public class adminControllerImpl implements adminController {
 		return mav;
 	}
 	
+	
+	// 회원 삭제
+	@RequestMapping(value = "admin/removeMember.do", method = RequestMethod.GET)
+	public ModelAndView removeMember(@RequestParam("id") String id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		memberService.removeMember(id);
+		List<MemberVO> memList = memberService.listMembers();
+		mav.addObject("memList",memList);
+		mav.setViewName("admin/viewUserList");
+		return mav;
+	}
+	
 	@RequestMapping(value = "admin/addNewQuizProc.do", method = RequestMethod.POST)
 	public ModelAndView addNewQuizProc(@RequestParam ("category") int category,@RequestParam ("quiz") String quiz,
 			@RequestParam ("answer") String answer, HttpServletRequest request, HttpServletResponse response) throws Exception {

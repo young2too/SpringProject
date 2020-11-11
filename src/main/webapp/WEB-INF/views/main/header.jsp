@@ -70,6 +70,7 @@
 									<li><a href="logout.do">로그아웃</a></li>
 									<!-- Search Button ==== -->
 									<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+									&nbsp;&nbsp;<li><div id="google_translate_element"></div></li>
 								</ul>
 								<%
 							}else
@@ -198,5 +199,39 @@
                 </div>
             </div>
         </div>
+        
+        
+        <!-- 자동번역기능 -->
+	        <script type="text/javascript">
+				function googleTranslateElementInit() {
+				  new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'ko,de,en,es,fr,ja,vi', 
+					  layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+				}
+			</script>
+			
+			<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+		<style>
+			#google_translate_element{
+				margin-right: 3%;
+			}
+			.goog-te-banner-frame.skiptranslate {
+			       display: none !important;
+			} body { top: 0px !important; }
+			.goog-tooltip {
+			       display: none !important;
+			}
+			.goog-tooltip:hover {
+			       display: none !important;
+			}
+			.goog-text-highlight {
+			       background-color: transparent !important;
+			       border: none !important; 
+			       box-shadow: none !important;
+			}
+		</style>
+        
+        
+        
     </header>
 </body>

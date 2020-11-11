@@ -35,7 +35,7 @@ public class MemberDaoImpl implements MemberDao{
 	@Override
 	public int deleteMember(String id) throws DataAccessException {
 		// TODO Auto-generated method stub
-		int result = sqlSession.delete("mapper.member.deletMember", id);
+		int result = sqlSession.delete("mapper.member.deleteMember", id);
 		return result;
 	}
 
