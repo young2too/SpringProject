@@ -21,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.WebUtils;
 
 import com.mysql.jdbc.interceptors.SessionAssociationInterceptor;
+import com.spring.project.member.dao.MemberDao;
 import com.spring.project.member.service.MemberService;
 import com.spring.project.member.vo.MemberVO;
 
@@ -31,6 +32,8 @@ public class MemberControllerImpl implements MemberController {
 	MemberVO memberVO;
 	@Autowired
 	MemberService memberService;
+	@Autowired
+	MemberDao memberDao;
 
 	@Override
 	@RequestMapping(value = "register.do", method = RequestMethod.GET)
@@ -105,11 +108,8 @@ public class MemberControllerImpl implements MemberController {
 				Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 				memberService.keepLogin(memberVO.getId(), session.getId(), sessionLimit);
 			}
-			/*
-			 * 
-			 * if ( session.getAttribute("login") !=null ){
-			 * session.removeAttribute("login"); }
-			 */
+//			  if ( session.getAttribute("login") !=null ){
+//			  session.removeAttribute("login"); }
 		} else {
 			mav.addObject("result", "loginFailed");
 			System.out.println("로그인 실패");
@@ -149,20 +149,47 @@ public class MemberControllerImpl implements MemberController {
 		return result;
 	}
 
-	/*
-	 * @Override
-	 * 
-	 * @ResponseBody
-	 * 
-	 * @RequestMapping(value = "pwcheck.do", method = {RequestMethod.POST,
-	 * RequestMethod.GET}) public int pwCheck(@RequestParam("pwcheck") String RgPw)
-	 * throws Exception { // TODO Auto-generated method stub int result =
-	 * memberService.pwCheck(RgPw); return result; }
-	 */
-	/*
-	 * @Override public ModelAndView logout(HttpServletRequest request,
-	 * HttpServletResponse response) throws Exception { // TODO Auto-generated
-	 * method stub return null; }
-	 */
+//	@Override
+//	@RequestMapping(value = "userpage.do", method = { RequestMethod.POST, RequestMethod.GET })
+//	public ModelAndView userpage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+//		// TODO Auto-generated method stub
+//		ModelAndView mav = new ModelAndView();
+//		HttpSession session = request.getSession();
+//		String id = (String)session.getAttribute("LgId");
+//		
+//		if(id!=null) {
+//			memberDao.selectAllMemberList();
+//			
+//		}
+//		else {
+//			Cookie[] cookies = request.getCookies();
+//    		for(Cookie cookie : cookies){
+//    			if(cookie.getName().equals("loginCookie")){
+//    				session.setAttribute("LgId", cookie.getValue());
+//    				
+//    			}
+//    		}
+//    	String LgId = (String)session.getAttribute("LgId");
+//		}
+//		mav.setViewName("admin/user-profile");
+//		return mav;
+//	}
+
+//	@Override
+//	@RequestMapping
+//	public ModelAndView pwChange(HttpServletRequest request, HttpServletResponse response) throws Exception {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//	
+//	@Override
+//	@ResponseBody
+//	@RequestMapping(value = "pwcheck.do", method = {RequestMethod.POST,RequestMethod.GET}) 
+//	public int pwCheck(@RequestParam("pwcheck") String RgPw)throws Exception {
+//		// TODO Auto-generated method stub 
+//		int result = memberService.pwCheck(RgPw);
+//		return result;
+//	}
+	 
 
 }

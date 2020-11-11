@@ -1,3 +1,5 @@
+<%@page import="com.spring.project.member.dao.MemberDao"%>
+<%@page import="com.spring.project.member.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -26,7 +28,7 @@
 	<meta name="format-detection" content="telephone=no">
 	
 	<!-- FAVICONS ICON ============================================= -->
-	<link rel="icon" href="../main/error-404.jsp" type="image/x-icon" />
+	<link rel="icon" href="index.do" type="image/x-icon" />
 	<link rel="shortcut icon" type="image/x-icon" href="${contextPath }/resources/admin/assets/images/favicon.png" />
 	
 	<!-- PAGE TITLE HERE ============================================= -->
@@ -56,34 +58,34 @@
 	<link class="skin" rel="stylesheet" type="text/css" href="${contextPath }/resources/admin/assets/css/color/color-1.css">
 	
 </head>
-<body class="ttr-opened-sidebar ttr-pinned-sidebar">
+<!-- <body class="ttr-opened-sidebar ttr-pinned-sidebar"> -->
 	
 	<!-- header start -->
 	<header class="ttr-header">
 		<div class="ttr-header-wrapper">
 			<!--sidebar menu toggler start -->
-			<div class="ttr-toggle-sidebar ttr-material-button">
+			<!-- <div class="ttr-toggle-sidebar ttr-material-button">
 				<i class="ti-close ttr-open-icon"></i>
 				<i class="ti-menu ttr-close-icon"></i>
-			</div>
+			</div> -->
 			<!--sidebar menu toggler end -->
 			<!--logo start -->
 			<div class="ttr-logo-box">
 				<div>
-					<a href="index.jsp" class="ttr-logo">
+					<a href="index.do" class="ttr-logo">
 						<img alt="" class="ttr-logo-mobile" src="${contextPath }/resources/admin/assets/images/logo-mobile.png" width="30" height="30">
 						<img alt="" class="ttr-logo-desktop" src="${contextPath }/resources/admin/assets/images/logo-white.png" width="160" height="27">
 					</a>
 				</div>
 			</div>
 			<!--logo end -->
-			<div class="ttr-header-menu">
+			<!-- <div class="ttr-header-menu"> -->
 				<!-- header left menu start -->
-				<ul class="ttr-header-navigation">
-					<li>
-						<a href="../main/index.jsp" class="ttr-material-button ttr-submenu-toggle">HOME</a>
-					</li>
-					<li>
+				<!-- <ul class="ttr-header-navigation"> -->
+					<!-- <li>
+						<a href="main/index.do" class="ttr-material-button ttr-submenu-toggle">HOME</a>
+					</li> -->
+					<!-- <li>
 						<a href="#" class="ttr-material-button ttr-submenu-toggle">QUICK MENU <i class="fa fa-angle-down"></i></a>
 						<div class="ttr-header-submenu">
 							<ul>
@@ -94,10 +96,10 @@
 						</div>
 					</li>
 				</ul>
-				<!-- header left menu end -->
+				header left menu end
 			</div>
 			<div class="ttr-header-right ttr-with-seperator">
-				<!-- header right menu start -->
+				header right menu start
 				<ul class="ttr-header-navigation">
 					<li>
 						<a href="#" class="ttr-material-button ttr-search-toggle"><i class="fa fa-search"></i></a>
@@ -175,8 +177,8 @@
 							</div>
 						</div>
 					</li>
-					<li>
-						<a href="#" class="ttr-material-button ttr-submenu-toggle"><span class="ttr-user-avatar"><img alt="" src="${contextPath }/resources/admin/assets/images/testimonials/pic3.jpg" width="32" height="32"></span></a>
+					<li> -->
+						<%-- <a href="#" class="ttr-material-button ttr-submenu-toggle"><span class="ttr-user-avatar"><img alt="" src="${contextPath }/resources/admin/assets/images/testimonials/pic3.jpg" width="32" height="32"></span></a>
 						<div class="ttr-header-submenu">
 							<ul>
 								<li><a href="user-profile.jsp">My profile</a></li>
@@ -215,9 +217,9 @@
 							</a>
 						</div>
 					</li>
-				</ul>
+				</ul> --%>
 				<!-- header right menu end -->
-			</div>
+			<!-- </div> -->
 			<!--header search panel start -->
 			<div class="ttr-search-bar">
 				<form class="ttr-search-form">
@@ -250,7 +252,7 @@
 			</div>
 			<!-- side menu logo end -->
 			<!-- sidebar menu start -->
-			<nav class="ttr-sidebar-navi">
+			<!-- <nav class="ttr-sidebar-navi">
 				<ul>
 					<li>
 						<a href="index.jsp" class="ttr-material-button">
@@ -332,8 +334,8 @@
 		            </li>
 		            <li class="ttr-seperate"></li>
 				</ul>
-				<!-- sidebar menu end -->
-			</nav>
+				sidebar menu end
+			</nav> -->
 			<!-- sidebar menu end -->
 		</div>
 	</div>
@@ -343,7 +345,7 @@
 	<main class="ttr-wrapper">
 		<div class="container-fluid">
 			<div class="db-breadcrumb">
-				<h4 class="breadcrumb-title">User Profile</h4>
+				<h4 class="breadcrumb-title">My Page</h4>
 				<ul class="db-breadcrumb-list">
 					<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
 					<li>User Profile</li>
@@ -354,127 +356,40 @@
 				<div class="col-lg-12 m-b30">
 					<div class="widget-box">
 						<div class="wc-title">
-							<h4>User Profile</h4>
+							<h4>마이 페이지</h4>
 						</div>
 						<div class="widget-inner">
 							<form class="edit-profile m-b30">
 								<div class="">
 									<div class="form-group row">
 										<div class="col-sm-10  ml-auto">
-											<h3>1. Personal Details</h3>
+											<h3>My Page</h3>
 										</div>
 									</div>
+								
 									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Full Name</label>
+										<label class="col-sm-2 col-form-label">ID</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="Mark Andre">
-										</div>
+											<input class="form-control" type="text" value="zpqls">
+										</div> 
 									</div>
 									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Occupation</label>
+										<label class="col-sm-2 col-form-label">Name</label>
 										<div class="col-sm-7">
 											<input class="form-control" type="text" value="CTO">
 										</div>
 									</div>
 									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Company Name</label>
+										<label class="col-sm-2 col-form-label">Email</label>
 										<div class="col-sm-7">
 											<input class="form-control" type="text" value="EduChamp">
-											<span class="help">If you want your invoices addressed to a company. Leave blank to use your full name.</span>
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Phone No.</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="+120 012345 6789">
-										</div>
-									</div>
-									
-									<div class="seperator"></div>
-									
-									<div class="form-group row">
-										<div class="col-sm-10 ml-auto">
-											<h3>2. Address</h3>
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Address</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="5-S2-20 Dummy City, UK">
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">City</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="US">
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">State</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="California">
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Postcode</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="000702">
-										</div>
-									</div>
-
-									<div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
-
-									<div class="form-group row">
-										<div class="col-sm-10 ml-auto">
-											<h3 class="m-form__section">3. Social Links</h3>
-										</div>
-									</div>
-
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Linkedin</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="www.linkedin.com">
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Facebook</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="www.facebook.com">
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Twitter</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="www.twitter.com">
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Instagram</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="www.instagram.com">
-										</div>
-									</div>
-								</div>
-								<div class="">
-									<div class="">
-										<div class="row">
-											<div class="col-sm-2">
-											</div>
-											<div class="col-sm-7">
-												<button type="reset" class="btn">Save changes</button>
-												<button type="reset" class="btn-secondry">Cancel</button>
-											</div>
+											<!-- <span class="help">If you want your invoices addressed to a company. Leave blank to use your full name.</span> -->
 										</div>
 									</div>
 								</div>
 							</form>
 							<form class="edit-profile">
 								<div class="">
-									<div class="form-group row">
-										<div class="col-sm-10 ml-auto">
-											<h3>4. Password</h3>
-										</div>
-									</div>
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">Current Password</label>
 										<div class="col-sm-7">
@@ -488,7 +403,7 @@
 										</div>
 									</div>
 									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Re Type Password</label>
+										<label class="col-sm-2 col-form-label">Re-check Password</label>
 										<div class="col-sm-7">
 											<input class="form-control" type="password" value="">
 										</div>
@@ -498,8 +413,9 @@
 									<div class="col-sm-2">
 									</div>
 									<div class="col-sm-7">
-										<button type="reset" class="btn">Save changes</button>
-										<button type="reset" class="btn-secondry">Cancel</button>
+										<button type="button" onclick="buttonClick()" class="btn">Log out</button>
+										<button type="button" onclick="buttonClick()" class="btn">Save</button>
+										<button type="button" onclick="buttonClick()" class="btn-secondry">Home</button>
 									</div>
 								</div>
 									
@@ -533,5 +449,9 @@
 <script src="${contextPath }/resources/admin/assets/vendors/switcher/switcher.js"></script>
 </body>
 
-<!-- Mirrored from educhamp.themetrades.com/demo/admin/user-profile.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:11:35 GMT -->
+<script>
+function buttonClick() {
+	location.href="index.do"
+}
+</script>
 </html>
