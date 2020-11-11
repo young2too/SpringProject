@@ -154,14 +154,12 @@
 </body>
 
 <script type="text/javascript">
-
 var idRule = /^[a-zA-Z0-9]{2,12}$/;
 var pwRule = /^[a-zA-Z0-9]{2,12}$/;
 $(document).ready(function(){
 	idCheck();
 	pwCheck();
 });
-
 function idCheck (){
 	$('input[name=RgId]').blur(function(){
 		var idCheck= $('input[name=RgId]').val();
@@ -219,8 +217,6 @@ function pwCheck(){
 	$('#checkmsgpw').css('color',color);	
 	})
 }
-
-
 </script>
 
 </html>

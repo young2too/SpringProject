@@ -50,46 +50,41 @@
 						<span></span>
 					</button>
 					<!-- Author Nav ==== -->
-					<div class="secondary-menu">
-						<div class="secondary-inner">
-							<%
+                     <div class="secondary-menu">
+                        <div class="secondary-inner">
+                        	<%
                         		Cookie[] cookies = request.getCookies();
-                        		for(Cookie cookie : cookies){
-                        			if(cookie.getName().equals("loginCookie")){
-                        				session.setAttribute("LgId", cookie.getValue());
-                        				
+                        		if(cookies != null){
+                        			for(Cookie cookie : cookies){
+                        				if(cookie.getName().equals("loginCookie")){
+                        					session.setAttribute("LgId", cookie.getValue());
+                        				}
                         			}
                         		}
-                        	String LgId = (String)session.getAttribute("LgId");
-                        	if(LgId !=null) {
+                        		String LgId = (String)session.getAttribute("LgId");
                         	%>
-								<ul>
-								<%-- <li><a href ="userpage.do"><%=LgId%></a>님 환영합니다　</li> --%>
-								<li><a href="logout.do">로그아웃</a></li>
-								<!-- Search Button ==== -->
-								<li class="search-btn">
-									<button id="quik-search-btn"
-										type="button" class="btn-link">
-										<i class="fa fa-search"></i>
-									</button></li>
+                        	<% if(LgId !=null) {
+                        		%> 
+                        		<ul>
+									<li><%=LgId%>님 환영합니다　　</li>
+									<li><a href="logout.do">로그아웃</a></li>
+									<!-- Search Button ==== -->
+									<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+									&nbsp;&nbsp;<li><div id="google_translate_element"></div></li>
 								</ul>
-							<%
+								<%
 							}else
 								{
 								%>
-							<ul>
-								<li><a href="login.do">로그인　</a></li>
-								<li><a href="register.do">회원가입</a></li>
-								<!-- Search Button ==== -->
-								<li class="search-btn">
-									<button id="quik-search-btn"
-										type="button" class="btn-link">
-										<i class="fa fa-search"></i>
-									</button></li>
-							</ul>
+                        	    <ul>
+									<li><a href="login.do">로그인</a>　</li>
+									<li><a href="register.do">회원가입</a></li>
+									<!-- Search Button ==== -->
+									<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+								</ul>
 							<%} %>
 						</div>
-					</div>
+                    </div>
 					<!-- Search Box ==== -->
                     <div class="nav-search-bar">
                         <form action="#">
@@ -204,5 +199,39 @@
                 </div>
             </div>
         </div>
+        
+        
+        <!-- 자동번역기능 -->
+	        <script type="text/javascript">
+				function googleTranslateElementInit() {
+				  new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'ko,de,en,es,fr,ja,vi', 
+					  layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+				}
+			</script>
+			
+			<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+		<style>
+			#google_translate_element{
+				margin-right: 3%;
+			}
+			.goog-te-banner-frame.skiptranslate {
+			       display: none !important;
+			} body { top: 0px !important; }
+			.goog-tooltip {
+			       display: none !important;
+			}
+			.goog-tooltip:hover {
+			       display: none !important;
+			}
+			.goog-text-highlight {
+			       background-color: transparent !important;
+			       border: none !important; 
+			       box-shadow: none !important;
+			}
+		</style>
+        
+        
+        
     </header>
 </body>

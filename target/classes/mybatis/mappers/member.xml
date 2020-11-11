@@ -45,6 +45,7 @@
 	   where id=#{id}
 	]]>      
   </delete>
+
   
   <!-- 로그인 -->
   <select id="loginById"  resultType="memberVO"   parameterType="memberVO" >
@@ -52,6 +53,7 @@
 		select * from member_table	
 		where id=#{id} and pw=#{pw}		
 	]]>
+
   </select>
   
   <!-- id 체크 -->
@@ -81,11 +83,12 @@
 	]]>
   </select>  
   
-<!-- pw 체크 
-  <select id="pwCheck"  resultType="int"   parameterType="String" >
+
+  <!-- pw 체크 -->
+<!--   <select id="pwCheck"  resultType="int"   parameterType="memberVO" >
 	<![CDATA[
-		select count(pw) from member_table	
-		where pw=#{RgPw}		
+		select count(*) from member_table	
+		where id=#{id}		
 	]]>
   </select> -->
   <!-- 회원코드 최댓값 구하기 -->

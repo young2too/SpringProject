@@ -15,8 +15,13 @@ public interface MemberDao {
 	 public int insertMember(MemberVO memberVO) throws DataAccessException ;
 	 public int deleteMember(String id) throws DataAccessException;
 	 public MemberVO loginById(String LgId, String LgPw) throws DataAccessException;
+	 
 	 public int idCheck(String RgId) throws DataAccessException;
+
 	/* public int pwCheck(String RgPw) throws DataAccessException; */ 
+
+//	 public int pwCheck(MemberVO memberVO) throws DataAccessException;
+
 	/* public int getMaxMemberCode() throws DataAccessException; */
 	 
 	 public void keepLogin(String id, String sessionId, Date sessionLimit);

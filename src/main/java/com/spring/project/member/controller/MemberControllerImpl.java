@@ -1,7 +1,6 @@
 package com.spring.project.member.controller;
 
 import java.sql.Date;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -90,10 +89,9 @@ public class MemberControllerImpl implements MemberController {
 		
 		if (memberVO != null) {
 			HttpSession session = request.getSession();
-			String[] rememberme = request.getParameterValues("RememberMe");
+			String[] rememberme = request.getParameterValues("rememberMe");
 			session.setAttribute("member", memberVO);
 			session.setAttribute("LgId", memberVO.getId());
-			
 			session.setAttribute("isLogOn", true);
 			System.out.println("로그인완료");
 			mav.setViewName("main/index");
@@ -108,12 +106,17 @@ public class MemberControllerImpl implements MemberController {
 				Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 				memberService.keepLogin(memberVO.getId(), session.getId(), sessionLimit);
 			}
+
 //			  if ( session.getAttribute("login") !=null ){
 //			  session.removeAttribute("login"); }
+
+			System.out.println("로그인완료");
+			mav.setViewName("main/index");
+			System.out.println(session.getAttribute("member"));
 		} else {
-			mav.addObject("result", "loginFailed");
-			System.out.println("로그인 실패");
-			mav.setViewName("main/login");
+			mav.addObject("errorMsg","로그인 실패");
+			mav.addObject("destUrl","login.do");
+			mav.setViewName("main/alert");
 		}
 		return mav;
 	}
@@ -131,12 +134,9 @@ public class MemberControllerImpl implements MemberController {
 	    	response.addCookie(cookie);
 	    	System.out.println("쿠키초기화");
 	    } 
-		/*
-		 * session.setAttribute("member", null); session.setAttribute("LgId", null);
-		 * session.setAttribute("isLogOn", false);
-		 */
 		session.invalidate();
 		mav.setViewName("redirect:/index.do");
+		System.out.println("로그아웃 되었습니다.");
 		return mav;
 	}
 
@@ -149,31 +149,32 @@ public class MemberControllerImpl implements MemberController {
 		return result;
 	}
 
-//	@Override
-//	@RequestMapping(value = "userpage.do", method = { RequestMethod.POST, RequestMethod.GET })
-//	public ModelAndView userpage(HttpServletRequest request, HttpServletResponse response) throws Exception {
-//		// TODO Auto-generated method stub
-//		ModelAndView mav = new ModelAndView();
-//		HttpSession session = request.getSession();
-//		String id = (String)session.getAttribute("LgId");
-//		
-//		if(id!=null) {
-//			memberDao.selectAllMemberList();
-//			
-//		}
-//		else {
-//			Cookie[] cookies = request.getCookies();
-//    		for(Cookie cookie : cookies){
-//    			if(cookie.getName().equals("loginCookie")){
-//    				session.setAttribute("LgId", cookie.getValue());
-//    				
-//    			}
-//    		}
-//    	String LgId = (String)session.getAttribute("LgId");
-//		}
-//		mav.setViewName("admin/user-profile");
-//		return mav;
-//	}
+
+	@Override
+	@RequestMapping(value = "userpage.do", method = { RequestMethod.POST, RequestMethod.GET })
+	public ModelAndView userpage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		// TODO Auto-generated method stub
+		ModelAndView mav = new ModelAndView();
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("LgId");
+		
+		if(id!=null) {
+			memberDao.selectAllMemberList();
+			
+		}
+		else {
+			Cookie[] cookies = request.getCookies();
+    		for(Cookie cookie : cookies){
+    			if(cookie.getName().equals("loginCookie")){
+    				session.setAttribute("LgId", cookie.getValue());
+    				
+    			}
+    		}
+    	String LgId = (String)session.getAttribute("LgId");
+		}
+		mav.setViewName("admin/user-profile");
+		return mav;
+	}
 
 //	@Override
 //	@RequestMapping
@@ -191,5 +192,12 @@ public class MemberControllerImpl implements MemberController {
 //		return result;
 //	}
 	 
+
+//	@Override
+//	public int pwCheck(HttpServletRequest request, HttpServletResponse response) throws Exception {
+//		// TODO Auto-generated method stub
+//		return 0;
+//	}
+
 
 }

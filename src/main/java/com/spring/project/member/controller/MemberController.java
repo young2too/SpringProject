@@ -29,12 +29,16 @@ public interface MemberController {
 	public ModelAndView logoutProc(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	// 로그아웃 구현
 	public int idCheck(@RequestParam("idcheck") String id) throws Exception;
+
 	// 아이디 중복체크 구현
-//	public ModelAndView userpage(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView userpage(HttpServletRequest request, HttpServletResponse response) throws Exception;
 //	// 마이페이지로 이동
 	
 //	public ModelAndView pwChange(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	// 마이페이지에서 비밀번호 변경 구현
 //	public int pwCheck(@RequestParam("pwcheck") String pw) throws Exception; 
 //	// 마이페이지에서 현재비밀번호 체크 구현
+
+//	public int pwCheck(HttpServletRequest request, HttpServletResponse response) throws Exception;
+
 }

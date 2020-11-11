@@ -38,7 +38,7 @@ public class MemberDaoImpl implements MemberDao{
 	@Override
 	public int deleteMember(String id) throws DataAccessException {
 		// TODO Auto-generated method stub
-		int result = sqlSession.delete("mapper.member.deletMember", id);
+		int result = sqlSession.delete("mapper.member.deleteMember", id);
 		return result;
 	}
 
@@ -81,6 +81,11 @@ public class MemberDaoImpl implements MemberDao{
 	 * TODO Auto-generated method stub int result =
 	 * sqlSession.selectOne("mapper.member.pwCheck", RgPw); return result; }
 	 */
+//	public int pwCheck(MemberVO memberVO) throws DataAccessException {
+//		// TODO Auto-generated method stub
+//		int result = sqlSession.selectOne("mapper.member.pwCheck", memberVO);
+//		return result;
+//	}
 
 
 	/*

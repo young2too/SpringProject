@@ -56,6 +56,21 @@
     display: inline-block;
     margin-left: 10px;
 }
+
+.secondary-inner-2 ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+.secondary-inner-2 ul li{
+	display:inline-block;
+	position:relative;
+}
+.secondary-inner-2 ul li a{
+	color:#000;
+}
+
+
 .nav-search-bar {
     background-color:rgba(255,255,255,0.95);
     position: fixed;
