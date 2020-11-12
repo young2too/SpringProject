@@ -106,7 +106,10 @@ body {
 										type="button" class="btn-link">
 										<i class="fa fa-search"></i>
 									</button></li> &nbsp;&nbsp;
-								<li><div id="google_translate_element"></div></li>
+								<li>
+								<div id="google_translate_element">
+								</div>
+								</li>
 							</ul>
 							<%
 								} else {
@@ -157,7 +160,6 @@ body {
 											class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
 											<li><a href="study.do">문제풀기</a></li>
-											<li><a href="study.do">미구현</a></li>
 										</ul></li>
 									<li><a href="javascript:;">문제풀기<i
 											class="fa fa-angle-right"></i></a>
@@ -251,16 +253,15 @@ body {
 		<!-- 자동번역기능 -->
 		<script type="text/javascript">
 			function googleTranslateElementInit() {
-				new google.translate.TranslateElement(
-						{
-							pageLanguage : 'ko',
-							includedLanguages : 'ko,de,en,es,fr,ja,vi',
-							layout : google.translate.TranslateElement.InlineLayout.SIMPLE
-						}, 'google_translate_element');
+				new google.translate.TranslateElement({
+						pageLanguage : 'ko',
+						includedLanguages : 'ko,de,en,es,fr,ja,vi',
+						layout : google.translate.TranslateElement.InlineLayout.SIMPLE
+				}, 'google_translate_element');
 			}
 
 			function authorize_admin() {
-				if(sessionStorage.getItem("admin")==null){
+				if (sessionStorage.getItem("admin") == null) {
 					var admin_id = prompt("관리자 로그인 아이디");
 					var admin_pw = prompt("관리자 로그인 비밀번호");
 					$.ajax({
@@ -273,7 +274,7 @@ body {
 						success : function(data) {
 							if (data == 1) {
 								location.href = "admin/index.do";
-								sessionStorage.setItem("admin","관리자권한");
+								sessionStorage.setItem("admin", "관리자권한");
 							} else {
 								alert("로그인 실패");
 							}
@@ -282,10 +283,10 @@ body {
 							alert("ajax 접속 오류");
 						}
 					})
-				}else{
+				} else {
 					location.href = "admin/index.do";
 				}
-				
+
 			}
 		</script>
 
