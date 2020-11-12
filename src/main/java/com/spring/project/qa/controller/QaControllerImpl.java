@@ -74,6 +74,7 @@ public class QaControllerImpl implements QaController{
 		  
 		  request.setCharacterEncoding("utf-8");
 		  response.setCharacterEncoding("utf-8");
+		  System.out.println(listNum);
 		  List QaesList = qaService.listQaes(listNum); //모든 글 정보 조회 
 		  ModelAndView mav = new ModelAndView("main/blog/blog-list-sidebar"); 
 		  mav.addObject("QaesList",QaesList); //조회한 글 정보를 바인딩 후 jsp로 전달

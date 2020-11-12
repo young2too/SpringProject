@@ -97,7 +97,7 @@
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
-					<div class="widget-card widget-bg3" onclick="window.open('#','_self')" style="cursor: pointer;">					 
+					<div class="widget-card widget-bg3" onclick="window.open('viewBrd.do','_self')" style="cursor: pointer;">					 
 						<div class="wc-item">
 							<h4 class="wc-title">
 								게시글 관리

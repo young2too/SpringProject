@@ -40,7 +40,7 @@
 		 
 		            </li>
 					<li>
-						<a href="#" class="ttr-material-button">
+						<a href="viewBrd.do" class="ttr-material-button">
 							<span class="ttr-icon"><i class="ti-comments"></i></span>
 		                	<span class="ttr-label">게시글 관리</span>
 		                </a>
