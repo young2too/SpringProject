@@ -5,7 +5,7 @@
 <c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- 미정 -->
 <head>
 
 	<!-- META ============================================= -->
@@ -51,24 +51,25 @@
 	<!-- STYLESHEETS ============================================= -->
 	<link rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/css/style.css">
 	<link class="skin" rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/css/color/color-1.css">
+	<link rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/css/cardflip.css">
 	
 </head>
 <body id="bg">
 <div class="page-wraper">
 	<div id="loading-icon-bx"></div>
     <!-- Header Top ==== -->
-    <header class="header rs-nav">
+    <header class="header rs-nav header-transparent">
 		<div class="top-bar">
 			<div class="container">
 				<div class="row d-flex justify-content-between">
-					<div class="topbar-left">
+					<!--  <div class="topbar-left">
 						<ul>
 							<li><a href="faq-1.jsp"><i class="fa fa-question-circle"></i>Ask a Question</a></li>
 							<li><a href="javascript:;"><i class="fa fa-envelope-o"></i>Support@website.com</a></li>
 						</ul>
-					</div>
-					<div class="topbar-right">
-						<ul>
+					</div>-->
+					<!--<div class="topbar-right">
+						  <ul>
 							<li>
 								<select class="header-lang-bx">
 									<option data-icon="flag flag-uk">English UK</option>
@@ -78,7 +79,7 @@
 							<li><a href="login.jsp">Login</a></li>
 							<li><a href="register.jsp">Register</a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -87,7 +88,7 @@
                 <div class="container clearfix">
 					<!-- Header Logo ==== -->
 					<div class="menu-logo">
-						<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
+						<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""></a>
 					</div>
 					<!-- Mobile Nav Button ==== -->
                     <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,12 +97,11 @@
 						<span></span>
 					</button>
 					<!-- Author Nav ==== -->
-                    <div class="secondary-menu">
+                     <div class="secondary-menu">
                         <div class="secondary-inner">
                             <ul>
-								<li><a href="javascript:;" class="btn-link"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="javascript:;" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="javascript:;" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="login.jsp">로그인 </a></li>
+							<li><a href="register.jsp">회원가입</a></li>
 								<!-- Search Button ==== -->
 								<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
 							</ul>
@@ -118,26 +118,26 @@
 					<!-- Navigation Menu ==== -->
                     <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
 						<div class="menu-logo">
-							<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
+							<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo.png" alt=""></a>
 						</div>
                         <ul class="nav navbar-nav">	
-							<li class="active"><a href="javascript:;">Home <i class="fa fa-chevron-down"></i></a>
+							<li class="active"><a href="javascript:;">Home<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="index.jsp">Home 1</a></li>
+									<li><a href="index.do">Home 1</a></li>
 									<li><a href="index-2.jsp">Home 2</a></li>
 								</ul>
 							</li>
-							<li><a href="javascript:;">Pages <i class="fa fa-chevron-down"></i></a>
+							<li><a href="javascript:;">PAGES<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="javascript:;">About<i class="fa fa-angle-right"></i></a>
+									<li><a href="javascript:;">학습하기<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
-											<li><a href="about-1.jsp">About 1</a></li>
+											<li><a href="study.do">About 1</a></li>
 											<li><a href="about-2.jsp">About 2</a></li>
 										</ul>
 									</li>
-									<li><a href="javascript:;">Event<i class="fa fa-angle-right"></i></a>
+									<li><a href="javascript:;">문제풀기<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
-											<li><a href="event.jsp">Event</a></li>
+											<li><a href="exercise.do">주관식</a></li>
 											<li><a href="events-details.jsp">Events Details</a></li>
 										</ul>
 									</li>
@@ -159,16 +159,16 @@
 									<li><a href="error-404.jsp">404 Page</a></li>
 								</ul>
 							</li>
-							<li class="add-mega-menu"><a href="javascript:;">Our Courses <i class="fa fa-chevron-down"></i></a>
+							<li class="add-mega-menu"><a href="javascript:;">나의 단어장<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu add-menu">
 									<li class="add-menu-left">
-										<h5 class="menu-adv-title">Our Courses</h5>
+										<h5 class="menu-adv-title">나의 단어장</h5>
 										<ul>
-											<li><a href="courses.jsp">Courses </a></li>
-											<li><a href="courses-details.jsp">Courses Details</a></li>
-											<li><a href="profile.jsp">Instructor Profile</a></li>
-											<li><a href="event.jsp">Upcoming Event</a></li>
-											<li><a href="membership.jsp">Membership</a></li>
+											<li><a href="main/courses.jsp">정보처리기사</a></li>
+											<li><a href="courses-details.jsp">보안기사</a></li>
+											<li><a href="profile.jsp">리눅스</a></li>
+											<li><a href="exercise.do">한국사</a></li>
+											<li><a href="membership.jsp">영단어</a></li>
 										</ul>
 									</li>
 									<li class="add-menu-right">
@@ -180,7 +180,7 @@
 								<ul class="sub-menu">
 									<li><a href="blog-classic-grid.jsp">Blog Classic</a></li>
 									<li><a href="blog-classic-sidebar.jsp">Blog Classic Sidebar</a></li>
-									<li><a href="blog-list-sidebar.jsp">Blog List Sidebar</a></li>
+									<li><a href="blog-list-sidebar.jsp">QnA게시판</a></li>
 									<li><a href="blog-standard-sidebar.jsp">Blog Standard Sidebar</a></li>
 									<li><a href="blog-details.jsp">Blog Details</a></li>
 								</ul>
@@ -202,9 +202,9 @@
 									</li>
 									<li><a href="javascript:;">Mailbox<i class="fa fa-angle-right"></i></a>
 										<ul class="sub-menu">
-											<li><a href="../../admin/mailbox.jsp">Mailbox</a></li>
-											<li><a href="../../admin/mailbox-compose.jsp">Compose</a></li>
-											<li><a href="../../admin/mailbox-read.jsp">Mail Read</a></li>
+											<li><a href="../admin/mailbox.jsp">Mailbox</a></li>
+											<li><a href="../admin/mailbox-compose.jsp">Compose</a></li>
+											<li><a href="../admin/mailbox-read.jsp">Mail Read</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -221,22 +221,39 @@
             </div>
         </div>
     </header>
-    <!-- header END ==== -->
+    <!-- Header Top END ==== -->
     <!-- Inner Content Box ==== -->
     <div class="page-content bg-white">
         <!-- Page Heading Box ==== -->
         <div class="page-banner ovbl-dark" style="background-image:url(${contextPath }/resources/main_assets/assets/images/banner/banner3.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
-                    <h1 class="text-white">About Us 2</h1>
+                    <h1 class="text-white">
+                    	<c:choose>
+                    		<c:when test="${category == 1 }">정보처리기사</c:when>
+                    		<c:when test="${category == 2 }">정보보안기사</c:when>
+                    		<c:when test="${category == 3 }">리눅스 마스터</c:when>
+                    		<c:when test="${category == 4 }">영단어 마스터</c:when>
+                    		<c:when test="${category == 5 }">한국사 능력시험</c:when>
+                    	</c:choose>
+					</h1>
 				 </div>
             </div>
         </div>
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
-					<li><a href="#">Home</a></li>
-					<li>About Us 2</li>
+					<li><a href="/">Home</a></li>
+					<li>문제집 선택</li>
+					<li>
+						<c:choose>
+                    		<c:when test="${category == 1 }">정보처리기사</c:when>
+                    		<c:when test="${category == 2 }">정보보안기사</c:when>
+                    		<c:when test="${category == 3 }">리눅스 마스터</c:when>
+                    		<c:when test="${category == 4 }">영단어 마스터</c:when>
+                    		<c:when test="${category == 5 }">한국사 능력시험</c:when>
+                    	</c:choose>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -247,37 +264,38 @@
 			<div class="section-area section-sp1">
                 <div class="container">
 					 <div class="row">
-						 <div class="col-lg-6 m-b30">
+						<!--  <div class="col-lg-6 m-b30">
 							<h2 class="title-head ">Learn a new skill online<br/> <span class="text-primary"> on your time</span></h2>
 							<h4><span class="counter">57,000 </span> Online Courses</h4>
 							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
 							<a href="#" class="btn button-md">Join Now</a>
-						 </div>
+						 </div> -->
 						 <div class="col-lg-6">
 							 <div class="row">
 								<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
 									<div class="feature-container">
 										<div class="feature-md text-white m-b20">
-											<a href="#" class="icon-cell"><img src="${contextPath }/resources/main_assets/assets/images/icon/icon1.png" alt=""/></a> 
+											<a href="questionList.do" class="icon-cell"><img src="${contextPath }/resources/main_assets/assets/images/icon/icon1.png" alt=""/></a> 
 										</div>
 										<div class="icon-content">
-											<h5 class="ttr-tilte">Our Philosophy</h5>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing.</p>
+											<h5 class="ttr-tilte">공부하기</h5>
+											<p>합격은 멀지 않아요!</p>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
-									<div class="feature-container">
 										<div class="feature-md text-white m-b20">
-											<a href="#" class="icon-cell"><img src="${contextPath }/resources/main_assets/assets/images/icon/icon2.png" alt=""/></a> 
+											<a href="http://widget.mibbit.com/?settings=800e90a6af4103a070941c320a169bb5&server=irc.mibbit.net%3A%2B6697&channel=%23float_chat_test" onclick="window.open(this.href,'_blank','width=450,height=450');return false;">
+											<img src="${contextPath }/resources/main_assets/assets/images/icon/icon2.png" alt=""/>
+											</a>
 										</div>
 										<div class="icon-content">
-											<h5 class="ttr-tilte">Kingster's Principle</h5>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing.</p>
-										</div>
+												<h5 class="ttr-tilte">오픈채팅</h5>
+												<p>다른 사람들과 의견을 나눠요!</p>
+										</div>	
 									</div>
 								</div>
-								<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+								<%-- <div class="col-lg-6 col-md-6 col-sm-6 m-b30">
 									<div class="feature-container">
 										<div class="feature-md text-white m-b20">
 											<a href="#" class="icon-cell"><img src="${contextPath }/resources/main_assets/assets/images/icon/icon3.png" alt=""/></a> 
@@ -288,6 +306,7 @@
 										</div>
 									</div>
 								</div>
+								
 								<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
 									<div class="feature-container">
 										<div class="feature-md text-white m-b20">
@@ -298,7 +317,7 @@
 											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing.</p>
 										</div>
 									</div>
-								</div>
+								</div> --%>
 							</div>
 						</div>
 					</div>
@@ -362,7 +381,7 @@
 			</div>
 			<!-- Why Choose END ==== -->
 			<!-- Company Status ==== -->
-			<div class="section-area content-inner section-sp1">
+			<!-- <div class="section-area content-inner section-sp1">
                 <div class="container">
                     <div class="section-content">
                          <div class="row">
@@ -401,9 +420,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 			<!-- Company Stats END ==== -->
-			<!-- Our Story ==== -->
+			<%-- <!-- Our Story ==== -->
 			<div class="section-area bg-gray section-sp1 our-story">
 				<div class="container">
 					<div class="row align-items-center d-flex">
@@ -422,45 +441,27 @@
 					</div>
 				</div>
 			</div>
-			<!-- Our Story END ==== -->
+			<!-- Our Story END ==== --> --%>
 			<!-- Testimonials ==== -->
 			<div class="section-area section-sp2">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 heading-bx left">
-							<h2 class="title-head text-uppercase">what people <span>say</span></h2>
-							<p>It is a long established fact that a reader will be distracted by the readable content of a page</p>
+							<h2 class="title-head text-uppercase">오늘의 문제 <span>콕콕!</span></h2>
+							<p>눈길만 스쳐도 쏙쏙 머리에 들어오는 공부! 오늘의 문제는?</p>
 						</div>
 					</div>
 					<div class="testimonial-carousel owl-carousel owl-btn-1 col-12 p-lr0">
-						<div class="item">
+						<c:forEach items="${ randomQuizList }" var="randomQuiz">
+							<div class="item">
 							<div class="testimonial-bx">
-								<div class="testimonial-thumb">
-									<img src="${contextPath }/resources/main_assets/assets/images/testimonials/pic1.jpg" alt="">
-								</div>
-								<div class="testimonial-info">
-									<h5 class="name">Peter Packer</h5>
-									<p>-Art Director</p>
-								</div>
 								<div class="testimonial-content">
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type...</p>
+									<p>${randomQuiz.quiz }</p>
+									<p style="color:red;font-weight:bold;">${randomQuiz.answer }</p>
 								</div>
 							</div>
 						</div>
-						<div class="item">
-							<div class="testimonial-bx">
-								<div class="testimonial-thumb">
-									<img src="${contextPath }/resources/main_assets/assets/images/testimonials/pic2.jpg" alt="">
-								</div>
-								<div class="testimonial-info">
-									<h5 class="name">Peter Packer</h5>
-									<p>-Art Director</p>
-								</div>
-								<div class="testimonial-content">
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type...</p>
-								</div>
-							</div>
-						</div>
+						</c:forEach>
 					</div>
 				</div>
 			</div>

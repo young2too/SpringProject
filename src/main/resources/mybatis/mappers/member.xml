@@ -4,129 +4,77 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mapper.member">
-	<!-- <resultMap id="memResult" type="memberVO">
+
+	<resultMap type="memberVO" id="memResult">
 		<result property="id" column="id" />
-        <result property="pwd" column="pwd" />
+        <result property="pw" column="pw" />
         <result property="name" column="name" />
         <result property="email" column="email" />
-        <result property="joinDate" column="joinDate" />
-	</resultMap> 
-
-
+	</resultMap>
+	
+	<!-- 전체회원 정보조회 -->
 	<select id="selectAllMemberList" resultMap="memResult">
-      <![CDATA[
-         select * from t_member	order by joinDate desc	 	
-      ]]>
-	</select>
-
-	<select id="selectName" resultType="String">
-    <![CDATA[
-	select name from t_member
-	where id = 'hong'			
-    ]]>
+	<![CDATA[
+		select *
+		from member_table
+	]]>
 	</select>
 	
-	<select id="selectPwd" resultType="int" >
-	  <![CDATA[ 
-	    select pwd from t_member 
-	    where id = 'hong'
-	 ]]>
-	 </select> 
-	 
-	<select id="selectMemberById" resultType="memberVO"  parameterType="String" >
-      <![CDATA[
-         select * from t_member
-         where
-         id=#{id}			
-      ]]>
-	 </select>	
-	
-	<select id="selectMemberByPwd" resultMap="memResult"  parameterType="int" >
-      <![CDATA[
-         select * from t_member
-         where
-         pwd = #{pwd}			
-      ]]>
-    </select>
-    
-     <insert id="insertMember"  parameterType="memberVO">
+	<!-- 회원정보 추가 -->
+	<insert id="insertMember"  parameterType="memberVO">
 		<![CDATA[
-		 insert into t_member(id,pwd, name, email)
-		 values(#{id}, #{pwd}, #{name}, #{email})
+		 insert into member_table(id,pw, name, email)
+		 values(#{id}, #{pw}, #{name}, #{email})
 		]]>      
 	</insert>
 	
-	<insert id="insertMember2"  parameterType="java.util.HashMap">
-		<![CDATA[
-			 insert into t_member(id,pwd, name, email)
-			 values(#{id}, #{pwd}, #{name}, #{email})
-		]]>      
-   </insert>
-   
-   <update id="updateMember"  parameterType="memberVO">
+	<!-- 회원정보 수정 -->
+	<!-- <update id="updateMember"  parameterType="memberVO">
      <![CDATA[
 	     update t_member
-	     set pwd=#{pwd}, name=#{name}, email=#{email}
+	     set pw=#{pw}, name=#{name}, email=#{email}
 	     where
 	     id=#{id}
       ]]>      
-   </update> 
-     
+   </update> --> 
+    
+   <!-- 회원정보 제거 --> 
    <delete id="deleteMember"  parameterType="String">
 	<![CDATA[
-	   delete from  t_member
-	   where
-	   id=#{id}
+	   delete from  member_table
+	   where id=#{id}
 	]]>      
   </delete>
-	
-	
-	동적 SQL문
-  <select id="searchMember" parameterType="memberVO" resultMap="memResult">
-      <![CDATA[
-          select * from t_member
-      ]]>
-      <where>
-         <if test=" name != ''  and  name != null">
-            name=#{name}
-         </if>
-         <if test="email != ''  and email != null ">
-           and email = #{email}
-         </if>
-      </where>
-      order by joinDate desc
+
+  
+  <!-- 로그인 -->
+  <select id="loginById"  resultType="memberVO"   parameterType="memberVO" >
+	<![CDATA[
+		select * from member_table	
+		where id=#{id} and pw=#{pw}		
+	]]>
+
   </select>
-   
-   <select id="foreachSelect" resultMap="memResult" parameterType="java.util.Map">
-      <include refid="a" />
-      <![CDATA[
-        select * from t_member 
-          
-      ]]>
-      
-      where name in
-      <foreach item="item" collection="list" open="(" separator="," close=")" >
-         #{item}
-      </foreach>
-      order by joinDate desc
-   </select>
-   
-   <insert id="foreachInsert"  parameterType="java.util.Map">
-      <foreach item="item"  collection="list"   open="INSERT ALL" separator=" " close="SELECT * FROM DUAL" >
-          INTO  t_member(id, pwd, name, email)
-          VALUES  (#{item.id},
-                    #{item.pwd},
-                    #{item.name},
-                    #{item.email})
-      </foreach>
-   </insert>
-   
-    like 검색
-   <select id="selectLike" resultMap="memResult"  parameterType="String" >
-      <![CDATA[
-         select * from t_member
-         where
-         name like '%' || #{name} || '%'		
-      ]]>
-    </select> -->
+  
+  <!-- id 체크 -->
+  <select id="idCheck"  resultType="int"   parameterType="String" >
+	<![CDATA[
+		select count(id) from member_table	
+		where id=#{RgId}		
+	]]>
+  </select>  
+  
+  <!-- pw 체크 -->
+  <select id="pwCheck"  resultType="int"   parameterType="memberVO" >
+	<![CDATA[
+		select count(*) from member_table	
+		where id=#{id}		
+	]]>
+  </select>
+  <!-- 회원코드 최댓값 구하기 -->
+	<!-- <select id="getMaxMemberCode"  resultType="_int" >
+	<![CDATA[
+		select max(member_code) from member_table			
+	]]>
+  </select> -->
 </mapper>

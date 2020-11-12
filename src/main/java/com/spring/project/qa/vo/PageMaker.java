@@ -1,9 +1,13 @@
 package com.spring.project.qa.vo;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+
+@Component("pageMaker")
 public class PageMaker {
+	
 	
 	private ListNum listNum;
 	//페이지 번호

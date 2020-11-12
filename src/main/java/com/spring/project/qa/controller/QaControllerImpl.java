@@ -19,6 +19,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,6 +34,7 @@ import com.spring.project.qa.vo.ListNum;
 import com.spring.project.qa.vo.PageMaker;
 import com.spring.project.qa.vo.QaVO;
 
+
 @Controller
 public class QaControllerImpl implements QaController{
 	
@@ -45,16 +47,24 @@ public class QaControllerImpl implements QaController{
 	QaService qaService;
 	@Autowired
 	QaVO qaVO;
+	/*
+	 * @Autowired PageMaker pageMaker;
+	 * 
+	 * @Autowired ListNum listNum;
+	 */
+	 
 	
 	
 	  @Override
 	  @RequestMapping(value= "/listQaes.do", method ={RequestMethod.GET,RequestMethod.POST}) 
-	  public ModelAndView listQaes(@RequestParam(value="page",required=false, defaultValue="1" )int page ,HttpServletRequest request, HttpServletResponse response,ListNum listNum) throws Exception { 
+	  public ModelAndView listQaes(@RequestParam(value="page",required=false, defaultValue="1" )int page, HttpServletRequest request, HttpServletResponse response,ListNum listNum) throws Exception { 
+		  
 		  //String viewName =(String)request.getAttribute("viewName"); //인터셉트에서 전달된 뷰이름.
 		  
 		  request.setCharacterEncoding("utf-8");
-		  response.setCharacterEncoding("utf-8");
 		  List QaesList = qaService.listQaes(listNum); //모든 글 정보 조회 
+		  
+		  //List QaesList = qaService.listQaes();
 		  ModelAndView mav = new ModelAndView("main/blog/blog-list-sidebar"); 
 		  mav.addObject("QaesList",QaesList); //조회한 글 정보를 바인딩 후 jsp로 전달
 		  
@@ -66,6 +76,7 @@ public class QaControllerImpl implements QaController{
 		  mav.addObject("page",page);
 		  
 		  return mav; 
+		  
 	}
 	
 	

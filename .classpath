@@ -14,8 +14,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry including="**/*.java" kind="src" output="target/test-classes" path="src/test/resources"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
+			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -25,5 +26,7 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/dhgpd/Desktop/자습 jsp/유틸리티/apache-tomcat-9.0.33-windows-x64/apache-tomcat-9.0.33/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dhgpd/Desktop/자습 jsp/유틸리티/apache-tomcat-9.0.33-windows-x64/apache-tomcat-9.0.33/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

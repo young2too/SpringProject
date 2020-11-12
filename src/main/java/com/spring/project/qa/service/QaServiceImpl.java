@@ -18,7 +18,8 @@ public class QaServiceImpl implements QaService {
 	
 	
 	  @Override public List<QaVO> listQaes(ListNum listNum) throws Exception {
-	  return qaDAO.selectAllQaesList(listNum); }
+		  return qaDAO.selectAllQaesList(listNum); 
+	  }
 	 
 	
 	

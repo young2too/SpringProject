@@ -24,9 +24,8 @@ public class QaDAOImpl implements QaDAO {
 
 	
 	
-	  @Override public List selectAllQaesList(ListNum listNum) throws
-	  DataAccessException { return
-	  sqlSession.selectList("mapper.qa.selectAllQaesList", listNum);
+	  @Override public List selectAllQaesList(ListNum listNum) throws DataAccessException { 
+		  return sqlSession.selectList("mapper.qa.selectAllQaesList",listNum);
 	  
 	  }
 	 
