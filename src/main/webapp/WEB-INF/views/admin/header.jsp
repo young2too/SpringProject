@@ -57,7 +57,7 @@
 						<a href="#" class="ttr-material-button ttr-submenu-toggle"><span class="ttr-user-avatar"><img alt="" src="${contextPath }/resources/admin/assets/images/testimonials/pic3.jpg" width="32" height="32"></span></a>
 						<div class="ttr-header-submenu">
 							<ul>
-								<li><a href="../logout.do">로그아웃</a></li>
+								<li><a onclick="logoutProc()">로그아웃</a></li>
 							</ul>
 						</div>
 					</li>
@@ -116,6 +116,11 @@
 			$(temp).show();
 		});
 	});
+	
+	function logoutProc(){
+		sessionStorage.removeItem("admin");
+		location.href="logout.do";
+	}
 </script>
 </body>
 

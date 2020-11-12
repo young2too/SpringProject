@@ -48,6 +48,15 @@ public class adminControllerImpl implements adminController {
 		return mav;
 	}
 	
+	@RequestMapping(value = {"admin/logout.do"}, method = RequestMethod.GET)
+	public ModelAndView logoutProc(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("main/index");
+		return mav;
+	}
+	
 	@RequestMapping(value = "admin/removeQuiz.do", method = RequestMethod.GET)
 	public ModelAndView removeQuizProc(@RequestParam ("code") String quiz_code, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();

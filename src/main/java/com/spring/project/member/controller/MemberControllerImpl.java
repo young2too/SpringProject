@@ -81,6 +81,7 @@ public class MemberControllerImpl implements MemberController {
 		ModelAndView mav = new ModelAndView();
 		String id = request.getParameter("LgId");
 		String pw = request.getParameter("LgPw");
+		
 		memberVO = memberService.loginProc(id, pw);
 		if (memberVO != null) {
 			HttpSession session = request.getSession();
