@@ -62,7 +62,7 @@ public class MemberControllerImpl implements MemberController {
 	}
 
 	@Override
-	@RequestMapping(value = "addmember.do", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "addmember.do", method = { RequestMethod.POST, RequestMethod.GET})
 	public ModelAndView addmember(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		MemberVO addmemberVO = new MemberVO();
@@ -79,7 +79,7 @@ public class MemberControllerImpl implements MemberController {
 	}
 
 	@Override
-	@RequestMapping(value = "loginProc.do", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "loginProc.do", method = { RequestMethod.POST, RequestMethod.GET})
 	public ModelAndView loginProc(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		ModelAndView mav = new ModelAndView();
@@ -122,7 +122,7 @@ public class MemberControllerImpl implements MemberController {
 	}
 
 	@Override
-	@RequestMapping(value = "logout.do", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "logout.do", method = { RequestMethod.POST, RequestMethod.GET})
 	public ModelAndView logoutProc(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub`	
 		ModelAndView mav = new ModelAndView();
@@ -142,7 +142,7 @@ public class MemberControllerImpl implements MemberController {
 
 	@Override
 	@ResponseBody
-	@RequestMapping(value = "idcheck.do", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "idcheck.do", method = { RequestMethod.POST, RequestMethod.GET})
 	public int idCheck(@RequestParam("idcheck") String RgId) throws Exception {
 		// TODO Auto-generated method stub
 		int result = memberService.idCheck(RgId);
@@ -151,31 +151,34 @@ public class MemberControllerImpl implements MemberController {
 
 
 	@Override
-	@RequestMapping(value = "userpage.do", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "userpage.do", method = { RequestMethod.POST, RequestMethod.GET})
 	public ModelAndView userpage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		ModelAndView mav = new ModelAndView();
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("LgId");
-		
-		if(id!=null) {
-			memberDao.selectAllMemberList();
-			
-		}
-		else {
-			Cookie[] cookies = request.getCookies();
-    		for(Cookie cookie : cookies){
-    			if(cookie.getName().equals("loginCookie")){
-    				session.setAttribute("LgId", cookie.getValue());
-    				
-    			}
-    		}
-    	String LgId = (String)session.getAttribute("LgId");
-		}
+		memberVO = memberDao.selectMember(id);
+		mav.addObject("member",memberVO);
 		mav.setViewName("admin/user-profile");
 		return mav;
 	}
 
+	@Override
+	@RequestMapping(value = "updatePw.do", method = { RequestMethod.POST, RequestMethod.GET})
+	public ModelAndView updatePw(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		// TODO Auto-generated method stub
+		ModelAndView mav = new ModelAndView();
+		String pw = request.getParameter("NwPwOk");
+		System.out.println(pw);
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("LgId");
+		memberVO.setId(id);
+		memberVO.setPw(pw);
+		memberService.updatePw(memberVO);
+		mav.setViewName("main/index");
+		return mav;
+	}
+	
 //	@Override
 //	@RequestMapping
 //	public ModelAndView pwChange(HttpServletRequest request, HttpServletResponse response) throws Exception {

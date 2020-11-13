@@ -74,7 +74,7 @@
 					<h2 class="title-head">Sign Up <span>Now</span></h2>
 					<p>Login Your Account <a href="login.do">Click here</a></p>
 				</div>	
-				<form class="contact-bx" action="addmember.do">
+				<form class="contact-bx" action="addmember.do" method="post">
 					<div class="row placeani">
 						<div class="col-lg-12">
 							<div class="form-group">
@@ -166,7 +166,7 @@ function idCheck (){
 		if(idRule.test(idCheck)){
 			$.ajax({
 				url:'idcheck.do?idcheck='+idCheck,
-				type:'get',
+				type:'post',
 				success:function(data){
 					var color;
 					var msg;

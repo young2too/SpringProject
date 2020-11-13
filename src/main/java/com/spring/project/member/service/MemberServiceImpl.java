@@ -57,11 +57,17 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		memberDAO.keepLogin(id, sessionId, sessionLimit);
 	}
-
+	
 	@Override
 	public MemberVO checkUserWithSessionKey(String sessionId) throws Exception{
 		// TODO Auto-generated method stub
 		return memberDAO.checkUserWithSessionKey(sessionId);
+	}
+
+	@Override
+	public int updatePw(MemberVO memberVO) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return memberDAO.updatePw(memberVO);
 	}
 
 	/*

@@ -66,7 +66,7 @@
                         	<% if(LgId !=null) {
                         		%> 
                         		<ul>
-									<li><%=LgId%>님 환영합니다　　</li>
+									<li><a href="userpage.do"><%=LgId%></a>님 환영합니다　　</li>
 									<li><a href="logout.do">로그아웃</a></li>
 									<!-- Search Button ==== -->
 									<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>

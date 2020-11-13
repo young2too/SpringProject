@@ -76,6 +76,20 @@ public class MemberDaoImpl implements MemberDao{
 		return sqlSession.selectOne("mapper.member.checkUserWithSessionKey",sessionId);
 	}
 
+	@Override
+	public MemberVO selectMember(String id) throws DataAccessException {
+		// TODO Auto-generated method stub
+		MemberVO vo = sqlSession.selectOne("mapper.member.selectMemberById", id);
+		return vo;
+	}
+
+	@Override
+	public int updatePw(MemberVO memberVO) throws DataAccessException {
+		// TODO Auto-generated method stub
+		int result= sqlSession.update("mapper.member.updateMember", memberVO);
+		return result; 
+	}
+
 	/*
 	 * @Override public int pwCheck(String RgPw) throws DataAccessException { //
 	 * TODO Auto-generated method stub int result =

@@ -366,46 +366,46 @@
 											<h3>My Page</h3>
 										</div>
 									</div>
-								
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">ID</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="zpqls">
+											<input class="form-control" type="text" value="${member.id}" disabled>
 										</div> 
 									</div>
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">Name</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="CTO">
+											<input class="form-control" type="text" value="${member.name}"disabled>
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">Email</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="EduChamp">
+											<input class="form-control" type="text" value="${member.email}"disabled>
 											<!-- <span class="help">If you want your invoices addressed to a company. Leave blank to use your full name.</span> -->
 										</div>
 									</div>
 								</div>
 							</form>
-							<form class="edit-profile">
+							<form class="edit-profile" action="updatePw.do" method="post">
 								<div class="">
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">Current Password</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="password" value="">
+											<input class="form-control" type="password" name="CuPw" value="">
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">New Password</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="password" value="">
+											<input class="form-control" type="password" name="NwPw" value="" disabled>
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">Re-check Password</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="password" value="">
+											<input class="form-control" type="password" name="NwPwOk" value="" disabled>
+											<div id="checkmsgpw"></div>	
 										</div>
 									</div>
 								</div>
@@ -413,9 +413,9 @@
 									<div class="col-sm-2">
 									</div>
 									<div class="col-sm-7">
-										<button type="button" onclick="buttonClick()" class="btn">Log out</button>
-										<button type="button" onclick="buttonClick()" class="btn">Save</button>
-										<button type="button" onclick="buttonClick()" class="btn-secondry">Home</button>
+										<button type="button" onclick="buttonClick()" id="Home" class="btn-secondry">Home</button>
+										<button type="button" onclick="buttonClick()" id="deleteMember" class="btn" >회원탈퇴</button>
+										<button type="submit" onclick="buttonClick()" id="savePw" class="btn" >비밀번호 저장</button>
 									</div>
 								</div>
 									
@@ -450,8 +450,54 @@
 </body>
 
 <script>
+var pwRule = /^[a-zA-Z0-9]{2,12}$/;
+
+$(document).ready(function(){
+	pwCheck();
+	nwpwCheck();
+})
+
 function buttonClick() {
 	location.href="index.do"
 }
+
+function pwCheck(){
+	$('input[name=CuPw]').blur(function(){
+		var pw = '${member.pw}';
+		var pwOk = $('input[name=CuPw]').val();
+		if(pw!=pwOk){
+			console.log("비번불일치")
+		}
+		else{
+			console.log("비번일치")
+			$('input[name=NwPw]').removeAttr('disabled');
+			$('input[name=NwPwOk]').removeAttr('disabled');
+		}
+	})
+}
+
+function nwpwCheck(){
+	$('input[name=NwPwOk]').blur(function(){
+		var NwPw = $('input[name=NwPw]').val();
+		var NwPwOk = $('input[name=NwPwOk]').val();
+		var color;
+		var msg;
+		if(NwPw!=NwPwOk){
+			console.log("비번일치노노")
+			msg = '비밀번호가 일치하지 않습니다.';
+			color='red';
+		}
+		else{
+			console.log('비번일치')
+			msg= '비밀번호를 사용할 수 있습니다'
+			color='blue';
+			$('#[deleteMember]').removeAttr('disabled');
+			$('#[savePw]').removeAttr('disabled');
+		}
+		$('#checkmsgpw').text(msg);
+		$('#checkmsgpw').css('color',color);
+	})
+}
+
 </script>
 </html>
