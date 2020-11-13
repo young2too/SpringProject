@@ -26,7 +26,7 @@ public interface MemberDao {
 	 public MemberVO selectMember(String LgId) throws DataAccessException;
 	 
 	 public int updatePw(MemberVO memberVO) throws DataAccessException;
-	 
+	
 	 /* public int pwCheck(String RgPw) throws DataAccessException; */ 
 //	 public int pwCheck(MemberVO memberVO) throws DataAccessException;
 

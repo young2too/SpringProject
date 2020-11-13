@@ -74,7 +74,9 @@ public class MemberControllerImpl implements MemberController {
 		memberService.addMember(addmemberVO);
 
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:login");
+		mav.addObject("errorMsg","회원가입 되었습니다.");
+		mav.addObject("destUrl","login.do");
+		mav.setViewName("main/alert");
 		return mav;
 	}
 
@@ -106,10 +108,8 @@ public class MemberControllerImpl implements MemberController {
 				Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 				memberService.keepLogin(memberVO.getId(), session.getId(), sessionLimit);
 			}
-
 //			  if ( session.getAttribute("login") !=null ){
 //			  session.removeAttribute("login"); }
-
 			System.out.println("로그인완료");
 			mav.setViewName("main/index");
 			System.out.println(session.getAttribute("member"));
@@ -169,13 +169,32 @@ public class MemberControllerImpl implements MemberController {
 		// TODO Auto-generated method stub
 		ModelAndView mav = new ModelAndView();
 		String pw = request.getParameter("NwPwOk");
-		System.out.println(pw);
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("LgId");
 		memberVO.setId(id);
 		memberVO.setPw(pw);
 		memberService.updatePw(memberVO);
-		mav.setViewName("main/index");
+		mav.setViewName("main/alert");
+		mav.addObject("errorMsg","비밀번호가 변경되었습니다.");
+		mav.addObject("destUrl","index.do");
+		return mav;
+	}
+
+	@Override
+	@RequestMapping(value = "deleteProc.do", method = { RequestMethod.POST, RequestMethod.GET})
+	public ModelAndView deleteProc(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		// TODO Auto-generated method stub
+		ModelAndView mav = new ModelAndView();
+		HttpSession session = request.getSession();
+		Cookie cookie = WebUtils.getCookie(request, "loginCookie");
+		String id = (String)session.getAttribute("LgId");
+		memberService.removeMember(id);
+//    	cookie.setMaxAge(0);
+//    	response.addCookie(cookie);
+		session.invalidate();
+		mav.setViewName("main/alert");
+		mav.addObject("errorMsg","회원 탈퇴되셨습니다.");
+		mav.addObject("destUrl","index.do");
 		return mav;
 	}
 	

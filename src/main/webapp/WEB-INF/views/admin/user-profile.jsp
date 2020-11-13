@@ -7,7 +7,13 @@
 <c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Btn 비활성화 -->
+<style>
+.non-active{
+	pointer-events: none;
+	background-color : gray;
+}
+</style>
 <!-- Mirrored from educhamp.themetrades.com/demo/admin/user-profile.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:11:35 GMT -->
 <head>
 
@@ -387,7 +393,7 @@
 									</div>
 								</div>
 							</form>
-							<form class="edit-profile" action="updatePw.do" method="post">
+							<form class="edit-profile" action="updatePw.do" method="get">
 								<div class="">
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">Current Password</label>
@@ -413,12 +419,11 @@
 									<div class="col-sm-2">
 									</div>
 									<div class="col-sm-7">
-										<button type="button" onclick="buttonClick()" id="Home" class="btn-secondry">Home</button>
-										<button type="button" onclick="buttonClick()" id="deleteMember" class="btn" >회원탈퇴</button>
-										<button type="submit" onclick="buttonClick()" id="savePw" class="btn" >비밀번호 저장</button>
+										<button type="button" onclick="location.href='deleteProc.do' " id="deleteMember" class="btn non-active" >회원탈퇴</button>
+										<button type="submit" onclick="buttonClick()" id="savePw" class="btn non-active" >비밀번호 저장</button>
 									</div>
 								</div>
-									
+									 
 							</form>
 						</div>
 					</div>
@@ -465,14 +470,20 @@ function pwCheck(){
 	$('input[name=CuPw]').blur(function(){
 		var pw = '${member.pw}';
 		var pwOk = $('input[name=CuPw]').val();
+		var color;
+		var msg;
 		if(pw!=pwOk){
 			console.log("비번불일치")
 		}
 		else{
 			console.log("비번일치")
+			msg= '새로운 비밀번호를 입력하세요.'
+			color='blue';
 			$('input[name=NwPw]').removeAttr('disabled');
-			$('input[name=NwPwOk]').removeAttr('disabled');
+			$('input[name=NwPwOk]').removeAttr('disabled'); 
 		}
+		$('#checkmsg').text(msg);
+		$('#checkmsg').css('color',color);
 	})
 }
 
@@ -483,16 +494,16 @@ function nwpwCheck(){
 		var color;
 		var msg;
 		if(NwPw!=NwPwOk){
-			console.log("비번일치노노")
+			console.log('비번일치노노')
 			msg = '비밀번호가 일치하지 않습니다.';
 			color='red';
 		}
 		else{
 			console.log('비번일치')
-			msg= '비밀번호를 사용할 수 있습니다'
+			msg= '비밀번호를 사용할 수 있습니다.';
 			color='blue';
-			$('#[deleteMember]').removeAttr('disabled');
-			$('#[savePw]').removeAttr('disabled');
+			$('#deleteMember').removeClass('non-active');
+			$('#savePw').removeClass('non-active');
 		}
 		$('#checkmsgpw').text(msg);
 		$('#checkmsgpw').css('color',color);

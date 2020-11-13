@@ -66,24 +66,33 @@
                         	<% if(LgId !=null) {
                         		%> 
                         		<ul>
-									<li><a href="userpage.do"><%=LgId%></a>님 환영합니다　　</li>
-									<li><a href="logout.do">로그아웃</a></li>
-									<!-- Search Button ==== -->
-									<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
-									&nbsp;&nbsp;<li><div id="google_translate_element"></div></li>
-								</ul>
-								<%
-							}else
-								{
-								%>
-                        	    <ul>
-									<li><a href="login.do">로그인</a>　</li>
-									<li><a href="register.do">회원가입</a></li>
-									<!-- Search Button ==== -->
-									<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
-								</ul>
-							<%} %>
-						</div>
+									<li><a href="userpage.do"><%=LgId%></a>님 환영합니다　</li>
+									<li>
+			                        	<a href="userpage.do">
+			                           		<i class="fa fa-user"></i> 
+			                        	</a>
+			                        　				</li>
+									<li><a href="logout.do">로그아웃　</a></li>
+			                        <li>
+			                        <div id="google_translate_element">
+			                        </div>
+			                     </li>
+			                     </ul>
+			                     <%
+			                        } else {
+			                     %>
+			                     <ul>
+			                        <li><a href="login.do">로그인</a>　</li>
+			                        <li><a href="register.do">회원가입</a>　</li>
+			                        <li>
+			                        <div id="google_translate_element">
+			                        </div>
+			                     </li>
+			                     </ul>
+			                     <%
+			                        }
+			                     %>
+			                </div>
                     </div>
 					<!-- Search Box ==== -->
                     <div class="nav-search-bar">

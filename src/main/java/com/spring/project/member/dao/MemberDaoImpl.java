@@ -89,7 +89,7 @@ public class MemberDaoImpl implements MemberDao{
 		int result= sqlSession.update("mapper.member.updateMember", memberVO);
 		return result; 
 	}
-
+	
 	/*
 	 * @Override public int pwCheck(String RgPw) throws DataAccessException { //
 	 * TODO Auto-generated method stub int result =

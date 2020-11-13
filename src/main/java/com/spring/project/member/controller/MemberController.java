@@ -34,6 +34,8 @@ public interface MemberController {
 	// 마이페이지로 이동
 	public ModelAndView updatePw(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	// 비밀번호 수정(마이페이지)
+	public ModelAndView deleteProc(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	// 회원탈퇴 
 	
 //	public ModelAndView pwChange(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	// 마이페이지에서 비밀번호 변경 구현
