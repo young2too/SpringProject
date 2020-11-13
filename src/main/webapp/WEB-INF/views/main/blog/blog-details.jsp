@@ -222,11 +222,9 @@
 											<%-- <input type=button value="답글쓰기"
 												onClick="fn_reply_form('${contextPath}/openReply.do', ${qa.qaNUM})"
 												class="btn button-md"> --%>
-											<c:if test="${member.id == 'system' }">
 												<input type=button value="답글쓰기"
 													onClick="javascript:fn_blogForm('${isLogOn }','${contextPath }/openReply.do','${contextPath}/member/login.do',${qa.qaNUM})"
 													class="btn button-md">
-											</c:if>
 										
 										</div>
 									</div>

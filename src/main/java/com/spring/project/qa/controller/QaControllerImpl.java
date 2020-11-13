@@ -184,9 +184,8 @@ public class QaControllerImpl implements QaController{
 			System.out.println(value);
 		}
 		HttpSession session = request.getSession();
-		QaVO qaVO = (QaVO) session.getAttribute("qa");
-		System.out.println(qaVO);
-		String id = "system";
+		memberVO = (MemberVO)session.getAttribute("member");
+		String id = memberVO.getId();
 		int temp_qaNUM = Integer.parseInt(qaNUM);
 		//temp_qaNUM--;
 		
