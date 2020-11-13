@@ -143,7 +143,7 @@
 								data-paddingbottom="[10,10,10,10]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;">
-									OO에 오신 것을 환영합니다
+									뻔한 퀴즈가 FUN해 집니다
 							</div>
 
 							<!-- LAYER NR. 3 -->
@@ -300,7 +300,7 @@
 								data-paddingbottom="[10,10,10,10]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;text-transform:uppercase;">
-									OO에 오신 것을 환영합니다
+									뻔한 퀴즈가 FUN해 집니다
 							</div>
 
 							<!-- LAYER NR. 3 -->
