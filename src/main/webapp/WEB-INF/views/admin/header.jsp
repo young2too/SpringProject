@@ -38,9 +38,9 @@
 						<a href="#" class="ttr-material-button ttr-submenu-toggle">QUICK MENU <i class="fa fa-angle-down"></i></a>
 						<div class="ttr-header-submenu">
 							<ul>
-								<li><a href="#">회원 관리</a></li>
+								<li><a href="viewUser.do">회원 관리</a></li>
 								<li><a href="#">게시글 관리</a></li>
-								<li><a href="#">문제집 관리</a></li>
+								<li><a href="quizes.do">문제집 관리</a></li>
 							</ul>
 						</div>
 					</li>

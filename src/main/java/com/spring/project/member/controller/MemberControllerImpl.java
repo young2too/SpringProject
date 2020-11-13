@@ -49,7 +49,7 @@ public class MemberControllerImpl implements MemberController {
 	}
 
 	@Override
-	@RequestMapping(value = "forget-password.do", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "forget-password.do", method = { RequestMethod.POST})
 	public ModelAndView forgetPw(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		ModelAndView mav = new ModelAndView();
@@ -58,7 +58,7 @@ public class MemberControllerImpl implements MemberController {
 	}
 
 	@Override
-	@RequestMapping(value = "addmember.do", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "addmember.do", method = { RequestMethod.POST })
 	public ModelAndView addmember(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		MemberVO addmemberVO = new MemberVO();
@@ -76,7 +76,7 @@ public class MemberControllerImpl implements MemberController {
 	}
 
 	@Override
-	@RequestMapping(value = "loginProc.do", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "loginProc.do", method = { RequestMethod.POST })
 	public ModelAndView loginProc(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		ModelAndView mav = new ModelAndView();
@@ -128,7 +128,6 @@ public class MemberControllerImpl implements MemberController {
 		return mav;
 	}
 
-	@Override
 	@ResponseBody
 	@RequestMapping(value = "idcheck.do", method = {RequestMethod.POST, RequestMethod.GET})
 	public int idCheck(@RequestParam("idcheck") String RgId) throws Exception{
@@ -137,7 +136,6 @@ public class MemberControllerImpl implements MemberController {
 		return result;
 	}
 
-	@Override
 	public int pwCheck(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;

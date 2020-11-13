@@ -69,9 +69,7 @@ body {
 				<div class="container clearfix">
 					<!-- Header Logo ==== -->
 					<div class="menu-logo">
-						<a href="index.do"><img
-							src="${contextPath }/resources/main_assets/assets/images/logo-white.png"
-							alt=""></a>
+						<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo3.png" alt=""></a>
 					</div>
 					<!-- Mobile Nav Button ==== -->
 					<button
@@ -99,33 +97,34 @@ body {
 								if (LgId != null) {
 							%>
 							<ul>
-								<li><%=LgId%>님 환영합니다</li>
-								<li><a href="logout.do">로그아웃</a></li>
-								<!-- Search Button ==== -->
-								<li class="search-btn"><button id="quik-search-btn"
-										type="button" class="btn-link">
-										<i class="fa fa-search"></i>
-									</button></li> &nbsp;&nbsp;
+								<li><%=LgId%>님 환영합니다　</li>
+								<li><a href="logout.do">로그아웃</a>　</li>
+								<li>
+								<a>
+									<i class="fa fa-user"></i> 
+								</a>
+								</li>
 								<li>
 								<div id="google_translate_element">
 								</div>
-								</li>
+							</li>
 							</ul>
 							<%
 								} else {
 							%>
 							<ul>
-								<li><a href="login.do">로그인</a></li>
-								<li><a href="register.do">회원가입</a></li>
-								<!-- Search Button ==== -->
-								<li class="search-btn"><button id="quik-search-btn"
-										type="button" class="btn-link">
-										<i class="fa fa-search"></i>
-									</button></li>
+								<li><a href="login.do">로그인</a>　</li>
+								<li><a href="register.do">회원가입</a>　</li>
+								<li>
+								<div id="google_translate_element">
+								</div>
+							</li>
 							</ul>
 							<%
 								}
 							%>
+							
+							
 						</div>
 					</div>
 					<!-- Search Box ==== -->
@@ -142,9 +141,7 @@ body {
 						class="menu-links navbar-collapse collapse justify-content-start"
 						id="menuDropdown">
 						<div class="menu-logo">
-							<a href="index.do"><img
-								src="${contextPath }/resources/main_assets/assets/images/logo.png"
-								alt=""></a>
+						<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo3.png" alt=""></a>
 						</div>
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="javascript:;">Home<i
@@ -166,22 +163,6 @@ body {
 											<li><a href="exercise.do">주관식</a></li>
 											<li><a href="exercise.do">객관식</a></li>
 										</ul></li>
-									<!-- <li><a href="javascript:;">FAQ's<i class="fa fa-angle-right"></i></a>
-										<ul class="sub-menu">
-											<li><a href="faq-1.jsp">FAQ's 1</a></li>
-											<li><a href="faq-2.jsp">FAQ's 2</a></li>
-										</ul>
-									</li>
-									<li><a href="javascript:;">Contact Us<i class="fa fa-angle-right"></i></a>
-										<ul class="sub-menu">
-											<li><a href="contact-1.jsp">Contact Us 1</a></li>
-											<li><a href="contact-2.jsp">Contact Us 2</a></li>
-										</ul>
-									</li>
-									<li><a href="portfolio.jsp">Portfolio</a></li>
-									<li><a href="profile.jsp">Profile</a></li>
-									<li><a href="membership.jsp">Membership</a></li>
-									<li><a href="error-404.jsp">404 Page</a></li> -->
 								</ul></li>
 							<li class="add-mega-menu"><a href="javascript:;">나의 단어장<i
 									class="fa fa-chevron-down"></i></a>
