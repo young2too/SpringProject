@@ -65,8 +65,36 @@
 <link class="skin" rel="stylesheet" type="text/css"
 	href="${contextPath }/resources/main_assets/assets/css/color/color-1.css">
 <title>글추가창</title>
-<script type="text/javascript">
 
+<script type="text/javascript">
+	
+	
+		function writeCheck(){
+			 var form = document.blogForm;
+			 
+			 if( !form.qaTitle.value )   // form 에 있는 name 값이 없을 때
+			 {
+			  alert( "제목을 작성해주세요" ); // 경고창 띄움
+			  form.name.focus();   // form 에 있는 name 위치로 이동
+			  return;
+			 }
+			 
+			 if( !form.qaContent.value )
+			 {
+			  alert( "내용를 작성해주세요" );
+			  form.password.focus();
+			  return;
+			 }
+			 
+			if( !form.qaHead.value )
+			 {
+			  alert( "질문유형을 선택해주세요" );
+			  form.title.focus();
+			  return;
+			 }
+			
+			form.submit();
+		}
 	 function init(f){
 		 var f_sel = f.question;
 		 
@@ -81,6 +109,8 @@
 	    obj.action="${contextPath}/listQaes.do";
 	    obj.submit();
 	  }
+	  
+	  
 	   
 	</script>
 </head>
@@ -120,8 +150,8 @@
 							<div class="col-lg-12 col-xl-12">
 								<div class="blog-post blog-md-30">
 									<!-- blog start -->
-									<form name="blogForm" method="post"
-										action="${contextPath}/addQa.do">
+									
+									<form name="blogForm" method="post" action="${contextPath}/addQa.do">
 										<!-- tiles안써서 다름 -->
 										<div class="info-bx">
 											<table border="0" align="center">
@@ -140,9 +170,9 @@
 												<tr>
 													<td align="right"><i class="fa fa-user"></i> 작성자</td>
 													<td colspan="2" align="left"><input type="text"
-														size="20" maxlength="100" value="hw" readonly /></td>
-
-												</tr>
+														size="20" maxlength="100"  value="${member.name }" readonly /></td>
+													<%-- <input type="hidden" name="id" value="${qa.id }"> --%>
+												</tr> 
 												<tr>
 													<td align="right">글제목</td>
 													<td colspan="2"><input type="text" size="100"
@@ -155,7 +185,7 @@
 												</tr>
 											</table>
 											<div align="center" class="col-lg-12">
-												<input type="submit" value="글쓰기" class="btn button-md">
+												<input type="button" value="글쓰기" class="btn button-md" OnClick="javascript:writeCheck();">
 												<input type="button" value="목록보기" class="btn button-md"
 													onClick="backToList(this.form)">
 											</div>

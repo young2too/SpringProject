@@ -114,6 +114,44 @@
 						</div>				      
 					</div>
 				</div>
+			</div> -->
+			<div class="row">
+				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
+					<div class="widget-card widget-bg1"  onclick="window.open('#','_self')" style="cursor: pointer;">				 
+						<div class="wc-item">
+							<h4 class="wc-title">
+								문제집 관리
+							</h4>
+						</div>				      
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12"">
+					<div class="widget-card widget-bg2"  onclick="window.open('viewUser.do','_self')" style="cursor: pointer;">					 
+						<div class="wc-item">
+							<h4 class="wc-title">
+								 회원 관리
+							</h4>
+						</div>				      
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
+					<div class="widget-card widget-bg3" onclick="window.open('#','_self')" style="cursor: pointer;">					 
+						<div class="wc-item">
+							<h4 class="wc-title">
+								게시글 관리
+							</h4>
+						</div>				      
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
+					<div class="widget-card widget-bg4" onclick="window.open('#','_self')" style="cursor: pointer;">					 
+						<div class="wc-item">
+							<h4 class="wc-title">
+								내 일정 관리
+							</h4>
+						</div>				      
+					</div>
+				</div>
 			</div>
 			<!-- Card END -->
 			<!-- user list -->

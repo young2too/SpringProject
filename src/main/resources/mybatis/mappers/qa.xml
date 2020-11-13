@@ -46,20 +46,18 @@ select qa_num, qa_title, qa_content, id, qa_date, qa_head, row_number() over(ord
   <insert id="insertNewQa"  parameterType="java.util.Map">
 		<![CDATA[
 			INSERT into qa_table(qa_num, qa_title, qa_content, qa_head, id)
-			VALUES(#{qaNUM }, #{qaTitle }, #{qaContent } ,#{qaHead }, 'hw')
+			VALUES(#{qaNUM }, #{qaTitle }, #{qaContent } ,#{qaHead }, #{id})
 		]]>      
 	</insert>
-<!-- 	
-VALUES(#{qaNUM}, #{qaTitle}, #{qaContent} ,#{qaHead}, 'hw')
- -->
+
 	
 	
 	
 	<!-- 답글 추가 -->
 	 <insert id="addReply"  parameterType="java.util.Map">
 		<![CDATA[
-			INSERT into qa_table(qa_num, qa_title, qa_content, qa_head, qa_parent_num)
-			VALUES(#{qaNUM }, #{qaTitle }, #{qaContent } ,'▶문의답글', #{qaParentNUM })
+			INSERT into qa_table(qa_num, qa_title, qa_content, qa_head, qa_parent_num, id)
+			VALUES(#{qaNUM }, #{qaTitle }, #{qaContent } ,'▶문의답글', #{qaParentNUM }, #{id})
 		]]>      
 	</insert>
 	

@@ -73,12 +73,13 @@ li {
 </style>
 </head>
 <script>
-	function fn_qaForm(isLogOn,blog-details,loginForm){
-		if(isLogOn != '' && isLogOn !='false'){
-			location.href=blog-details;
+
+	function fn_blogForm(isLogOn,blogForm,loginForm){
+		if(isLogOn != '' && isLogOn != 'false'){
+			location.href=blogForm;
 		}else{
 			alert("로그인 후 글쓰기가 가능합니다.")
-			location.href=loginForm+'?action=/listQaes.do';
+			location.href=login+'?action=/main/login.do';
 		}
 	}
 </script>
@@ -155,7 +156,7 @@ li {
 															<!--   <span style="padding-right:10px"></span> --> <c:choose>
 																<c:when test='${qa.level > 1 }'>
 																	<c:forEach begin="1" end="${qa.level }" step="1">
-																		<span style="padding-left: 1px"></span>
+																		<span style="padding-left: 13px"></span>
 																	</c:forEach>
 																	<span style="font-size: 20px;">└ RE )) </span>
 																	<a class='cls1'
@@ -201,7 +202,8 @@ li {
 										</ul>
 									</div>
 									<div class="pt-btn-write">
-										<a href="insertQa.do" class="btn">WRITE</a>
+										<a href="javascript:fn_blogForm('${isLogOn }','${contextPath }/insertQa.do','${contextPath}/member/login.do')" class="btn">WRITE</a>
+										<!-- <a href="insertQa.do" class="btn">WRITE</a> -->
 									</div>
 								</div>
 							</div>

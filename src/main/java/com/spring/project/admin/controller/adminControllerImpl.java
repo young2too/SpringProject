@@ -140,6 +140,7 @@ public class adminControllerImpl implements adminController {
 	@RequestMapping(value = "admin/getadditionalQuiz.do", method = RequestMethod.GET)
 	public List<QuizVO> getadditionalQuiz(@RequestParam ("startNo") int startNo, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		List<QuizVO> additionalQuizList = quizService.select10Quiz(startNo);
+
 		return additionalQuizList;
 	}
 }

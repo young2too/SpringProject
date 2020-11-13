@@ -70,6 +70,27 @@
 		obj.action = "${contextPath}/listQaes.do";
 		obj.submit();
 	}
+	
+	function writeCheck(){
+		 var form = document.frmReply;
+		 
+		 if( !form.qaTitle.value )   // form 에 있는 name 값이 없을 때
+		 {
+		  alert( "제목을 작성해주세요" ); // 경고창 띄움
+		  form.name.focus();   // form 에 있는 name 위치로 이동
+		  return;
+		 }
+		 
+		 if( !form.qaContent.value )
+		 {
+		  alert( "내용를 작성해주세요" );
+		  form.password.focus();
+		  return;
+		 }
+		
+		
+		form.submit();
+	}
 </script>
 </head>
 <body id="bg">
@@ -130,13 +151,14 @@
 											<tr>
 												<td align="right"><i class="fa fa-user"></i> 작성자</td>
 												<td colspan="2" align="left"><input type="text"
-													size="20" maxlength="100" value="hw" readonly /></td>
+													size="20" maxlength="100" value="${member.name }" readonly /></td>
 
 											</tr>
 											<tr>
 												<td align="right">글제목</td>
-												<td colspan="2"><input type="text" size="100"
-													maxlength="500" name="qaTitle" /></td>
+												<td colspan="2">
+												<input type="text" size="100" maxlength="500" name="qaTitle" value="질문답변 드립니다." onfocus="this.value=''"/></td>
+
 											</tr>
 											<tr>
 												<td align="right" valign="top"><br>글내용</td>
@@ -145,7 +167,8 @@
 											</tr>
 										</table>
 										<div align="center" class="col-lg-12">
-											<input type="submit" value="답글쓰기" class="btn button-md">
+
+											<input type="button" value="답글쓰기" class="btn button-md" OnClick="javascript:writeCheck();">
 											<input type="button" value="취소" class="btn button-md"
 												onClick="backToList(this.form)">
 										</div>

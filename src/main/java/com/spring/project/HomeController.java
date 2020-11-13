@@ -41,8 +41,10 @@ public class HomeController {
 		
 		int category = (int)Math.random()*5+1; 
 		List<QuizVO> randomQuizList = quizService.selectTwoRandomQuiz(category);
+
 		String formattedDate = dateFormat.format(date);
 		model.addAttribute("randomQuizList", randomQuizList);
+
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "main/index";

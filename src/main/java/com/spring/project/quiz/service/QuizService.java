@@ -25,4 +25,5 @@ public interface QuizService {
 	public void deleteByQuizCode(String quiz_code) throws DataAccessException;
 	public int getQuizNumberByCategory(int category) throws DataAccessException;
 	public void addQuiz(QuizVO quizVO) throws DataAccessException;
+
 }

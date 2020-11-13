@@ -19,6 +19,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,10 +28,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.project.member.vo.MemberVO;
 import com.spring.project.qa.service.QaService;
 import com.spring.project.qa.vo.ListNum;
 import com.spring.project.qa.vo.PageMaker;
 import com.spring.project.qa.vo.QaVO;
+
 
 @Controller
 public class QaControllerImpl implements QaController{
@@ -38,43 +41,30 @@ public class QaControllerImpl implements QaController{
 //	이미지 구현 안함.
 	
 	
-	
+	@Autowired
+	MemberVO memberVO;
 	@Autowired
 	QaService qaService;
 	@Autowired
 	QaVO qaVO;
+	/*
+	 * @Autowired PageMaker pageMaker;
+	 * 
+	 * @Autowired ListNum listNum;
+	 */
+	 
 	
 	
 	  @Override
-	  
-	 /* @RequestMapping(value= "/listQaes.do", method ={RequestMethod.GET,RequestMethod.POST}) 
-	  public ModelAndView listQaes(@RequestParam("page") int page, HttpServletRequest request, HttpServletResponse response,ListNum listNum) throws Exception { 
-		  //String viewName =(String)request.getAttribute("viewName"); //인터셉트에서 전달된 뷰이름.
-		  response.setCharacterEncoding("utf-8");
-		  List QaesList = qaService.listQaes(listNum); //모든 글 정보 조회 
-		  ModelAndView mav = new ModelAndView("main/blog/blog-list-sidebar"); 
-		  mav.addObject("QaesList",QaesList); //조회한 글 정보를 바인딩 후 jsp로 전달
-		  
-		  
-		  PageMaker pageMaker = new PageMaker(); 
-		  pageMaker.setListNum(listNum);
-		  pageMaker.setTotalCount(qaService.listCount());
-		  pageMaker.setListTotal(qaService.listCount());//전체 게시글 수
-		  pageMaker.makeQuery(page);
-		  mav.addObject("pageMaker",pageMaker);
-		  
-		  return mav; 
-	}*/
-	 
-	  
-	 
 	  @RequestMapping(value= "/listQaes.do", method ={RequestMethod.GET,RequestMethod.POST}) 
-	  public ModelAndView listQaes(@RequestParam(value="page",required=false, defaultValue="1" )int page ,HttpServletRequest request, HttpServletResponse response,ListNum listNum) throws Exception { 
+	  public ModelAndView listQaes(@RequestParam(value="page",required=false, defaultValue="1" )int page, HttpServletRequest request, HttpServletResponse response,ListNum listNum) throws Exception { 
+		  
 		  //String viewName =(String)request.getAttribute("viewName"); //인터셉트에서 전달된 뷰이름.
 		  
 		  request.setCharacterEncoding("utf-8");
-		  response.setCharacterEncoding("utf-8");
 		  List QaesList = qaService.listQaes(listNum); //모든 글 정보 조회 
+		  
+		  //List QaesList = qaService.listQaes();
 		  ModelAndView mav = new ModelAndView("main/blog/blog-list-sidebar"); 
 		  mav.addObject("QaesList",QaesList); //조회한 글 정보를 바인딩 후 jsp로 전달
 		  
@@ -86,6 +76,7 @@ public class QaControllerImpl implements QaController{
 		  mav.addObject("page",page);
 		  
 		  return mav; 
+		  
 	}
 	
 	
@@ -118,9 +109,9 @@ public class QaControllerImpl implements QaController{
 	@Override
 	@RequestMapping(value="/addQa.do" ,method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity addNewQa(HttpServletRequest multipartRequest, HttpServletResponse response)
-			throws Exception {
+	public ResponseEntity addNewQa(HttpServletRequest multipartRequest, HttpServletResponse response) throws Exception {
 		multipartRequest.setCharacterEncoding("utf-8");
+		System.out.println("hello!!!");
 		Map<String,Object> qaMap = new HashMap<String, Object>();
 		//글 정보를 저장하기 위한 qamap
 		Enumeration enu=multipartRequest.getParameterNames();
@@ -132,14 +123,17 @@ public class QaControllerImpl implements QaController{
 		//글쓰기창에서 전송된 글 정보를 map의 키와 밸류 값으로 저장
 		
 		HttpSession session = multipartRequest.getSession();
-		QaVO qaVO = (QaVO) session.getAttribute("qa");
-		//String id = qaVO.getId();
-		String id ="hw";
+	
+		memberVO = (MemberVO) session.getAttribute("member");
+		String id = memberVO.getId();
+		//String id = (String) session.getAttribute("LgId");
+		//String loginedUser = (String) session.getAttribute("LgId");
+		
 		//세션에 저장된 회원 정보로부터 회원 id가져온다.
 		qaMap.put("qa_parent_num", 0);
 		qaMap.put("id", id);
 		//회원 아이디, 부모글 번호는 qamap에 저장한다.
-		
+		System.out.println("member아이이디딛디"+ id);
 		
 		String message;
 		ResponseEntity resEnt=null;
@@ -168,22 +162,14 @@ public class QaControllerImpl implements QaController{
 	}
 	
 	
-	//답글달기
 	
+	
+	
+	//답글쓰기
 	  @Override
 	  @RequestMapping(value="/addReply.do" ,method = RequestMethod.POST)
 	  @ResponseBody public ResponseEntity addReply(HttpServletRequest request, HttpServletResponse response) throws Exception {
-	 
-			/*
-			 * @Override
-			 * 
-			 * @RequestMapping(value="/addReply.do" ,method = RequestMethod.POST)
-			 * 
-			 * @ResponseBody public ResponseEntity addReply(@RequestParam("qaNUM") int
-			 * qaNUM, HttpServletRequest request, HttpServletResponse response) throws
-			 * Exception {
-			 */
-		 
+		  
 		request.setCharacterEncoding("utf-8");
 		String qaNUM = request.getParameter("qaNUM");
  		Map<String,Object> qaMap = new HashMap<String, Object>();
@@ -198,9 +184,8 @@ public class QaControllerImpl implements QaController{
 			System.out.println(value);
 		}
 		HttpSession session = request.getSession();
-		QaVO qaVO = (QaVO) session.getAttribute("qa");
-		//String id = qaVO.getId();
-		String id ="hw";
+		memberVO = (MemberVO)session.getAttribute("member");
+		String id = memberVO.getId();
 		int temp_qaNUM = Integer.parseInt(qaNUM);
 		//temp_qaNUM--;
 		
@@ -239,6 +224,9 @@ public class QaControllerImpl implements QaController{
 		return resEnt;
 	}
 	
+	  
+	  
+	  
 
 	//답글입력창 띄우기
 	@RequestMapping(value = "/openReply.do", method =  RequestMethod.GET)
@@ -251,13 +239,21 @@ public class QaControllerImpl implements QaController{
 	
 	
 	
+	
+	
+	
 	//입력 창 띄우기
 	@RequestMapping(value = "/insertQa.do", method =  RequestMethod.GET)
 	private ModelAndView form(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		//ModelAndView mav = new ModelAndView();
 		ModelAndView mav = new ModelAndView("main/blog/blog-add");
 		return mav;
 	}
+	
+	
+	
+	
 	
 	//수정
 	//@Override
@@ -279,10 +275,9 @@ public class QaControllerImpl implements QaController{
 			}
 			
 			HttpSession session = multipartRequest.getSession();
-			//MemberVO memberVO = (MemberVO)session.getAttribute("member");
-			//String id = qaVO.getId();
-			qaMap.put("id", "hw");
-			//qaMap.put("id", id);
+			MemberVO memberVO = (MemberVO)session.getAttribute("member");
+			String id = qaVO.getId();
+			qaMap.put("id", id);
 			
 			String qaNUM=(String)qaMap.get("qaNUM");
 			String message;
