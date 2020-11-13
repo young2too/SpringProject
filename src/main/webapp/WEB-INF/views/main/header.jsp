@@ -41,7 +41,7 @@
                 <div class="container clearfix">
 					<!-- Header Logo ==== -->
 					<div class="menu-logo">
-						<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""></a>
+						<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo3.png" alt=""></a>
 					</div>
 					<!-- Mobile Nav Button ==== -->
                     <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,8 +52,18 @@
 					<!-- Author Nav ==== -->
                      <div class="secondary-menu">
                         <div class="secondary-inner">
+                        
                         	<%
-								String LgId = (String)session.getAttribute("LgId");
+                        		
+                        		Cookie[] cookies = request.getCookies();
+                        		if(cookies != null){
+                        			for(Cookie cookie : cookies){
+                        				if(cookie.getName().equals("loginCookie")){
+                        					session.setAttribute("LgId", cookie.getValue());
+                        				}
+                        			}
+                        		}
+                        		String LgId = (String)session.getAttribute("LgId");
                         		MemberVO member = (MemberVO)session.getAttribute("member");
                         	%>
                         	<% if(LgId !=null) {
@@ -132,7 +142,7 @@
 							<li class="add-mega-menu"><a href="javascript:;">나의 단어장<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu add-menu">
 									<li class="add-menu-left">
-										<!-- <h5 class="menu-adv-title">나의 단어장</h5> -->
+										<h5 class="menu-adv-title">나의 단어장</h5>
 										<ul>
 											<li><a href="engineer.do?category=1">정보처리기사 </a></li>
 											<li><a href="security.do?category=2">정보보안기사</a></li>
@@ -141,9 +151,9 @@
 											<li><a href="korean-history.do?category=5">한국사 능력시험</a></li>
 										</ul>
 									</li>
-									<%-- <li class="add-menu-right">
+									<li class="add-menu-right">
 										<img src="${contextPath }/resources/main_assets/assets/images/adv/adv.jpg" alt=""/>
-									</li> --%>
+									</li>
 								</ul>
 							</li>
 							<li><a href="javascript:;">게시판 <i class="fa fa-chevron-down"></i></a>

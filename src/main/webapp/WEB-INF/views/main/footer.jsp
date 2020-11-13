@@ -16,7 +16,7 @@
 				<div class="container">
 					<div class="d-flex align-items-stretch">
 						<div class="pt-logo mr-auto">
-							<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""/></a>
+							<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo3.png" alt=""/></a>
 						</div>
 						<!-- <div class="pt-social-link">
 							<ul class="list-inline m-a0">
@@ -32,7 +32,7 @@
 					</div>
 				</div>
 			</div>
-            <div class="container">
+            <!-- <div class="container">
                 <div class="row">
 					<div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
                         <div class="widget">
@@ -88,7 +88,7 @@
 							</div>
 						</div>
                     </div>
-					<div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
+					<div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4"> -->
                        <%--  <div class="widget widget_gallery gallery-grid-4">
                             <h5 class="footer-title">Our Gallery</h5>
                             <ul class="magnific-image">

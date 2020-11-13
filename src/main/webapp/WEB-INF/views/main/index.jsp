@@ -135,7 +135,7 @@
 								data-height="none"
 								data-whitespace="normal"
 								data-type="text" 
-								data-responsive_offset="on" 
+								data-responsive_offset="on"
 								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
 								data-textAlign="['center','center','center','center']"
 								data-paddingtop="[0,0,0,0]"
@@ -147,7 +147,7 @@
 							</div>
 
 							<!-- LAYER NR. 3 -->
-							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
+							<div class="tp-caption Newspaper-Subtitle tp-resizeme"
 								id="slide-100-layer-3" 
 								data-x="['center','center','center','center']"
 								data-hoffset="['0','0','0','0']"
@@ -324,7 +324,6 @@
 								style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
 									가장 거침없는 자기 자신이 되세요!
 							</div>
-							
 							
 							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
 								id="slide-200-layer-4" 
