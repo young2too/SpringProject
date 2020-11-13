@@ -7,8 +7,11 @@
 <html lang="en">
 
 <!-- 카테고리 셀렉하는 페이지 -->
-<%
-%>
+<style>
+.action-box > img{
+	width : 
+}
+</style>
 <head>
 
 	<!-- META ============================================= -->
@@ -129,8 +132,8 @@
 										<div>
 											<div class="event-time">
 												<div class="event-date">14</div>
-												<div class="event-month">Nobemver</div>
-											</div>
+													<div class="event-month">Nobemver</div>
+										</div>
 										</div>
 
 										<div class="event-info">
