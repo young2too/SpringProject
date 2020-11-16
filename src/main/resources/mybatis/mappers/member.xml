@@ -10,6 +10,7 @@
         <result property="pw" column="pw" />
         <result property="name" column="name" />
         <result property="email" column="email" />
+        <result property="isUseCookie" column="isUseCookie" />
 	</resultMap>
 	
 	<!-- 전체회원 정보조회 -->
@@ -17,6 +18,15 @@
 	<![CDATA[
 		select *
 		from member_table
+	]]>
+	</select>
+	
+	<!-- 아이디를 통안 회원정보조회 -->
+	<select id="selectMemberById" resultMap="memResult" parameterType="String">
+	<![CDATA[
+		select *
+		from member_table
+		where id=#{id}
 	]]>
 	</select>
 	
@@ -28,15 +38,14 @@
 		]]>      
 	</insert>
 	
-	<!-- 회원정보 수정 -->
-	<!-- <update id="updateMember"  parameterType="memberVO">
+	<!-- 비밀번호 수정 -->
+	<update id="updateMember"  parameterType="memberVO">
      <![CDATA[
-	     update t_member
-	     set pw=#{pw}, name=#{name}, email=#{email}
-	     where
-	     id=#{id}
+	     update member_table
+	     set pw=#{pw}
+	     where id=#{id}
       ]]>      
-   </update> --> 
+   </update> 
     
    <!-- 회원정보 제거 --> 
    <delete id="deleteMember"  parameterType="String">
@@ -64,13 +73,33 @@
 	]]>
   </select>  
   
+  <!-- 로그인 된 경우 해당세션id와 유효시간을 table에 세팅 -->
+  <update id="keepLogin" parameterType="memberVO" >
+	<![CDATA[
+		update member_table 
+		set sessionkey=#{sessionId}, 
+		sessionLimit=#{sessionLimit} 
+		where id=#{id}
+	]]>
+  </update>
+  
+  <!--유효기간이 남아있으면서 해당 sessionId를 가지는 사용자 정보를 꺼내오는 부분  -->
+  <select id="checkUserWithSessionKey" resultType="memberVO">
+	<![CDATA[
+		select * from member_table	
+		where sessionkey=#{sessionId}
+		and sessionLimit > now()
+	]]>
+  </select>  
+  
+	
   <!-- pw 체크 -->
-  <select id="pwCheck"  resultType="int"   parameterType="memberVO" >
+<!--   <select id="pwCheck"  resultType="int"   parameterType="memberVO" >
 	<![CDATA[
 		select count(*) from member_table	
 		where id=#{id}		
 	]]>
-  </select>
+  </select> -->
   <!-- 회원코드 최댓값 구하기 -->
 	<!-- <select id="getMaxMemberCode"  resultType="_int" >
 	<![CDATA[

@@ -121,10 +121,8 @@ body {
 							</li>
 							</ul>
 							<%
-								}
+							}
 							%>
-							
-							
 						</div>
 					</div>
 					<!-- Search Box ==== -->
