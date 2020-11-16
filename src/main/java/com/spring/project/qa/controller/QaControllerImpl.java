@@ -59,9 +59,8 @@ public class QaControllerImpl implements QaController{
 	  @RequestMapping(value= "/listQaes.do", method ={RequestMethod.GET,RequestMethod.POST}) 
 	  public ModelAndView listQaes(@RequestParam(value="page",required=false, defaultValue="1" )int page, HttpServletRequest request, HttpServletResponse response,ListNum listNum) throws Exception { 
 		  
-		  //String viewName =(String)request.getAttribute("viewName"); //인터셉트에서 전달된 뷰이름.
-		  
-		  request.setCharacterEncoding("utf-8");
+		  response.setCharacterEncoding("utf-8");
+		  System.out.println(listNum);
 		  List QaesList = qaService.listQaes(listNum); //모든 글 정보 조회 
 		  
 		  //List QaesList = qaService.listQaes();

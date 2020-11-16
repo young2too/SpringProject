@@ -67,59 +67,9 @@
 
 	<!--Main container start -->
 	<main class="ttr-wrapper">
-		<div class="container-fluid">
-			<div class="db-breadcrumb">
-				<h4 class="breadcrumb-title">관리자 메뉴</h4>
-				<ul class="db-breadcrumb-list">
-					<li><a href="admin/index.do"><i class="fa fa-home"></i>Home</a></li>
-					<li>Dashboard</li>
-				</ul>
-				
-			</div>	
-			
-			<div class="row">
-				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
-					<div class="widget-card widget-bg1"  onclick="window.open('quizes.do','_self')" style="cursor: pointer;">				 
-						<div class="wc-item">
-							<h4 class="wc-title">
-								문제집 관리
-							</h4>
-						</div>				      
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12"">
-					<div class="widget-card widget-bg2"  onclick="window.open('viewUser.do','_self')" style="cursor: pointer;">					 
-						<div class="wc-item">
-							<h4 class="wc-title">
-								 회원 관리
-							</h4>
-						</div>				      
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
-					<div class="widget-card widget-bg3" onclick="window.open('viewBrd.do','_self')" style="cursor: pointer;">					 
-						<div class="wc-item">
-							<h4 class="wc-title">
-								게시글 관리
-							</h4>
-						</div>				      
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
-					<div class="widget-card widget-bg4" onclick="window.open('calender.do','_self')" style="cursor: pointer;">					 
-						<div class="wc-item">
-							<h4 class="wc-title">
-								내 일정 관리
-							</h4>
-						</div>				      
-					</div>
-				</div>
-			</div>
-			<!-- Card END -->
 			<!-- 캘린더 -->
 			<jsp:include page="calender.jsp"></jsp:include>
 			<!-- 캘린더 -->
-			</div>
 	</main>
 	<div class="ttr-overlay"></div>
 

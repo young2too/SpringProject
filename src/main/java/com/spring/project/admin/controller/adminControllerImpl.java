@@ -1,5 +1,6 @@
 package com.spring.project.admin.controller;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.project.member.service.MemberService;
 import com.spring.project.member.vo.MemberVO;
+import com.spring.project.qa.service.QaService;
+import com.spring.project.qa.vo.ListNum;
+import com.spring.project.qa.vo.PageMaker;
+import com.spring.project.qa.vo.QaVO;
 import com.spring.project.quiz.service.QuizService;
 import com.spring.project.quiz.vo.QuizVO;
 
@@ -26,7 +31,9 @@ import com.spring.project.quiz.vo.QuizVO;
 public class adminControllerImpl implements adminController {
 	@Autowired MemberService memberService;
 	@Autowired QuizService quizService;
+	@Autowired QaService qaService; 
 	@Autowired QuizVO quizVO;
+	@Autowired QaVO qaVO;
 	
 	@ResponseBody
 	@RequestMapping(value = {"authorize.do"}, method = RequestMethod.POST)
@@ -40,6 +47,7 @@ public class adminControllerImpl implements adminController {
 		else
 			return 0;
 	}
+
 	
 	@RequestMapping(value = {"admin/index.do", "admin/"}, method = RequestMethod.GET)
 	public ModelAndView studyPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -76,6 +84,18 @@ public class adminControllerImpl implements adminController {
 		mav.setViewName("admin/viewUserList");
 		return mav;
 	}
+	
+	// 게시판 삭제
+	@RequestMapping(value = "admin/removeBrd.do", method = RequestMethod.GET)
+	public ModelAndView removeBrd(@RequestParam("qaNUM") int qaNUM, HttpServletRequest request, HttpServletResponse response, ListNum listNum) throws Exception{
+		ModelAndView mav = new ModelAndView();
+		qaService.removeQa(qaNUM);
+		List<QaVO> brdList = qaService.listQaes(listNum);
+		  mav.addObject("brdList",brdList);
+		  mav.setViewName("admin/viewBoardList");
+		  return mav;
+	}
+	
 	
 	@RequestMapping(value = "admin/addNewQuizProc.do", method = RequestMethod.POST)
 	public ModelAndView addNewQuizProc(@RequestParam ("category") int category,@RequestParam ("quiz") String quiz,
@@ -130,6 +150,25 @@ public class adminControllerImpl implements adminController {
 		return mav;
 	}
 	
+	// 게시판 리스트
+	@RequestMapping(value= "admin/viewBrd.do", method ={RequestMethod.GET}) 
+	  public ModelAndView listQaes( HttpServletRequest request, HttpServletResponse response, ListNum listNum) throws Exception { 
+		  ModelAndView mav = new ModelAndView();
+		  List<QaVO> brdList = qaService.listQaes(listNum);
+		  mav.addObject("brdList",brdList);
+		  mav.setViewName("admin/viewBoardList");
+		  return mav; 
+	}
+	
+	@RequestMapping(value= "admin/calender.do", method ={RequestMethod.GET}) 
+	  public ModelAndView calenderPage( HttpServletRequest request, HttpServletResponse response, ListNum listNum) throws Exception { 
+		  ModelAndView mav = new ModelAndView();
+		  mav.setViewName("admin/mycalender");
+		  return mav; 
+	}
+	
+	
+	
 	@RequestMapping(value = "admin/getadditionalMember.do", method = RequestMethod.GET)
 	public List<MemberVO> getadditionalMember(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		List<MemberVO> additionalmemList = memberService.listMembers();
@@ -143,4 +182,6 @@ public class adminControllerImpl implements adminController {
 
 		return additionalQuizList;
 	}
+	
+	
 }
