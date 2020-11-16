@@ -74,7 +74,7 @@
 					<h2 class="title-head">Sign Up <span>Now</span></h2>
 					<p>Login Your Account <a href="login.do">Click here</a></p>
 				</div>	
-				<form class="contact-bx" action="addmember.do">
+				<form class="contact-bx" action="addmember.do" method="get">
 					<div class="row placeani">
 						<div class="col-lg-12">
 							<div class="form-group">
@@ -119,15 +119,10 @@
 							</div>
 						</div>
 						
-						<div class="col-lg-12 m-b30">
+						<div class="col-lg-12 m-b30" style="text-align: right;">
 							<button name="submit" type="submit" value="Submit" class="btn button-md" >Sign Up</button>
 						</div>
 						<div class="col-lg-12">
-							<h6>Sign Up with Social media</h6>
-							<div class="d-flex">
-								<a class="btn flex-fill m-r5 facebook" href="#"><i class="fa fa-facebook"></i>Facebook</a>
-								<a class="btn flex-fill m-l5 google-plus" href="#"><i class="fa fa-google-plus"></i>Google Plus</a>
-							</div>
 						</div>
 					</div>
 				</form>
@@ -166,7 +161,7 @@ function idCheck (){
 		if(idRule.test(idCheck)){
 			$.ajax({
 				url:'idcheck.do?idcheck='+idCheck,
-				type:'get',
+				type:'post',
 				success:function(data){
 					var color;
 					var msg;

@@ -5,7 +5,6 @@
 <c:set var="contextPath" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html lang="en">
-
 <!-- 나의 단어장_영단어 -->
 <head>
 

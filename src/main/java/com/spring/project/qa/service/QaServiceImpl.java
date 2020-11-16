@@ -17,13 +17,10 @@ public class QaServiceImpl implements QaService {
 	QaDAO qaDAO;
 	
 	
-	  @Override public List<QaVO> listQaes(ListNum listNum) throws Exception {
-	  return qaDAO.selectAllQaesList(listNum); }
-	 
-	
-	
-	
-	
+	 @Override public List<QaVO> listQaes(ListNum listNum) throws Exception {
+		  return qaDAO.selectAllQaesList(listNum); 
+	 }
+	  
 	@Override
 	public int listCount() throws Exception {
 		// TODO Auto-generated method stub

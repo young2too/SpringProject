@@ -1,5 +1,6 @@
 package com.spring.project.member.service;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -12,13 +13,13 @@ import org.springframework.transaction.annotation.Transactional;
 import com.spring.project.member.dao.MemberDao;
 import com.spring.project.member.vo.MemberVO;
 
-
 @Service("memberService")
 
-public class MemberServiceImpl implements MemberService{
-	
-	@Autowired private MemberDao memberDAO;
-	
+public class MemberServiceImpl implements MemberService {
+
+	@Autowired
+	private MemberDao memberDAO;
+
 	@Override
 	public List listMembers() throws DataAccessException {
 		// TODO Auto-generated method stub
@@ -52,17 +53,21 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public int pwCheck(MemberVO memberVO) throws Exception {
+	public void keepLogin(String id, String sessionId, Date sessionLimit) throws Exception {
 		// TODO Auto-generated method stub
-		return memberDAO.pwCheck(memberVO);
+		memberDAO.keepLogin(id, sessionId, sessionLimit);
 	}
 
+	@Override
+	public MemberVO checkUserWithSessionKey(String sessionId) throws Exception {
+		// TODO Auto-generated method stub
+		return memberDAO.checkUserWithSessionKey(sessionId);
+	}
 
-	/*
-	 * public int getMaxMemberCode() throws Exception{ return
-	 * memberDAO.getMaxMemberCode();
-	 * 
-	 * }
-	 */
-	
+	@Override
+	public int updatePw(MemberVO memberVO) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return memberDAO.updatePw(memberVO);
+	}
+
 }

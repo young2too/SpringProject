@@ -69,6 +69,8 @@
 	href="${contextPath }/resources/main_assets/assets/css/color/color-1.css">
 
 <script>
+		
+
 	 function backToList(obj){
 		    obj.action="${contextPath}/listQaes.do?page=1";
 		    obj.submit();
@@ -100,6 +102,25 @@
 		     form.submit();
 		 
 		 }
+		 
+		 function fn_blogForm(isLogOn,blogForm,loginForm,qaNUM){
+				if(isLogOn != '' && isLogOn != 'false'){
+					var form = document.createElement("form");
+					 form.setAttribute("method", "get");
+					 form.setAttribute("action", blogForm);
+					 var articleNOInput = document.createElement("input");
+				     articleNOInput.setAttribute("type","hidden");
+				     articleNOInput.setAttribute("name","qaNUM");
+				     articleNOInput.setAttribute("value", qaNUM);
+					 
+				     form.appendChild(articleNOInput);
+				     document.body.appendChild(form);
+				     form.submit();
+				}else{
+					alert("로그인 후 글쓰기가 가능합니다.")
+					location.href="login.do";
+				}
+			}
 		 
 		 function fn_reply_form(url, qaNUM){
 			 var form = document.createElement("form");
@@ -188,7 +209,7 @@
 										</div>
 										<p>
 										<div id="tr_btn" align="center">
-											<c:if test="${'hw' == qa.id }">
+											<c:if test="${member.id == qa.id }">
 												<input type=button value="수정하기"
 													onClick="fn_enable(this.form)" class="btn button-md">
 												<input type=button value="삭제하기"
@@ -197,9 +218,12 @@
 											</c:if>
 											<input type=button value="리스트로 돌아가기"
 												onClick="backToList(this.form)" class="btn button-md">
-											<input type=button value="답글쓰기"
+											<%-- <input type=button value="답글쓰기"
 												onClick="fn_reply_form('${contextPath}/openReply.do', ${qa.qaNUM})"
-												class="btn button-md">
+												class="btn button-md"> --%>
+												<input type=button value="답글쓰기"
+													onClick="javascript:fn_blogForm('${isLogOn }','${contextPath }/openReply.do','${contextPath}/member/login.do',${qa.qaNUM})"
+													class="btn button-md">
 										</div>
 									</div>
 								</form>

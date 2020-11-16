@@ -14,7 +14,7 @@
 		<div class="ttr-sidebar-wrapper content-scroll">
 			<!-- side menu logo start -->
 			<div class="ttr-sidebar-logo">
-				<a href="#"><img alt="" src="${contextPath }/resources/admin/assets/images/logo.png" width="122" height="27"></a>
+				<a href="index.do"><img alt="" src="${contextPath }/resources/main_assets/assets/images/logo2.png" width="122" height="27"></a>
 			</div>
 			<!-- side menu logo end -->
 			<!-- sidebar menu start -->
@@ -33,7 +33,7 @@
 		                </a>
 		            </li>
 					<li>
-						<a href="#" class="ttr-material-button">
+						<a href="calender.do" class="ttr-material-button">
 							<span class="ttr-icon"><i class="ti-calendar"></i></span>
 		                	<span class="ttr-label">내 일정 관리</span>
 		                </a>

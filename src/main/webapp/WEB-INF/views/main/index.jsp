@@ -1,4 +1,3 @@
-
 <%@page import="com.spring.project.member.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
@@ -60,9 +59,6 @@
 	<link rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/vendors/revolution/css/navigation.css">
 	<!-- REVOLUTION SLIDER END -->	
 </head>
-<script>
-alert(sessionStorage.))
-</script>
 <body id="bg">
 <div class="page-wraper">
 <div id="loading-icon-bx"></div>
@@ -99,7 +95,7 @@ alert(sessionStorage.))
 						data-param9="" data-param10="" 
 						data-description="Science says that Women are generally happier">
 							<!-- MAIN IMAGE -->
-							<img src="${contextPath }/resources/main_assets/assets/images/slider/slide1.jpg" alt="" 
+							<img src="${contextPath }/resources/main_assets/assets/images/slider/slide4.png" alt="" 
 								data-bgposition="center center" 
 								data-bgfit="cover" 
 								data-bgrepeat="no-repeat" 
@@ -139,7 +135,7 @@ alert(sessionStorage.))
 								data-height="none"
 								data-whitespace="normal"
 								data-type="text" 
-								data-responsive_offset="on" 
+								data-responsive_offset="on"
 								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
 								data-textAlign="['center','center','center','center']"
 								data-paddingtop="[0,0,0,0]"
@@ -147,11 +143,11 @@ alert(sessionStorage.))
 								data-paddingbottom="[10,10,10,10]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;">
-									Welcome To University
+									뻔한 퀴즈가 FUN해 집니다
 							</div>
 
 							<!-- LAYER NR. 3 -->
-							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
+							<div class="tp-caption Newspaper-Subtitle tp-resizeme"
 								id="slide-100-layer-3" 
 								data-x="['center','center','center','center']"
 								data-hoffset="['0','0','0','0']"
@@ -169,7 +165,7 @@ alert(sessionStorage.))
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; white-space: nowrap; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-									Batter Education For A Better 
+									가장 거침없는 자기 자신이 되세요!
 							</div>
 							
 							<!-- LAYER NR. 3 -->
@@ -191,8 +187,7 @@ alert(sessionStorage.))
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
-									 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-							</div>
+									동기부여와 목표가 무엇이든, 모든 학생들에게 성공을 위한 도구와 자신감을 심어 줍니다.						</div>
 							<!-- LAYER NR. 4 -->
 							<div class="tp-caption Newspaper-Button rev-btn " 
 								id="slide-100-layer-5" 
@@ -212,8 +207,9 @@ alert(sessionStorage.))
 								data-paddingright="[30,35,35,15]"
 								data-paddingbottom="[12,12,12,12]"
 								data-paddingleft="[30,35,35,15]"
-								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; background-color:var(--primary) !important; border:0; border-radius:30px; margin-right:5px;">READ MORE </div>
+								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; background-color:var(--primary) !important; border:0; border-radius:30px; margin-right:5px;">더 읽어보기 </div>
 							<div class="tp-caption Newspaper-Button rev-btn" 
+								onclick="location.href('https://trello.com/b/uSbjNHdQ/db-%EB%AC%B8%EC%A0%9C-%ED%85%8C%EC%9D%B4%EB%B8%94-%EA%B5%AC%EC%84%B1')" 
 								id="slide-100-layer-6" 
 								data-x="['center','center','center','center']" 
 								data-hoffset="['-90','-80','-75','-90']" 
@@ -231,7 +227,7 @@ alert(sessionStorage.))
 								data-paddingright="[30,35,35,15]"
 								data-paddingbottom="[12,12,12,12]"
 								data-paddingleft="[30,35,35,15]"
-								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius:30px;">CONTACT US</div>
+								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius:30px;">문의하기</div>
 						</li>
 						<li data-index="rs-200" 
 						data-transition="parallaxvertical" 
@@ -241,7 +237,7 @@ alert(sessionStorage.))
 						data-easein="default" 
 						data-easeout="default" 
 						data-masterspeed="default" 
-						data-thumb="${contextPath }/resources/main_assets/assets/images/slider/slide1.jpg" 
+						data-thumb="${contextPath }/resources/main_assets/assets/images/slider/slide4.png" 
 						data-rotate="0" 
 						data-fstransition="fade" 
 						data-fsmasterspeed="1500" 
@@ -255,7 +251,7 @@ alert(sessionStorage.))
 						data-param9="" data-param10="" 
 						data-description="Science says that Women are generally happier">
 							<!-- MAIN IMAGE -->
-							<img src="${contextPath }/resources/main_assets/assets/images/slider/slide2.jpg" alt="" 
+							<img src="${contextPath }/resources/main_assets/assets/images/slider/slide4.png" alt="" 
 								data-bgposition="center center" 
 								data-bgfit="cover" 
 								data-bgrepeat="no-repeat" 
@@ -305,7 +301,7 @@ alert(sessionStorage.))
 								data-paddingbottom="[10,10,10,10]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;text-transform:uppercase;">
-									Welcome To University
+									뻔한 퀴즈가 FUN해 집니다
 							</div>
 
 							<!-- LAYER NR. 3 -->
@@ -318,7 +314,7 @@ alert(sessionStorage.))
 								data-width="none"
 								data-height="none"
 								data-whitespace="nowrap"
-								data-type="text" 
+								data-type="text"
 								data-responsive_offset="on"
 								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
 								data-textAlign="['left','left','left','left']"
@@ -327,12 +323,12 @@ alert(sessionStorage.))
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-									Batter Education For A Better 
+									가장 거침없는 자기 자신이 되세요!
 							</div>
 							
-							<!-- LAYER NR. 3 -->
 							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
 								id="slide-200-layer-4" 
+								
 								data-x="['center','center','center','center']" 
 								data-hoffset="['0','0','0','0']" 
 								data-y="['top','top','top','top']" 
@@ -349,52 +345,15 @@ alert(sessionStorage.))
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
-									 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-							</div>
-							<!-- LAYER NR. 4 -->
-							<div class="tp-caption Newspaper-Button rev-btn " 
-								id="slide-200-layer-5" 
-								data-x="['center','center','center','center']" 
-								data-hoffset="['90','80','75','90']" 
-								data-y="['top','top','top','top']" 
-								data-voffset="['400','400','400','420']" 
-								data-width="none"
-								data-height="none"
-								data-whitespace="nowrap"
-								data-type="button" 
-								data-responsive_offset="on" 
-								data-responsive="off"
-								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-								data-textAlign="['center','center','center','center']"
-								data-paddingtop="[12,12,12,12]"
-								data-paddingright="[30,35,35,15]"
-								data-paddingbottom="[12,12,12,12]"
-								data-paddingleft="[30,35,35,15]"
-								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; background-color:var(--primary) !important; border:0; border-radius:30px; margin-right:5px;">READ MORE </div>
-							<div class="tp-caption Newspaper-Button rev-btn" 
-								id="slide-200-layer-6" 
-								data-x="['center','center','center','center']" 
-								data-hoffset="['-90','-80','-75','-90']" 
-								data-y="['top','top','top','top']" 
-								data-voffset="['400','400','400','420']" 
-								data-width="none"
-								data-height="none"
-								data-whitespace="nowrap"
-								data-type="button" 
-								data-responsive_offset="on" 
-								data-responsive="off"
-								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-								data-textAlign="['center','center','center','center']"
-								data-paddingtop="[12,12,12,12]"
-								data-paddingright="[30,35,35,15]"
-								data-paddingbottom="[12,12,12,12]"
-								data-paddingleft="[30,35,35,15]"
-								style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius:30px;">CONTACT US</div>
+									 동기부여와 목표가 무엇이든, 모든 학생들에게 성공을 위한 도구와 자신감을 심어 줍니다.
+							<!-- LAYER NR. 3 --></div>
 						</li>
 						<!-- SLIDE  -->
 					</ul>
 				</div><!-- END REVOLUTION SLIDER -->  
-			</div>  
+				</div>
+			</div> 
+
 		</div>  
         <!-- Main Slider -->
 		<div class="content-block">
@@ -406,42 +365,44 @@ alert(sessionStorage.))
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="service-bx">
 								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/our-services/pic1.jpg" alt="">
+									<a href="study.do"><img src="${contextPath }/resources/main_assets/assets/images/our-services/pic5.png" alt="공부하기"></a>
 								</div>
 								<div class="info-bx text-center">
 									<div class="feature-box-sm radius bg-white">
 										<i class="fa fa-bank text-primary"></i>
 									</div>
 									<h4><a href="study.do">학습하기</a></h4>
-									<a href="study.do" class="btn radius-xl">View More</a>
+									<a href="study.do" class="btn radius-xl">더보기</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="service-bx">
 								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/our-services/pic2.jpg" alt="">
+									<a href="engineer.do?category=1"><img src="${contextPath }/resources/main_assets/assets/images/our-services/pic4.png" alt="단어장 보기"></a>
 								</div>
 								<div class="info-bx text-center">
 									<div class="feature-box-sm radius bg-white">
-										<i class="fa fa-book text-primary"></i>
+										<a href="engineer.do?category=1"><i class="fa fa-book text-primary"></i></a>
 									</div>
-									<h4><a href="#">나의 단어장</a></h4>
-									<a href="#" class="btn radius-xl">View More</a>
+									<h4><a href="engineer.do?category=1">나의 단어장</a></h4>
+									<a href="engineer.do?category=1" class="btn radius-xl">더보기</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-12">
 							<div class="service-bx m-b0">
 								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/our-services/pic3.jpg" alt="">
+									<a href="listQaes.do"><img src="${contextPath }/resources/main_assets/assets/images/our-services/pic6.png" alt="게시판으로"></a>
 								</div>
 								<div class="info-bx text-center">
 									<div class="feature-box-sm radius bg-white">
+										<a href="listQaes.do">
 										<i class="fa fa-file-text-o text-primary"></i>
+										</a>
 									</div>
-									<h4><a href="#">게시판</a></h4>
-									<a href="#" class="btn radius-xl">View More</a>
+									<h4><a href="listQaes.do">게시판</a></h4>
+									<a href="listQaes.do" class="btn radius-xl">더보기</a>
 								</div>
 							</div>
 						</div>
@@ -449,271 +410,6 @@ alert(sessionStorage.))
 				</div>
             </div>
             <!-- Our Services END -->
-			
-			<%-- <!-- Popular Courses -->
-			 <div class="section-area section-sp2 popular-courses-bx">
-                <div class="container">
-					<div class="row">
-						<div class="col-md-12 heading-bx left">
-							<h2 class="title-head">Popular <span>Courses</span></h2>
-							<p>It is a long established fact that a reader will be distracted by the readable content of a page</p>
-						</div>
-					</div>
-					<div class="row">
-					<div class="courses-carousel owl-carousel owl-btn-1 col-12 p-lr0">
-						<div class="item">
-							<div class="cours-bx">
-								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/courses/pic1.jpg" alt="">
-									<a href="#" class="btn">Read More</a>
-								</div>
-								<div class="info-bx text-center">
-									<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-									<span>Programming</span>
-								</div>
-								<div class="cours-more-info">
-									<div class="review">
-										<span>3 Review</span>
-										<ul class="cours-star">
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="price">
-										<del>$190</del>
-										<h5>$120</h5>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cours-bx">
-								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/courses/pic2.jpg" alt="">
-									<a href="#" class="btn">Read More</a>
-								</div>
-								<div class="info-bx text-center">
-									<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-									<span>Programming</span>
-								</div>
-								<div class="cours-more-info">
-									<div class="review">
-										<span>3 Review</span>
-										<ul class="cours-star">
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="price">
-										<del>$190</del>
-										<h5>$120</h5>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cours-bx">
-								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/courses/pic3.jpg" alt="">
-									<a href="#" class="btn">Read More</a>
-								</div>
-								<div class="info-bx text-center">
-									<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-									<span>Programming</span>
-								</div>
-								<div class="cours-more-info">
-									<div class="review">
-										<span>3 Review</span>
-										<ul class="cours-star">
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="price">
-										<del>$190</del>
-										<h5>$120</h5>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cours-bx">
-								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/courses/pic4.jpg" alt="">
-									<a href="#" class="btn">Read More</a>
-								</div>
-								<div class="info-bx text-center">
-									<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-									<span>Programming</span>
-								</div>
-								<div class="cours-more-info">
-									<div class="review">
-										<span>3 Review</span>
-										<ul class="cours-star">
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li class="active"><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-											<li><i class="fa fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="price">
-										<del>$190</del>
-										<h5>$120</h5>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					</div>
-				</div>
-			</div> 
-			<!-- Popular Courses END --> --%>
-			
-			<!-- Form -->
-			<!-- <div class="section-area section-sp1 ovpr-dark bg-fix online-cours" style="background-image:url(${contextPath }/resources/main_assets/assets/images/background/bg1.jpg);">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 text-center text-white">
-							<h2>Online Courses To Learn</h2>
-							<h5>Own Your Feature Learning New Skills Online</h5>
-							<form class="cours-search">
-								<div class="input-group">
-									<input type="text" class="form-control" placeholder="What do you want to learn today?	">
-									<div class="input-group-append">
-										<button class="btn" type="submit">Search</button> 
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="mw800 m-auto">
-						<div class="row">
-							<div class="col-md-4 col-sm-6">
-								<div class="cours-search-bx m-b30">
-									<div class="icon-box">
-										<h3><i class="ti-user"></i><span class="counter">5</span>M</h3>
-									</div>
-									<span class="cours-search-text">Over 5 million student</span>
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-6">
-								<div class="cours-search-bx m-b30">
-									<div class="icon-box">
-										<h3><i class="ti-book"></i><span class="counter">30</span>K</h3>
-									</div>
-									<span class="cours-search-text">30,000 Courses.</span>
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-12">
-								<div class="cours-search-bx m-b30">
-									<div class="icon-box">
-										<h3><i class="ti-layout-list-post"></i><span class="counter">20</span>K</h3>
-									</div>
-									<span class="cours-search-text">Learn Anythink Online.</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>  -->
-			<!-- Form END -->
-			<!-- <div class="section-area section-sp2">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 text-center heading-bx">
-							<h2 class="title-head m-b0">Upcoming <span>Events</span></h2>
-							<p class="m-b0">Upcoming Education Events To Feed Brain. </p>
-						</div>
-					</div>
-					<div class="row">
-					<div class="upcoming-event-carousel owl-carousel owl-btn-center-lr owl-btn-1 col-12 p-lr0  m-b30">
-						<div class="item">
-							<div class="event-bx">
-								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/event/pic4.jpg" alt="">
-								</div>
-								<div class="info-bx d-flex">
-									<div>
-										<div class="event-time">
-											<div class="event-date">29</div>
-											<div class="event-month">October</div>
-										</div>
-									</div>
-									<div class="event-info">
-										<h4 class="event-title"><a href="#">Education Autumn Tour 2019</a></h4>
-										<ul class="media-post">
-											<li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
-											<li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a></li>
-										</ul>
-										<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="event-bx">
-								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/event/pic3.jpg" alt="">
-								</div>
-								<div class="info-bx d-flex">
-									<div>
-										<div class="event-time">
-											<div class="event-date">29</div>
-											<div class="event-month">October</div>
-										</div>
-									</div>
-									<div class="event-info">
-										<h4 class="event-title"><a href="#">Education Autumn Tour 2019</a></h4>
-										<ul class="media-post">
-											<li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
-											<li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a></li>
-										</ul>
-										<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="event-bx">
-								<div class="action-box">
-									<img src="${contextPath }/resources/main_assets/assets/images/event/pic2.jpg" alt="">
-								</div>
-								<div class="info-bx d-flex">
-									<div>
-										<div class="event-time">
-											<div class="event-date">29</div>
-											<div class="event-month">October</div>
-										</div>
-									</div>
-									<div class="event-info">
-										<h4 class="event-title"><a href="#">Education Autumn Tour 2019</a></h4>
-										<ul class="media-post">
-											<li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
-											<li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a></li>
-										</ul>
-										<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					</div>
-					<div class="text-center">
-						<a href="#" class="btn">View All Event</a>
-					</div>
-				</div>
-			</div>  -->
-			
 			<!-- Testimonials -->
 			<div class="section-area section-sp2">
 				<div class="container">
@@ -738,119 +434,14 @@ alert(sessionStorage.))
 				</div>
 			</div>
 			<!-- Testimonials END -->
-			
         </div>
 		<!-- contact area END -->
     </div>
     <!-- Content END-->
 	<!-- Footer ==== -->
-    <footer>
-        <div class="footer-top">
-			<div class="pt-exebar">
-				<div class="container">
-					<div class="d-flex align-items-stretch">
-						<div class="pt-logo mr-auto">
-							<a href="index.do"><img src="${contextPath }/resources/main_assets/assets/images/logo-white.png" alt=""/></a>
-						</div>
-						<div class="pt-social-link">
-							<ul class="list-inline m-a0">
-								<li><a href="#" class="btn-link"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#" class="btn-link"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-						<div class="pt-btn-join">
-							<a href="#" class="btn ">Join Now</a>
-						</div>
-					</div>
-				</div>
-			</div>
-            <div class="container">
-                <div class="row">
-					<div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
-                        <div class="widget">
-                            <h5 class="footer-title">Sign Up For A Newsletter</h5>
-							<p class="text-capitalize m-b20">Weekly Breaking news analysis and cutting edge advices on job searching.</p>
-                            <div class="subscribe-form m-b20">
-								<form class="subscription-form" action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
-									<div class="ajax-message"></div>
-									<div class="input-group">
-										<input name="email" required="required"  class="form-control" placeholder="Your Email Address" type="email">
-										<span class="input-group-btn">
-											<button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
-										</span> 
-									</div>
-								</form>
-							</div>
-                        </div>
-                    </div>
-					<div class="col-12 col-lg-5 col-md-7 col-sm-12">
-						<div class="row">
-							<div class="col-4 col-lg-4 col-md-4 col-sm-4">
-								<div class="widget footer_widget">
-									<h5 class="footer-title">Company</h5>
-									<ul>
-										<li><a href="index.do">Home</a></li>
-										<li><a href="study.do">About</a></li>
-										<li><a href="faq-1.jsp">FAQs</a></li>
-										<li><a href="contact-1.jsp">Contact</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-4 col-lg-4 col-md-4 col-sm-4">
-								<div class="widget footer_widget">
-									<h5 class="footer-title">Get In Touch</h5>
-									<ul>
-										<li><a href="../admin/index.do">Dashboard</a></li>
-										<li><a href="blog-classic-grid.jsp">Blog</a></li>
-										<li><a href="portfolio.jsp">Portfolio</a></li>
-										<li><a href="exercise.do">Event</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-4 col-lg-4 col-md-4 col-sm-4">
-								<div class="widget footer_widget">
-									<h5 class="footer-title">Courses</h5>
-									<ul>
-										<li><a href="courses.jsp">Courses</a></li>
-										<li><a href="courses-details.jsp">Details</a></li>
-										<li><a href="membership.jsp">Membership</a></li>
-										<li><a href="profile.jsp">Profile</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-                    </div>
-					<div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
-                        <div class="widget widget_gallery gallery-grid-4">
-                            <h5 class="footer-title">Our Gallery</h5>
-                            <ul class="magnific-image">
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic1.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic2.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic3.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic3.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic4.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic4.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic5.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic5.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic6.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic6.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic7.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic7.jpg" alt=""></a></li>
-								<li><a href="${contextPath }/resources/main_assets/assets/images/gallery/pic8.jpg" class="magnific-anchor"><img src="${contextPath }/resources/main_assets/assets/images/gallery/pic8.jpg" alt=""></a></li>
-							</ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--  <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a target="_blank" href="https://www.templateshub.net">Templates Hub</a></div>
-                </div>
-            </div>
-        </div>  -->
-    </footer>
-    <!-- Footer END ==== -->
-    <button class="back-to-top fa fa-chevron-up" ></button>
-</div>
+     <jsp:include page="footer.jsp"></jsp:include>
+     <!-- Footer END -->
+        
 
 <!-- External JavaScripts -->
 <script src="${contextPath }/resources/main_assets/assets/js/jquery.min.js"></script>
@@ -969,4 +560,5 @@ jQuery(document).ready(function() {
 });	
 </script>
 </body>
+
 </html>

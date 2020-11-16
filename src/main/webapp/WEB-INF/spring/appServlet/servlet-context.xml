@@ -32,10 +32,9 @@
 	   		<beans:bean class="com.spring.project.common.interceptor.forAdminInterceptor" />
 		</mvc:interceptor>
     	<mvc:interceptor>
-	      	<mvc:mapping path="/*/*.do"/>
+	    	<mvc:mapping path="/*/*.do"/>
 	   		<beans:bean class="com.spring.project.common.interceptor.ViewNameInterceptor" />
 		</mvc:interceptor>
-		
 	</mvc:interceptors>
 
 	<context:component-scan

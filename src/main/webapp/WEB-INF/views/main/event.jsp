@@ -7,8 +7,11 @@
 <html lang="en">
 
 <!-- 카테고리 셀렉하는 페이지 -->
-<%
-%>
+<style>
+.action-box > img{
+	width : 
+}
+</style>
 <head>
 
 	<!-- META ============================================= -->
@@ -121,7 +124,7 @@
 								<div class="event-bx m-b30">
 									<div class="action-box">
 										<a href="selectedCategory.do?queryType=${queryType}&category=1">
-											<img src="${contextPath }/resources/main_assets/assets/images/event/pic1.jpg" alt="">
+											<img src="${contextPath }/resources/main_assets/assets/images/event/engineer.png" alt="">
 										</a>
 									</div>
 
@@ -129,8 +132,8 @@
 										<div>
 											<div class="event-time">
 												<div class="event-date">14</div>
-												<div class="event-month">Nobemver</div>
-											</div>
+													<div class="event-month">Nobemver</div>
+										</div>
 										</div>
 
 										<div class="event-info">
@@ -138,7 +141,7 @@
 											<ul class="media-post">
 												<li><i class="fa fa-clock-o"></i> 9:30am 11:59am</a></li>
 											</ul>
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
+											<p>공대생의 필수품 정보처리기사!</p>
 										</div>
 									</div>
 								</div>
@@ -148,7 +151,7 @@
 								<div class="event-bx m-b30">
 									<div class="action-box">
 										<a href="selectedCategory.do?queryType=${queryType}&category=2">
-											<img src="${contextPath }/resources/main_assets/assets/images/event/pic2.jpg" alt="">
+											<img src="${contextPath }/resources/main_assets/assets/images/event/security.png" alt="">
 										</a>
 									</div>
 									<div class="info-bx d-flex">
@@ -163,7 +166,7 @@
 											<ul class="media-post">
 												<li><i class="fa fa-clock-o"></i> 9:30am 11:59am</a></li>
 											</ul>
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
+											<p>나도 할 수 있다! 정보보안기사</p>
 										</div>
 									</div>
 								</div>
@@ -172,7 +175,7 @@
 								<div class="event-bx m-b30">
 									<div class="action-box">
 										<a href="selectedCategory.do?queryType=${queryType}&category=3">
-											<img src="${contextPath }/resources/main_assets/assets/images/event/pic3.jpg" alt="">
+											<img src="${contextPath }/resources/main_assets/assets/images/event/linux.png" alt="">
 										</a>
 									</div>
 									<div class="info-bx d-flex">
@@ -187,7 +190,7 @@
 											<ul class="media-post">
 												<li><i class="fa fa-clock-o"></i> 9:30am 11:59am</a></li>
 											</ul>
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
+											<p>필수 OS 리눅스를 알아보자</p>
 										</div>
 									</div>
 								</div>
@@ -196,7 +199,7 @@
 								<div class="event-bx m-b30">
 									<div class="action-box">
 										<a href="selectedCategory.do?queryType=${queryType}&category=4">
-											<img src="${contextPath }/resources/main_assets/assets/images/event/pic4.jpg" alt="">
+											<img src="${contextPath }/resources/main_assets/assets/images/event/english.png" alt="">
 										</a>
 									</div>
 									<div class="info-bx d-flex">
@@ -211,7 +214,7 @@
 											<ul class="media-post">
 												<li><i class="fa fa-clock-o"></i> 9:30am 11:59am</a></li>
 											</ul>
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
+											<p>토익 영단어 정복기</p>
 										</div>
 									</div>
 								</div>
@@ -220,7 +223,7 @@
 								<div class="event-bx m-b30">
 									<div class="action-box">
 										<a href="selectedCategory.do?queryType=${queryType}&category=5">
-										<img src="${contextPath }/resources/main_assets/assets/images/event/pic2.jpg" alt="">
+										<img src="${contextPath }/resources/main_assets/assets/images/event/korean.png" alt="">
 										</a>
 									</div>
 									<div class="info-bx d-flex">
@@ -236,8 +239,7 @@
 											<ul class="media-post">
 												<li><i class="fa fa-clock-o"></i> 9:30am 11:59am</a></li>
 											</ul>
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
-
+											<p>태정태세문단세 한국을 빛낸 100명의 위인들!</p>
 										</div>
 									</div>
 								</div>

@@ -1,15 +1,19 @@
 package com.spring.project.qa.vo;
 
+import org.springframework.stereotype.Component;
+
+@Component("listNum")
 public class ListNum {
 	
-	private int page;
-	private int perPageNum;
-	private int rowStart;
-	private int rowEnd;
+	//페이지 아래 번호 
+	private int page;//현재 페이지 번호
+	private int perPageNum;//한페이지당 보여줄 게시글 갯수
+	private int rowStart;//페이지 첫번째 게시물
+	private int rowEnd;//페이지 마지막 게시물
 	
 	public ListNum() {
-		this.page = 1;
-		this.perPageNum = 10;
+		this.page = 1;//페이지 1개부터
+		this.perPageNum = 10;//페이지당 10개까지 
 	}
 	
 	public void setPage(int page) {
@@ -20,7 +24,7 @@ public class ListNum {
 		this.page = page;
 	}
 	
-	public void setPerPageNum(int perPageNum) {
+	public void setPerPageNum(int perPageNum) {//페이지
 		if (perPageNum <= 0 || perPageNum > 100) {
 			this.perPageNum = 10;
 			return;

@@ -32,8 +32,8 @@ public class adminControllerImpl implements adminController {
 	@Autowired MemberService memberService;
 	@Autowired QuizService quizService;
 	@Autowired QaService qaService; 
-	@Autowired QaVO qaVO;
 	@Autowired QuizVO quizVO;
+	@Autowired QaVO qaVO;
 	
 	@ResponseBody
 	@RequestMapping(value = {"authorize.do"}, method = RequestMethod.POST)
@@ -52,6 +52,15 @@ public class adminControllerImpl implements adminController {
 	public ModelAndView studyPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("admin/index");
+		return mav;
+	}
+	
+	@RequestMapping(value = {"admin/logout.do"}, method = RequestMethod.GET)
+	public ModelAndView logoutProc(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("main/index");
 		return mav;
 	}
 	
@@ -150,6 +159,14 @@ public class adminControllerImpl implements adminController {
 		  return mav; 
 	}
 	
+	@RequestMapping(value= "admin/calender.do", method ={RequestMethod.GET}) 
+	  public ModelAndView calenderPage( HttpServletRequest request, HttpServletResponse response, ListNum listNum) throws Exception { 
+		  ModelAndView mav = new ModelAndView();
+		  mav.setViewName("admin/mycalender");
+		  return mav; 
+	}
+	
+	
 	
 	@RequestMapping(value = "admin/getadditionalMember.do", method = RequestMethod.GET)
 	public List<MemberVO> getadditionalMember(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -161,6 +178,7 @@ public class adminControllerImpl implements adminController {
 	@RequestMapping(value = "admin/getadditionalQuiz.do", method = RequestMethod.GET)
 	public List<QuizVO> getadditionalQuiz(@RequestParam ("startNo") int startNo, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		List<QuizVO> additionalQuizList = quizService.select10Quiz(startNo);
+
 		return additionalQuizList;
 	}
 	

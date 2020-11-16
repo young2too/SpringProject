@@ -1,6 +1,9 @@
 package com.spring.project.member.dao;
 
+import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -35,7 +38,9 @@ public class MemberDaoImpl implements MemberDao{
 	@Override
 	public int deleteMember(String id) throws DataAccessException {
 		// TODO Auto-generated method stub
+
 		int result = sqlSession.delete("mapper.member.deleteMember", id);
+
 		return result;
 	}
 
@@ -57,11 +62,46 @@ public class MemberDaoImpl implements MemberDao{
 	}
 
 	@Override
-	public int pwCheck(MemberVO memberVO) throws DataAccessException {
+	public void keepLogin(String id, String sessionId, Date sessionLimit) {
 		// TODO Auto-generated method stub
-		int result = sqlSession.selectOne("mapper.member.pwCheck", memberVO);
-		return result;
+		Map<String,Object> result = new HashMap<String, Object>();
+		result.put("id", id);
+		result.put("sessionId", sessionId);
+		result.put("sessionLimit", sessionLimit);
+		sqlSession.update("mapper.member.keepLogin", result);
+		
 	}
+
+	@Override
+	public MemberVO checkUserWithSessionKey(String sessionId) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("mapper.member.checkUserWithSessionKey",sessionId);
+	}
+
+	@Override
+	public MemberVO selectMember(String id) throws DataAccessException {
+		// TODO Auto-generated method stub
+		MemberVO vo = sqlSession.selectOne("mapper.member.selectMemberById", id);
+		return vo;
+	}
+
+	@Override
+	public int updatePw(MemberVO memberVO) throws DataAccessException {
+		// TODO Auto-generated method stub
+		int result= sqlSession.update("mapper.member.updateMember", memberVO);
+		return result; 
+	}
+	
+	/*
+	 * @Override public int pwCheck(String RgPw) throws DataAccessException { //
+	 * TODO Auto-generated method stub int result =
+	 * sqlSession.selectOne("mapper.member.pwCheck", RgPw); return result; }
+	 */
+//	public int pwCheck(MemberVO memberVO) throws DataAccessException {
+//		// TODO Auto-generated method stub
+//		int result = sqlSession.selectOne("mapper.member.pwCheck", memberVO);
+//		return result;
+//	}
 
 
 	/*

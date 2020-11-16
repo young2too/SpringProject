@@ -105,7 +105,23 @@
 						<div class="col-lg-8 col-md-7 col-sm-12">
 							<div class="courses-post">
 								<div class="ttr-post-media media-effect">
-									<a href="#"><img src="${contextPath }/resources/main_assets/assets/images/blog/default/thum1.jpg" alt=""></a>
+									<c:choose>
+												<c:when test="${category == 1 }">
+												<a href="#"><img src="${contextPath }/resources/main_assets/assets/images/blog/default/engineer.png" alt=""></a>
+												</c:when>
+												<c:when test="${category == 2 }">
+												<img src="${contextPath }/resources/main_assets/assets/images/blog/default/security.png" alt="">
+												</c:when>
+												<c:when test="${category == 3 }">
+												<img src="${contextPath }/resources/main_assets/assets/images/blog/default/linux.png" alt="">
+												</c:when>
+												<c:when test="${category == 4 }">
+												<img src="${contextPath }/resources/main_assets/assets/images/blog/default/english.png" alt="">
+												</c:when>
+												<c:when test="${category == 5 }">
+												<img src="${contextPath }/resources/main_assets/assets/images/blog/default/korean.png" alt="">
+												</c:when>
+									</c:choose>
 								</div>
 								<div class="ttr-post-info">
 									<div class="ttr-post-title ">

@@ -55,7 +55,7 @@ public class VocaServiceImpl implements VocaService{
 		List<VocaVO> myQuizList = vocaDAO.getMyVocaByID(loginedUser);
 		String myQuizes = "";
 		myQuizes += myQuizList.get(0).getQuiz_code();
-		myQuizes += ",";
+
 		vocaVO = myQuizList.get(0);
 		String updateCode = myQuizes.replace(code+",", "");
 		vocaVO.setQuiz_code(updateCode);
