@@ -94,7 +94,7 @@
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
-					<li><a href="/">Home</a></li>
+					<li><a href="index.do">Home</a></li>
 					<li>문제집 선택</li>
 					<li>
 						<c:choose>

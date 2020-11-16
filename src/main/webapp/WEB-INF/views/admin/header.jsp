@@ -23,7 +23,7 @@
 				<div>
 					<a href="index.do" class="ttr-logo">
 						<img class="ttr-logo-mobile" alt="" src="${contextPath }/resources/main_assets/assets/images/logo3.png" width="30" height="30">
-						<img class="ttr-logo-desktop" alt="" src="${contextPath }/resources/main_assets/assets/images/logo2.png" width="160" height="27">
+						<img class="ttr-logo-desktop" alt="" src="${contextPath }/resources/main_assets/assets/images/logo3.png" width="160" height="27">
 					</a>
 				</div>
 			</div>
