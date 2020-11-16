@@ -27,7 +27,7 @@
   border-radius: 4px;
   box-sizing: border-box;
 }
-.userInputWrapper>button{
+.userInputWrapper>button, #to-home{
 	font-size:18px;
 	border-radius : 5px;
 	border :1px solid skyblue;
@@ -36,10 +36,19 @@
 	padding:5px;
 
 }
-.userInputWrapper>button:hover{
+.userInputWrapper>button:hover, #to-home{
 	color:white;
 	background-color:skyblue;
 }
+
+#endTestPannel{
+text-align: center
+}
+
+#endTestPannel>p{
+	font-size:18px;
+}
+
 </style>
 
 
@@ -150,6 +159,11 @@
 				</div>
 			</div>
 			<!-- Page Heading Box END ==== -->
+			<div class="correct-uncorrect-box">
+					정답 : <span id="correct">0</span>개
+					오답 : <span id="incorrect">0</span>개
+					문제 수 : ${ howmanyQuiz }문
+			</div>
 			<!-- Page Content Box ==== -->
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
@@ -172,6 +186,11 @@
 						</div>
 					</c:forEach>
 				</div>
+				<div id="endTestPannel">
+					<p class="testEnd"></p>
+					<button id="to-home" onclick="window.open('index.do','_self')" style="display:none;">메인으로</button>
+				</div>
+				
 				<!-- Add Pagination -->
 				<div class="swiper-pagination"></div>
 				<!-- Add Arrows -->
@@ -231,15 +250,39 @@
 		});
 	</script>
 	<script>
+	var correct = 0;
+	var incorrect = 0;
+	var count = 0;
+	var maxQuiz = ${howmanyQuiz};
 		$(function(){
-			var maxQuiz = ${howmanyQuiz};
 			for(var i=0;i<maxQuiz;i++){
 				$('#confirm'+i).click((function(){
 					var index = (this.id).substring(7);
+					$(this).off("click");
 					var userAnswer = $('#userAnswer'+index)[0].value;
 					var realAnswer = $('#answer'+index)[0].value;
 					alert("당신의 답 : "+userAnswer+"\n"
 							+"정답 : "+realAnswer);
+					if(userAnswer==realAnswer){
+						correct++;
+						$(this).text("정답입니다");
+						changeCorrects(correct,incorrect);
+						$("#correct").css('background','#C9FFC3');
+						setTimeout(() => {
+							$("#correct").css('background','')
+						}, 500);
+						count++;
+					}else{
+						incorrect++;
+						$(this).text("오답입니다");
+						changeCorrects(correct,incorrect);
+						$("#incorrect").css('background','#FF8383');
+						setTimeout(() => {
+							$("#incorrect").css('background','');
+						}, 500);
+						count++;
+					}
+					changeCorrects(correct,incorrect);
 				}))
 			}
 
@@ -247,6 +290,14 @@
 		function changeCorrects(correct, incorrect){
 			$("#correct").text(correct);
 			$("#incorrect").text(incorrect);
+			if(count==maxQuiz){
+				testEnd();
+			}
+		}
+		function testEnd(){
+			$(".testEnd").html('<p>정답 : '+correct+'개\n오답 : '+incorrect+'개 입니다</p>');
+			$(".swiper-wrapper").css('display','none');
+			$("#to-home").css('display','');
 		}
 
 </script>
