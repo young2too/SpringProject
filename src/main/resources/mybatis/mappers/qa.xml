@@ -69,7 +69,7 @@ select qa_num, qa_title, qa_content, id, qa_date, qa_head, row_number() over(ord
 	
   <select id="selectNewQaNUM" resultType="int"  >
 		<![CDATA[
-			SELECT max(qa_num)+1 from qa_table		
+			SELECT NVL(max(qa_num)+1,1) from qa_table		
 		]]>
 	</select>
 	

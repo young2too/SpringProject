@@ -93,8 +93,8 @@
                         <ul class="nav navbar-nav">	
 							<li class="active"><a href="javascript:;">Home<i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="index.do">Home 1</a></li>
-									<li><a href="index-2.jsp">Home 2</a></li>
+									<li><a href="index.do">Home</a></li>
+						
 								</ul>
 							</li>
 							<li><a href="javascript:;">공부방<i class="fa fa-chevron-down"></i></a>
