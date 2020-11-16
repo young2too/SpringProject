@@ -21,7 +21,6 @@ public interface MemberController {
 	// 로그인 페이지로 이동
 	public ModelAndView forgetPw(HttpServletRequest request, HttpServletResponse response)throws Exception;
 	// 비밀번호 찾기 페이지로 이동
-	
 	public ModelAndView addmember(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	// 회원가입 구현
 	public ModelAndView loginProc(HttpServletRequest request, HttpServletResponse response) throws Exception;
@@ -36,12 +35,4 @@ public interface MemberController {
 	// 비밀번호 수정(마이페이지)
 	public ModelAndView deleteProc(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	// 회원탈퇴 
-	
-//	public ModelAndView pwChange(HttpServletRequest request, HttpServletResponse response) throws Exception;
-	// 마이페이지에서 비밀번호 변경 구현
-//	public int pwCheck(@RequestParam("pwcheck") String pw) throws Exception; 
-//	// 마이페이지에서 현재비밀번호 체크 구현
-
-//	public int pwCheck(HttpServletRequest request, HttpServletResponse response) throws Exception;
-
 }

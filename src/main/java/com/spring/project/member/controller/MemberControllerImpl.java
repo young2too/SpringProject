@@ -108,8 +108,6 @@ public class MemberControllerImpl implements MemberController {
 				Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 				memberService.keepLogin(memberVO.getId(), session.getId(), sessionLimit);
 			}
-//			  if ( session.getAttribute("login") !=null ){
-//			  session.removeAttribute("login"); }
 			System.out.println("로그인완료");
 			mav.setViewName("main/index");
 			System.out.println(session.getAttribute("member"));
@@ -186,40 +184,20 @@ public class MemberControllerImpl implements MemberController {
 		// TODO Auto-generated method stub
 		ModelAndView mav = new ModelAndView();
 		HttpSession session = request.getSession();
-		Cookie cookie = WebUtils.getCookie(request, "loginCookie");
 		String id = (String)session.getAttribute("LgId");
 		memberService.removeMember(id);
-//    	cookie.setMaxAge(0);
-//    	response.addCookie(cookie);
+	    Cookie cookie = WebUtils.getCookie(request, "loginCookie");
+	    if(cookie!= null) { 
+	    	cookie.setPath("/"); 
+	    	cookie.setMaxAge(0);
+	    	response.addCookie(cookie);
+	    	System.out.println("쿠키초기화");
+	    } 
 		session.invalidate();
 		mav.setViewName("main/alert");
-		mav.addObject("errorMsg","회원 탈퇴되셨습니다.");
+		mav.addObject("errorMsg","탈퇴가 완료되었습니다.");
 		mav.addObject("destUrl","index.do");
 		return mav;
 	}
-	
-//	@Override
-//	@RequestMapping
-//	public ModelAndView pwChange(HttpServletRequest request, HttpServletResponse response) throws Exception {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//	
-//	@Override
-//	@ResponseBody
-//	@RequestMapping(value = "pwcheck.do", method = {RequestMethod.POST,RequestMethod.GET}) 
-//	public int pwCheck(@RequestParam("pwcheck") String RgPw)throws Exception {
-//		// TODO Auto-generated method stub 
-//		int result = memberService.pwCheck(RgPw);
-//		return result;
-//	}
-	 
-
-//	@Override
-//	public int pwCheck(HttpServletRequest request, HttpServletResponse response) throws Exception {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-
 
 }

@@ -15,24 +15,6 @@
 		<div class="top-bar">
 			<div class="container">
 				<div class="row d-flex justify-content-between">
-					<!--  <div class="topbar-left">
-						<ul>
-							<li><a href="faq-1.jsp"><i class="fa fa-question-circle"></i>Ask a Question</a></li>
-							<li><a href="javascript:;"><i class="fa fa-envelope-o"></i>Support@website.com</a></li>
-						</ul>
-					</div>-->
-					<!--<div class="topbar-right">
-						  <ul>
-							<li>
-								<select class="header-lang-bx">
-									<option data-icon="flag flag-uk">English UK</option>
-									<option data-icon="flag flag-us">English US</option>
-								</select>
-							</li>
-							<li><a href="login.jsp">Login</a></li>
-							<li><a href="register.jsp">Register</a></li>
-						</ul>
-					</div> -->
 				</div>
 			</div>
 		</div>
@@ -66,7 +48,7 @@
                         	<% if(LgId !=null) {
                         		%> 
                         		<ul>
-									<li><a href="userpage.do"><%=LgId%></a>님 환영합니다　</li>
+									<li><a href="userpage.do"><%=LgId%></a>님 환영합니다</li>
 									<li>
 			                        	<a href="userpage.do">
 			                           		<i class="fa fa-user"></i> 
@@ -128,22 +110,6 @@
 											<li><a href="exercise.do">객관식</a></li>
 										</ul>
 									</li>
-									<!-- <li><a href="javascript:;">FAQ's<i class="fa fa-angle-right"></i></a>
-										<ul class="sub-menu">
-											<li><a href="faq-1.jsp">FAQ's 1</a></li>
-											<li><a href="faq-2.jsp">FAQ's 2</a></li>
-										</ul>
-									</li>
-									<li><a href="javascript:;">Contact Us<i class="fa fa-angle-right"></i></a>
-										<ul class="sub-menu">
-											<li><a href="contact-1.jsp">Contact Us 1</a></li>
-											<li><a href="contact-2.jsp">Contact Us 2</a></li>
-										</ul>
-									</li>
-									<li><a href="portfolio.jsp">Portfolio</a></li>
-									<li><a href="profile.jsp">Profile</a></li>
-									<li><a href="membership.jsp">Membership</a></li>
-									<li><a href="error-404.jsp">404 Page</a></li> -->
 								</ul>
 							</li>
 							<li class="add-mega-menu"><a href="javascript:;">나의 단어장<i class="fa fa-chevron-down"></i></a>
@@ -165,11 +131,7 @@
 							</li>
 							<li><a href="javascript:;">게시판 <i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="listQaes.do">자유 게시판</a></li><!-- 
-									<li><a href="blog-classic-sidebar.jsp">Blog Classic Sidebar</a></li>
-									<li><a href="blog-list-sidebar.jsp">QnA게시판</a></li>
-									<li><a href="blog-standard-sidebar.jsp">Blog Standard Sidebar</a></li>
-									<li><a href="blog-details.jsp">Blog Details</a></li> -->
+									<li><a href="listQaes.do">자유 게시판</a></li>
 								</ul>
 							</li>
 							<!-- 관리자 대시보드 -->
