@@ -27,10 +27,15 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	 <mvc:interceptors>
+		 <mvc:interceptor>
+	      	<mvc:mapping path="/admin/*.do"/>
+	   		<beans:bean class="com.spring.project.common.interceptor.forAdminInterceptor" />
+		</mvc:interceptor>
     	<mvc:interceptor>
 	      	<mvc:mapping path="/*/*.do"/>
 	   		<beans:bean class="com.spring.project.common.interceptor.ViewNameInterceptor" />
 		</mvc:interceptor>
+		
 	</mvc:interceptors>
 
 	<context:component-scan

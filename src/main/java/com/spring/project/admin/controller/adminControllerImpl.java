@@ -7,6 +7,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +32,21 @@ public class adminControllerImpl implements adminController {
 	@Autowired MemberService memberService;
 	@Autowired QuizService quizService;
 	@Autowired QaService qaService; 
-	@Autowired QuizVO quizVO;
 	@Autowired QaVO qaVO;
+	@Autowired QuizVO quizVO;
+	
+	@ResponseBody
+	@RequestMapping(value = {"authorize.do"}, method = RequestMethod.POST)
+	public int authorize(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(((String)request.getParameter("adminID")).equals("system") &&
+				((String)request.getParameter("adminPW")).equals("oracle")) {
+			HttpSession session = request.getSession();
+			session.setAttribute("admin", "관리자권한");
+			return 1;
+		}
+		else
+			return 0;
+	}
 	
 	@RequestMapping(value = {"admin/index.do", "admin/"}, method = RequestMethod.GET)
 	public ModelAndView studyPage(HttpServletRequest request, HttpServletResponse response) throws Exception {

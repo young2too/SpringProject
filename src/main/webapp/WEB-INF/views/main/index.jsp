@@ -60,6 +60,9 @@
 	<link rel="stylesheet" type="text/css" href="${contextPath }/resources/main_assets/assets/vendors/revolution/css/navigation.css">
 	<!-- REVOLUTION SLIDER END -->	
 </head>
+<script>
+alert(sessionStorage.))
+</script>
 <body id="bg">
 <div class="page-wraper">
 <div id="loading-icon-bx"></div>
