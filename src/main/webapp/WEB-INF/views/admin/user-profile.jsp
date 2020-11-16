@@ -64,17 +64,9 @@
 	<link class="skin" rel="stylesheet" type="text/css" href="${contextPath }/resources/admin/assets/css/color/color-1.css">
 	
 </head>
-<!-- <body class="ttr-opened-sidebar ttr-pinned-sidebar"> -->
-	
 	<!-- header start -->
 	<header class="ttr-header">
 		<div class="ttr-header-wrapper">
-			<!--sidebar menu toggler start -->
-			<!-- <div class="ttr-toggle-sidebar ttr-material-button">
-				<i class="ti-close ttr-open-icon"></i>
-				<i class="ti-menu ttr-close-icon"></i>
-			</div> -->
-			<!--sidebar menu toggler end -->
 			<!--logo start -->
 			<div class="ttr-logo-box">
 				<div>
@@ -84,148 +76,6 @@
 					</a>
 				</div>
 			</div>
-			<!--logo end -->
-			<!-- <div class="ttr-header-menu"> -->
-				<!-- header left menu start -->
-				<!-- <ul class="ttr-header-navigation"> -->
-					<!-- <li>
-						<a href="main/index.do" class="ttr-material-button ttr-submenu-toggle">HOME</a>
-					</li> -->
-					<!-- <li>
-						<a href="#" class="ttr-material-button ttr-submenu-toggle">QUICK MENU <i class="fa fa-angle-down"></i></a>
-						<div class="ttr-header-submenu">
-							<ul>
-								<li><a href="../main/courses.jsp">Our Courses</a></li>
-								<li><a href="../main/event.jsp">New Event</a></li>
-								<li><a href="../main/membership.jsp">Membership</a></li>
-							</ul>
-						</div>
-					</li>
-				</ul>
-				header left menu end
-			</div>
-			<div class="ttr-header-right ttr-with-seperator">
-				header right menu start
-				<ul class="ttr-header-navigation">
-					<li>
-						<a href="#" class="ttr-material-button ttr-search-toggle"><i class="fa fa-search"></i></a>
-					</li>
-					<li>
-						<a href="#" class="ttr-material-button ttr-submenu-toggle"><i class="fa fa-bell"></i></a>
-						<div class="ttr-header-submenu noti-menu">
-							<div class="ttr-notify-header">
-								<span class="ttr-notify-text-top">9 New</span>
-								<span class="ttr-notify-text">User Notifications</span>
-							</div>
-							<div class="noti-box-list">
-								<ul>
-									<li>
-										<span class="notification-icon dashbg-gray">
-											<i class="fa fa-check"></i>
-										</span>
-										<span class="notification-text">
-											<span>Sneha Jogi</span> sent you a message.
-										</span>
-										<span class="notification-time">
-											<a href="#" class="fa fa-close"></a>
-											<span> 02:14</span>
-										</span>
-									</li>
-									<li>
-										<span class="notification-icon dashbg-yellow">
-											<i class="fa fa-shopping-cart"></i>
-										</span>
-										<span class="notification-text">
-											<a href="#">Your order is placed</a> sent you a message.
-										</span>
-										<span class="notification-time">
-											<a href="#" class="fa fa-close"></a>
-											<span> 7 Min</span>
-										</span>
-									</li>
-									<li>
-										<span class="notification-icon dashbg-red">
-											<i class="fa fa-bullhorn"></i>
-										</span>
-										<span class="notification-text">
-											<span>Your item is shipped</span> sent you a message.
-										</span>
-										<span class="notification-time">
-											<a href="#" class="fa fa-close"></a>
-											<span> 2 May</span>
-										</span>
-									</li>
-									<li>
-										<span class="notification-icon dashbg-green">
-											<i class="fa fa-comments-o"></i>
-										</span>
-										<span class="notification-text">
-											<a href="#">Sneha Jogi</a> sent you a message.
-										</span>
-										<span class="notification-time">
-											<a href="#" class="fa fa-close"></a>
-											<span> 14 July</span>
-										</span>
-									</li>
-									<li>
-										<span class="notification-icon dashbg-primary">
-											<i class="fa fa-file-word-o"></i>
-										</span>
-										<span class="notification-text">
-											<span>Sneha Jogi</span> sent you a message.
-										</span>
-										<span class="notification-time">
-											<a href="#" class="fa fa-close"></a>
-											<span> 15 Min</span>
-										</span>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</li>
-					<li> -->
-						<%-- <a href="#" class="ttr-material-button ttr-submenu-toggle"><span class="ttr-user-avatar"><img alt="" src="${contextPath }/resources/admin/assets/images/testimonials/pic3.jpg" width="32" height="32"></span></a>
-						<div class="ttr-header-submenu">
-							<ul>
-								<li><a href="user-profile.jsp">My profile</a></li>
-								<li><a href="list-view-calendar.jsp">Activity</a></li>
-								<li><a href="mailbox.jsp">Messages</a></li>
-								<li><a href="../main/login.jsp">Logout</a></li>
-							</ul>
-						</div>
-					</li>
-					<li class="ttr-hide-on-mobile">
-						<a href="#" class="ttr-material-button"><i class="ti-layout-grid3-alt"></i></a>
-						<div class="ttr-header-submenu ttr-extra-menu">
-							<a href="#">
-								<i class="fa fa-music"></i>
-								<span>Musics</span>
-							</a>
-							<a href="#">
-								<i class="fa fa-youtube-play"></i>
-								<span>Videos</span>
-							</a>
-							<a href="#">
-								<i class="fa fa-envelope"></i>
-								<span>Emails</span>
-							</a>
-							<a href="#">
-								<i class="fa fa-book"></i>
-								<span>Reports</span>
-							</a>
-							<a href="#">
-								<i class="fa fa-smile-o"></i>
-								<span>Persons</span>
-							</a>
-							<a href="#">
-								<i class="fa fa-picture-o"></i>
-								<span>Pictures</span>
-							</a>
-						</div>
-					</li>
-				</ul> --%>
-				<!-- header right menu end -->
-			<!-- </div> -->
 			<!--header search panel start -->
 			<div class="ttr-search-bar">
 				<form class="ttr-search-form">
@@ -248,101 +98,10 @@
 			<!-- side menu logo start -->
 			<div class="ttr-sidebar-logo">
 				<a href="#"><img alt="" src="${contextPath }/resources/admin/assets/images/logo.png" width="122" height="27"></a>
-				<!-- <div class="ttr-sidebar-pin-button" title="Pin/Unpin Menu">
-					<i class="material-icons ttr-fixed-icon">gps_fixed</i>
-					<i class="material-icons ttr-not-fixed-icon">gps_not_fixed</i>
-				</div> -->
 				<div class="ttr-sidebar-toggle-button">
 					<i class="ti-arrow-left"></i>
 				</div>
 			</div>
-			<!-- side menu logo end -->
-			<!-- sidebar menu start -->
-			<!-- <nav class="ttr-sidebar-navi">
-				<ul>
-					<li>
-						<a href="index.jsp" class="ttr-material-button">
-							<span class="ttr-icon"><i class="ti-home"></i></span>
-		                	<span class="ttr-label">Dashborad</span>
-		                </a>
-		            </li>
-					<li>
-						<a href="courses.jsp" class="ttr-material-button">
-							<span class="ttr-icon"><i class="ti-book"></i></span>
-		                	<span class="ttr-label">Courses</span>
-		                </a>
-		            </li>
-					<li>
-						<a href="#" class="ttr-material-button">
-							<span class="ttr-icon"><i class="ti-email"></i></span>
-		                	<span class="ttr-label">Mailbox</span>
-		                	<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
-		                </a>
-		                <ul>
-		                	<li>
-		                		<a href="mailbox.jsp" class="ttr-material-button"><span class="ttr-label">Mail Box</span></a>
-		                	</li>
-		                	<li>
-		                		<a href="mailbox-compose.jsp" class="ttr-material-button"><span class="ttr-label">Compose</span></a>
-		                	</li>
-							<li>
-		                		<a href="mailbox-read.jsp" class="ttr-material-button"><span class="ttr-label">Mail Read</span></a>
-		                	</li>
-		                </ul>
-		            </li>
-					<li>
-						<a href="#" class="ttr-material-button">
-							<span class="ttr-icon"><i class="ti-calendar"></i></span>
-		                	<span class="ttr-label">Calendar</span>
-		                	<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
-		                </a>
-		                <ul>
-		                	<li>
-		                		<a href="basic-calendar.jsp" class="ttr-material-button"><span class="ttr-label">Basic Calendar</span></a>
-		                	</li>
-		                	<li>
-		                		<a href="list-view-calendar.jsp" class="ttr-material-button"><span class="ttr-label">List View</span></a>
-		                	</li>
-		                </ul>
-		            </li>
-					<li>
-						<a href="bookmark.jsp" class="ttr-material-button">
-							<span class="ttr-icon"><i class="ti-bookmark-alt"></i></span>
-		                	<span class="ttr-label">Bookmarks</span>
-		                </a>
-		            </li>
-					<li>
-						<a href="review.jsp" class="ttr-material-button">
-							<span class="ttr-icon"><i class="ti-comments"></i></span>
-		                	<span class="ttr-label">Review</span>
-		                </a>
-		            </li>
-					<li>
-						<a href="add-listing.jsp" class="ttr-material-button">
-							<span class="ttr-icon"><i class="ti-layout-accordion-list"></i></span>
-		                	<span class="ttr-label">Add listing</span>
-		                </a>
-		            </li>
-					<li>
-						<a href="#" class="ttr-material-button">
-							<span class="ttr-icon"><i class="ti-user"></i></span>
-		                	<span class="ttr-label">My Profile</span>
-		                	<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
-		                </a>
-		                <ul>
-		                	<li>
-		                		<a href="user-profile.jsp" class="ttr-material-button"><span class="ttr-label">User Profile</span></a>
-		                	</li>
-		                	<li>
-		                		<a href="teacher-profile.jsp" class="ttr-material-button"><span class="ttr-label">Teacher Profile</span></a>
-		                	</li>
-		                </ul>
-		            </li>
-		            <li class="ttr-seperate"></li>
-				</ul>
-				sidebar menu end
-			</nav> -->
-			<!-- sidebar menu end -->
 		</div>
 	</div>
 	<!-- Left sidebar menu end -->
@@ -353,7 +112,7 @@
 			<div class="db-breadcrumb">
 				<h4 class="breadcrumb-title">My Page</h4>
 				<ul class="db-breadcrumb-list">
-					<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+					<li><a href="index.do"><i class="fa fa-home"></i>Home</a></li>
 					<li>User Profile</li>
 				</ul>
 			</div>	
@@ -399,6 +158,7 @@
 										<label class="col-sm-2 col-form-label">Current Password</label>
 										<div class="col-sm-7">
 											<input class="form-control" type="password" name="CuPw" value="">
+											<div id="checkmsg"></div>	
 										</div>
 									</div>
 									<div class="form-group row">
@@ -418,7 +178,7 @@
 								<div class="row">
 									<div class="col-sm-2">
 									</div>
-									<div class="col-sm-7">
+									<div class="col-sm-7" style="text-align: right;">
 										<button type="button" onclick="location.href='deleteProc.do' " id="deleteMember" class="btn non-active" >회원탈퇴</button>
 										<button type="submit" onclick="buttonClick()" id="savePw" class="btn non-active" >비밀번호 저장</button>
 									</div>
@@ -474,6 +234,8 @@ function pwCheck(){
 		var msg;
 		if(pw!=pwOk){
 			console.log("비번불일치")
+			msg= '비밀번호가 일치하지 않습니다.'
+			color='blue';
 		}
 		else{
 			console.log("비번일치")
@@ -491,19 +253,20 @@ function nwpwCheck(){
 	$('input[name=NwPwOk]').blur(function(){
 		var NwPw = $('input[name=NwPw]').val();
 		var NwPwOk = $('input[name=NwPwOk]').val();
+		var pw = $('input[name=CuPw]').val();
 		var color;
 		var msg;
-		if(NwPw!=NwPwOk){
-			console.log('비번일치노노')
-			msg = '비밀번호가 일치하지 않습니다.';
-			color='red';
-		}
-		else{
+		if(NwPw!=pw && NwPw==NwPwOk){
 			console.log('비번일치')
 			msg= '비밀번호를 사용할 수 있습니다.';
 			color='blue';
 			$('#deleteMember').removeClass('non-active');
 			$('#savePw').removeClass('non-active');
+		}
+		else{
+			console.log('비번일치노노')
+			msg = '비밀번호가 일치하지 않습니다.';
+			color='red';
 		}
 		$('#checkmsgpw').text(msg);
 		$('#checkmsgpw').css('color',color);

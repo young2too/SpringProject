@@ -91,19 +91,5 @@
 		and sessionLimit > now()
 	]]>
   </select>  
-  
-	
-  <!-- pw 체크 -->
-<!--   <select id="pwCheck"  resultType="int"   parameterType="memberVO" >
-	<![CDATA[
-		select count(*) from member_table	
-		where id=#{id}		
-	]]>
-  </select> -->
-  <!-- 회원코드 최댓값 구하기 -->
-	<!-- <select id="getMaxMemberCode"  resultType="_int" >
-	<![CDATA[
-		select max(member_code) from member_table			
-	]]>
-  </select> -->
+
 </mapper>

@@ -70,22 +70,4 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.updatePw(memberVO);
 	}
 
-	
-	/*
-	 * @Override public int pwCheck(String RgPw) throws Exception { // TODO
-	 * Auto-generated method stub return memberDAO.pwCheck(RgPw); }
-	 */
-
-//	public int pwCheck(MemberVO memberVO) throws Exception {
-//		// TODO Auto-generated method stub
-//		return memberDAO.pwCheck(memberVO);
-//	}
-
-	/*
-	 * public int getMaxMemberCode() throws Exception{ return
-	 * memberDAO.getMaxMemberCode();
-	 * 
-	 * }
-	 */
-
 }

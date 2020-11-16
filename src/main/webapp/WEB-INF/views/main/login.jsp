@@ -59,7 +59,7 @@
 	<div id="loading-icon-bx"></div>
 	<div class="account-form">
 		<div class="account-head" style="background-image:url(${contextPath }/resources/main_assets/assets/images/background/bg2.jpg);">
-			<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo-white-2.png" alt=""></a>
+			<a href="index.jsp"><img src="${contextPath }/resources/main_assets/assets/images/logo3.png" alt=""></a>
 		</div>
 		<div class="account-form-inner">
 			<div class="account-container">
@@ -91,18 +91,12 @@
 									<input type="checkbox" class="custom-control-input" id="customControlAutosizing" name="rememberMe">
 									<label class="custom-control-label" for="customControlAutosizing">Remember me</label>
 								</div>
-								<a href="forget-password.do" class="ml-auto">Forgot Password?</a>
 							</div>
 						</div>
-						<div class="col-lg-12 m-b30">
-							<button name="submit" type="submit" value="Submit" class="btn button-md">Login</button>
+						<div class="col-lg-12 m-b30" style="text-align: right;">
+							<button name="submit" type="submit" value="Submit" class="btn button-md" >Login</button>
 						</div>
 						<div class="col-lg-12">
-							<h6>Login with Social media</h6>
-							<div class="d-flex">
-								<a class="btn flex-fill m-r5 facebook" href="#"><i class="fa fa-facebook"></i>Facebook</a>
-								<a class="btn flex-fill m-l5 google-plus" href="#"><i class="fa fa-google-plus"></i>Google Plus</a>
-							</div>
 						</div>
 					</div>
 				</form>
